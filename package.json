@@ -1,5 +1,17 @@
 {
+  "name": "nevsky",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "keywords": [],
+  "author": "Gueorgui AGAPOV",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i ./css/input.css -o ./css/tailwind.min.css --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
     "tailwindcss": "^4.1.11"
   }
 }
