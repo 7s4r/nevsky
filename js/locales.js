@@ -56,7 +56,7 @@ window.locales = {
       'Voici les prochains événements de la paroisse. Vous pouvez ajouter les dates à votre agenda.',
     'events.add': 'Ajouter au calendrier',
     'events.item1.title': 'Divine Liturgie de la Dormition',
-    'events.item1.time': 'Vendredi 15 août · 10:00 — 12:00',
+    'events.item1.time': 'Vendredi 28 août · 10:00 — 12:00',
     'events.item1.desc':
       "Grande fête mariale. Office suivi d'un temps fraternel.",
     'events.item2.title': 'Vêpres',
@@ -153,7 +153,7 @@ window.locales = {
       'Здесь вы найдёте ближайшие события прихода. Добавляйте даты в свой календарь.',
     'events.add': 'Добавить в календарь',
     'events.item1.title': 'Божественная Литургия Успения',
-    'events.item1.time': 'Пятница 15 августа · 10:00 — 12:00',
+    'events.item1.time': 'Пятница 28 августа · 10:00 — 12:00',
     'events.item1.desc':
       'Великий богородичный праздник. После — братское чаепитие.',
     'events.item2.title': 'Вечерня',
