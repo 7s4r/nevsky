@@ -8,12 +8,31 @@
     </title>
     <meta
       name="description"
-      content="Paroisse Orthodoxe Russe Saint Alexandre Nevsky à Pau, France — liturgie byzantine, horaires des offices, événements, services, histoire, dons et contact."
+      content="Liturgie byzantine à Pau, horaires des offices, événements, services et histoire de l’église. Un lieu d’accueil et de prière, ouvert à tous, pour partager la foi, la culture orthodoxe et soutenir nos projets."
       data-i18n="meta.description"
     />
     <link rel="canonical" href="https://nevsky.fr/" />
-    <link rel="alternate" hreflang="fr" href="https://nevsky.fr/" />
+    <link rel="alternate" hreflang="fr" href="https://nevsky.fr/?lang=fr" />
     <link rel="alternate" hreflang="ru" href="https://nevsky.fr/?lang=ru" />
+    <link rel="alternate" hreflang="en" href="https://nevsky.fr/?lang=en" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta property="og:url" content="https://nevsky.fr/" />
     <meta
       property="og:title"
@@ -21,7 +40,12 @@
     />
     <meta
       property="og:description"
-      content="Paroisse Orthodoxe Russe Saint Alexandre Nevsky à Pau, France — liturgie byzantine, horaires des offices, événements, services, histoire, dons et contact."
+      content="Liturgie byzantine à Pau, horaires des offices, événements, services et histoire de l’église. Un lieu d’accueil et de prière, ouvert à tous, pour partager la foi, la culture orthodoxe et soutenir nos projets."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://nevsky.fr/images/logo-nevsky-share.jpg"
     />
 
     <link
@@ -101,7 +125,12 @@
     >
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
-          <a href="#accueil" class="flex items-center gap-3">
+          <a href="#accueil" class="flex items-center">
+            <img
+              src="images/logo-nevsky.svg"
+              alt="Logo de l'Église Orthodoxe Russe Alexandre Nevsky"
+              class="h-10 w-10"
+            />
             <span
               class="logo font-script text-3xl leading-none"
               data-i18n="brand.name"
@@ -947,16 +976,24 @@
               </p>
             </div>
             <form
-              onsubmit="event.preventDefault(); alert(currentLang==='ru'?'Спасибо за подписку!':'Merci pour votre inscription !');"
+              id="newsletterForm"
+              method="POST"
               class="mt-6 md:mt-0 w-full md:max-w-lg"
             >
+              <input
+                type="hidden"
+                name="access_key"
+                value="2f13f552-cc3f-4ee8-b0fb-1020ddddaac1"
+              />
               <div class="flex gap-3">
                 <label for="email" class="sr-only">Adresse e‑mail</label>
                 <input
-                  id="email"
                   type="email"
+                  name="email"
+                  id="email"
                   required
-                  placeholder="Votre e‑mail"
+                  placeholder="E‑mail"
+                  autocomplete="email"
                   class="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 focus:border-[#ffd615] focus:outline-none focus:ring-2 focus:ring-[#ffe46a]"
                 />
                 <button
@@ -970,6 +1007,11 @@
               <p class="mt-2 text-xs text-slate-500" data-i18n="news.legal">
                 Nous ne partagerons jamais votre e‑mail.
               </p>
+              <div
+                class="mb-4"
+                id="newsletterResult"
+                class="font-semibold"
+              ></div>
             </form>
           </div>
         </div>
@@ -1006,10 +1048,12 @@
               </div>
             </dl>
 
-            <form
-              class="mt-8 grid gap-3"
-              onsubmit="event.preventDefault(); alert(currentLang==='ru'?'Сообщение отправлено. Спасибо!':'Message envoyé. Merci !');"
-            >
+            <form method="POST" id="contactForm" class="mt-8 grid gap-3">
+              <input
+                type="hidden"
+                name="access_key"
+                value="2f13f552-cc3f-4ee8-b0fb-1020ddddaac1"
+              />
               <div class="grid gap-3 sm:grid-cols-2">
                 <div>
                   <label
@@ -1019,8 +1063,10 @@
                     >Nom</label
                   >
                   <input
+                    name="name"
                     id="name"
                     type="text"
+                    autocomplete="name"
                     required
                     class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5 focus:border-[#ffd615] focus:outline-none focus:ring-2 focus:ring-[#ffe46a]"
                   />
@@ -1032,6 +1078,8 @@
                     >E‑mail</label
                   >
                   <input
+                    name="email"
+                    autocomplete="email"
                     id="email2"
                     type="email"
                     required
@@ -1047,12 +1095,21 @@
                   >Message</label
                 >
                 <textarea
+                  name="message"
+                  autocomplete="off"
                   id="message"
                   rows="4"
                   required
                   class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5 focus:border-[#ffd615] focus:outline-none focus:ring-2 focus:ring-[#ffe46a]"
                 ></textarea>
               </div>
+              <!-- Honeypot Spam Protection -->
+              <input
+                type="checkbox"
+                name="botcheck"
+                class="hidden"
+                style="display: none"
+              />
               <button
                 type="submit"
                 class="mt-2 inline-flex items-center justify-center rounded-xl bg-gold px-5 py-3 font-semibold text-slate-900 hover:opacity-90"
@@ -1061,6 +1118,7 @@
                 Envoyer
               </button>
             </form>
+            <div class="mb-4" id="contactResult" class="font-semibold"></div>
           </div>
 
           <div class="overflow-hidden rounded-2xl shadow ring-1 ring-slate-200">
@@ -1081,7 +1139,16 @@
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
         <div class="grid gap-8 md:grid-cols-2">
           <div>
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-2">
+              <span class="block h-8 w-8" data-i18n="brand.icon">
+                <img
+                  src="images/logo-nevsky.svg"
+                  alt="Logo de l'Église
+                Orthodoxe Russe Alexandre Nevsky"
+                  width="32"
+                  height="32"
+                />
+              </span>
               <span class="font-script text-3xl" data-i18n="brand.name"
                 >Nevsky</span
               >
@@ -1133,6 +1200,7 @@
                 >
                   <option value="fr">🇫🇷 Français</option>
                   <option value="ru">🇷🇺 Русский</option>
+                  <option value="en">🇬🇧 English</option>
                 </select>
               </div>
             </div>
@@ -1203,7 +1271,7 @@
     </footer>
 
     <!-- Scripts -->
-    <script defer src="js/locales.js"></script>
-    <script defer src="js/main.js"></script>
+    <script defer src="js/locales.min.js"></script>
+    <script defer src="js/main.min.js"></script>
   </body>
 </html>

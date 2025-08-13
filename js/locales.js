@@ -2,7 +2,7 @@ window.locales = {
   fr: {
     'meta.title': 'Église Orthodoxe Russe Saint Alexandre Nevsky à Pau',
     'meta.description':
-      'Paroisse Orthodoxe Russe Saint Alexandre Nevsky à Pau, France — liturgie byzantine, horaires des offices, événements, services, histoire, dons et contact.',
+      'Liturgie byzantine à Pau, horaires des offices, événements, services et histoire de l’église. Un lieu d’accueil et de prière, ouvert à tous, pour partager la foi, la culture orthodoxe et soutenir nos projets.',
     'brand.name': 'Nevsky',
     'nav.home': 'Accueil',
     'nav.about': 'Histoire',
@@ -92,6 +92,9 @@ window.locales = {
     'contact.form.nameL': 'Nom',
     'contact.form.msgL': 'Message',
     'contact.form.send': 'Envoyer',
+    'contact.form.wait': 'Envoi en cours...',
+    'contact.form.success': 'Message envoyé. Merci !',
+    'contact.form.error': 'Une erreur est survenue.',
     'footer.rights': 'Tous droits réservés.',
     'footer.links': 'Liens utiles',
     'footer.socials': 'Réseaux sociaux',
@@ -100,7 +103,7 @@ window.locales = {
     'meta.title':
       'Русская Православная Церковь Святого Александра Невского в По',
     'meta.description':
-      'Приход Русской Православной Церкви Святого Александра Невского в По, Франция — византийская литургия, расписание богослужений, события, служения, история, пожертвования и контакты.',
+      'Византийская литургия в По, расписание богослужений, события, история храма. Место молитвы и встречи, открытое для всех, кто ищет веру и общение.',
     'brand.name': 'Невский',
     'nav.home': 'Главная',
     'nav.about': 'История',
@@ -187,8 +190,110 @@ window.locales = {
     'contact.form.nameL': 'Имя',
     'contact.form.msgL': 'Сообщение',
     'contact.form.send': 'Отправить',
+    'contact.form.wait': 'Отправка...',
+    'contact.form.success': 'Сообщение отправлено. Спасибо !',
+    'contact.form.error': 'Произошла ошибка.',
     'footer.rights': 'Все права защищены.',
     'footer.links': 'Полезные ссылки',
     'footer.socials': 'Социальные сети',
+  },
+  en: {
+    'meta.title': 'Russian Orthodox Church of Saint Alexander Nevsky in Pau',
+    'meta.description':
+      'Byzantine liturgy in Pau, service times, events, and church history. A place of prayer and fellowship, open to all seeking faith and community.',
+    'brand.name': 'Nevsky',
+    'nav.home': 'Home',
+    'nav.about': 'History',
+    'nav.services': 'Services',
+    'nav.events': 'Events',
+    'nav.donate': 'Donate',
+    'nav.contact': 'Contact',
+    'nav.cta': 'Make a Donation',
+    'hero.title': 'Light and Peace in the Heart of Béarn',
+    'hero.desc':
+      'Join us for the beauty of Orthodox liturgy at our Saint Alexander Nevsky Church in Pau. A place of prayer, fellowship, and sharing faith, Byzantine traditions, and Christian friendship.',
+    'hero.cta1': 'Upcoming Services',
+    'hero.cta2': 'Support the Church',
+    'about.title': 'Our Parish',
+    'about.p1':
+      'Founded in 1867 by Father Herodian, chaplain of the Russian colony, the Saint Alexander Nevsky Church was built through a fundraising campaign that raised 65,000 francs from the Russian aristocracy of Béarn. It is the third Russian Orthodox church built in France, after Nice (1860) and Paris (1861). Dedicated to Alexander Nevsky, the prince of Novgorod and hero of the Battle of the Neva (1240), it reflects the deep ties between Pau and Russia.',
+    'about.p2':
+      'Humble and nestled in a garden surrounded by palm trees, it lacks traditional domes and ostentatious facades. Commissioned from a Pau architect in Saint Petersburg, it resembles a Protestant church built for English-speaking residents in the area of the current police station.',
+    'about.cards.history.title': 'History',
+    'about.cards.history.text':
+      'Since its founding, the parish has been a place of prayer and fellowship. We grow through the involvement of our parishioners.',
+    'about.cards.trad.title': 'Living Tradition',
+    'about.cards.trad.text':
+      'Liturgy, icons, singing, and the church calendar fill the year.',
+    'about.cards.comm.title': 'Community',
+    'about.cards.comm.text':
+      'After services, we gather to welcome newcomers and share fellowship. Everyone is welcome.',
+    'services.title': 'Our Services',
+    'services.desc':
+      'Spiritual guidance and sacraments in the Orthodox tradition.',
+    'services.items.bapt.title': 'Baptism',
+    'services.items.bapt.text':
+      'Preparation for the baptism of children and adults according to the Byzantine rite.',
+    'services.items.mar.title': 'Marriage',
+    'services.items.mar.text':
+      'Preparation for couples and celebration of the sacrament of marriage.',
+    'services.items.conf.title': 'Confession & Guidance',
+    'services.items.conf.text':
+      'Meet with the priest for confession, listening, and prayer.',
+    'services.items.cat.title': 'Catechism',
+    'services.items.cat.text':
+      'Classes for children, teenagers, and adults. Introduction to the faith.',
+    'services.items.ben.title': 'Blessings & Funerals',
+    'services.items.ben.text':
+      'Blessing of homes and objects, prayer for the sick, funerals.',
+    'services.items.hor.title': 'Service Times',
+    'services.items.hor.text':
+      'Below is the calendar of services and liturgical feasts.',
+    'events.title': 'Upcoming Events & Service Calendar',
+    'events.desc':
+      'Here are the upcoming events of the parish. You can add the dates to your calendar.',
+    'events.add': 'Add to Calendar',
+    'events.item1.title': 'Divine Liturgy of the Dormition',
+    'events.item1.time': 'Friday, August 28 · 10:00 — 12:00',
+    'events.item1.desc':
+      'Great Marian feast. Followed by a time of fellowship.',
+    'events.item2.title': 'Vespers',
+    'events.item2.time': 'Saturday, August 23 · 18:30 — 19:30',
+    'events.item2.desc': 'Evening service with choral singing.',
+    'events.item3.title': 'Adult Catechism',
+    'events.item3.time': 'Sunday, August 31 · 12:15 — 13:15',
+    'events.item3.desc':
+      'Introduction to the Orthodox faith, questions & answers.',
+    'events.help': 'Click on a date to see the services.',
+    'don.title': 'Support Major Works',
+    'don.desc':
+      'Our church requires significant repairs (roof, heating, safety). Your donation helps preserve this place of prayer.',
+    'don.goal': 'Goal: 50,000 €',
+    'don.helloasso': 'Donate via HelloAsso',
+    'don.once': 'One-time Donation',
+    'don.monthly': 'Monthly Donation',
+    'don.alloc': 'Allocation of Donations',
+    'don.items.roof': 'Roof and Insulation',
+    'don.items.heat': 'Heating & Electricity',
+    'don.items.access': 'Accessibility & Safety',
+    'don.items.icons': 'Icon Maintenance',
+    'news.title': 'Newsletter Subscription',
+    'news.desc': 'Receive parish announcements, service times, and events.',
+    'news.cta': 'Subscribe',
+    'news.legal': 'We will never share your email.',
+    'contact.title': 'Contact',
+    'contact.addr': 'Address: 18 Rue Jean Réveil, 64000 Pau, France',
+    'contact.phoneL': 'Phone',
+    'contact.priestL': 'Priest',
+    'contact.priest': 'Father Alexandre',
+    'contact.form.nameL': 'Name',
+    'contact.form.msgL': 'Message',
+    'contact.form.send': 'Send',
+    'contact.form.wait': 'Sending...',
+    'contact.form.success': 'Message sent. Thank you!',
+    'contact.form.error': 'An error occurred.',
+    'footer.rights': 'All rights reserved.',
+    'footer.links': 'Useful Links',
+    'footer.socials': 'Social Media',
   },
 };
