@@ -1,6 +1,6 @@
-const { devices } = require('@playwright/test');
+import { devices } from '@playwright/test';
 
-module.exports = {
+export default {
   testDir: './',
   timeout: 30 * 1000,
   expect: { timeout: 5000 },

@@ -9,7 +9,8 @@
   "scripts": {
     "minify:css": "npx @tailwindcss/cli -i ./css/styles.css -o ./css/styles.min.css --minify",
     "minify:js": "npx terser ./js/main.js -o ./js/main.min.js --compress --mangle",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest",
+    "test:unit": "vitest",
     "test:e2e": "playwright test --project=mobile",
     "lint": "eslint . --ext .js,*.cjs",
     "lint:css": "stylelint \"./css/**/*.css\""
@@ -22,8 +23,9 @@
     "@playwright/test": "^1.40.0",
     "eslint": "^8.47.0",
     "http-server": "^14.1.1",
-    "stylelint": "^16.23.1",
+    "stylelint": "^16.23.0",
     "stylelint-config-standard": "^39.0.0",
-    "stylelint-config-tailwindcss": "^1.0.0"
+    "stylelint-config-tailwindcss": "^1.0.0",
+    "vitest": "^1.6.1"
   }
 }

@@ -1,4 +1,4 @@
-const { test, expect } = require('@playwright/test');
+import { test, expect } from '@playwright/test';
 
 test.describe('Basic site checks', () => {
   test('Homepage loads and shows hero', async ({ page }) => {
@@ -29,7 +29,11 @@ test.describe('Basic site checks', () => {
     const footer = page.locator('footer');
     await expect(footer).toBeVisible();
     // check no horizontal scrollbar on body
-    const hasOverflowX = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth);
+    const hasOverflowX = await page.evaluate(
+      () =>
+        document.documentElement.scrollWidth >
+        document.documentElement.clientWidth
+    );
     expect(hasOverflowX).toBeFalsy();
   });
 });
