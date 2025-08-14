@@ -1,6 +1,6 @@
 {
   "extends": ["stylelint-config-standard", "stylelint-config-tailwindcss"],
   "rules": {
-    "indentation": 2
+    "selector-id-pattern": null
   }
 }

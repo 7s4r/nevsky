@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "node": true
   },
   "extends": ["eslint:recommended"],
   "parserOptions": {
@@ -11,5 +12,11 @@
   "rules": {
     "no-unused-vars": ["warn"],
     "no-console": ["off"]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.config.js", "tests/**/*.js"],
+      "env": { "node": true }
+    }
+  ]
 }

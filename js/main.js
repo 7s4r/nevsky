@@ -1,21 +1,28 @@
 // Year in footer
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Mobile menu toggle
 const btn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
-btn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-mobileMenu
-  ?.querySelectorAll('a')
-  .forEach((a) =>
-    a.addEventListener('click', () => mobileMenu.classList.add('hidden'))
-  );
+if (btn) {
+  btn.addEventListener('click', () => {
+    if (mobileMenu) mobileMenu.classList.toggle('hidden');
+  });
+}
+if (mobileMenu) {
+  mobileMenu
+    .querySelectorAll('a')
+    .forEach((a) =>
+      a.addEventListener('click', () => mobileMenu.classList.add('hidden'))
+    );
+}
 
 // Sticky header behavior
 const header = document.getElementById('siteHeader');
 const onScroll = () => {
   const scrolled = window.scrollY > 10;
-  header.classList.toggle('scrolled', scrolled);
+  if (header) header.classList.toggle('scrolled', scrolled);
 };
 window.addEventListener('scroll', onScroll);
 onScroll();
@@ -34,7 +41,8 @@ function getLangFromUrl() {
     const params = new URLSearchParams(window.location.search);
     const l = (params.get('lang') || '').toLowerCase();
     return l === 'fr' || l === 'ru' || l === 'en' ? l : null;
-  } catch (_) {
+  } catch (err) {
+    console.warn('getLangFromUrl: parsing failed', err);
     return null;
   }
 }
@@ -45,7 +53,9 @@ function setLangParamInUrl(lang) {
     url.searchParams.set('lang', lang);
     // Do not create a new history entry; keep navigation clean
     window.history.replaceState({}, '', url);
-  } catch (_) {}
+  } catch (err) {
+    console.warn('setLangParamInUrl: URL update failed', err);
+  }
 }
 
 let currentLang = getLangFromUrl() || localStorage.getItem('lang') || 'fr';
@@ -61,6 +71,7 @@ function formatMonthYear(d) {
 }
 
 function buildCalendar(date) {
+  if (!grid || !title) return;
   grid.innerHTML = '';
   title.textContent = formatMonthYear(date);
   const firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
@@ -105,11 +116,11 @@ next?.addEventListener('click', () => {
 });
 buildCalendar(current);
 
-const translations = window.locales;
+const translations = window.locales || {};
 const t = {
-  fr: translations.fr,
-  ru: translations.ru,
-  en: translations.en,
+  fr: translations.fr || {},
+  ru: translations.ru || {},
+  en: translations.en || {},
 };
 /** ---- SEO helpers: canonical, hreflang, title & descriptions per language ---- */
 function ensureAltLink(hreflang) {
@@ -141,7 +152,10 @@ function updateSeoTags() {
     const url = new URL(window.location.href);
     url.searchParams.set('lang', lang);
     canonical.setAttribute('href', url.toString());
-  } catch {}
+  } catch (err) {
+    // swallow non-fatal URL construction errors but log for debug
+    console.warn('updateSeoTags: canonical URL construction failed', err);
+  }
 
   // Hreflang alternates (+ x-default -> FR)
   try {
@@ -162,7 +176,10 @@ function updateSeoTags() {
     linkRu.setAttribute('href', ru.toString());
     linkEn.setAttribute('href', en.toString());
     linkXd.setAttribute('href', fr.toString()); // default to FR
-  } catch {}
+  } catch (err) {
+    // non-critical; log for debugging
+    console.warn('updateSeoTags: hreflang link creation failed', err);
+  }
 
   // Title & meta descriptions (HTML + OpenGraph)
   try {
@@ -212,7 +229,9 @@ function updateSeoTags() {
       document.head.appendChild(ogUrl);
     }
     ogUrl.setAttribute('content', new URL(window.location.href).toString());
-  } catch {}
+  } catch (err) {
+    console.warn('updateSeoTags: meta tag update failed', err);
+  }
 }
 
 currentLang =
@@ -245,7 +264,9 @@ function syncLangSelect() {
 }
 document.addEventListener('DOMContentLoaded', () => {
   syncLangSelect();
-  langSelect?.addEventListener('change', (e) => setLang(e.target.value));
+  if (langSelect) {
+    langSelect.addEventListener('change', (e) => setLang(e.target.value));
+  }
 });
 
 applyI18n();
@@ -308,55 +329,59 @@ function sendFormData(form, url, resultElement) {
     });
 }
 
-contactForm.addEventListener('submit', function (e) {
-  e.preventDefault();
+if (contactForm) {
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-  displayFormResult(
-    contactResult,
-    'info',
-    translations[currentLang]['contact.form.wait'] || 'Please wait...'
-  );
+    displayFormResult(
+      contactResult,
+      'info',
+      translations[currentLang]['contact.form.wait'] || 'Please wait...'
+    );
 
-  sendFormData(
-    contactForm,
-    'https://api.web3forms.com/submit',
-    contactResult
-  ).then(function () {
-    contactForm.reset();
-    setTimeout(() => {
-      contactResult.style.display = 'none';
-    }, 3000);
+    sendFormData(
+      contactForm,
+      'https://api.web3forms.com/submit',
+      contactResult
+    ).then(function () {
+      contactForm.reset();
+      setTimeout(() => {
+        if (contactResult) contactResult.style.display = 'none';
+      }, 3000);
+    });
   });
-});
+}
 
-newsletterForm.addEventListener('submit', function (e) {
-  e.preventDefault();
+if (newsletterForm) {
+  newsletterForm.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-  displayFormResult(
-    newsletterResult,
-    'info',
-    translations[currentLang]['contact.form.wait'] || 'Please wait...'
-  );
+    displayFormResult(
+      newsletterResult,
+      'info',
+      translations[currentLang]['contact.form.wait'] || 'Please wait...'
+    );
 
-  sendFormData(
-    newsletterForm,
-    'https://api.web3forms.com/submit',
-    newsletterResult
-  ).then(function () {
-    newsletterForm.reset();
-    setTimeout(() => {
-      newsletterResult.style.display = 'none';
-    }, 3000);
+    sendFormData(
+      newsletterForm,
+      'https://api.web3forms.com/submit',
+      newsletterResult
+    ).then(function () {
+      newsletterForm.reset();
+      setTimeout(() => {
+        if (newsletterResult) newsletterResult.style.display = 'none';
+      }, 3000);
+    });
   });
-});
+}
 
 (function () {
-  var el = document.getElementById('contactEmail');
+  const el = document.getElementById('contactEmail');
   if (!el) return;
-  var u = el.getAttribute('data-user');
-  var d = el.getAttribute('data-domain');
+  const u = el.getAttribute('data-user');
+  const d = el.getAttribute('data-domain');
   if (!u || !d) return;
-  var addr = u + '@' + d;
+  const addr = u + '@' + d;
   el.textContent = addr;
   el.setAttribute('href', 'mailto:' + addr);
 })();
