@@ -67,6 +67,9 @@ window.locales = {
     'events.item3.desc':
       'Découverte de la foi orthodoxe, questions & réponses.',
     'events.help': 'Cliquez sur une date pour voir les offices.',
+    'events.notice.title': 'Église temporairement fermée pour travaux',
+    'events.notice.text':
+      'Merci de votre compréhension. Inscrivez-vous à la newsletter pour être informé(e) de la réouverture et des prochains offices.',
     'don.title': 'Soutenir les grands travaux',
     'don.desc':
       'Notre église nécessite des travaux importants (toiture, chauffage, mise aux normes). Votre don nous aide à préserver ce lieu de prière.',
@@ -90,6 +93,7 @@ window.locales = {
     'contact.priestL': 'Prêtre',
     'contact.priest': 'Père Alexandre',
     'contact.form.nameL': 'Nom',
+    'contact.form.emailL': 'E‑mail',
     'contact.form.msgL': 'Message',
     'contact.form.send': 'Envoyer',
     'contact.form.wait': 'Envoi en cours...',
@@ -166,6 +170,9 @@ window.locales = {
     'events.item3.time': 'Воскресенье 31 августа · 12:15 — 13:15',
     'events.item3.desc': 'Знакомство с православной верой. Вопросы и ответы.',
     'events.help': 'Нажмите на дату, чтобы увидеть службы.',
+    'events.notice.title': 'Храм временно закрыт на ремонт',
+    'events.notice.text':
+      'Спасибо за понимание. Подпишитесь на рассылку, чтобы получить уведомление об открытии и ближайших богослужениях.',
     'don.title': 'Поддержите ремонт храма',
     'don.desc':
       'Храм нуждается в серьёзных работах (крыша, отопление, безопасность). Ваше пожертвование помогает сохранить дом молитвы.',
@@ -188,6 +195,7 @@ window.locales = {
     'contact.priestL': 'Священник',
     'contact.priest': 'Отец Александр',
     'contact.form.nameL': 'Имя',
+    'contact.form.emailL': 'Электронная почта',
     'contact.form.msgL': 'Сообщение',
     'contact.form.send': 'Отправить',
     'contact.form.wait': 'Отправка...',
@@ -265,6 +273,9 @@ window.locales = {
     'events.item3.desc':
       'Introduction to the Orthodox faith, questions & answers.',
     'events.help': 'Click on a date to see the services.',
+    'events.notice.title': 'Church temporarily closed for renovation',
+    'events.notice.text':
+      'Thank you for your understanding. Subscribe to the newsletter to be notified about the reopening and upcoming services.',
     'don.title': 'Support Major Works',
     'don.desc':
       'Our church requires significant repairs (roof, heating, safety). Your donation helps preserve this place of prayer.',
@@ -287,6 +298,7 @@ window.locales = {
     'contact.priestL': 'Priest',
     'contact.priest': 'Father Alexandre',
     'contact.form.nameL': 'Name',
+    'contact.form.emailL': 'Email',
     'contact.form.msgL': 'Message',
     'contact.form.send': 'Send',
     'contact.form.wait': 'Sending...',
