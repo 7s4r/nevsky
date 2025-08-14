@@ -33,7 +33,7 @@ function getLangFromUrl() {
   try {
     const params = new URLSearchParams(window.location.search);
     const l = (params.get('lang') || '').toLowerCase();
-    return l === 'fr' || l === 'ru' ? l : null;
+    return l === 'fr' || l === 'ru' || l === 'en' ? l : null;
   } catch (_) {
     return null;
   }
@@ -53,11 +53,10 @@ let currentLang = getLangFromUrl() || localStorage.getItem('lang') || 'fr';
 setLangParamInUrl(currentLang);
 
 function formatMonthYear(d) {
+  const localeMap = { fr: 'fr-FR', ru: 'ru-RU', en: 'en-GB' };
+  const loc = localeMap[currentLang] || 'fr-FR';
   return d
-    .toLocaleDateString(currentLang === 'ru' ? 'ru-RU' : 'fr-FR', {
-      month: 'long',
-      year: 'numeric',
-    })
+    .toLocaleDateString(loc, { month: 'long', year: 'numeric' })
     .replace(/^./, (c) => c.toUpperCase());
 }
 
@@ -83,15 +82,15 @@ function buildCalendar(date) {
     cell.className =
       'h-10 rounded-lg border border-slate-200 text-sm hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-[#ffd615]';
     cell.textContent = d;
-    cell.addEventListener('click', () =>
-      alert(
-        (currentLang === 'ru' ? 'Богослужения на ' : 'Offices pour le ') +
-          d +
-          ' ' +
-          formatMonthYear(date) +
-          ' — (à compléter)'
-      )
-    );
+    cell.addEventListener('click', () => {
+      const msgPrefix =
+        currentLang === 'ru'
+          ? 'Богослужения на '
+          : currentLang === 'en'
+          ? 'Services on '
+          : 'Offices pour le ';
+      alert(msgPrefix + d + ' ' + formatMonthYear(date) + ' — (à compléter)');
+    });
     grid.appendChild(cell);
   }
 }
@@ -110,6 +109,7 @@ const translations = window.locales;
 const t = {
   fr: translations.fr,
   ru: translations.ru,
+  en: translations.en,
 };
 /** ---- SEO helpers: canonical, hreflang, title & descriptions per language ---- */
 function ensureAltLink(hreflang) {
@@ -150,13 +150,17 @@ function updateSeoTags() {
     fr.searchParams.set('lang', 'fr');
     const ru = new URL(base);
     ru.searchParams.set('lang', 'ru');
+    const en = new URL(base);
+    en.searchParams.set('lang', 'en');
 
     const linkFr = ensureAltLink('fr');
     const linkRu = ensureAltLink('ru');
+    const linkEn = ensureAltLink('en');
     const linkXd = ensureAltLink('x-default');
 
     linkFr.setAttribute('href', fr.toString());
     linkRu.setAttribute('href', ru.toString());
+    linkEn.setAttribute('href', en.toString());
     linkXd.setAttribute('href', fr.toString()); // default to FR
   } catch {}
 
@@ -215,7 +219,7 @@ currentLang =
   getLangFromUrl() || localStorage.getItem('lang') || currentLang || 'fr';
 
 function applyI18n() {
-  document.documentElement.lang = currentLang === 'ru' ? 'ru' : 'fr';
+  document.documentElement.lang = currentLang || 'fr';
   document.title = t[currentLang]['meta.title'];
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.getAttribute('data-i18n');
@@ -345,3 +349,14 @@ newsletterForm.addEventListener('submit', function (e) {
     }, 3000);
   });
 });
+
+(function () {
+  var el = document.getElementById('contactEmail');
+  if (!el) return;
+  var u = el.getAttribute('data-user');
+  var d = el.getAttribute('data-domain');
+  if (!u || !d) return;
+  var addr = u + '@' + d;
+  el.textContent = addr;
+  el.setAttribute('href', 'mailto:' + addr);
+})();

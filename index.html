@@ -744,81 +744,21 @@
 
         <div class="mt-10 grid gap-8 lg:grid-cols-2">
           <div class="space-y-4">
-            <article class="rounded-2xl border border-slate-200 p-5">
-              <div class="flex items-start justify-between gap-4">
-                <div>
-                  <h3
-                    class="text-lg font-semibold"
-                    data-i18n="events.item2.title"
-                  >
-                    Vêpres
-                  </h3>
-                  <p
-                    class="mt-1 text-sm text-slate-600"
-                    data-i18n="events.item2.time"
-                  >
-                    Samedi 23 août · 18:30 — 19:30
-                  </p>
-                  <p class="mt-2 text-slate-700" data-i18n="events.item2.desc">
-                    Office du soir avec chant choral.
-                  </p>
-                </div>
-                <span
-                  class="inline-flex h-10 min-w-[2.75rem] items-center justify-center rounded-xl bg-[#fff2a1] px-3 text-sm font-semibold"
-                  >23 AOÛT</span
+            <div class="rounded-2xl border border-amber-200 bg-amber-50 p-6">
+              <h3
+                class="text-lg font-semibold text-slate-900"
+                data-i18n="events.notice.title"
+              >
+                Église temporairement fermée pour travaux
+              </h3>
+              <p class="mt-2 text-slate-700" data-i18n="events.notice.text">
+                Merci de votre compréhension. Inscrivez-vous à la
+                <a href="#newsletter" class="underline font-semibold link-gold"
+                  >newsletter</a
                 >
-              </div>
-            </article>
-            <article class="rounded-2xl border border-slate-200 p-5">
-              <div class="flex items-start justify-between gap-4">
-                <div>
-                  <h3
-                    class="text-lg font-semibold"
-                    data-i18n="events.item1.title"
-                  >
-                    Divine Liturgie de la Dormition
-                  </h3>
-                  <p
-                    class="mt-1 text-sm text-slate-600"
-                    data-i18n="events.item1.time"
-                  >
-                    Vendredi 28 août · 10:00 — 12:00
-                  </p>
-                  <p class="mt-2 text-slate-700" data-i18n="events.item1.desc">
-                    Grande fête mariale. Office suivi d'un temps fraternel.
-                  </p>
-                </div>
-                <span
-                  class="inline-flex h-10 min-w-[2.75rem] items-center justify-center rounded-xl bg-[#fff2a1] px-3 text-sm font-semibold"
-                  >28 AOÛT</span
-                >
-              </div>
-            </article>
-            <article class="rounded-2xl border border-slate-200 p-5">
-              <div class="flex items-start justify-between gap-4">
-                <div>
-                  <h3
-                    class="text-lg font-semibold"
-                    data-i18n="events.item3.title"
-                  >
-                    Catéchisme adultes
-                  </h3>
-                  <p
-                    class="mt-1 text-sm text-slate-600"
-                    data-i18n="events.item3.time"
-                  >
-                    Dimanche 31 août · 12:15 — 13:15
-                  </p>
-                  <p class="mt-2 text-slate-700" data-i18n="events.item3.desc">
-                    Découverte de la foi orthodoxe, questions & réponses.
-                  </p>
-                </div>
-                <span
-                  class="inline-flex h-10 min-w-[2.75rem] items-center justify-center rounded-xl bg-[#fff2a1] px-3 text-sm font-semibold"
-                  >31 AOÛT</span
-                >
-              </div>
-            </article>
+                pour être informé(e) de la réouverture et des prochains offices.
+              </p>
+            </div>
           </div>
 
           <!-- Simple Calendar -->
@@ -883,10 +823,10 @@
             <!-- Progress -->
             <div class="mt-6">
               <div class="flex items-center justify-between text-sm">
-                <span class="opacity-90" data-i18n="don.goal"
+                <!-- <span class="opacity-90" data-i18n="don.goal"
                   >Objectif : 50 000 €</span
                 >
-                <span id="progressLabel" class="font-semibold">23 450 €</span>
+                <span id="progressLabel" class="font-semibold">23 450 €</span> -->
               </div>
               <div
                 class="mt-2 h-3 w-full overflow-hidden rounded-full bg-white/20"
@@ -1044,7 +984,20 @@
               </div>
               <div class="flex gap-2">
                 <dt class="w-28 shrink-0 text-slate-500">E‑mail</dt>
-                <dd>contact@nevsky.fr</dd>
+                <dd>
+                  <a
+                    id="contactEmail"
+                    class="link-gold hover:opacity-90"
+                    href="#"
+                    rel="nofollow"
+                    data-user="contact"
+                    data-domain="nevsky.fr"
+                    >[activer JavaScript]</a
+                  >
+                  <noscript>
+                    <span>contact [at] nevsky [dot] fr</span>
+                  </noscript>
+                </dd>
               </div>
             </dl>
 

@@ -8,7 +8,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "minify:css": "npx @tailwindcss/cli -i ./css/input.css -o ./css/tailwind.min.css --minify",
-    "minify:js": "npx terser ./js/input.js -o ./js/input.min.js --compress --mangle",
+    "minify:js": "npx terser ./js/main.js -o ./js/main.min.js --compress --mangle",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
