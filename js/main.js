@@ -256,6 +256,21 @@ function setLang(lang) {
   applyI18n();
 }
 
+// Expose setter for tests to change currentLang without triggering full UI flows
+export function setLangValue(lang) {
+  currentLang = lang;
+}
+
+// Export useful helpers for unit tests
+export {
+  getLangFromUrl,
+  setLangParamInUrl,
+  formatMonthYear,
+  buildCalendar,
+  ensureAltLink,
+  updateSeoTags,
+};
+
 // Language selector in footer
 let langSelect = null;
 function syncLangSelect() {
