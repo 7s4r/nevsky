@@ -9,10 +9,15 @@
   "scripts": {
     "minify:css": "npx @tailwindcss/cli -i ./css/styles.css -o ./css/styles.min.css --minify",
     "minify:js": "npx terser ./js/main.js -o ./js/main.min.js --compress --mangle",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:e2e": "playwright test --project=mobile"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.11",
     "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "http-server": "^14.1.1"
   }
 }
