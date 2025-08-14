@@ -2,6 +2,11 @@ import { devices } from '@playwright/test';
 
 export default {
   testDir: 'tests',
+  testMatch: [
+    '**/e2e/**/*.spec.*',
+    '**/visual/**/*.spec.*',
+    '**/accessibility/**/*.spec.*'
+  ],
   timeout: 30 * 1000,
   expect: { timeout: 5000 },
   reporter: [['list'], ['html', { outputFolder: 'playwright-report' }]],
