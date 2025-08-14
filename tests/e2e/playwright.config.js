@@ -1,7 +1,7 @@
 import { devices } from '@playwright/test';
 
 export default {
-  testDir: './',
+  testDir: 'tests',
   timeout: 30 * 1000,
   expect: { timeout: 5000 },
   reporter: [['list'], ['html', { outputFolder: 'playwright-report' }]],
@@ -16,7 +16,7 @@ export default {
     },
   ],
   use: {
-    baseURL: 'http://127.0.0.1:5500',
+    baseURL: process.env.BASE_URL || 'http://127.0.0.1:5500',
     headless: true,
   },
 };

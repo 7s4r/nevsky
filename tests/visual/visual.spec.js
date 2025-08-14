@@ -9,20 +9,26 @@ test.describe('Visual regression', () => {
     await page.goto('/index.html?lang=fr');
     await page.setViewportSize({ width: 360, height: 800 });
     const hero = page.locator('section#accueil');
-    await expect(hero).toHaveScreenshot('hero-mobile.png', { animations: 'disabled' });
+    await expect(hero).toHaveScreenshot('hero-mobile.png', {
+      animations: 'disabled',
+    });
   });
 
   test('Footer (mobile)', async ({ page }) => {
     await page.goto('/index.html?lang=ru');
     await page.setViewportSize({ width: 360, height: 800 });
     const footer = page.locator('footer');
-    await expect(footer).toHaveScreenshot('footer-mobile.png', { animations: 'disabled' });
+    await expect(footer).toHaveScreenshot('footer-mobile.png', {
+      animations: 'disabled',
+    });
   });
 
   test('Hero section (desktop)', async ({ page }) => {
     await page.goto('/index.html?lang=fr');
     await page.setViewportSize({ width: 1280, height: 900 });
     const hero = page.locator('section#accueil');
-    await expect(hero).toHaveScreenshot('hero-desktop.png', { animations: 'disabled' });
+    await expect(hero).toHaveScreenshot('hero-desktop.png', {
+      animations: 'disabled',
+    });
   });
 });

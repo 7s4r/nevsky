@@ -113,7 +113,9 @@ jobs:
       - name: Run unit tests (if available)
         run: |
           mkdir -p tmp
-          node -e "const p=require('./package.json'); process.exit(p.scripts && p.scripts['test'] ? 0 : 1)" && { npm test -- --reporter=json 2>&1 | tee tmp/test.log || true; echo ran > tmp/test.status; } || { echo 'No test script defined' > tmp/test.log; echo no-script > tmp/test.status; }
+          node -e "const p=require('./package.json'); process.exit(p.scripts && p.scripts['test'] ? 0 : 1)" \
+            && { (npx vitest run --reporter=json 2>&1 | tee tmp/test.log) || (npm test -- --reporter=json 2>&1 | tee tmp/test.log) ; echo ran > tmp/test.status; } \
+            || { echo 'No test script defined' > tmp/test.log; echo no-script > tmp/test.status; }
       - name: Post unit tests comment to PR
         uses: actions/github-script@v6
         with:
@@ -137,7 +139,9 @@ jobs:
       - name: Run e2e tests (if available)
         run: |
           mkdir -p tmp
-          node -e "const p=require('./package.json'); process.exit(p.scripts && (p.scripts['e2e']||p.scripts['test:e2e']||p.scripts['playwright']) ? 0 : 1)" && { (npm run e2e || npm run test:e2e || npm run playwright) 2>&1 | tee tmp/e2e.log || true; echo ran > tmp/e2e.status; } || { echo 'No e2e script defined' > tmp/e2e.log; echo no-script > tmp/e2e.status; }
+          node -e "const p=require('./package.json'); process.exit(p.scripts && (p.scripts['e2e']||p.scripts['test:e2e']||p.scripts['playwright']) ? 0 : 1)" \
+            && { echo 'Installing Playwright browsers...' && npx playwright install --with-deps 2>&1 | tee tmp/playwright-install.log || true; (npm run e2e 2>&1 | tee tmp/e2e.log) || (npm run test:e2e 2>&1 | tee tmp/e2e.log) || (npm run playwright 2>&1 | tee tmp/e2e.log); echo ran > tmp/e2e.status; } \
+            || { echo 'No e2e script defined' > tmp/e2e.log; echo no-script > tmp/e2e.status; }
       - name: Post e2e comment to PR
         uses: actions/github-script@v6
         with:
