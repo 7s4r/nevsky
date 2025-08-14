@@ -12,6 +12,8 @@
     "test": "vitest",
     "test:unit": "vitest",
     "test:e2e": "playwright test --project=mobile",
+    "test:visual": "playwright test tests/visual --project=desktop --config=tests/e2e/playwright.config.js",
+    "visual:record": "PLAYWRIGHT_UPDATE_BASELINE=1 npx playwright test tests/visual --project=desktop --config=tests/e2e/playwright.config.js",
     "lint": "eslint . --ext .js,*.cjs",
     "lint:css": "stylelint \"./css/**/*.css\""
   },
@@ -20,7 +22,9 @@
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
     "@playwright/test": "^1.40.0",
+    "axe-core": "^4.10.3",
     "eslint": "^8.47.0",
     "http-server": "^14.1.1",
     "stylelint": "^16.23.0",
