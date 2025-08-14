@@ -2,17 +2,45 @@
   "name": "nevsky",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "",
   "keywords": [],
   "author": "Gueorgui AGAPOV",
   "license": "UNLICENSED",
   "scripts": {
     "minify:css": "npx @tailwindcss/cli -i ./css/styles.css -o ./css/styles.min.css --minify",
-    "minify:js": "npx terser ./js/main.js -o ./js/main.min.js --compress --mangle",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "minify:js:main": "npx terser ./js/main.js -o ./js/main.min.js --compress --mangle",
+    "minify:js:locales": "npx terser ./js/locales.js -o ./js/locales.min.js --compress --mangle",
+    "build": "npm run minify:css && npm run minify:js:main && npm run minify:js:locales",
+    "test": "vitest",
+    "test:unit": "vitest",
+    "test:e2e": "npx playwright test --project=mobile",
+    "e2e": "npx playwright test --project=mobile",
+    "playwright": "npx playwright test --project=mobile",
+    "test:visual": "npx playwright test tests/visual --project=desktop",
+    "visual": "npx playwright test tests/visual --project=desktop",
+    "visual:record": "PLAYWRIGHT_UPDATE_BASELINE=1 npx playwright test tests/visual --project=desktop",
+    "lint": "eslint . --ext .js,*.cjs",
+    "lint:css": "stylelint 'css/styles.css' --fix",
+    "stylelint": "stylelint 'css/styles.css'",
+    "audit": "npx playwright test tests/accessibility --project=desktop",
+    "percy": "echo 'percy not configured'"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.11",
     "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@playwright/test": "^1.40.0",
+    "axe-core": "^4.10.3",
+    "eslint": "^8.47.0",
+    "http-server": "^14.1.1",
+    "jsdom": "^26.1.0",
+    "stylelint": "^16.23.0",
+    "stylelint-config-standard": "^39.0.0",
+    "stylelint-config-tailwindcss": "^1.0.0",
+    "terser": "^5.43.1",
+    "vitest": "^1.6.1"
   }
 }
