@@ -11,11 +11,15 @@
     "minify:js": "npx terser ./js/main.js -o ./js/main.min.js --compress --mangle",
     "test": "vitest",
     "test:unit": "vitest",
-    "test:e2e": "playwright test --project=mobile",
-    "test:visual": "playwright test tests/visual --project=desktop --config=tests/e2e/playwright.config.js",
-    "visual:record": "PLAYWRIGHT_UPDATE_BASELINE=1 npx playwright test tests/visual --project=desktop --config=tests/e2e/playwright.config.js",
+    "test:e2e": "npx playwright test --project=mobile",
+    "e2e": "npx playwright test --project=mobile",
+    "playwright": "npx playwright test --project=mobile",
+    "test:visual": "npx playwright test tests/visual --project=desktop",
+    "visual": "npx playwright test tests/visual --project=desktop",
+    "visual:record": "PLAYWRIGHT_UPDATE_BASELINE=1 npx playwright test tests/visual --project=desktop",
     "lint": "eslint . --ext .js,*.cjs",
-    "lint:css": "stylelint \"./css/**/*.css\""
+    "lint:css": "stylelint \"./css/**/*.css\"",
+    "percy": "echo 'percy not configured'"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.11",
