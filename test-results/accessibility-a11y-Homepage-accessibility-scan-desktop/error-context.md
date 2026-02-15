@@ -1,0 +1,181 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - link "Logo de l'Église Orthodoxe Russe Alexandre Nevsky Nevsky":
+    - /url: "#accueil"
+    - img "Logo de l'Église Orthodoxe Russe Alexandre Nevsky"
+    - text: Nevsky
+  - navigation:
+    - link "Accueil":
+      - /url: "#accueil"
+    - link "Histoire":
+      - /url: "#about"
+    - link "Services":
+      - /url: "#services"
+    - link "Événements":
+      - /url: "#events"
+    - link "Dons":
+      - /url: "#don"
+    - link "Contact":
+      - /url: "#contact"
+- img "Église Orthodoxe Russe Alexandre Nevsky à Pau"
+- heading "Lumière et paix au cœur du Béarn" [level=1]
+- paragraph: Venez vivre la beauté de la liturgie orthodoxe dans notre église Saint Alexandre Nevsky à Pau. Un lieu de prière, de rencontre et de partage de la foi, la tradition byzantine et l’amitié chrétienne.
+- link "Prochains offices":
+  - /url: "#events"
+- link "Soutenir l'église":
+  - /url: "#don"
+- heading "Histoire de notre église" [level=2]
+- paragraph: Fondée en 1867 à l’initiative du père Hérodien, aumônier de la colonie russe, l’église Saint‑Alexandre‑Nevsky vit le jour grâce à une souscription de 65 000 francs levée auprès des aristocrates russes du Béarn. Troisième église orthodoxe russe bâtie en France, après Nice (1860) et Paris (1861), elle est dédiée à Alexandre Nevsky, prince de Novgorod et héros de la bataille de la Neva (1240). Elle illustre les liens profonds unissant Pau et la Russie.
+- paragraph: Discrète, nichée dans un jardin bordé de palmiers, elle ne possède ni dômes traditionnels ni façades ostentatoires. Commandée depuis Saint Petersbourg à un architecte palois, qui en lieu et place d’une église orthodoxe a livré une construction semblable aux églises protestantes construites pour les résidents anglophones dans le quartier actuel du commissariat.
+- img "Eglise Orthodoxe Russe Saint Alexandre Nevsky à Pau"
+- img "Bougies allumées devant des icônes"
+- img "Liturgie Orthodoxe Russe"
+- img "Noël Orthodoxe Russe"
+- heading "Histoire" [level=3]
+- paragraph: Depuis sa création, la paroisse est un lieu de prière et de rencontre. Notre communauté grandit grâce à l'engagement des fidèles.
+- heading "Tradition vivante" [level=3]
+- paragraph: La liturgie, les icônes, le chant et le calendrier des fêtes rythment l'année.
+- heading "Communauté" [level=3]
+- paragraph: Après les offices, un temps fraternel permet d'accueillir et d'échanger. Tous sont les bienvenus.
+- heading "Services proposés" [level=2]
+- paragraph: Accompagnement spirituel et sacrements dans la tradition orthodoxe.
+- article:
+  - img
+  - heading "Baptême" [level=3]
+  - paragraph: Préparation au baptême des enfants et des adultes, selon le rite byzantin.
+- article:
+  - img
+  - heading "Mariage" [level=3]
+  - paragraph: Accompagnement des fiancés et célébration du sacrement du mariage.
+- article:
+  - img
+  - heading "Confession & accompagnement" [level=3]
+  - paragraph: Rencontre avec le prêtre pour la confession, l'écoute et la prière.
+- article:
+  - img
+  - heading "Catéchisme" [level=3]
+  - paragraph: Cours pour enfants, adolescents et adultes, introduction à la foi orthodoxe.
+- article:
+  - img
+  - heading "Bénédictions & funérailles" [level=3]
+  - paragraph: Bénédiction des maisons et objets, prière pour les malades, funérailles.
+- article:
+  - img
+  - heading "Horaires des offices" [level=3]
+  - paragraph: Consultez ci-dessous le calendrier des offices et des fêtes liturgiques.
+- heading "Événements à venir & calendrier des offices" [level=2]
+- paragraph: Voici les prochains événements de la paroisse. Vous pouvez ajouter les dates à votre agenda.
+- link "Ajouter au calendrier":
+  - /url: "#"
+- heading "Église temporairement fermée pour travaux" [level=3]
+- paragraph: Merci de votre compréhension. Inscrivez-vous à la newsletter pour être informé(e) de la réouverture et des prochains offices.
+- button "◀"
+- heading "Août 2025" [level=3]
+- button "▶"
+- text: Lu Ma Me Je Ve Sa Di
+- button "1"
+- button "2"
+- button "3"
+- button "4"
+- button "5"
+- button "6"
+- button "7"
+- button "8"
+- button "9"
+- button "10"
+- button "11"
+- button "12"
+- button "13"
+- button "14"
+- button "15"
+- button "16"
+- button "17"
+- button "18"
+- button "19"
+- button "20"
+- button "21"
+- button "22"
+- button "23"
+- button "24"
+- button "25"
+- button "26"
+- button "27"
+- button "28"
+- button "29"
+- button "30"
+- button "31"
+- paragraph: Cliquez sur une date pour voir les offices.
+- heading "Soutenir les grands travaux" [level=2]
+- paragraph: Notre église nécessite des travaux importants (toiture, chauffage, mise aux normes). Votre don nous aide à préserver ce lieu de prière.
+- link "Don via HelloAsso":
+  - /url: https://www.helloasso.com/association-culturelle-orthodoxe-russe-saint-alexandre-nevsky
+- link "Don unique":
+  - /url: "#contact"
+- link "Don mensuel":
+  - /url: "#contact"
+- heading "Affectation des dons" [level=3]
+- list:
+  - listitem: Toiture et isolation
+  - listitem: Chauffage & électricité
+  - listitem: Accessibilité & sécurité
+  - listitem: Entretien des icônes
+- heading "Inscription à la newsletter" [level=2]
+- paragraph: Recevez les annonces de la paroisse, les horaires des offices et les événements.
+- text: Adresse e‑mail
+- textbox "Adresse e‑mail"
+- button "S'inscrire"
+- paragraph: Nous ne partagerons jamais votre e‑mail.
+- heading "Contact" [level=2]
+- paragraph: "Adresse : 18 Rue Jean Réveil, 64000 Pau, France"
+- term: Téléphone
+- definition: +33 (0)6 12 34 56 78
+- term: E‑mail
+- definition:
+  - link "contact@nevsky.fr":
+    - /url: mailto:contact@nevsky.fr
+- text: Nom
+- textbox "Nom"
+- text: E‑mail
+- textbox "E‑mail"
+- text: Message
+- textbox "Message"
+- button "Envoyer"
+- iframe
+- contentinfo:
+  - img "Logo de l'Église Orthodoxe Russe Alexandre Nevsky"
+  - text: Nevsky
+  - link "Facebook":
+    - /url: https://www.facebook.com/groups/nevskypau/
+    - img
+  - link "Instagram":
+    - /url: "#"
+    - img
+  - link "YouTube":
+    - /url: "#"
+    - img
+  - combobox "Sélection de la langue":
+    - option "🇫🇷 Français" [selected]
+    - option "🇷🇺 Русский"
+    - option "🇬🇧 English"
+  - heading "Liens utiles" [level=3]
+  - navigation "Liens utiles":
+    - list:
+      - listitem:
+        - link "Histoire":
+          - /url: "#about"
+      - listitem:
+        - link "Services":
+          - /url: "#services"
+      - listitem:
+        - link "Événements":
+          - /url: "#events"
+      - listitem:
+        - link "Dons":
+          - /url: "#don"
+      - listitem:
+        - link "Contact":
+          - /url: "#contact"
+  - paragraph: © 2025 — Tous droits réservés.
+```

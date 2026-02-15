@@ -4,17 +4,20 @@
 html {
   scroll-behavior: smooth;
 }
+
 /* Sticky header visual states */
 .sticky-header.scrolled {
   backdrop-filter: saturate(180%) blur(6px);
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  background: rgb(255 255 255 / 96%);
+  box-shadow: 0 1px 0 rgb(0 0 0 / 6%);
 }
+
 .sticky-header .logo,
 .sticky-header .nav-link {
   color: #fff;
   transition: color 0.2s;
 }
+
 .sticky-header #menuBtn svg {
   color: #fff;
   transition: color 0.2s;
@@ -24,49 +27,50 @@ html {
 .sticky-header.scrolled .nav-link {
   color: #111827;
 }
+
 .sticky-header.scrolled #menuBtn svg {
   color: #111827;
 }
+
 .link-gold {
   color: #ffd615;
 }
+
 .link-gold:hover {
   opacity: 0.85;
 }
+
 .font-script {
   font-family: 'Great Vibes', cursive;
 }
+
 .bg-gold {
   background-color: #ffd615;
 }
+
 .text-gold {
   color: #ffd615;
 }
 
-/* Only apply wrapping/word-break rules inside the footer to avoid global regressions */
 footer,
 footer nav,
 footer nav a,
 footer * {
   overflow-wrap: anywhere;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
   hyphens: auto;
 }
 
 /* Footer links specific: allow wrapping and prevent being cut off (REVERTED)
    Restore previous behavior: allow link text to wrap normally and remove nowrap/flex forcing */
 footer nav .overflow-x-auto {
-  /* allow normal wrapping inside this container */
   overflow-x: visible;
 }
+
 footer nav .overflow-x-auto a {
-  white-space: normal; /* allow wrapping */
-  display: inline-block; /* keeps them flow inline but allows wrapping */
+  white-space: normal;
+  display: inline-block;
   max-width: 100%;
   overflow-wrap: anywhere;
-  word-break: break-word;
 }
 
 /* Allow the footer's centered container and grid/flex children to shrink to prevent creating horizontal overflow */
@@ -78,6 +82,7 @@ footer .flex {
 }
 
 /* Keep media rules local — do NOT apply globally to img/picture/iframe to avoid affecting hero image layout */
+
 /* If needed, target specific responsive containers with a class like .media-responsive in the future. */
 
 /* Full viewport height on mobile (accounts for dynamic browser bars) */

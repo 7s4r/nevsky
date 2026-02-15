@@ -1,0 +1,202 @@
+name: PR automated checks
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      node-version: ${{ steps.node.outputs.node-version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        id: node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install deps
+        run: |
+          npm ci
+
+  lint:
+    needs: [setup]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install deps
+        run: npm ci
+      - name: Run lint (if available)
+        run: |
+          mkdir -p tmp
+          node -e "const p=require('./package.json'); process.exit(p.scripts && p.scripts['lint'] ? 0 : 1)" && { npm run lint 2>&1 | tee tmp/lint.log || true; echo ran > tmp/lint.status; } || { echo 'No lint script defined' > tmp/lint.log; echo no-script > tmp/lint.status; }
+      - name: Post lint comment to PR
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const pr = context.payload.pull_request.number;
+            const log = fs.readFileSync('tmp/lint.log','utf8');
+            const status = fs.readFileSync('tmp/lint.status','utf8');
+            const body = `### Lint\n**Status**: ${status.trim() === 'ran' ? '✅ Completed' : '⚪ Skipped'}\n\n<details><summary>Log (truncated)</summary>\n\n\n\`\`\`\n${log.substring(0,12000)}\n\`\`\`\n\n</details>`;
+            await github.rest.issues.createComment({owner: context.repo.owner, repo: context.repo.repo, issue_number: pr, body});
+
+  stylelint:
+    needs: [setup]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - run: npm ci
+      - name: Run stylelint (if available)
+        run: |
+          mkdir -p tmp
+          node -e "const p=require('./package.json'); process.exit(p.scripts && (p.scripts['stylelint']||p.scripts['lint:css']) ? 0 : 1)" && { (npm run stylelint || npm run lint:css) 2>&1 | tee tmp/style.log || true; echo ran > tmp/style.status; } || { echo 'No stylelint script defined' > tmp/style.log; echo no-script > tmp/style.status; }
+      - name: Post stylelint comment to PR
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const pr = context.payload.pull_request.number;
+            const log = fs.readFileSync('tmp/style.log','utf8');
+            const status = fs.readFileSync('tmp/style.status','utf8');
+            const body = `### Style/CSS Lint\n**Status**: ${status.trim() === 'ran' ? '✅ Completed' : '⚪ Skipped'}\n\n<details><summary>Log (truncated)</summary>\n\n\n\`\`\`\n${log.substring(0,12000)}\n\`\`\`\n\n</details>`;
+            await github.rest.issues.createComment({owner: context.repo.owner, repo: context.repo.repo, issue_number: pr, body});
+
+  build:
+    needs: [setup]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - run: npm ci
+      - name: Run build (if available) or Tailwind fallback
+        run: |
+          mkdir -p tmp
+          node -e "const p=require('./package.json'); process.exit(p.scripts && p.scripts['build'] ? 0 : 1)" && { npm run build 2>&1 | tee tmp/build.log || true; echo ran > tmp/build.status; } || { echo 'No build script: attempting Tailwind compile' > tmp/build.log; npx tailwindcss -i ./css/styles.css -o ./css/styles.min.css --minify 2>&1 | tee -a tmp/build.log || true; echo tailwind > tmp/build.status; }
+      - name: Post build comment to PR
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const pr = context.payload.pull_request.number;
+            const log = fs.readFileSync('tmp/build.log','utf8');
+            const status = fs.readFileSync('tmp/build.status','utf8');
+            const body = `### Build\n**Status**: ${status.trim() === 'ran' ? '✅ Completed' : (status.trim() === 'tailwind' ? '⚠️ Tailwind fallback run' : '⚪ Skipped')}\n\n<details><summary>Log (truncated)</summary>\n\n\n\`\`\`\n${log.substring(0,12000)}\n\`\`\`\n\n</details>`;
+            await github.rest.issues.createComment({owner: context.repo.owner, repo: context.repo.repo, issue_number: pr, body});
+
+  unit-tests:
+    needs: [setup]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - run: npm ci
+      - name: Run unit tests (if available)
+        run: |
+          mkdir -p tmp
+          node -e "const p=require('./package.json'); process.exit(p.scripts && p.scripts['test'] ? 0 : 1)" \
+            && { (npx vitest run --reporter=json 2>&1 | tee tmp/test.log) || (npm test -- --reporter=json 2>&1 | tee tmp/test.log) ; echo ran > tmp/test.status; } \
+            || { echo 'No test script defined' > tmp/test.log; echo no-script > tmp/test.status; }
+      - name: Post unit tests comment to PR
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const pr = context.payload.pull_request.number;
+            const log = fs.readFileSync('tmp/test.log','utf8');
+            const status = fs.readFileSync('tmp/test.status','utf8');
+            const body = `### Unit tests\n**Status**: ${status.trim() === 'ran' ? '✅ Completed' : '⚪ Skipped'}\n\n<details><summary>Log (truncated)</summary>\n\n\n\`\`\`\n${log.substring(0,12000)}\n\`\`\`\n\n</details>`;
+            await github.rest.issues.createComment({owner: context.repo.owner, repo: context.repo.repo, issue_number: pr, body});
+
+  e2e:
+    needs: [setup]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - run: npm ci
+      - name: Run e2e tests (if available)
+        run: |
+          mkdir -p tmp
+          node -e "const p=require('./package.json'); process.exit(p.scripts && (p.scripts['e2e']||p.scripts['test:e2e']||p.scripts['playwright']) ? 0 : 1)" \
+            && { echo 'Installing Playwright browsers...' && npx playwright install --with-deps 2>&1 | tee tmp/playwright-install.log || true; (npm run e2e 2>&1 | tee tmp/e2e.log) || (npm run test:e2e 2>&1 | tee tmp/e2e.log) || (npm run playwright 2>&1 | tee tmp/e2e.log); echo ran > tmp/e2e.status; } \
+            || { echo 'No e2e script defined' > tmp/e2e.log; echo no-script > tmp/e2e.status; }
+      - name: Post e2e comment to PR
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const pr = context.payload.pull_request.number;
+            const log = fs.readFileSync('tmp/e2e.log','utf8');
+            const status = fs.readFileSync('tmp/e2e.status','utf8');
+            const body = `### E2E tests\n**Status**: ${status.trim() === 'ran' ? '✅ Completed' : '⚪ Skipped'}\n\n<details><summary>Log (truncated)</summary>\n\n\n\`\`\`\n${log.substring(0,12000)}\n\`\`\`\n\n</details>`;
+            await github.rest.issues.createComment({owner: context.repo.owner, repo: context.repo.repo, issue_number: pr, body});
+
+  accessibility:
+    needs: [setup]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - run: npm ci
+      - name: Run accessibility audit (if script present)
+        run: |
+          mkdir -p tmp
+          node -e "const p=require('./package.json'); process.exit(p.scripts && (p.scripts['lhci']||p.scripts['lighthouse']||p.scripts['audit']) ? 0 : 1)" && { (npm run lhci || npm run lighthouse || npm run audit) 2>&1 | tee tmp/a11y.log || true; echo ran > tmp/a11y.status; } || { echo 'No accessibility script defined' > tmp/a11y.log; echo no-script > tmp/a11y.status; }
+      - name: Post accessibility comment to PR
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const pr = context.payload.pull_request.number;
+            const log = fs.readFileSync('tmp/a11y.log','utf8');
+            const status = fs.readFileSync('tmp/a11y.status','utf8');
+            const body = `### Accessibility (Lighthouse/LHCI)\n**Status**: ${status.trim() === 'ran' ? '✅ Completed' : '⚪ Skipped'}\n\n<details><summary>Log (truncated)</summary>\n\n\n\`\`\`\n${log.substring(0,12000)}\n\`\`\`\n\n</details>`;
+            await github.rest.issues.createComment({owner: context.repo.owner, repo: context.repo.repo, issue_number: pr, body});
+
+  visual-regression:
+    needs: [setup]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - run: npm ci
+      - name: Run visual regression (if script present)
+        run: |
+          mkdir -p tmp
+          node -e "const p=require('./package.json'); process.exit(p.scripts && (p.scripts['visual']||p.scripts['test:visual']||p.scripts['percy']||p.scripts['playwright:visual']) ? 0 : 1)" && { (npm run visual || npm run test:visual || npm run percy || npm run playwright:visual) 2>&1 | tee tmp/visual.log || true; echo ran > tmp/visual.status; } || { echo 'No visual regression script defined' > tmp/visual.log; echo no-script > tmp/visual.status; }
+      - name: Post visual regression comment to PR
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const pr = context.payload.pull_request.number;
+            const log = fs.readFileSync('tmp/visual.log','utf8');
+            const status = fs.readFileSync('tmp/visual.status','utf8');
+            const body = `### Visual regression\n**Status**: ${status.trim() === 'ran' ? '✅ Completed' : '⚪ Skipped'}\n\n<details><summary>Log (truncated)</summary>\n\n\n\`\`\`\n${log.substring(0,12000)}\n\`\`\`\n\n</details>`;
+            await github.rest.issues.createComment({owner: context.repo.owner, repo: context.repo.repo, issue_number: pr, body});

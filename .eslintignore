@@ -1,0 +1,8 @@
+# Ignore build artifacts and vendor files
+js/*.min.js
+node_modules/
+tests/visual/baseline/**
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.webp
