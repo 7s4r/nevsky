@@ -123,7 +123,7 @@
     .tab {
       appearance: none; border: 0; background: transparent; cursor: pointer;
       color: #dbe4f3; font-family: var(--font-sans); font-size: .92rem; font-weight: 600; letter-spacing: .01em;
-      padding: 15px 16px 13px; white-space: nowrap; position: relative; display: flex; align-items: center; gap: 8px;
+      padding: 15px 13px 13px; white-space: nowrap; position: relative; display: flex; align-items: center; gap: 8px;
       transition: color .2s, background-color .2s;
     }
     .tab .num { font-family: var(--font-serif); font-size: 1.15rem; color: var(--gold-500); font-weight: 700; }
@@ -136,12 +136,12 @@
        4. BANNIÈRE HERO + RECHERCHE GLOBALE
        ========================================================== */
     .hero {
-      position: relative; z-index: 5; /* pas d’overflow:hidden : la liste de résultats doit déborder sous la bannière */
+      position: relative; z-index: 45; /* au-dessus de la barre d’onglets sticky (40) : la liste de résultats déborde par-dessus ; pas d’overflow:hidden */
       background:
         radial-gradient(1200px 400px at 50% -120px, rgba(212, 175, 55, .16), transparent 70%),
         linear-gradient(180deg, var(--blue-50) 0%, var(--white) 100%);
       border-bottom: 1px solid var(--line);
-      padding: 56px 0 46px; text-align: center;
+      padding: 44px 0 36px; text-align: center;
     }
     /* motif d'étoiles discret, évoquant une coupole étoilée */
     .hero::before {
@@ -157,7 +157,8 @@
     .eyebrow { display: inline-block; font-size: .75rem; text-transform: uppercase; letter-spacing: .18em; color: var(--gold-700); font-weight: 700; margin-bottom: 10px; }
     .hero h1 { font-size: clamp(2.1rem, 5.2vw, 3.6rem); margin-bottom: 14px; }
     .hero h1 em { font-style: italic; color: var(--blue-700); }
-    .hero-lead { max-width: 720px; margin: 0 auto 28px; font-size: 1.06rem; color: var(--ink-soft); }
+    .hero-lead { max-width: 720px; margin: 0 auto 24px; font-size: 1.06rem; color: var(--ink-soft); }
+    .hero-lead .lead-short { display: none; }
 
     .search { position: relative; max-width: 680px; margin: 0 auto; text-align: left; }
     .search-field { display: flex; align-items: center; background: var(--white); border: 1px solid var(--line); border-radius: 999px; box-shadow: var(--shadow-md); padding: 4px 6px 4px 20px; transition: border-color .2s, box-shadow .2s; }
@@ -174,7 +175,20 @@
 
     .search-results { position: absolute; left: 0; right: 0; top: calc(100% + 8px); background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--gold-600); border-radius: var(--radius); box-shadow: var(--shadow-lg); max-height: min(60vh, 520px); overflow-y: auto; z-index: 50; display: none; }
     .search-results.open { display: block; }
-    .search-results .meta { padding: 10px 16px; font-size: .8rem; color: var(--ink-soft); border-bottom: 1px solid var(--line); background: var(--stone); position: sticky; top: 0; }
+    .search-results .meta { padding: 10px 16px; font-size: .8rem; color: var(--ink-soft); border-bottom: 1px solid var(--line); background: var(--stone); position: sticky; top: 0; z-index: 1; }
+    .search-results .meta strong { color: var(--blue-800); }
+    .meta-kinds { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+    .meta-kinds span { font-size: .72rem; border: 1px solid var(--line); background: var(--white); border-radius: 999px; padding: 1px 9px; }
+    .meta-kinds b { color: var(--gold-700); }
+    .meta-more { display: block; margin-top: 6px; font-style: italic; }
+    /* Bouton « Rechercher » dans la barre d’onglets : la recherche globale reste accessible depuis toutes les rubriques */
+    .main-nav .container { display: flex; align-items: center; gap: 8px; }
+    .main-nav .tablist { flex: 1; min-width: 0; }
+    .nav-search { appearance: none; flex: none; display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255, 255, 255, .3); background: rgba(255, 255, 255, .08); color: #fff; font: inherit; font-size: .85rem; font-weight: 600; border-radius: 999px; padding: 7px 14px; cursor: pointer; transition: background .2s, border-color .2s; }
+    .nav-search:hover { background: rgba(255, 255, 255, .16); border-color: var(--gold-500); }
+    @media (max-width: 1279px) { .nav-search kbd { display: none; } }
+    @media (max-width: 1120px) { .nav-search { padding: 8px; } .nav-search .nav-search-label { display: none; } }
+    .nav-search kbd { font: inherit; font-size: .72rem; border: 1px solid rgba(255, 255, 255, .35); border-radius: 4px; padding: 0 5px; opacity: .8; }
     .result { display: block; width: 100%; text-align: left; appearance: none; border: 0; background: transparent; padding: 12px 16px; border-bottom: 1px solid var(--line); cursor: pointer; font: inherit; color: inherit; }
     .result:last-child { border-bottom: 0; }
     .result:hover, .result.active { background: var(--blue-50); }
@@ -370,13 +384,20 @@
     .section-nav .prev { grid-column: 1; }
     @media (max-width: 640px) { .section-nav { grid-template-columns: 1fr; } .section-nav .next, .section-nav .prev { grid-column: 1; } .section-nav .next { order: -1; } }
 
-    /* Rubrique V — catéchisme en questions */
+    /* Rubrique IV — Credo en questions (catéchisme) */
     .filters.chapters .filter { font-size: .8rem; padding: 6px 12px; }
     .filters.chapters .filter small { display: block; font-weight: 400; font-size: .7rem; opacity: .8; letter-spacing: .02em; }
     .cat-chapter-head { max-width: 880px; margin: 0 auto 14px; padding: 16px 20px; background: var(--parchment); border: 1px solid var(--parchment-deep); border-left: 3px solid var(--gold-600); border-radius: 0 var(--radius) var(--radius) 0; }
     .cat-chapter-head h3 { margin: 0 0 4px; font-size: 1.35rem; }
     .cat-chapter-head p { margin: 0; font-family: var(--font-serif); font-style: italic; font-size: 1.1rem; color: var(--blue-900); }
     .qn { display: inline-block; min-width: 42px; text-align: center; font-size: .7rem; font-weight: 700; color: var(--gold-700); border: 1px solid var(--gold-500); border-radius: 999px; padding: 1px 7px; margin-right: 6px; vertical-align: middle; font-family: var(--font-sans); }
+    .filter-groups { display: grid; gap: 12px; }
+    .filter-all { justify-content: center; }
+    .filter-group { display: grid; gap: 6px; justify-items: center; }
+    .filter-group-label { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-700); }
+    .qa-block-title { max-width: 880px; margin: 32px auto 14px; font-size: 1.6rem; text-align: center; }
+    .qa-block-title:first-of-type { margin-top: 8px; }
+    .qa-block-title::after { content: ""; display: block; width: 60px; height: 2px; margin: 8px auto 0; background: var(--gold-500); }
     .cat-group { max-width: 880px; margin: 22px auto 8px; font-family: var(--font-serif); font-size: 1.3rem; color: var(--blue-800); border-bottom: 1px solid var(--line); padding-bottom: 4px; }
     .cat-group:first-child { margin-top: 0; }
     #cat-list { gap: 10px; }
@@ -416,12 +437,25 @@
       body { font-size: 16px; }
       .container { padding: 0 16px; }
       .section { padding: 44px 0; }
-      .hero { padding: 40px 0 34px; }
+      .hero { padding: 26px 0 22px; }
+      .hero h1 { margin-bottom: 8px; }
+      .hero .ornament { margin-bottom: 10px; }
+      .hero-lead { font-size: .95rem; line-height: 1.6; margin-bottom: 16px; }
+      .hero-lead .lead-long { display: none; }
+      .hero-lead .lead-short { display: inline; } /* texte d’accueil abrégé sur mobile */
+      /* suggestions sur une seule ligne défilante */
+      .search-hints { display: flex; gap: 6px; overflow-x: auto; white-space: nowrap; scrollbar-width: none; margin: 10px -16px 0; padding: 0 16px; text-align: left; align-items: center; }
+      .search-hints::-webkit-scrollbar { display: none; }
+      .search-hints button { margin: 0; flex: none; }
       .topbar .container { justify-content: center; text-align: center; }
       .topbar .back { display: none; }
       .brand { padding: 14px 0; }
       .tab { padding: 13px 13px 11px; font-size: .85rem; }
-      .tab .label-long { display: none; }
+      .nav-search { padding: 8px; } .nav-search .nav-search-label, .nav-search kbd { display: none; }
+      /* Puces des articles du Credo : une ligne défilante au lieu de 7 lignes empilées */
+      .filters.chapters { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; scrollbar-width: none; margin: 0 -16px; padding: 2px 16px 6px; width: calc(100% + 32px); }
+      .filters.chapters::-webkit-scrollbar { display: none; }
+      .filters.chapters .filter { flex: none; }
       .acc-trigger { gap: 12px; padding: 14px 14px; }
       .acc-num { width: 38px; height: 38px; font-size: 1.1rem; }
       .acc-title { font-size: 1.15rem; }
@@ -441,7 +475,11 @@
       .footer-grid { grid-template-columns: 1fr; }
       .quote { font-size: 1.1rem; padding: 18px 18px 14px 24px; }
     }
-    @media (min-width: 641px) { .tab .label-short { display: none; } }
+    /* Libellés courts des onglets sur tablette et mobile */
+    @media (min-width: 1024px) { .tab .label-short { display: none; } }
+    @media (max-width: 1023px) { .tab .label-long { display: none; } }
+    /* Petits écrans : 4 onglets + loupe sans défilement horizontal */
+    @media (max-width: 480px) { .tab { padding: 13px 8px 11px; font-size: .82rem; } .tab .num { display: none; } .main-nav .container { gap: 4px; } }
 
     @media print {
       .section-nav { display: none !important; }
@@ -488,17 +526,6 @@
     </div>
   </header>
 
-  <nav class="main-nav" aria-label="Rubriques de la catéchèse">
-    <div class="container">
-      <div class="tablist" role="tablist">
-        <button class="tab" role="tab" id="tab-fondements" aria-controls="fondements" aria-selected="true" data-tab="fondements"><span class="num">I</span><span class="label-long">Fondements de la Foi</span><span class="label-short">Fondements</span></button>
-        <button class="tab" role="tab" id="tab-credo" aria-controls="credo" aria-selected="false" tabindex="-1" data-tab="credo"><span class="num">II</span><span class="label-long">Symbole de la Foi</span><span class="label-short">Credo</span></button>
-        <button class="tab" role="tab" id="tab-cles" aria-controls="cles" aria-selected="false" tabindex="-1" data-tab="cles"><span class="num">III</span><span class="label-long">Sept Clés spirituelles</span><span class="label-short">Sept clés</span></button>
-        <button class="tab" role="tab" id="tab-questions" aria-controls="questions" aria-selected="false" tabindex="-1" data-tab="questions"><span class="num">IV</span><span class="label-long">Questions &amp; Réponses</span><span class="label-short">Q&amp;R</span></button>
-        <button class="tab" role="tab" id="tab-catechisme" aria-controls="catechisme" aria-selected="false" tabindex="-1" data-tab="catechisme"><span class="num">V</span><span class="label-long">Catéchisme en questions</span><span class="label-short">Catéchisme</span></button>
-      </div>
-    </div>
-  </nav>
 
   <!-- ======================= HERO + RECHERCHE ======================= -->
   <section class="hero" aria-labelledby="hero-title">
@@ -506,13 +533,13 @@
       <span class="eyebrow">Catéchèse orthodoxe</span>
       <h1 id="hero-title">Découvrir et Approfondir <em>la Foi Orthodoxe</em></h1>
       <div class="ornament" aria-hidden="true"><svg class="cross"><use href="#ortho-cross" /></svg></div>
-      <p class="hero-lead">Que vous franchissiez pour la première fois le seuil d’une église orthodoxe, que vous vous prépariez au baptême ou que vous souhaitiez simplement mieux comprendre ce que vous vivez chaque dimanche, ces pages vous accompagnent pas à pas : le mystère de Dieu, le Credo, la prière, les icônes, les sacrements et la Divine Liturgie — avec les 313 questions-réponses du catéchisme pour aller plus loin.</p>
+      <p class="hero-lead"><span class="lead-long">Que vous franchissiez pour la première fois le seuil d’une église orthodoxe, que vous vous prépariez au baptême ou que vous souhaitiez simplement mieux comprendre ce que vous vivez chaque dimanche, ces pages vous accompagnent pas à pas : le mystère de Dieu, le Credo, la prière, les icônes, les sacrements et la Divine Liturgie — avec les 313 questions-réponses du catéchisme pour aller plus loin.</span><span class="lead-short">Le mystère de Dieu, le Credo, la prière, les icônes, les sacrements et la Divine Liturgie, expliqués pas à pas — et 313 questions-réponses pour aller plus loin.</span></p>
 
       <div class="search" role="search">
-        <label for="global-search" class="sr-only">Rechercher dans la catéchèse</label>
+        <label for="global-search" class="sr-only">Rechercher dans toutes les rubriques de la catéchèse</label>
         <div class="search-field">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" stroke-linecap="round" /></svg>
-          <input id="global-search" type="search" autocomplete="off" placeholder="Rechercher : Trinité, icône, communion, Pâques…" aria-controls="search-results" aria-expanded="false" aria-autocomplete="list" />
+          <input id="global-search" type="search" autocomplete="off" placeholder="Rechercher dans toutes les rubriques : Trinité, icône, communion…" aria-controls="search-results" aria-expanded="false" aria-autocomplete="list" />
           <button class="search-clear" type="button" aria-label="Effacer la recherche">×</button>
         </div>
         <div class="search-results" id="search-results" role="listbox" aria-label="Résultats de recherche"></div>
@@ -528,6 +555,19 @@
       </div>
     </div>
   </section>
+
+  <!-- Barre d’onglets : placée juste au-dessus du contenu qu’elle pilote (sticky) -->
+  <nav class="main-nav" aria-label="Rubriques de la catéchèse">
+    <div class="container">
+      <div class="tablist" role="tablist">
+        <button class="tab" role="tab" id="tab-fondements" aria-controls="fondements" aria-selected="true" data-tab="fondements"><span class="num">I</span><span class="label-long">Fondements de la Foi</span><span class="label-short">Fondements</span></button>
+        <button class="tab" role="tab" id="tab-credo" aria-controls="credo" aria-selected="false" tabindex="-1" data-tab="credo"><span class="num">II</span><span class="label-long">Symbole de la Foi</span><span class="label-short">Credo</span></button>
+        <button class="tab" role="tab" id="tab-cles" aria-controls="cles" aria-selected="false" tabindex="-1" data-tab="cles"><span class="num">III</span><span class="label-long">Sept Clés spirituelles</span><span class="label-short">Sept clés</span></button>
+        <button class="tab" role="tab" id="tab-questions" aria-controls="questions" aria-selected="false" tabindex="-1" data-tab="questions"><span class="num">IV</span><span class="label-long">Questions &amp; Réponses</span><span class="label-short">Questions</span></button>
+      </div>
+      <button class="nav-search" type="button" aria-label="Rechercher dans toutes les rubriques (raccourci : /)" title="Rechercher dans toutes les rubriques (/)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" stroke-linecap="round" /></svg><span class="nav-search-label">Rechercher</span><kbd>/</kbd></button>
+    </div>
+  </nav>
 
   <main id="contenu">
 
@@ -1102,33 +1142,50 @@
 
     <!-- =========================================================
          RUBRIQUE IV — QUESTIONS & RÉPONSES
+         Deux sources réunies sous un même filtre :
+         · les questions pratiques (21) ;
+         · le Credo en 313 questions, d’après le « Catéchisme de l’Église
+           orthodoxe en langage contemporain » (diacre Roman Biliavskyi, ROCOR, 2018).
          ========================================================= -->
     <div class="panel" id="questions" role="tabpanel" aria-labelledby="tab-questions" tabindex="-1">
       <section class="section">
         <div class="container">
           <div class="section-head">
-            <span class="eyebrow">Rubrique IV · Catéchisme pratique</span>
+            <span class="eyebrow">Rubrique IV · Catéchisme en questions</span>
             <h2>Questions &amp; Réponses</h2>
             <div class="ornament" aria-hidden="true"><svg class="cross"><use href="#ortho-cross" /></svg></div>
-            <p>Les questions que se posent le plus souvent visiteurs, catéchumènes et fidèles. N’hésitez pas à poursuivre la conversation avec le prêtre de la paroisse.</p>
+            <p>Les questions pratiques que se posent visiteurs, catéchumènes et fidèles, puis le Symbole de la foi expliqué article par article en 313 questions, d’après le <em>Catéchisme de l’Église orthodoxe en langage contemporain</em> (Église orthodoxe russe hors frontières). Les réponses du catéchisme ont été reformulées et condensées ; leur numéro renvoie à l’ouvrage.</p>
           </div>
 
-          <div class="faq-tools">
+          <div class="faq-tools qa-tools">
             <label class="faq-search">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" stroke-linecap="round" /></svg>
               <span class="sr-only">Filtrer les questions</span>
-              <input id="faq-search" type="search" placeholder="Filtrer les questions par mot-clé…" autocomplete="off" />
+              <input id="qa-search" type="search" placeholder="Filtrer les questions : baptême, communion, anges, Filioque…" autocomplete="off" />
             </label>
-            <div class="filters" role="group" aria-label="Catégories">
-              <button class="filter" type="button" data-cat="all" aria-pressed="true">Toutes<span class="count"></span></button>
-              <button class="filter" type="button" data-cat="dogme" aria-pressed="false">Dogme<span class="count"></span></button>
-              <button class="filter" type="button" data-cat="liturgie" aria-pressed="false">Liturgie<span class="count"></span></button>
-              <button class="filter" type="button" data-cat="spirituel" aria-pressed="false">Vie spirituelle<span class="count"></span></button>
-              <button class="filter" type="button" data-cat="pratique" aria-pressed="false">Pratique<span class="count"></span></button>
+            <div class="filter-groups" role="group" aria-label="Filtrer par thème">
+              <div class="filters filter-all">
+                <button class="filter" type="button" data-qa="all" aria-pressed="true">Toutes les questions<span class="count"></span></button>
+              </div>
+              <div class="filter-group">
+                <span class="filter-group-label">Vie pratique</span>
+                <div class="filters">
+                  <button class="filter" type="button" data-qa="faq" data-cat="all" aria-pressed="false">Toutes<span class="count"></span></button>
+                  <button class="filter" type="button" data-qa="faq" data-cat="dogme" aria-pressed="false">Dogme<span class="count"></span></button>
+                  <button class="filter" type="button" data-qa="faq" data-cat="liturgie" aria-pressed="false">Liturgie<span class="count"></span></button>
+                  <button class="filter" type="button" data-qa="faq" data-cat="spirituel" aria-pressed="false">Vie spirituelle<span class="count"></span></button>
+                  <button class="filter" type="button" data-qa="faq" data-cat="pratique" aria-pressed="false">Pratique<span class="count"></span></button>
+                </div>
+              </div>
+              <div class="filter-group">
+                <span class="filter-group-label">Le Credo en questions</span>
+                <div class="filters chapters" id="cat-chapters"></div>
+              </div>
             </div>
-            <p class="faq-status" id="faq-status" aria-live="polite"></p>
+            <p class="faq-status" id="qa-status" aria-live="polite"></p>
           </div>
 
+          <h3 class="qa-block-title" id="qa-title-faq">Questions pratiques</h3>
           <div class="accordion faq" id="faq-list">
 
             <div class="acc-item" id="faq-orthodoxe" data-cat="dogme" data-search data-kind="Q&R" data-title="Que signifie « orthodoxe » ?">
@@ -1330,39 +1387,12 @@
             </div>
 
           </div>
-          <p class="faq-empty" id="faq-empty">Aucune question ne correspond à votre recherche. Essayez un autre mot-clé, ou posez directement votre question au prêtre de la paroisse.</p>
-        </div>
-      </section>
-    </div>
 
-    <!-- =========================================================
-         RUBRIQUE V — LE CATÉCHISME EN QUESTIONS
-         (d'après le « Catéchisme de l'Église orthodoxe en langage
-         contemporain », diacre Roman Biliavskyi, ROCOR, 2018)
-         ========================================================= -->
-    <div class="panel" id="catechisme" role="tabpanel" aria-labelledby="tab-catechisme" tabindex="-1">
-      <section class="section stone">
-        <div class="container">
-          <div class="section-head">
-            <span class="eyebrow">Rubrique V · Le Credo en questions</span>
-            <h2>Le Catéchisme en questions</h2>
-            <div class="ornament" aria-hidden="true"><svg class="cross"><use href="#ortho-cross" /></svg></div>
-            <p>Le Symbole de la foi expliqué article par article, en 313 questions et réponses, d’après le <em>Catéchisme de l’Église orthodoxe en langage contemporain</em> (Église orthodoxe russe hors frontières). Les réponses ont été reformulées et condensées ; le numéro renvoie à la question de l’ouvrage.</p>
-          </div>
-
-          <div class="faq-tools">
-            <label class="faq-search">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" stroke-linecap="round" /></svg>
-              <span class="sr-only">Filtrer les questions du catéchisme</span>
-              <input id="cat-search" type="search" placeholder="Filtrer : baptême, anges, Filioque, communion…" autocomplete="off" />
-            </label>
-            <div class="filters chapters" id="cat-chapters" role="group" aria-label="Chapitres du catéchisme"></div>
-            <p class="faq-status" id="cat-status" aria-live="polite"></p>
-          </div>
-
+          <h3 class="qa-block-title" id="qa-title-cat">Le Credo en 313 questions</h3>
           <div class="cat-chapter-head" id="cat-chapter-head" hidden></div>
           <div class="accordion faq" id="cat-list"></div>
-          <p class="faq-empty" id="cat-empty">Aucune question ne correspond à votre recherche.</p>
+
+          <p class="faq-empty" id="qa-empty">Aucune question ne correspond à votre recherche. Essayez un autre mot-clé, ou posez directement votre question au prêtre de la paroisse.</p>
         </div>
       </section>
     </div>
@@ -1811,7 +1841,7 @@
       { c: 12, n: 317, q: "En quoi penser à la fin des temps aide-t-il à vivre ?", a: "Le souvenir de la mort, de la résurrection et du Jugement aide à se détacher des biens qui passent, à garder le cœur pur, à se consoler dans les épreuves et à vivre chaque jour en présence de Dieu. « Souviens-toi de ta fin, et tu ne pécheras jamais » (Si 7, 36)." }
     ];
 
-    /** Rendu de la rubrique V à partir des données (avant l'initialisation des accordéons). */
+    /** Rendu des questions du catéchisme (rubrique IV) à partir des données (avant l'initialisation des accordéons). */
     const CREED_LINES = [
       "Le Symbole de la foi : son sens, son origine, les conciles.",
       "Je crois en un seul Dieu, le Père tout-puissant, Créateur du ciel et de la terre, de toutes les choses visibles et invisibles.",
@@ -1840,8 +1870,7 @@
       });
       document.getElementById('cat-list').innerHTML = html;
       document.getElementById('cat-chapters').innerHTML =
-        '<button class="filter" type="button" data-chap="all" aria-pressed="true">Tout<small>' + CATECHISM.length + ' questions</small></button>' +
-        CATECHISM_CHAPTERS.map((ch) => `<button class="filter" type="button" data-chap="${ch.id}" aria-pressed="false">${ch.short}<small>${ch.title}</small></button>`).join('');
+        CATECHISM_CHAPTERS.map((ch) => `<button class="filter" type="button" data-qa="cat" data-chap="${ch.id}" aria-pressed="false">${ch.short}<small>${ch.title}</small></button>`).join('');
       // Passerelles depuis chaque article du Credo (rubrique II)
       CATECHISM_CHAPTERS.slice(1).forEach((ch) => {
         const body = document.querySelector(`#credo-${ch.id} .acc-body`);
@@ -1874,12 +1903,20 @@
       if (updateHash) history.replaceState(null, '', '#' + name);
     }
 
+    /** Fait défiler jusqu’au début d’une rubrique, juste sous la barre d’onglets sticky. */
+    function scrollToPanel(id, smooth = true) {
+      const panel = document.getElementById(id);
+      if (!panel) return;
+      const top = panel.getBoundingClientRect().top + window.scrollY - $('.main-nav').offsetHeight;
+      if (Math.abs(window.scrollY - top) > 2) window.scrollTo({ top, behavior: smooth ? 'smooth' : 'auto' });
+    }
+
     tabs.forEach((tab, i) => {
       tab.addEventListener('click', () => {
         activateTab(tab.dataset.tab);
-        const nav = $('.main-nav');
-        // Remonte en haut de la rubrique si on est plus bas
-        if (window.scrollY > nav.offsetTop) window.scrollTo({ top: nav.offsetTop, behavior: 'smooth' });
+        // Toujours amener le début de la rubrique sous les onglets, même depuis le haut de page :
+        // le changement de contenu est ainsi immédiatement visible.
+        scrollToPanel(tab.dataset.tab);
       });
       tab.addEventListener('keydown', (e) => {
         let j = null;
@@ -1983,7 +2020,7 @@
       }
       if (el.classList.contains('acc-item')) {
         // S'assure que la question est visible malgré les filtres FAQ
-        if (el.hidden) (el.closest('#cat-list') ? resetCatFilters : resetFaqFilters)();
+        if (el.hidden) resetQa();
         setAcc(el, true);
         if (flash) { el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash'); }
       }
@@ -2004,7 +2041,10 @@
        5. RECHERCHE GLOBALE — index construit à partir du DOM
        --------------------------------------------------------- */
     const index = $$('[data-search]').map((el) => {
-      const text = (el.querySelector('.key-full, .acc-body') || el).textContent.replace(/\s+/g, ' ').trim();
+      // Copie du contenu avec un espace après chaque bloc, pour éviter les mots collés dans les extraits
+      const clone = (el.querySelector('.key-full, .acc-body') || el).cloneNode(true);
+      clone.querySelectorAll('small, p, li, h3, h4, div, blockquote, cite, b, td, th').forEach((n) => n.append(' '));
+      const text = clone.textContent.replace(/\s+/g, ' ').trim();
       const title = el.dataset.title;
       return { id: el.id, kind: el.dataset.kind, title, text, nTitle: norm(title), nText: norm(text) };
     });
@@ -2049,19 +2089,32 @@
         })
         .filter(Boolean)
         .sort((a, b) => b.score - a.score)
-        .slice(0, 15)
         .map(({ it }) => ({ ...it, html: snippet(it, terms), titleHtml: highlight(it.title, terms) }));
     }
+
+    /** Rubriques couvertes par la recherche globale (étiquette affichée sur chaque résultat). */
+    const KINDS = [
+      { kind: 'Fondements', label: 'I · Fondements' },
+      { kind: 'Credo', label: 'II · Credo' },
+      { kind: 'Sept clés', label: 'III · Sept clés', gold: true },
+      { kind: 'Q&R', label: 'IV · Vie pratique' },
+      { kind: 'Catéchisme', label: 'IV · Credo en questions', gold: true }
+    ];
 
     function renderResults() {
       const q = input.value.trim();
       clearBtn.classList.toggle('show', q.length > 0);
       if (q.length < 2) { results.classList.remove('open'); input.setAttribute('aria-expanded', 'false'); return; }
-      const list = search(q);
+      const all = search(q);
+      const list = all.slice(0, 30);
       active = -1;
-      results.innerHTML = list.length
-        ? `<div class="meta">${list.length} résultat${list.length > 1 ? 's' : ''} pour « ${escapeHtml(q)} »</div>` +
-          list.map((r, i) => `<button type="button" class="result" role="option" id="res-${i}" data-target="${r.id}"><span class="badge ${r.kind === 'Sept clés' || r.kind === 'Catéchisme' ? 'gold' : ''}">${r.kind}</span><span class="result-title">${r.titleHtml}</span><span class="result-snippet">${r.html}</span></button>`).join('')
+      // Répartition des résultats par rubrique (la recherche couvre toutes les rubriques)
+      const perKind = KINDS.map((k) => ({ ...k, n: all.filter((r) => r.kind === k.kind).length })).filter((k) => k.n);
+      results.innerHTML = all.length
+        ? `<div class="meta"><strong>${all.length} résultat${all.length > 1 ? 's' : ''}</strong> pour « ${escapeHtml(q)} » dans ${perKind.length > 1 ? 'toutes les rubriques' : 'la rubrique ' + perKind[0].label}` +
+            `<span class="meta-kinds">${perKind.map((k) => `<span>${k.label} <b>${k.n}</b></span>`).join('')}</span>` +
+            (all.length > list.length ? `<span class="meta-more">Les ${list.length} plus pertinents sont affichés — précisez votre recherche pour affiner.</span>` : '') + `</div>` +
+          list.map((r, i) => { const k = KINDS.find((x) => x.kind === r.kind); return `<button type="button" class="result" role="option" id="res-${i}" data-target="${r.id}"><span class="badge ${k.gold ? 'gold' : ''}">${k.label}</span><span class="result-title">${r.titleHtml}</span><span class="result-snippet">${r.html}</span></button>`; }).join('')
         : `<div class="no-result">Aucun résultat pour « ${escapeHtml(q)} ». Essayez « Trinité », « icône », « confession »…</div>`;
       results.classList.add('open');
       input.setAttribute('aria-expanded', 'true');
@@ -2091,6 +2144,20 @@
     document.addEventListener('click', (e) => { if (!e.target.closest('.search')) results.classList.remove('open'); });
     $$('.search-hints [data-q]').forEach((b) => b.addEventListener('click', () => { input.value = b.dataset.q; renderResults(); input.focus(); }));
 
+    /** Ramène à la recherche globale depuis n’importe quelle rubrique. */
+    function focusSearch() {
+      const top = $('.search').getBoundingClientRect().top + window.scrollY - 120;
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      setTimeout(() => { input.focus({ preventScroll: true }); input.select(); if (input.value.trim().length >= 2) renderResults(); }, 350);
+    }
+    $('.nav-search').addEventListener('click', focusSearch);
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey) return;
+      if (e.target.closest('input, textarea, [contenteditable]') || reader.open) return;
+      e.preventDefault();
+      focusSearch();
+    });
+
     function choose(id) {
       results.classList.remove('open');
       input.blur();
@@ -2098,100 +2165,88 @@
     }
 
     /* ---------------------------------------------------------
-       6. FAQ — filtres par catégorie + recherche instantanée
+       6. QUESTIONS & RÉPONSES — un seul champ et une seule rangée de filtres
+          pour les questions pratiques (#faq-list) et le catéchisme (#cat-list).
+          État : { scope: 'all' | 'faq' | 'cat', cat (catégorie pratique), chap (chapitre du Credo) }
        --------------------------------------------------------- */
     const faqItems = $$('#faq-list .acc-item');
-    const faqInput = $('#faq-search');
-    const filters = $$('.filter[data-cat]');
-    let currentCat = 'all';
-
-    // Compteurs par catégorie
-    filters.forEach((f) => {
-      const c = f.dataset.cat;
-      $('.count', f).textContent = '(' + (c === 'all' ? faqItems.length : faqItems.filter((i) => i.dataset.cat === c).length) + ')';
-    });
-
-    function applyFaq() {
-      const terms = norm(faqInput.value).split(/\s+/).filter(Boolean);
-      let shown = 0;
-      faqItems.forEach((item) => {
-        const catOk = currentCat === 'all' || item.dataset.cat === currentCat;
-        const hay = norm(item.textContent);
-        const textOk = terms.every((t) => hay.includes(t));
-        const show = catOk && textOk;
-        item.hidden = !show;
-        if (show) shown++;
-        // surlignage du titre
-        const title = $('.acc-title', item);
-        if (!title.dataset.raw) title.dataset.raw = title.innerHTML;
-        title.innerHTML = terms.length ? highlight(title.textContent, terms) : title.dataset.raw;
-      });
-      $('#faq-empty').style.display = shown ? 'none' : 'block';
-      $('#faq-status').textContent = (terms.length || currentCat !== 'all') ? `${shown} question${shown > 1 ? 's' : ''} affichée${shown > 1 ? 's' : ''}` : '';
-    }
-    function resetFaqFilters() {
-      currentCat = 'all';
-      faqInput.value = '';
-      filters.forEach((f) => f.setAttribute('aria-pressed', f.dataset.cat === 'all'));
-      applyFaq();
-    }
-    filters.forEach((f) => f.addEventListener('click', () => {
-      currentCat = f.dataset.cat;
-      filters.forEach((x) => x.setAttribute('aria-pressed', x === f));
-      applyFaq();
-    }));
-    faqInput.addEventListener('input', applyFaq);
-
-    /* ---------------------------------------------------------
-       6 bis. CATÉCHISME EN QUESTIONS — chapitres + recherche
-       --------------------------------------------------------- */
     const catItems = $$('#cat-list .acc-item');
     const catGroups = $$('#cat-list .cat-group');
-    const catInput = $('#cat-search');
-    const catFilters = $$('#cat-chapters .filter');
-    let currentChap = 'all';
+    const qaInput = $('#qa-search');
+    const qaFilters = $$('[data-qa]');
+    const qa = { scope: 'all', cat: 'all', chap: 'all' };
 
-    function applyCat() {
-      const terms = norm(catInput.value).split(/\s+/).filter(Boolean);
+    // Compteurs
+    qaFilters.forEach((f) => {
+      const c = $('.count', f);
+      if (!c) return;
+      let n = 0;
+      if (f.dataset.qa === 'all') n = faqItems.length + catItems.length;
+      else if (f.dataset.qa === 'faq') n = f.dataset.cat === 'all' ? faqItems.length : faqItems.filter((i) => i.dataset.cat === f.dataset.cat).length;
+      c.textContent = ' (' + n + ')';
+    });
+
+    /** Filtre une liste d’accordéons ; renvoie le nombre d’éléments visibles. */
+    function filterItems(items, terms, keep) {
       let shown = 0;
-      const perChap = {};
-      catItems.forEach((item) => {
-        const ok = (currentChap === 'all' || item.dataset.chap === currentChap) && terms.every((t) => norm(item.textContent).includes(t));
+      items.forEach((item) => {
+        const ok = keep(item) && terms.every((t) => norm(item.textContent).includes(t));
         item.hidden = !ok;
-        if (ok) { shown++; perChap[item.dataset.chap] = true; }
+        if (ok) shown++;
         const title = $('.acc-title', item);
         if (!title.dataset.raw) title.dataset.raw = title.innerHTML;
         title.innerHTML = terms.length ? highlight(title.textContent, terms) : title.dataset.raw;
       });
-      catGroups.forEach((g) => { g.hidden = currentChap !== 'all' || !perChap[g.dataset.chap]; });
+      return shown;
+    }
+
+    function applyQa() {
+      const terms = norm(qaInput.value).split(/\s+/).filter(Boolean);
+      const showFaq = qa.scope !== 'cat';
+      const showCat = qa.scope !== 'faq';
+      const nFaq = filterItems(faqItems, terms, (i) => showFaq && (qa.cat === 'all' || i.dataset.cat === qa.cat));
+      const nCat = filterItems(catItems, terms, (i) => showCat && (qa.chap === 'all' || i.dataset.chap === qa.chap));
+      $('#qa-title-faq').hidden = !nFaq;
+      $('#qa-title-cat').hidden = !nCat;
+      const perChap = {};
+      catItems.forEach((i) => { if (!i.hidden) perChap[i.dataset.chap] = true; });
+      catGroups.forEach((g) => { g.hidden = qa.chap !== 'all' || !perChap[g.dataset.chap]; });
       const head = $('#cat-chapter-head');
-      if (currentChap !== 'all') {
-        const ch = CATECHISM_CHAPTERS[+currentChap];
+      if (qa.scope === 'cat' && qa.chap !== 'all' && nCat) {
+        const ch = CATECHISM_CHAPTERS[+qa.chap];
         head.innerHTML = `<h3>${ch.short} · ${ch.title}</h3><p>${CREED_LINES[ch.id]}</p>`;
         head.hidden = false;
       } else head.hidden = true;
-      $('#cat-empty').style.display = shown ? 'none' : 'block';
-      $('#cat-status').textContent = `${shown} question${shown > 1 ? 's' : ''} affichée${shown > 1 ? 's' : ''}`;
+      const shown = nFaq + nCat;
+      $('#qa-empty').style.display = shown ? 'none' : 'block';
+      $('#qa-status').textContent = (terms.length || qa.scope !== 'all') ? `${shown} question${shown > 1 ? 's' : ''} affichée${shown > 1 ? 's' : ''}` : '';
+      qaFilters.forEach((f) => {
+        const on = f.dataset.qa === qa.scope &&
+          (f.dataset.qa === 'all' || (f.dataset.qa === 'faq' ? f.dataset.cat === qa.cat : f.dataset.chap === qa.chap));
+        f.setAttribute('aria-pressed', on);
+      });
     }
-    function setChap(chap) {
-      currentChap = String(chap);
-      catFilters.forEach((x) => x.setAttribute('aria-pressed', x.dataset.chap === currentChap));
-      applyCat();
+    function setQa(scope, value) {
+      qa.scope = scope;
+      qa.cat = scope === 'faq' ? value : 'all';
+      qa.chap = scope === 'cat' ? String(value) : 'all';
+      applyQa();
     }
-    function resetCatFilters() { catInput.value = ''; setChap('all'); }
-    catFilters.forEach((f) => f.addEventListener('click', () => setChap(f.dataset.chap)));
-    catInput.addEventListener('input', applyCat);
-    applyCat();
+    function resetQa() { qaInput.value = ''; setQa('all'); }
+    qaFilters.forEach((f) => f.addEventListener('click', () => {
+      setQa(f.dataset.qa, f.dataset.qa === 'faq' ? f.dataset.cat : f.dataset.chap);
+    }));
+    qaInput.addEventListener('input', applyQa);
+    applyQa();
 
-    // Lien « Approfondir » depuis un article du Credo → rubrique V filtrée
+    // Lien « Approfondir » depuis un article du Credo → questions du chapitre correspondant
     document.addEventListener('click', (e) => {
       const b = e.target.closest('[data-catchap]');
       if (!b) return;
-      catInput.value = '';
-      setChap(b.dataset.catchap);
-      activateTab('catechisme');
-      const nav = $('.main-nav');
-      window.scrollTo({ top: $('#catechisme').offsetTop - nav.offsetHeight, behavior: 'smooth' });
+      qaInput.value = '';
+      setQa('cat', b.dataset.catchap);
+      activateTab('questions');
+      scrollToPanel('questions');
     });
 
     /* ---------------------------------------------------------
@@ -2214,8 +2269,7 @@
       fondements: 'I · Les Fondements de la Foi',
       credo: 'II · Le Symbole de la Foi',
       cles: 'III · Les Sept Clés de la Vie Spirituelle',
-      questions: 'IV · Questions & Réponses',
-      catechisme: 'V · Le Catéchisme en questions'
+      questions: 'IV · Questions & Réponses'
     };
     panels.forEach((panel, i) => {
       const prev = panels[i - 1];
@@ -2236,8 +2290,7 @@
       if (!a) return;
       e.preventDefault();
       activateTab(a.dataset.section);
-      const nav = $('.main-nav');
-      window.scrollTo({ top: $('#' + a.dataset.section).offsetTop - nav.offsetHeight, behavior: 'smooth' });
+      scrollToPanel(a.dataset.section);
     });
 
     /* ---------------------------------------------------------
@@ -2252,13 +2305,22 @@
        9. ROUTAGE INITIAL (#credo, #credo-5, #cle-3, #faq-communion…)
        --------------------------------------------------------- */
     function route() {
-      const id = decodeURIComponent(location.hash.slice(1));
+      let id = decodeURIComponent(location.hash.slice(1));
+      if (id === 'catechisme') id = 'questions'; // ancienne rubrique V, fusionnée dans IV
       if (!id) return;
-      if (tabs.some((t) => t.dataset.tab === id)) activateTab(id, { updateHash: false });
+      if (tabs.some((t) => t.dataset.tab === id)) { activateTab(id, { updateHash: false }); scrollToPanel(id, false); }
       else goTo(id, { flash: true });
     }
     route();
     window.addEventListener('hashchange', route);
+    // Les polices web modifient la hauteur de la bannière après le premier rendu :
+    // on repositionne une fois la mise en page stabilisée (lien direct vers une rubrique).
+    const settle = () => {
+      const id = decodeURIComponent(location.hash.slice(1));
+      if (tabs.some((t) => t.dataset.tab === id)) scrollToPanel(id, false);
+    };
+    window.addEventListener('load', settle);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(settle);
   })();
   </script>
 </body>
