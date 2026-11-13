@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catéchèse orthodoxe — Église Saint Alexandre Nevsky à Pau</title>
+  <meta name="description" content="Découvrir et approfondir la foi orthodoxe : la Sainte Trinité, le Christ, le Symbole de Nicée-Constantinople article par article, les sept clés de la vie spirituelle et les questions pratiques des catéchumènes. D’après la catéchèse du Père Georges Lusseaud." />
+  <link rel="canonical" href="https://nevsky.fr/catechisme.html" />
+  <meta property="og:url" content="https://nevsky.fr/catechisme.html" />
+  <meta property="og:title" content="Catéchèse orthodoxe — Découvrir et approfondir la foi" />
+  <meta property="og:description" content="Ressources pour catéchumènes et fidèles : fondements de la foi, Credo, vie spirituelle et liturgique, questions-réponses." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://nevsky.fr/images/logo-nevsky-share.jpg" />
+  <meta name="theme-color" content="#1B3B6F" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+
+  <!-- Polices : Cormorant Garamond (titres, citations liturgiques) + Open Sans (texte, interface) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================
+       1. CHARTE GRAPHIQUE (style nevsky.fr) — variables globales
+       ========================================================== */
+    :root {
+      /* Bleu coupole */
+      --blue-900: #12284d;
+      --blue-800: #1B3B6F;
+      --blue-700: #234B8E;
+      --blue-100: #E8EEF7;
+      --blue-50:  #F3F6FB;
+      /* Or byzantin */
+      --gold-700: #A07E1C;
+      --gold-600: #C59B27;
+      --gold-500: #D4AF37;
+      --gold-100: #F6EDD3;
+      /* Fonds pierre / parchemin */
+      --white: #FFFFFF;
+      --stone: #F8F9FA;
+      --parchment: #F4F1EA;
+      --parchment-deep: #EDE6D6;
+      /* Texte */
+      --ink: #2C3E50;
+      --ink-soft: #55677A;
+      --line: #E2E8F0;
+
+      --font-serif: 'Cormorant Garamond', 'Lora', Georgia, serif;
+      --font-sans: 'Open Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+      --radius: 6px;
+      --shadow-sm: 0 1px 2px rgba(18, 40, 77, .06), 0 2px 8px rgba(18, 40, 77, .05);
+      --shadow-md: 0 4px 14px rgba(18, 40, 77, .10), 0 1px 3px rgba(18, 40, 77, .06);
+      --shadow-lg: 0 20px 50px rgba(18, 40, 77, .25);
+      --container: 1180px;
+      --ease: cubic-bezier(.2, .7, .2, 1);
+    }
+
+    /* ==========================================================
+       2. BASE
+       ========================================================== */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 16.5px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, svg { max-width: 100%; }
+    a { color: var(--blue-700); text-decoration-color: rgba(35, 75, 142, .35); text-underline-offset: 3px; }
+    a:hover { color: var(--blue-800); text-decoration-color: var(--gold-600); }
+    h1, h2, h3, h4 { font-family: var(--font-serif); color: var(--blue-800); line-height: 1.2; margin: 0 0 .5em; font-weight: 600; }
+    h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); }
+    h3 { font-size: clamp(1.4rem, 2.3vw, 1.75rem); }
+    h4 { font-size: 1.25rem; }
+    p { margin: 0 0 1em; }
+    strong { color: var(--blue-900); font-weight: 600; }
+    :focus-visible { outline: 3px solid var(--gold-500); outline-offset: 2px; border-radius: 3px; }
+    .container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+    .skip-link { position: absolute; left: 12px; top: -60px; background: var(--gold-500); color: var(--blue-900); padding: 8px 14px; z-index: 100; font-weight: 600; border-radius: var(--radius); }
+    .skip-link:focus { top: 12px; }
+    mark { background: var(--gold-100); color: inherit; padding: 0 2px; border-radius: 2px; box-shadow: inset 0 -2px 0 var(--gold-500); }
+
+    /* Croix orthodoxe décorative (SVG réutilisé) */
+    .cross { display: inline-block; width: 1em; height: 1.6em; vertical-align: middle; color: var(--gold-600); }
+
+    /* Filet doré avec croix centrale */
+    .ornament { display: flex; align-items: center; justify-content: center; gap: 14px; color: var(--gold-600); margin: 0 auto 18px; max-width: 280px; }
+    .ornament::before, .ornament::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-500)); }
+    .ornament::after { background: linear-gradient(90deg, var(--gold-500), transparent); }
+    .ornament .cross { width: 14px; height: 22px; }
+
+    /* ==========================================================
+       3. EN-TÊTE INSTITUTIONNEL
+       ========================================================== */
+    .topbar { background: var(--blue-900); color: #cfd9ea; font-size: .8rem; letter-spacing: .02em; }
+    .topbar .container { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 36px; flex-wrap: wrap; padding-top: 6px; padding-bottom: 6px; }
+    .topbar a { color: var(--gold-500); text-decoration: none; font-weight: 600; }
+    .topbar a:hover { color: #fff; }
+    .topbar .dot { color: var(--gold-500); margin: 0 6px; }
+
+    .site-header { background: var(--white); border-bottom: 1px solid var(--line); }
+    .brand { display: flex; align-items: center; gap: 16px; padding: 18px 0; text-decoration: none; }
+    .brand .cross { width: 30px; height: 48px; color: var(--blue-800); }
+    .brand-text { display: flex; flex-direction: column; }
+    .brand-title { font-family: var(--font-serif); font-size: clamp(1.35rem, 2.6vw, 1.75rem); font-weight: 700; color: var(--blue-800); line-height: 1.1; }
+    .brand-sub { font-size: .78rem; text-transform: uppercase; letter-spacing: .14em; color: var(--gold-700); font-weight: 600; margin-top: 4px; }
+
+    /* Barre de navigation (onglets principaux) */
+    .main-nav { background: var(--blue-800); border-bottom: 3px solid var(--gold-600); position: sticky; top: 0; z-index: 40; box-shadow: 0 2px 10px rgba(18, 40, 77, .18); }
+    .tablist { display: flex; gap: 2px; margin: 0; padding: 0; list-style: none; overflow-x: auto; scrollbar-width: none; }
+    .tablist::-webkit-scrollbar { display: none; }
+    .tab {
+      appearance: none; border: 0; background: transparent; cursor: pointer;
+      color: #dbe4f3; font-family: var(--font-sans); font-size: .92rem; font-weight: 600; letter-spacing: .01em;
+      padding: 15px 18px 13px; white-space: nowrap; position: relative; display: flex; align-items: center; gap: 8px;
+      transition: color .2s, background-color .2s;
+    }
+    .tab .num { font-family: var(--font-serif); font-size: 1.15rem; color: var(--gold-500); font-weight: 700; }
+    .tab::after { content: ""; position: absolute; left: 14px; right: 14px; bottom: -3px; height: 3px; background: var(--gold-500); transform: scaleX(0); transition: transform .25s var(--ease); }
+    .tab:hover { color: #fff; background: rgba(255, 255, 255, .06); }
+    .tab[aria-selected="true"] { color: #fff; background: var(--blue-700); }
+    .tab[aria-selected="true"]::after { transform: scaleX(1); }
+
+    /* ==========================================================
+       4. BANNIÈRE HERO + RECHERCHE GLOBALE
+       ========================================================== */
+    .hero {
+      position: relative; overflow: hidden;
+      background:
+        radial-gradient(1200px 400px at 50% -120px, rgba(212, 175, 55, .16), transparent 70%),
+        linear-gradient(180deg, var(--blue-50) 0%, var(--white) 100%);
+      border-bottom: 1px solid var(--line);
+      padding: 56px 0 46px; text-align: center;
+    }
+    /* motif d'étoiles discret, évoquant une coupole étoilée */
+    .hero::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
+      background-image:
+        radial-gradient(circle at 12% 30%, var(--gold-500) 1px, transparent 1.5px),
+        radial-gradient(circle at 85% 22%, var(--gold-500) 1px, transparent 1.5px),
+        radial-gradient(circle at 72% 70%, var(--gold-500) 1px, transparent 1.5px),
+        radial-gradient(circle at 25% 78%, var(--gold-500) 1px, transparent 1.5px),
+        radial-gradient(circle at 50% 12%, var(--gold-500) 1px, transparent 1.5px);
+    }
+    .hero .container { position: relative; }
+    .eyebrow { display: inline-block; font-size: .75rem; text-transform: uppercase; letter-spacing: .18em; color: var(--gold-700); font-weight: 700; margin-bottom: 10px; }
+    .hero h1 { font-size: clamp(2.1rem, 5.2vw, 3.6rem); margin-bottom: 14px; }
+    .hero h1 em { font-style: italic; color: var(--blue-700); }
+    .hero-lead { max-width: 720px; margin: 0 auto 28px; font-size: 1.06rem; color: var(--ink-soft); }
+
+    .search { position: relative; max-width: 680px; margin: 0 auto; text-align: left; }
+    .search-field { display: flex; align-items: center; background: var(--white); border: 1px solid var(--line); border-radius: 999px; box-shadow: var(--shadow-md); padding: 4px 6px 4px 20px; transition: border-color .2s, box-shadow .2s; }
+    .search-field:focus-within { border-color: var(--gold-500); box-shadow: 0 0 0 4px rgba(212, 175, 55, .18), var(--shadow-md); }
+    .search-field svg { flex: none; color: var(--blue-700); }
+    .search-field input { flex: 1; min-width: 0; border: 0; outline: none; background: transparent; font: inherit; font-size: 1rem; color: var(--ink); padding: 12px 12px; }
+    .search-field input::placeholder { color: #8a99ab; }
+    .search-clear { appearance: none; border: 0; background: var(--stone); color: var(--ink-soft); border-radius: 999px; width: 34px; height: 34px; cursor: pointer; font-size: 1.1rem; display: none; }
+    .search-clear.show { display: inline-block; }
+    .search-hints { margin-top: 12px; font-size: .85rem; color: var(--ink-soft); text-align: center; }
+    .search-hints button { appearance: none; border: 1px solid var(--line); background: var(--white); color: var(--blue-700); border-radius: 999px; padding: 3px 12px; margin: 3px 2px; font: inherit; font-size: .82rem; cursor: pointer; transition: border-color .2s, background .2s; }
+    .search-hints button:hover { border-color: var(--gold-500); background: var(--gold-100); }
+
+    .search-results { position: absolute; left: 0; right: 0; top: calc(100% + 8px); background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--gold-600); border-radius: var(--radius); box-shadow: var(--shadow-lg); max-height: min(60vh, 520px); overflow-y: auto; z-index: 50; display: none; }
+    .search-results.open { display: block; }
+    .search-results .meta { padding: 10px 16px; font-size: .8rem; color: var(--ink-soft); border-bottom: 1px solid var(--line); background: var(--stone); position: sticky; top: 0; }
+    .result { display: block; width: 100%; text-align: left; appearance: none; border: 0; background: transparent; padding: 12px 16px; border-bottom: 1px solid var(--line); cursor: pointer; font: inherit; color: inherit; }
+    .result:last-child { border-bottom: 0; }
+    .result:hover, .result.active { background: var(--blue-50); }
+    .result .badge { margin-right: 8px; }
+    .result-title { font-family: var(--font-serif); font-size: 1.12rem; font-weight: 700; color: var(--blue-800); }
+    .result-snippet { display: block; font-size: .86rem; color: var(--ink-soft); margin-top: 2px; line-height: 1.5; }
+    .no-result { padding: 18px 16px; color: var(--ink-soft); font-size: .92rem; }
+
+    /* ==========================================================
+       5. COMPOSANTS COMMUNS : sections, cartes, badges, citations
+       ========================================================== */
+    .panel { display: none; }
+    .panel.active { display: block; animation: fadeIn .4s var(--ease); }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+    .section { padding: 64px 0; }
+    .section.alt { background: var(--parchment); border-top: 1px solid var(--parchment-deep); border-bottom: 1px solid var(--parchment-deep); }
+    .section.stone { background: var(--stone); }
+    .section-head { text-align: center; max-width: 760px; margin: 0 auto 40px; }
+    .section-head p { color: var(--ink-soft); font-size: 1.04rem; }
+
+    .badge { display: inline-block; font-family: var(--font-sans); font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; background: var(--blue-100); color: var(--blue-800); vertical-align: middle; }
+    .badge.gold { background: var(--gold-100); color: var(--gold-700); }
+
+    /* Carte façon encart paroissial : bordure fine + barre supérieure colorée */
+    .card { background: var(--white); border: 1px solid var(--line); border-top: 4px solid var(--blue-800); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 26px 26px 22px; transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s; }
+    .card.gold { border-top-color: var(--gold-600); }
+    .card:hover { box-shadow: var(--shadow-md); }
+
+    /* Citation patristique / liturgique */
+    .quote { position: relative; margin: 26px 0; padding: 22px 26px 18px 30px; background: var(--parchment); border-left: 3px solid var(--gold-600); border-radius: 0 var(--radius) var(--radius) 0; font-family: var(--font-serif); font-size: 1.22rem; line-height: 1.55; color: var(--blue-900); font-style: italic; }
+    .quote::before { content: "“"; position: absolute; left: 8px; top: -6px; font-size: 3rem; color: var(--gold-500); font-style: normal; line-height: 1; }
+    .quote cite { display: block; margin-top: 10px; font-family: var(--font-sans); font-style: normal; font-size: .8rem; letter-spacing: .04em; color: var(--gold-700); font-weight: 600; }
+
+    /* Lettrine dorée */
+    .lettrine::first-letter { font-family: var(--font-serif); float: left; font-size: 3.6em; line-height: .85; padding: 6px 10px 0 0; color: var(--gold-600); font-weight: 700; }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; padding: 0; list-style: none; }
+    .chips li { font-size: .8rem; border: 1px solid var(--line); border-radius: 999px; padding: 2px 11px; color: var(--ink-soft); background: var(--white); }
+
+    .btn { appearance: none; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--blue-800); background: var(--blue-800); color: #fff; font: inherit; font-size: .9rem; font-weight: 600; padding: 9px 18px; border-radius: 999px; cursor: pointer; text-decoration: none; transition: background .2s, border-color .2s, color .2s; }
+    .btn:hover { background: var(--blue-700); border-color: var(--blue-700); color: #fff; }
+    .btn.ghost { background: transparent; color: var(--blue-800); border-color: var(--line); }
+    .btn.ghost:hover { border-color: var(--gold-500); background: var(--gold-100); color: var(--blue-900); }
+    .link-btn { appearance: none; border: 0; background: none; padding: 0; font: inherit; color: var(--blue-700); cursor: pointer; text-decoration: underline; text-decoration-color: rgba(35, 75, 142, .35); text-underline-offset: 3px; }
+    .link-btn:hover { text-decoration-color: var(--gold-600); }
+
+    /* ==========================================================
+       6. RUBRIQUE 1 — FONDEMENTS (articles éditoriaux)
+       ========================================================== */
+    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-bottom: 14px; }
+    .pillar { text-decoration: none; color: inherit; display: block; }
+    .pillar:hover { transform: translateY(-3px); color: inherit; }
+    .pillar .roman { font-family: var(--font-serif); font-size: 2.4rem; color: var(--gold-600); line-height: 1; font-weight: 700; }
+    .pillar h3 { margin: 8px 0 6px; }
+    .pillar p { color: var(--ink-soft); font-size: .95rem; margin: 0; }
+
+    .doc { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 48px; align-items: start; }
+    .toc { position: sticky; top: 76px; font-size: .9rem; border-left: 2px solid var(--line); padding-left: 16px; }
+    .toc strong { display: block; font-family: var(--font-serif); font-size: 1.1rem; color: var(--blue-800); margin-bottom: 8px; }
+    .toc a { display: block; text-decoration: none; color: var(--ink-soft); padding: 4px 0; line-height: 1.4; }
+    .toc a:hover, .toc a.current { color: var(--blue-800); }
+    .toc a.current { font-weight: 600; }
+    .prose { max-width: 760px; }
+    .prose > article { scroll-margin-top: 80px; padding-bottom: 36px; margin-bottom: 36px; border-bottom: 1px solid var(--line); }
+    .prose > article:last-child { border-bottom: 0; margin-bottom: 0; }
+    .prose h3 { display: flex; align-items: baseline; gap: 12px; }
+    .prose h3 .n { font-size: .9rem; font-family: var(--font-sans); color: var(--gold-700); font-weight: 700; letter-spacing: .08em; }
+    .prose ul { padding-left: 1.2em; }
+    .prose li { margin-bottom: .4em; }
+    .prose li::marker { color: var(--gold-600); }
+
+    .keypoints { background: var(--blue-50); border: 1px solid var(--blue-100); border-radius: var(--radius); padding: 18px 22px; margin: 22px 0; }
+    .keypoints h4 { font-size: 1.1rem; margin-bottom: 8px; }
+    .keypoints ul { margin: 0; }
+
+    .compare { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 22px 0; }
+    .compare > div { border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; background: var(--white); text-align: center; }
+    .compare b { display: block; font-family: var(--font-serif); color: var(--blue-800); font-size: 1.2rem; }
+    .compare span { font-size: .88rem; color: var(--ink-soft); }
+
+    /* Frise des conciles */
+    .timeline { position: relative; margin: 10px 0 0; padding: 0; list-style: none; }
+    .timeline::before { content: ""; position: absolute; left: 86px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(var(--gold-500), var(--blue-700)); }
+    .timeline li { display: grid; grid-template-columns: 70px 1fr; gap: 36px; padding: 0 0 22px; position: relative; }
+    .timeline li::before { content: ""; position: absolute; left: 80px; top: 8px; width: 14px; height: 14px; border-radius: 50%; background: var(--white); border: 3px solid var(--gold-600); }
+    .timeline .year { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--blue-800); text-align: right; line-height: 1.2; }
+    .timeline h4 { margin-bottom: 2px; }
+    .timeline p { margin: 0; font-size: .95rem; color: var(--ink-soft); }
+
+    .heresies { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-top: 22px; }
+    .heresy { border: 1px solid var(--line); border-left: 3px solid #b44a3a; border-radius: var(--radius); padding: 14px 16px; background: var(--white); font-size: .92rem; }
+    .heresy b { display: block; font-family: var(--font-serif); font-size: 1.15rem; color: var(--blue-900); }
+    .heresy .reply { display: block; margin-top: 6px; color: var(--blue-700); font-size: .86rem; }
+
+    /* ==========================================================
+       7. RUBRIQUE 2 — CREDO (accordéons)
+       ========================================================== */
+    .credo-tools { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 26px; }
+    .accordion { max-width: 880px; margin: 0 auto; display: grid; gap: 12px; }
+    .acc-item { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow: hidden; transition: border-color .25s, box-shadow .25s; scroll-margin-top: 80px; }
+    .acc-item.open { border-color: rgba(197, 155, 39, .55); box-shadow: var(--shadow-md); }
+    .acc-item.flash { animation: flash 1.6s var(--ease); }
+    @keyframes flash { 0%, 40% { box-shadow: 0 0 0 4px rgba(212, 175, 55, .45); } 100% { box-shadow: var(--shadow-sm); } }
+    .acc-trigger { appearance: none; width: 100%; border: 0; background: transparent; cursor: pointer; text-align: left; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 18px; padding: 18px 22px; font: inherit; color: inherit; }
+    .acc-trigger:hover { background: var(--blue-50); }
+    .acc-num { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: var(--blue-800); color: #fff; font-family: var(--font-serif); font-size: 1.35rem; font-weight: 700; border: 2px solid var(--gold-500); flex: none; }
+    .acc-title { font-family: var(--font-serif); font-size: 1.32rem; font-weight: 700; color: var(--blue-800); line-height: 1.25; display: block; }
+    .acc-sub { display: block; font-size: .85rem; color: var(--ink-soft); margin-top: 2px; }
+    .acc-icon { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; color: var(--gold-700); transition: transform .3s var(--ease), background .2s; }
+    .acc-item.open .acc-icon { transform: rotate(180deg); background: var(--gold-100); }
+    /* animation hauteur : grid 0fr → 1fr */
+    .acc-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .4s var(--ease); }
+    .acc-item.open .acc-panel { grid-template-rows: 1fr; }
+    .acc-inner { overflow: hidden; }
+    .acc-body { padding: 4px 26px 26px 86px; }
+    .creed-text { position: relative; margin: 6px 0 20px; padding: 22px 26px; background: var(--parchment); border: 1px solid var(--parchment-deep); outline: 1px solid var(--gold-500); outline-offset: -6px; border-radius: 4px; font-family: var(--font-serif); font-size: 1.3rem; line-height: 1.55; color: var(--blue-900); font-style: italic; text-align: center; }
+    .creed-text small { display: block; font-family: var(--font-sans); font-style: normal; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-700); margin-bottom: 6px; font-weight: 700; }
+    .see-also { font-size: .88rem; color: var(--ink-soft); margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line); }
+
+    .creed-full { max-width: 880px; margin: 40px auto 0; text-align: center; }
+    .creed-full .creed-text { text-align: left; font-size: 1.2rem; }
+    .creed-full .creed-text p { margin: 0 0 .5em; }
+
+    /* ==========================================================
+       8. RUBRIQUE 3 — SEPT CLÉS (grille + modales)
+       ========================================================== */
+    .keys-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 22px; }
+    .key { display: flex; flex-direction: column; scroll-margin-top: 80px; }
+    .key:nth-child(even) { border-top-color: var(--gold-600); }
+    .key:hover { transform: translateY(-3px); }
+    .key-head { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+    .key-icon { width: 54px; height: 54px; border-radius: 50%; flex: none; display: grid; place-items: center; background: var(--blue-50); border: 1px solid var(--blue-100); color: var(--blue-800); }
+    .key-icon svg { width: 28px; height: 28px; }
+    .key-num { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-700); font-weight: 700; }
+    .key h3 { font-size: 1.45rem; margin: 0; }
+    .key > p { color: var(--ink-soft); font-size: .95rem; flex: 1; }
+    .key .btn { align-self: flex-start; margin-top: 8px; }
+    .key-full { display: none; }
+
+    /* Modale de lecture approfondie */
+    dialog.reader { width: min(860px, calc(100% - 24px)); max-height: calc(100vh - 32px); padding: 0; border: 0; border-radius: 8px; box-shadow: var(--shadow-lg); color: var(--ink); background: var(--white); overflow: hidden; }
+    dialog.reader[open] { display: flex; flex-direction: column; animation: pop .3s var(--ease); }
+    dialog.reader::backdrop { background: rgba(18, 40, 77, .55); backdrop-filter: blur(3px); }
+    @keyframes pop { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: none; } }
+    .reader-head { background: var(--blue-800); color: #fff; padding: 20px 26px 18px; border-bottom: 3px solid var(--gold-600); display: flex; align-items: flex-start; gap: 16px; }
+    .reader-head .key-num { color: var(--gold-500); }
+    .reader-head h2 { color: #fff; font-size: clamp(1.5rem, 3vw, 2rem); margin: 2px 0 0; }
+    .reader-close { margin-left: auto; appearance: none; border: 1px solid rgba(255, 255, 255, .35); background: transparent; color: #fff; width: 38px; height: 38px; border-radius: 50%; font-size: 1.3rem; cursor: pointer; flex: none; }
+    .reader-close:hover { background: rgba(255, 255, 255, .12); border-color: var(--gold-500); }
+    .reader-body { padding: 26px 30px 10px; overflow-y: auto; }
+    .reader-body h4 { margin-top: 1.4em; }
+    .reader-foot { display: flex; justify-content: space-between; gap: 10px; padding: 14px 24px; border-top: 1px solid var(--line); background: var(--stone); flex-wrap: wrap; }
+
+    .choirs { display: grid; gap: 10px; margin: 16px 0; }
+    .choir { border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 16px; background: var(--white); }
+    .choir b { font-family: var(--font-serif); color: var(--blue-800); font-size: 1.1rem; }
+    .choir small { display: block; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-700); font-weight: 700; }
+    .sacraments { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 16px 0; }
+    .sacraments div { border: 1px solid var(--line); border-top: 3px solid var(--gold-600); border-radius: var(--radius); padding: 12px 14px; font-size: .9rem; }
+    .sacraments b { display: block; font-family: var(--font-serif); color: var(--blue-800); font-size: 1.12rem; }
+    .feasts { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .9rem; }
+    .feasts th, .feasts td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .feasts th { font-family: var(--font-serif); color: var(--blue-800); font-size: 1rem; background: var(--blue-50); }
+    .feasts td:first-child { white-space: nowrap; color: var(--gold-700); font-weight: 600; }
+    .table-wrap { overflow-x: auto; }
+
+    /* ==========================================================
+       9. RUBRIQUE 4 — QUESTIONS & RÉPONSES
+       ========================================================== */
+    .faq-tools { max-width: 880px; margin: 0 auto 22px; display: grid; gap: 14px; }
+    .faq-search { display: flex; align-items: center; gap: 10px; border: 1px solid var(--line); border-radius: var(--radius); padding: 2px 14px; background: var(--white); box-shadow: var(--shadow-sm); }
+    .faq-search:focus-within { border-color: var(--gold-500); }
+    .faq-search input { flex: 1; min-width: 0; border: 0; outline: none; font: inherit; padding: 11px 0; background: transparent; color: var(--ink); }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .filter { appearance: none; border: 1px solid var(--line); background: var(--white); color: var(--ink); font: inherit; font-size: .88rem; font-weight: 600; padding: 7px 16px; border-radius: 999px; cursor: pointer; transition: all .2s; }
+    .filter:hover { border-color: var(--gold-500); }
+    .filter[aria-pressed="true"] { background: var(--blue-800); border-color: var(--blue-800); color: #fff; box-shadow: inset 0 -2px 0 var(--gold-500); }
+    .filter .count { font-weight: 400; opacity: .75; margin-left: 4px; }
+    .faq-status { text-align: center; font-size: .85rem; color: var(--ink-soft); }
+    .faq .acc-body { padding-left: 26px; }
+    .faq .acc-trigger { grid-template-columns: 1fr auto; }
+    .faq .acc-title { font-size: 1.22rem; }
+    .faq-empty { text-align: center; padding: 30px; color: var(--ink-soft); border: 1px dashed var(--line); border-radius: var(--radius); max-width: 880px; margin: 0 auto; display: none; }
+
+    /* ==========================================================
+       10. PIED DE PAGE
+       ========================================================== */
+    .site-footer { background: var(--blue-800); color: #d4deee; border-top: 4px solid var(--gold-600); padding: 52px 0 24px; font-size: .92rem; }
+    .site-footer h2, .site-footer h3 { color: #fff; }
+    .site-footer h3 { font-size: 1.3rem; margin-bottom: 12px; }
+    .site-footer a { color: var(--gold-500); text-decoration-color: rgba(212, 175, 55, .4); }
+    .site-footer a:hover { color: #fff; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; }
+    .footer-brand { display: flex; gap: 14px; align-items: flex-start; }
+    .footer-brand .cross { color: var(--gold-500); width: 26px; height: 42px; flex: none; }
+    .footer-brand p { margin: 6px 0 0; }
+    .site-footer ul { list-style: none; margin: 0; padding: 0; }
+    .site-footer li { margin-bottom: 6px; }
+    .footer-bottom { margin-top: 38px; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, .15); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: .82rem; color: #aebcd3; }
+    .doxology { font-family: var(--font-serif); font-style: italic; font-size: 1.1rem; color: var(--gold-500); }
+
+    .to-top { position: fixed; right: 18px; bottom: 18px; width: 46px; height: 46px; border-radius: 50%; border: 2px solid var(--gold-500); background: var(--blue-800); color: #fff; display: grid; place-items: center; cursor: pointer; box-shadow: var(--shadow-md); opacity: 0; pointer-events: none; transform: translateY(10px); transition: opacity .3s, transform .3s; z-index: 45; }
+    .to-top.show { opacity: 1; pointer-events: auto; transform: none; }
+    .to-top:hover { background: var(--blue-700); }
+
+    /* ==========================================================
+       11. RESPONSIVE
+       ========================================================== */
+    @media (max-width: 960px) {
+      .doc { grid-template-columns: 1fr; gap: 0; }
+      .toc { display: none; }
+      .pillars { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid > :first-child { grid-column: 1 / -1; }
+    }
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      .container { padding: 0 16px; }
+      .section { padding: 44px 0; }
+      .hero { padding: 40px 0 34px; }
+      .topbar .container { justify-content: center; text-align: center; }
+      .topbar .back { display: none; }
+      .brand { padding: 14px 0; }
+      .tab { padding: 13px 13px 11px; font-size: .85rem; }
+      .tab .label-long { display: none; }
+      .acc-trigger { gap: 12px; padding: 14px 14px; }
+      .acc-num { width: 38px; height: 38px; font-size: 1.1rem; }
+      .acc-title { font-size: 1.15rem; }
+      .acc-body { padding: 4px 16px 20px; }
+      .creed-text { font-size: 1.15rem; padding: 18px 16px; }
+      .compare { grid-template-columns: 1fr; }
+      .keys-grid { grid-template-columns: 1fr; }
+      .card { padding: 22px 18px 18px; }
+      .reader-body { padding: 20px 18px 6px; }
+      .reader-head { padding: 16px 18px; }
+      .reader-foot { flex-wrap: nowrap; padding: 12px 14px; }
+      .reader-foot .btn { padding: 8px 12px; font-size: .82rem; }
+      .timeline::before { left: 56px; }
+      .timeline li { grid-template-columns: 44px 1fr; gap: 30px; }
+      .timeline li::before { left: 50px; }
+      .timeline .year { font-size: 1.15rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .quote { font-size: 1.1rem; padding: 18px 18px 14px 24px; }
+    }
+    @media (min-width: 641px) { .tab .label-short { display: none; } }
+
+    @media print {
+      .topbar, .main-nav, .search, .to-top, .credo-tools, .faq-tools, .search-hints { display: none !important; }
+      .panel { display: block !important; }
+      .acc-panel { grid-template-rows: 1fr !important; }
+      .key-full { display: block !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <!-- Symbole SVG réutilisable : croix orthodoxe russe à trois traverses -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="ortho-cross" viewBox="0 0 40 64">
+      <g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round">
+        <line x1="20" y1="2" x2="20" y2="62" />
+        <line x1="13" y1="10" x2="27" y2="10" />
+        <line x1="5" y1="21" x2="35" y2="21" />
+        <line x1="11" y1="41" x2="29" y2="48" />
+      </g>
+    </symbol>
+  </svg>
+
+  <!-- ======================= EN-TÊTE ======================= -->
+  <div class="topbar">
+    <div class="container">
+      <span>Catéchèse &amp; Transmission de la Foi Orthodoxe <span class="dot">•</span> Ressources pour catéchumènes et fidèles</span>
+      <a class="back" href="/">← Retour à nevsky.fr</a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/" aria-label="Église orthodoxe russe Saint Alexandre Nevsky — accueil">
+        <svg class="cross" aria-hidden="true"><use href="#ortho-cross" /></svg>
+        <span class="brand-text">
+          <span class="brand-title">Église Saint Alexandre Nevsky</span>
+          <span class="brand-sub">Catéchèse orthodoxe · Pau</span>
+        </span>
+      </a>
+    </div>
+  </header>
+
+  <nav class="main-nav" aria-label="Rubriques de la catéchèse">
+    <div class="container">
+      <div class="tablist" role="tablist">
+        <button class="tab" role="tab" id="tab-fondements" aria-controls="fondements" aria-selected="true" data-tab="fondements"><span class="num">I</span><span class="label-long">Les Fondements de la Foi</span><span class="label-short">Fondements</span></button>
+        <button class="tab" role="tab" id="tab-credo" aria-controls="credo" aria-selected="false" tabindex="-1" data-tab="credo"><span class="num">II</span><span class="label-long">Le Symbole de la Foi</span><span class="label-short">Credo</span></button>
+        <button class="tab" role="tab" id="tab-cles" aria-controls="cles" aria-selected="false" tabindex="-1" data-tab="cles"><span class="num">III</span><span class="label-long">Les Sept Clés de la Vie Spirituelle</span><span class="label-short">Sept clés</span></button>
+        <button class="tab" role="tab" id="tab-questions" aria-controls="questions" aria-selected="false" tabindex="-1" data-tab="questions"><span class="num">IV</span><span class="label-long">Questions &amp; Réponses</span><span class="label-short">Q&amp;R</span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======================= HERO + RECHERCHE ======================= -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <span class="eyebrow">Catéchèse orthodoxe</span>
+      <h1 id="hero-title">Découvrir et Approfondir <em>la Foi Orthodoxe</em></h1>
+      <div class="ornament" aria-hidden="true"><svg class="cross"><use href="#ortho-cross" /></svg></div>
+      <p class="hero-lead">Que vous franchissiez pour la première fois le seuil d’une église orthodoxe, que vous vous prépariez au baptême ou que vous souhaitiez simplement mieux comprendre ce que vous vivez chaque dimanche, ces pages vous accompagnent pas à pas : le mystère de Dieu, le Credo, la prière, les icônes, les sacrements et la Divine Liturgie.</p>
+
+      <div class="search" role="search">
+        <label for="global-search" class="sr-only">Rechercher dans la catéchèse</label>
+        <div class="search-field">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" stroke-linecap="round" /></svg>
+          <input id="global-search" type="search" autocomplete="off" placeholder="Rechercher : Trinité, icône, communion, Pâques…" aria-controls="search-results" aria-expanded="false" aria-autocomplete="list" />
+          <button class="search-clear" type="button" aria-label="Effacer la recherche">×</button>
+        </div>
+        <div class="search-results" id="search-results" role="listbox" aria-label="Résultats de recherche"></div>
+        <p class="search-hints">Suggestions :
+          <button type="button" data-q="Trinité">Trinité</button>
+          <button type="button" data-q="Chalcédoine">Chalcédoine</button>
+          <button type="button" data-q="icône">Icônes</button>
+          <button type="button" data-q="communion">Communion</button>
+          <button type="button" data-q="prière de Jésus">Prière de Jésus</button>
+          <button type="button" data-q="Pâques">Pâques</button>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenu">
+
+    <!-- =========================================================
+         RUBRIQUE I — LES FONDEMENTS DE LA FOI
+         ========================================================= -->
+    <div class="panel active" id="fondements" role="tabpanel" aria-labelledby="tab-fondements" tabindex="-1">
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Rubrique I · Théologie &amp; Mystère</span>
+            <h2>Les Fondements de la Foi</h2>
+            <div class="ornament" aria-hidden="true"><svg class="cross"><use href="#ortho-cross" /></svg></div>
+            <p>Qui est Dieu ? Qui est le Christ ? Quel est le but de notre vie ? Trois piliers pour entrer dans le mystère chrétien, tel que l’Église orthodoxe le confesse depuis les Apôtres.</p>
+          </div>
+
+          <div class="pillars">
+            <a class="card pillar" href="#f-trinite" data-jump="f-trinite">
+              <span class="roman">I</span>
+              <h3>La Sainte Trinité</h3>
+              <p>Un seul Dieu en trois Personnes : le Père, le Fils et le Saint-Esprit. Une communion d’amour qui éclaire ce qu’est une personne humaine.</p>
+            </a>
+            <a class="card pillar gold" href="#f-incarnation" data-jump="f-incarnation">
+              <span class="roman">II</span>
+              <h3>L’Incarnation et le Christ</h3>
+              <p>Vrai Dieu et vrai Homme, « sans confusion ni séparation » : le dogme de Chalcédoine et l’équilibre de toute la vie chrétienne.</p>
+            </a>
+            <a class="card pillar" href="#f-salut" data-jump="f-salut">
+              <span class="roman">III</span>
+              <h3>Esprit, Création &amp; Salut</h3>
+              <p>Créés à l’image de Dieu pour parvenir à sa ressemblance : la grâce, la liberté et la <em>théosis</em>, ou déification.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="container doc">
+          <nav class="toc" aria-label="Sommaire des fondements">
+            <strong>Sommaire</strong>
+            <a href="#f-croire" data-jump="f-croire">Croire Dieu pour le connaître</a>
+            <a href="#f-trinite" data-jump="f-trinite">La Sainte Trinité</a>
+            <a href="#f-revelation" data-jump="f-revelation">Comment Dieu s’est révélé Trinité</a>
+            <a href="#f-mystere" data-jump="f-mystere">Inconnaissable et pourtant proche</a>
+            <a href="#f-incarnation" data-jump="f-incarnation">Le Christ, Vérité faite homme</a>
+            <a href="#f-equilibre" data-jump="f-equilibre">Le Christ, équilibre de notre vie</a>
+            <a href="#f-chalcedoine" data-jump="f-chalcedoine">Des hérésies au dogme de Chalcédoine</a>
+            <a href="#f-salut" data-jump="f-salut">Esprit Saint, création et déification</a>
+          </nav>
+
+          <div class="prose">
+
+            <article id="f-croire" data-search data-kind="Fondements" data-title="Croire Dieu pour le connaître">
+              <h3><span class="n">01</span> Croire Dieu pour le connaître</h3>
+              <p class="lettrine">On ne « prouve » pas Dieu, pas plus que l’on ne prouve sa propre existence : on la vit. Nous existons, nous vivons, nous nous interrogeons — et cette simple évidence nous tourne déjà vers Celui qui est la source de la vie. Bien des personnes qui se disent athées ont surtout rejeté de fausses images de Dieu qu’on leur avait mal présentées ; souvent, elles gardent au fond d’elles l’intuition du Dieu véritable.</p>
+              <p>Être croyant, ce n’est pas d’abord croire <em>en</em> Dieu comme on adhère à une idée ; c’est <strong>croire Dieu</strong>, c’est-à-dire faire confiance à Quelqu’un qui a quelque chose à nous dire. Cela suppose de savoir faire silence pour l’entendre.</p>
+              <p>L’Église est précisément <strong>le lieu où Dieu parle à l’homme et où l’homme parle à Dieu</strong>. Elle ressemble à une croix : une barre verticale, notre élan de tout l’être vers Dieu ; une barre horizontale, notre vie dans le monde — le travail, la famille, la société. L’Église n’oppose jamais l’une à l’autre, parce que Dieu lui-même s’est fait homme en Jésus-Christ.</p>
+              <div class="keypoints">
+                <h4>Ce que les Apôtres ont transmis</h4>
+                <ul>
+                  <li><strong>Qui est Dieu</strong> : la Trinité, un seul Dieu en trois Personnes ; le Fils s’est incarné du Saint-Esprit et de la Vierge Marie, Mère de Dieu.</li>
+                  <li><strong>Ce que Dieu fait</strong> : il nous libère de l’impasse où l’humanité s’est enfermée en se détournant de lui, et nous donne de devenir enfants du Père par grâce — c’est la foi, ce sont les sacrements, à commencer par le baptême.</li>
+                  <li><strong>L’Esprit Saint demeure</strong> : il garde l’Église de l’erreur, la rajeunit sans cesse et nous fait boire à la source divine.</li>
+                </ul>
+              </div>
+              <blockquote class="quote">Il est impossible de vivre sans la vie. Or l’existence de la vie provient de la participation à Dieu. Participer à Dieu, c’est le connaître et jouir de sa bonté.<cite>Saint Irénée de Lyon († 202)</cite></blockquote>
+            </article>
+
+            <article id="f-trinite" data-search data-kind="Fondements" data-title="La Sainte Trinité">
+              <h3><span class="n">02</span> La Sainte Trinité : un seul Dieu en trois Personnes</h3>
+              <p>L’homme est créé <strong>à l’image de Dieu</strong>. Pour savoir qui nous sommes, il faut donc savoir qui est Dieu. Or chacun de nous dit « je » — c’est le mystère de l’unique — et personne ne peut vivre seul : nous disons aussi « nous » — c’est le mystère du multiple. Livrés à nous-mêmes, nous n’arrivons pas à concilier les deux : l’individu se dresse contre le groupe, ou le groupe écrase l’individu.</p>
+              <p>En se révélant <strong>Trinité</strong>, Dieu révèle l’homme à lui-même. En Dieu, le Père, le Fils et le Saint-Esprit ne s’opposent pas : chacun « fait être » l’autre dans un amour parfait, et ils sont <strong>un</strong>. Une <strong>personne</strong>, à l’image de Dieu, n’est donc pas un individu replié sur lui-même : c’est un être unique et irremplaçable qui se tourne vers l’autre et lui dit « toi ». Vivre ainsi, c’est <strong>communier</strong> — et cette communion, c’est l’Église.</p>
+              <div class="compare">
+                <div><b>Le Père</b><span>Source de la divinité, sans commencement, hors du temps.</span></div>
+                <div><b>Le Fils</b><span>Le Verbe, éternellement engendré du Père, de même nature que lui.</span></div>
+                <div><b>Le Saint-Esprit</b><span>Procède éternellement du Père, adoré et glorifié avec le Père et le Fils.</span></div>
+              </div>
+              <p>Le Père est la source (la « monarchie ») de la vie divine, et pourtant le Fils et l’Esprit lui sont pleinement égaux : trois Personnes, une seule nature, un seul Dieu. C’est pourquoi le mot <em>orthodoxie</em> signifie à la fois « foi droite » et « juste glorification » : <em>« Gloire au Père, et au Fils, et au Saint-Esprit, maintenant et toujours, et aux siècles des siècles. »</em></p>
+              <blockquote class="quote">Je n’ai pas commencé de penser à l’Unité que la Trinité me baigne dans sa splendeur. Je n’ai pas commencé de penser à la Trinité que l’Unité me ressaisit… Lorsque j’unis les Trois dans une même pensée, je vois un seul flambeau.<cite>Saint Grégoire de Nazianze (328-390)</cite></blockquote>
+            </article>
+
+            <article id="f-revelation" data-search data-kind="Fondements" data-title="Comment Dieu s’est révélé Trinité">
+              <h3><span class="n">03</span> Comment Dieu s’est-il révélé Trinité ?</h3>
+              <p>La Trinité n’est pas une invention de philosophes : elle est <strong>révélée</strong> dans l’histoire, par étapes.</p>
+              <ul>
+                <li><strong>Au chêne de Mambré</strong> (Genèse 18) : Abraham reçoit trois visiteurs et leur parle au singulier — « Seigneur, ne passe pas sans t’arrêter ». C’est la scène que représente la célèbre icône de la Trinité de saint André Roublev.</li>
+                <li><strong>Au baptême du Christ</strong> dans le Jourdain (Marc 1, 9-11) : le Père fait entendre sa voix, l’Esprit descend sous forme de colombe sur le Fils. C’est la <strong>Théophanie</strong>, la « manifestation de Dieu ».</li>
+                <li><strong>À la Transfiguration</strong> sur le mont Thabor (Marc 9, 2-8) : la nuée lumineuse figure l’Esprit, le Père proclame « Celui-ci est mon Fils bien-aimé : écoutez-le ».</li>
+                <li><strong>Dans l’enseignement du Christ</strong> (Évangile de Jean) : « Le Père est en moi et moi dans le Père » (10, 38) ; « Le Paraclet, l’Esprit Saint, que le Père enverra en mon nom, vous enseignera tout » (14, 26).</li>
+              </ul>
+              <blockquote class="quote">Tu nous révèles aujourd’hui que le Christ né de la Vierge est ton Fils bien-aimé… Ta voix clame sur les eaux, et ton Esprit, sous forme de colombe, témoigne de la divinité du Christ.<cite>Liturgie de la Théophanie</cite></blockquote>
+            </article>
+
+            <article id="f-mystere" data-search data-kind="Fondements" data-title="Inconnaissable et pourtant proche : le mystère de Dieu">
+              <h3><span class="n">04</span> Inconnaissable et pourtant proche</h3>
+              <p>Notre vie elle-même est tissée de mystère : l’amour, la souffrance, le désir d’un bonheur que nous n’atteignons jamais tout à fait. À chaque prise de conscience, nous sommes devant un <em>commencement</em> : la vie est une suite d’initiations. Et au fond de tout cela, il n’y a pas « quelque chose » mais <strong>Quelqu’un</strong> : Dieu qui agit.</p>
+              <p>Dieu n’est pas seulement « au-dessus » de nous : il est <strong>le Tout-Autre</strong>. « Je suis Celui qui suis » (Exode 3, 14). Notre intelligence ne peut l’enfermer dans des formules. C’est pourquoi la théologie orthodoxe est d’abord <strong>apophatique</strong> : elle approche Dieu en disant ce qu’il n’est <em>pas</em>, en nous dépouillant de nos images et de nos idées toutes faites.</p>
+              <div class="keypoints">
+                <h4>Essence et énergies : la clé orthodoxe</h4>
+                <ul>
+                  <li>Dans son <strong>essence</strong> (sa nature intime), Dieu reste à jamais inaccessible.</li>
+                  <li>Mais il se donne réellement par ses <strong>énergies incréées</strong> : sa grâce, sa lumière, sa vie. Ce n’est pas « quelque chose » de Dieu, c’est Dieu lui-même qui se communique.</li>
+                  <li>C’est cette lumière que les Apôtres ont contemplée au Thabor, et que les saints ont vue dans la prière : « il faut devenir soi-même lumière pour approcher Celui qui est la lumière ».</li>
+                </ul>
+              </div>
+              <blockquote class="quote">La foi est lumière, mais faible ; l’espérance est lumière, mais encore imparfaite ; c’est dans la plénitude de l’Amour que la lumière atteint sa perfection.<cite>Archimandrite Sophrony (Sakharov), 1952</cite></blockquote>
+            </article>
+
+            <article id="f-incarnation" data-search data-kind="Fondements" data-title="Le Christ, Vérité faite homme">
+              <h3><span class="n">05</span> Le Christ : la Vérité faite homme</h3>
+              <p>Le Fils, Dieu égal au Père et à l’Esprit, <strong>s’est fait homme</strong>. Il a pris place dans notre histoire, il est né, a grandi, a vécu toutes les étapes de notre existence. Ce qu’il apporte n’est pas seulement une doctrine ou une sagesse parmi d’autres : c’est la <strong>Vérité plénière</strong>, une Vérité qui n’est plus « quelque chose » mais <strong>Quelqu’un</strong>. Il n’y a plus d’abîme entre Dieu et l’homme.</p>
+              <p>Les sagesses humaines ont souvent oscillé entre deux extrêmes : un Dieu si lointain qu’il devient inaccessible, ou un humanisme qui finit par se passer de Dieu. La nouveauté bouleversante de l’Évangile, c’est <strong>Dieu <em>et</em> l’homme</strong> : le Christ apporte les deux.</p>
+              <p>Les paroles de l’Écriture ressemblent à des oiseaux : on peut lire mille fois un passage sans qu’il nous touche, puis un jour il nous saisit. Ce jour-là, c’est l’Esprit Saint qui nous a donné des yeux pour voir. C’est cela, la <strong>Tradition</strong> : l’Esprit Saint lui-même qui se fait mémoire et discernement de l’Église.</p>
+            </article>
+
+            <article id="f-equilibre" data-search data-kind="Fondements" data-title="Le Christ, équilibre de notre vie">
+              <h3><span class="n">06</span> Le Christ, équilibre de notre vie</h3>
+              <p>Deux déséquilibres menacent toujours la vie spirituelle :</p>
+              <ul>
+                <li><strong>Le « tout-spirituel »</strong> : rien que Dieu, rien que l’esprit ; le corps serait méprisable, la matière sale, le monde une prison. Cette piété désincarnée rend dur, intolérant, parfois inhumain.</li>
+                <li><strong>Le « tout-humain »</strong> : rien que l’homme et la terre, Dieu mis entre parenthèses comme un supplément de consolation.</li>
+              </ul>
+              <p>Devant le tombeau de Lazare, Jésus <strong>pleure</strong> — puis il dit : « Lazare, sors ! ». L’homme pleure et Dieu ressuscite, dans une seule et même Personne. En Christ, chaque chose reprend sa juste place : <strong>le divin n’écrase pas l’humain, l’humain ne chasse pas le divin</strong>. Le corps, le travail, la tendresse, un bon repas partagé, la beauté d’un jardin ont valeur et dignité. Le Christ a mangé, bu, dormi, aimé ses amis.</p>
+              <p>En lui, le divin a pénétré l’humain pour que l’homme devienne participant de la vie divine et soit ainsi <strong>pleinement lui-même</strong>.</p>
+            </article>
+
+            <article id="f-chalcedoine" data-search data-kind="Fondements" data-title="Des hérésies au dogme de Chalcédoine (451)">
+              <h3><span class="n">07</span> Des hérésies au dogme de Chalcédoine</h3>
+              <p>L’Église proclame un <strong>dogme</strong> lorsqu’une erreur menace l’accès des hommes à la vérité qui fait vivre. Les dogmes ne sont pas des carcans : ce sont des <strong>balises sur le chemin</strong>. « Si tu passes par là, c’est la vie ; si tu t’en écartes, tu t’égares. »</p>
+              <p>Durant les premiers siècles, la tentation fut toujours la même : refuser qu’un Dieu se fasse vraiment homme, et ajuster la Révélation à nos propres idées.</p>
+              <div class="heresies">
+                <div class="heresy"><b>Docétisme</b>L’humanité du Christ ne serait qu’une apparence.<span class="reply">→ Saint Jean, saint Ignace d’Antioche, saint Irénée défendent la chair réelle du Christ.</span></div>
+                <div class="heresy"><b>Arianisme</b>Le Fils ne serait qu’une créature, pas vraiment Dieu.<span class="reply">→ Nicée (325) : « consubstantiel au Père ».</span></div>
+                <div class="heresy"><b>Apollinarisme</b>Le Christ aurait un corps et une âme humains, mais pas d’esprit humain.<span class="reply">→ Constantinople (381) : le Christ est homme tout entier.</span></div>
+                <div class="heresy"><b>Nestorianisme</b>Marie ne serait que « mère du Christ », non Mère de Dieu.<span class="reply">→ Éphèse (431) : Marie est <em>Theotokos</em>.</span></div>
+                <div class="heresy"><b>Monophysisme</b>La divinité aurait absorbé l’humanité du Christ.<span class="reply">→ Chalcédoine (451) : deux natures, une seule Personne.</span></div>
+              </div>
+
+              <h4 style="margin-top:32px">Les quatre premiers conciles œcuméniques</h4>
+              <ol class="timeline">
+                <li><span class="year">325</span><div><h4>Nicée I</h4><p>Le Fils est « vrai Dieu né du vrai Dieu, consubstantiel au Père ». Première partie du Symbole de la foi.</p></div></li>
+                <li><span class="year">381</span><div><h4>Constantinople I</h4><p>Divinité du Saint-Esprit, « qui procède du Père ». Rédaction définitive du Symbole de Nicée-Constantinople.</p></div></li>
+                <li><span class="year">431</span><div><h4>Éphèse</h4><p>La Vierge Marie est proclamée <em>Theotokos</em>, Mère de Dieu.</p></div></li>
+                <li><span class="year">451</span><div><h4>Chalcédoine</h4><p>Le Christ, une seule Personne en deux natures, divine et humaine, « sans confusion, sans changement, sans division, sans séparation ».</p></div></li>
+              </ol>
+
+              <div class="keypoints">
+                <h4>Le dogme de Chalcédoine, expliqué</h4>
+                <ul>
+                  <li><strong>« En accord avec les saints Pères »</strong> : le peuple de Dieu se reconnaît dans la foi proclamée ; c’est une concorde, non une soumission.</li>
+                  <li><strong>« Nous enseignons de confesser »</strong> : confesser, c’est s’engager tout entier pour une vérité qui dépasse notre compréhension.</li>
+                  <li><strong>Un seul et même Fils</strong>, « Fils de Dieu » et « Fils de l’homme » : non pas deux fils, mais une double filiation.</li>
+                  <li><strong>Seigneur</strong> (le nom divin), <strong>Jésus</strong> (le nom humain), <strong>Christ</strong> (l’homme oint, déifié) : trois noms qui résument notre vocation — venir de Dieu, être pleinement humain, devenir divinisé.</li>
+                  <li><strong>« Homme comme nous, sauf le péché »</strong> : sur la Croix, il a vécu jusqu’à l’abandon (« Mon Dieu, pourquoi m’as-tu abandonné ? »), tout en demeurant le Créateur des mondes.</li>
+                </ul>
+              </div>
+              <blockquote class="quote">Corporellement dans le tombeau, dans l’enfer avec ton âme comme Dieu, au paradis avec le larron, et sur le trône avec le Père et l’Esprit, tu étais, ô Christ, emplissant tout, toi l’Incirconscrit.<cite>Tropaire des Heures pascales</cite></blockquote>
+            </article>
+
+            <article id="f-salut" data-search data-kind="Fondements" data-title="L’Esprit Saint, la création et le salut (théosis)">
+              <h3><span class="n">08</span> L’Esprit Saint, la création et la déification</h3>
+              <p>Dieu crée le monde <strong>par surabondance d’amour</strong> : pour pouvoir dire « toi » à quelqu’un d’autre. Il crée tout par son Verbe, dans l’Esprit, et chaque chose porte sa signature : l’unité dans la diversité.</p>
+              <p>L’homme est créé <strong>à l’image</strong> de Dieu <strong>pour parvenir à sa ressemblance</strong>. Le but de toute la création, c’est la <strong><em>théosis</em></strong>, la <strong>déification</strong> : devenir, par grâce, ce que Dieu est par nature. « Dieu s’est fait homme pour que l’homme devienne dieu », disait saint Athanase d’Alexandrie.</p>
+              <div class="keypoints">
+                <h4>Grâce et liberté : la synergie</h4>
+                <ul>
+                  <li>Le salut n’est pas un verdict extérieur : c’est une <strong>guérison</strong> et une <strong>transfiguration</strong> de toute la personne — corps, âme et esprit.</li>
+                  <li>La grâce de Dieu ne s’impose jamais ; elle attend notre libre « oui ». Deux mouvements s’unissent : celui de Dieu et celui de l’homme. C’est la <strong>synergie</strong>.</li>
+                  <li>L’<strong>Esprit Saint</strong> est l’artisan de cette transformation : c’est lui qui agit dans chaque sacrement, lui que l’Église invoque sans cesse — « Roi céleste, Consolateur, Esprit de vérité… viens et demeure en nous ».</li>
+                </ul>
+              </div>
+              <p>Le péché, au fond, est le choix de vouloir devenir « comme des dieux » <em>sans</em> Dieu. Le Christ, nouvel Adam, rouvre le chemin : par sa mort il a vaincu la mort, et par sa résurrection il nous ouvre la vie éternelle. Nos corps eux-mêmes ressusciteront, transfigurés.</p>
+              <blockquote class="quote">Ce monde passe, pour que la grâce vienne. Et la grâce vient. Ce monde passe, la grâce ne passera pas.<cite>D’après la catéchèse du Père Georges Lusseaud</cite></blockquote>
+            </article>
+
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- =========================================================
+         RUBRIQUE II — LE SYMBOLE DE NICÉE-CONSTANTINOPLE
+         ========================================================= -->
+    <div class="panel" id="credo" role="tabpanel" aria-labelledby="tab-credo" tabindex="-1">
+      <section class="section stone">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Rubrique II · Le Credo</span>
+            <h2>Le Symbole de Nicée-Constantinople</h2>
+            <div class="ornament" aria-hidden="true"><svg class="cross"><use href="#ortho-cross" /></svg></div>
+            <p>Rédigé par les conciles de Nicée (325) et de Constantinople (381), le Symbole de la foi est chanté par toute l’assemblée à chaque Divine Liturgie et proclamé lors du baptême. Le voici en douze articles, chacun accompagné d’une explication en langage d’aujourd’hui.</p>
+          </div>
+
+          <div class="credo-tools">
+            <button class="btn ghost" type="button" data-acc-all="open" data-acc-target="#credo-list">Tout déplier</button>
+            <button class="btn ghost" type="button" data-acc-all="close" data-acc-target="#credo-list">Tout replier</button>
+          </div>
+
+          <div class="accordion" id="credo-list">
+
+            <div class="acc-item" id="credo-1" data-search data-kind="Credo" data-title="Article 1 — Je crois en un seul Dieu, le Père">
+              <button class="acc-trigger" aria-expanded="false"><span class="acc-num">1</span><span><span class="acc-title">Dieu le Père, Créateur</span><span class="acc-sub">Je crois en un seul Dieu, le Père tout-puissant…</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <div class="creed-text"><small>Texte liturgique</small>Je crois en un seul Dieu, le Père tout-puissant, Créateur du ciel et de la terre, de toutes les choses visibles et invisibles.</div>
+                <p><strong>« Je crois »</strong> : la foi est un acte personnel, une confiance donnée à Dieu qui parle. On ne dit pas « je pense que », mais « je crois » — je m’engage.</p>
+                <p><strong>« Un seul Dieu, le Père »</strong> : le Père est la source de la divinité ; de lui le Fils est engendré et l’Esprit procède. Dieu n’est pas une force anonyme : il est Père, et nous pouvons l’appeler « Notre Père ».</p>
+                <p><strong>« Du ciel et de la terre, des choses visibles et invisibles »</strong> : tout ce qui existe vient de Dieu — la matière comme le monde spirituel des anges. Rien n’est mauvais en soi dans la création ; le « ciel » désigne aussi le monde angélique, la « terre » le monde humain.</p>
+                <p class="see-also">Pour aller plus loin : <button class="link-btn" data-goto="f-trinite">La Sainte Trinité</button> · <button class="link-btn" data-goto="cle-2">Les Anges</button></p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="credo-2" data-search data-kind="Credo" data-title="Article 2 — Et en un seul Seigneur Jésus-Christ, Fils unique de Dieu">
+              <button class="acc-trigger" aria-expanded="false"><span class="acc-num">2</span><span><span class="acc-title">Le Fils, vrai Dieu né du vrai Dieu</span><span class="acc-sub">Et en un seul Seigneur Jésus-Christ, le Fils unique de Dieu…</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <div class="creed-text"><small>Texte liturgique</small>Et en un seul Seigneur Jésus-Christ, le Fils unique de Dieu, né du Père avant tous les siècles ; Lumière de Lumière, vrai Dieu de vrai Dieu, engendré, non créé, consubstantiel au Père, et par qui tout a été fait.</div>
+                <p>Cet article répond à l’hérésie d’Arius, pour qui le Fils n’était qu’une créature supérieure. Le concile de Nicée affirme au contraire que le Fils est <strong>engendré, non créé</strong> : il n’a pas de commencement, il est éternellement Fils.</p>
+                <p><strong>« Lumière de Lumière »</strong> : comme la lumière jaillit du soleil sans le diminuer, le Fils naît du Père sans séparation. <strong>« Consubstantiel »</strong> (en grec <em>homoousios</em>) : de même nature, de même être que le Père.</p>
+                <p><strong>« Par qui tout a été fait »</strong> : le Verbe est le Créateur. Celui qui naîtra à Bethléem est celui par qui l’univers existe.</p>
+                <p class="see-also">Pour aller plus loin : <button class="link-btn" data-goto="f-chalcedoine">Des hérésies au dogme de Chalcédoine</button></p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="credo-3" data-search data-kind="Credo" data-title="Article 3 — Il s’est incarné du Saint-Esprit et de la Vierge Marie">
+              <button class="acc-trigger" aria-expanded="false"><span class="acc-num">3</span><span><span class="acc-title">L’Incarnation</span><span class="acc-sub">Qui pour nous les hommes et pour notre salut…</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <div class="creed-text"><small>Texte liturgique</small>Qui pour nous les hommes et pour notre salut est descendu des cieux, s’est incarné du Saint-Esprit et de la Vierge Marie, et s’est fait homme.</div>
+                <p><strong>« Pour nous et pour notre salut »</strong> : l’Incarnation n’est pas un spectacle, c’est un acte d’amour. Dieu s’abaisse — c’est la <em>kénose</em> — pour nous rejoindre là où nous sommes.</p>
+                <p><strong>« Du Saint-Esprit et de la Vierge Marie »</strong> : l’Esprit est l’auteur de cette conception, et Marie y consent librement au nom de toute l’humanité. Là où Ève avait dit non, Marie dit « Qu’il me soit fait selon ta parole ».</p>
+                <p><strong>« Et s’est fait homme »</strong> : non pas une apparence d’homme, mais un homme complet — corps, âme et esprit — tout en restant pleinement Dieu.</p>
+                <p class="see-also">Pour aller plus loin : <button class="link-btn" data-goto="cle-1">La Mère de Dieu</button> · <button class="link-btn" data-goto="f-incarnation">Le Christ, Vérité faite homme</button></p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="credo-4" data-search data-kind="Credo" data-title="Article 4 — Il a été crucifié pour nous sous Ponce Pilate">
+              <button class="acc-trigger" aria-expanded="false"><span class="acc-num">4</span><span><span class="acc-title">La Passion et la Croix</span><span class="acc-sub">Il a été crucifié pour nous sous Ponce Pilate…</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <div class="creed-text"><small>Texte liturgique</small>Il a été crucifié pour nous sous Ponce Pilate, a souffert et a été enseveli.</div>
+                <p><strong>« Sous Ponce Pilate »</strong> : la mention d’un gouverneur romain ancre notre foi dans l’histoire réelle. Le christianisme n’est pas un mythe intemporel.</p>
+                <p><strong>« A souffert »</strong> : le Christ a vraiment souffert dans sa chair et dans son âme, jusqu’à l’abandon. Il a vécu <em>notre</em> vie et <em>notre</em> mort, pour qu’aucune de nos détresses ne soit étrangère à Dieu.</p>
+                <p>La Croix n’est pas une défaite : dans la tradition orthodoxe, elle est toujours lumineuse, « Croix vivifiante », car c’est le Seigneur de gloire qui y est élevé. Du côté transpercé du Christ jaillissent le sang et l’eau : l’Eucharistie et le baptême, c’est-à-dire l’Église.</p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="credo-5" data-search data-kind="Credo" data-title="Article 5 — Il est ressuscité le troisième jour (Pâques)">
+              <button class="acc-trigger" aria-expanded="false"><span class="acc-num">5</span><span><span class="acc-title">La Résurrection</span><span class="acc-sub">Il est ressuscité le troisième jour, selon les Écritures…</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <div class="creed-text"><small>Texte liturgique</small>Il est ressuscité le troisième jour, selon les Écritures.</div>
+                <p>Le cœur de toute la foi chrétienne. Le Christ est descendu jusqu’aux enfers pour en briser les portes : c’est ce que montre l’icône de la Résurrection, où il relève Adam et Ève de leurs tombeaux.</p>
+                <p><strong>« Selon les Écritures »</strong> : la Résurrection accomplit les promesses de l’Ancien Testament. Elle n’est pas un simple retour à la vie, mais l’entrée de notre humanité dans la vie divine incorruptible.</p>
+                <blockquote class="quote">Le Christ est ressuscité des morts ; par sa mort il a vaincu la mort, à ceux qui sont dans les tombeaux il a donné la vie.<cite>Tropaire de Pâques</cite></blockquote>
+                <p class="see-also">Pour aller plus loin : <button class="link-btn" data-goto="cle-7">Le cycle liturgique et Pâques</button></p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="credo-6" data-search data-kind="Credo" data-title="Article 6 — Il est monté aux cieux (Ascension)">
+              <button class="acc-trigger" aria-expanded="false"><span class="acc-num">6</span><span><span class="acc-title">L’Ascension</span><span class="acc-sub">Il est monté aux cieux et siège à la droite du Père…</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <div class="creed-text"><small>Texte liturgique</small>Il est monté aux cieux et siège à la droite du Père.</div>
+                <p>À l’Ascension, le Christ n’abandonne pas les siens : il emporte <strong>notre nature humaine</strong> au cœur de la Trinité. Un homme — notre chair — siège désormais « à la droite du Père », c’est-à-dire dans la gloire divine.</p>
+                <p>Depuis lors, il demeure parmi nous <strong>invisiblement</strong> : dans l’Église, dans l’Eucharistie, dans la prière. « Je suis avec vous tous les jours, jusqu’à la fin du monde » (Matthieu 28, 20).</p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="credo-7" data-search data-kind="Credo" data-title="Article 7 — Il reviendra dans la gloire juger les vivants et les morts">
+              <button class="acc-trigger" aria-expanded="false"><span class="acc-num">7</span><span><span class="acc-title">Le Retour du Christ</span><span class="acc-sub">Il reviendra dans la gloire juger les vivants et les morts…</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <div class="creed-text"><small>Texte liturgique</small>Il reviendra dans la gloire juger les vivants et les morts, et son règne n’aura pas de fin.</div>
+                <p>Le Christ était, il est, il vient. Les premiers chrétiens priaient : <em>Maranatha</em> — « Viens, Seigneur ! ». Ce retour, la <strong>Parousie</strong>, sera la manifestation éclatante de ce qui est déjà vrai : le Christ est vainqueur.</p>
+                <p>Le jugement n’est pas d’abord une menace : c’est la lumière qui révèle chaque chose telle qu’elle est. Celui qui juge est celui qui a donné sa vie pour nous. Son règne, le <strong>Huitième jour</strong>, n’aura pas de fin.</p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="credo-8" data-search data-kind="Credo" data-title="Article 8 — Et en l’Esprit Saint, Seigneur, qui donne la vie">
+              <button class="acc-trigger" aria-expanded="false"><span class="acc-num">8</span><span><span class="acc-title">Le Saint-Esprit</span><span class="acc-sub">Et en l’Esprit Saint, Seigneur, qui donne la vie…</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <div class="creed-text"><small>Texte liturgique</small>Et en l’Esprit Saint, Seigneur, qui donne la vie, qui procède du Père, qui avec le Père et le Fils est adoré et glorifié, qui a parlé par les prophètes.</div>
+                <p><strong>« Seigneur »</strong> : l’Esprit n’est pas une force impersonnelle, il est une Personne divine, Dieu comme le Père et le Fils.</p>
+                <p><strong>« Qui procède du Père »</strong> : l’Église orthodoxe garde le texte du Symbole tel que les conciles l’ont fixé, sans ajout. Le Père est l’unique source du Fils et de l’Esprit — ce qui fonde l’équilibre de toute la vie de l’Église.</p>
+                <p><strong>« Qui donne la vie »</strong> : c’est l’Esprit qui agit dans chaque sacrement. Toute la vie de l’Église est une <em>épiclèse</em>, une invocation de l’Esprit. C’est lui aussi qui a « parlé par les prophètes » et qui fait comprendre les Écritures.</p>
+                <p class="see-also">Pour aller plus loin : <button class="link-btn" data-goto="f-salut">L’Esprit Saint et la déification</button> · <button class="link-btn" data-goto="cle-5">Les Sacrements</button></p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="credo-9" data-search data-kind="Credo" data-title="Article 9 — En l’Église une, sainte, catholique et apostolique">
+              <button class="acc-trigger" aria-expanded="false"><span class="acc-num">9</span><span><span class="acc-title">L’Église</span><span class="acc-sub">En l’Église, une, sainte, catholique et apostolique…</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <div class="creed-text"><small>Texte liturgique</small>En l’Église, une, sainte, catholique et apostolique.</div>
+                <ul>
+                  <li><strong>Une</strong> : une communion rassemblée autour de la même Eucharistie, dans la même foi.</li>
+                  <li><strong>Sainte</strong> : non parce que ses membres seraient parfaits, mais parce que le Christ la sanctifie et que l’Esprit y demeure.</li>
+                  <li><strong>Catholique</strong> (du grec <em>kath’holon</em>, « selon le tout ») : elle possède la plénitude de la foi et embrasse toute la création.</li>
+                  <li><strong>Apostolique</strong> : fondée sur les Apôtres, elle garde vivant leur témoignage par la succession des évêques et la Tradition.</li>
+                </ul>
+                <p class="see-also">Pour aller plus loin : <button class="link-btn" data-goto="cle-6">L’Église, Corps du Christ</button></p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="credo-10" data-search data-kind="Credo" data-title="Article 10 — Je confesse un seul baptême">
+              <button class="acc-trigger" aria-expanded="false"><span class="acc-num">10</span><span><span class="acc-title">Le Baptême</span><span class="acc-sub">Je confesse un seul baptême pour la rémission des péchés…</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <div class="creed-text"><small>Texte liturgique</small>Je confesse un seul baptême pour la rémission des péchés.</div>
+                <p>Le baptême est une <strong>nouvelle naissance</strong> : plongé trois fois dans l’eau au nom du Père, du Fils et du Saint-Esprit, le baptisé meurt avec le Christ et ressuscite avec lui. Il « revêt le Christ » (Galates 3, 27).</p>
+                <p><strong>« Un seul »</strong> : le baptême ne se répète pas. Dans l’Église orthodoxe, il est suivi immédiatement de la <strong>chrismation</strong> (le don de l’Esprit) et de la <strong>communion</strong> : c’est l’initiation chrétienne complète, aussi pour les petits enfants.</p>
+                <p>Après le baptême, c’est la <strong>confession</strong> qui renouvelle sans cesse la grâce baptismale ; on l’appelle parfois un « second baptême », celui des larmes.</p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="credo-11" data-search data-kind="Credo" data-title="Article 11 — J’attends la résurrection des morts">
+              <button class="acc-trigger" aria-expanded="false"><span class="acc-num">11</span><span><span class="acc-title">La Résurrection des morts</span><span class="acc-sub">J’attends la résurrection des morts…</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <div class="creed-text"><small>Texte liturgique</small>J’attends la résurrection des morts.</div>
+                <p>La foi chrétienne n’espère pas seulement la survie d’une âme : elle attend la <strong>résurrection des corps</strong>. Notre corps, aujourd’hui fragile et mortel, sera un « corps de gloire », incorruptible, à l’image du Christ ressuscité.</p>
+                <p>C’est pourquoi l’Église honore le corps, prie pour les défunts « depuis Adam jusqu’à nos jours », et vénère les reliques des saints. <strong>« J’attends »</strong> : la vie chrétienne est tout entière tendue vers cet avenir.</p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="credo-12" data-search data-kind="Credo" data-title="Article 12 — Et la vie du siècle à venir. Amen.">
+              <button class="acc-trigger" aria-expanded="false"><span class="acc-num">12</span><span><span class="acc-title">La Vie éternelle</span><span class="acc-sub">Et la vie du siècle à venir. Amen.</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <div class="creed-text"><small>Texte liturgique</small>Et la vie du siècle à venir. Amen.</div>
+                <p>Le « siècle à venir », c’est le Royaume de Dieu : la création tout entière transfigurée, où « Dieu sera tout en tous » (1 Corinthiens 15, 28). Ce n’est pas une prolongation du temps, mais la plénitude de la vie avec Dieu.</p>
+                <p>Ce Royaume est déjà goûté ici-bas : la Divine Liturgie commence par « Béni est le Règne du Père, et du Fils, et du Saint-Esprit ». Les icônes en sont comme des fenêtres.</p>
+                <p><strong>« Amen »</strong> : « oui, c’est vrai, je m’y engage ». Toute la profession de foi est scellée par ce mot, qui est déjà une prière.</p>
+              </div></div></div>
+            </div>
+          </div>
+
+          <div class="creed-full">
+            <h3>Le Symbole de la foi en entier</h3>
+            <div class="ornament" aria-hidden="true"><svg class="cross"><use href="#ortho-cross" /></svg></div>
+            <div class="creed-text">
+              <p>Je crois en un seul Dieu, le Père tout-puissant, Créateur du ciel et de la terre, de toutes les choses visibles et invisibles.</p>
+              <p>Et en un seul Seigneur Jésus-Christ, le Fils unique de Dieu, né du Père avant tous les siècles ; Lumière de Lumière, vrai Dieu de vrai Dieu, engendré, non créé, consubstantiel au Père, et par qui tout a été fait ;</p>
+              <p>qui pour nous les hommes et pour notre salut est descendu des cieux, s’est incarné du Saint-Esprit et de la Vierge Marie, et s’est fait homme.</p>
+              <p>Il a été crucifié pour nous sous Ponce Pilate, a souffert et a été enseveli. Il est ressuscité le troisième jour, selon les Écritures ; il est monté aux cieux et siège à la droite du Père. Il reviendra dans la gloire juger les vivants et les morts, et son règne n’aura pas de fin.</p>
+              <p>Et en l’Esprit Saint, Seigneur, qui donne la vie, qui procède du Père, qui avec le Père et le Fils est adoré et glorifié, qui a parlé par les prophètes.</p>
+              <p>En l’Église, une, sainte, catholique et apostolique. Je confesse un seul baptême pour la rémission des péchés. J’attends la résurrection des morts et la vie du siècle à venir. Amen.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- =========================================================
+         RUBRIQUE III — LES SEPT CLÉS DE LA VIE SPIRITUELLE
+         ========================================================= -->
+    <div class="panel" id="cles" role="tabpanel" aria-labelledby="tab-cles" tabindex="-1">
+      <section class="section alt">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Rubrique III · Vie spirituelle &amp; liturgique</span>
+            <h2>Les Sept Clés de la Vie Spirituelle</h2>
+            <div class="ornament" aria-hidden="true"><svg class="cross"><use href="#ortho-cross" /></svg></div>
+            <p>Sept portes pour entrer dans la vie concrète de l’Église. Ouvrez chaque clé pour une lecture approfondie.</p>
+          </div>
+
+          <div class="keys-grid">
+
+            <!-- Clé 1 -->
+            <article class="card key" id="cle-1" data-search data-kind="Sept clés" data-title="La Mère de Dieu (Theotokos) et la communion des Saints">
+              <div class="key-head">
+                <span class="key-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="16" cy="11" r="5" /><path d="M6 29c0-7 4.5-11 10-11s10 4 10 11" /><circle cx="16" cy="11" r="8.5" stroke-dasharray="2 2.5" /></svg></span>
+                <div><span class="key-num">Clé 1</span><h3>La Mère de Dieu et les Saints</h3></div>
+              </div>
+              <p>Marie, la <em>Theotokos</em>, « plus vénérable que les Chérubins », et la grande nuée des saints qui nous précèdent sur le chemin.</p>
+              <button class="btn" type="button" data-open="cle-1">Lire l’approfondissement →</button>
+              <div class="key-full">
+                <p class="lettrine">Marie, la Mère de notre Seigneur Jésus-Christ, a conçu <strong>du Saint-Esprit</strong> et non d’une semence humaine. L’Église la confesse <strong>Toujours-Vierge</strong> : vierge avant, pendant et après l’enfantement. Et depuis le concile d’Éphèse (431), elle la proclame <strong><em>Theotokos</em>, Mère de Dieu</strong> — car celui qu’elle a mis au monde n’est pas « un homme en qui Dieu habiterait », mais Dieu lui-même fait homme.</p>
+                <h4>La virginité : transparence à Dieu</h4>
+                <p>Au sens profond, la virginité n’est pas seulement l’abstention ; c’est <strong>la transparence à Dieu</strong>, le fait de devenir « tout neuf » pour lui, libre de l’habitude et de la routine. Imaginez une rivière paisible qui reflète le ciel : si l’on remue la vase, l’eau se trouble et ne reflète plus rien. Qu’on la laisse se reposer, et le ciel s’y mire à nouveau. Pour nous, pécheurs, la pureté du cœur est moins un état à conserver qu’un état à <strong>conquérir</strong>, avec la grâce.</p>
+                <h4>La nouvelle Ève</h4>
+                <p>Ève, libre et transparente à Dieu, a dit « non » ; toute l’humanité a été entraînée dans sa chute. Marie, au terme de générations de sainteté préparées par Dieu, dit librement <strong>« oui »</strong> au nom de toute l’humanité : « Qu’il me soit fait selon ta parole ». Sa virginité corporelle est le signe visible que l’enfant qui naît d’elle vient de Dieu, et qu’il <em>est</em> Dieu. Nier la virginité de Marie revient, au fond, à fragiliser la foi au Christ vrai Dieu et vrai homme.</p>
+                <blockquote class="quote">Plus vénérable que les Chérubins, et incomparablement plus glorieuse que les Séraphins, toi qui sans tache enfantas Dieu le Verbe, toi véritablement Mère de Dieu, nous te magnifions.<cite>Hymne à la Mère de Dieu, chantée à chaque Liturgie</cite></blockquote>
+                <h4>La communion des Saints</h4>
+                <p>Nous vénérons les saints parce qu’ils nous ont <strong>précédés et montré le chemin</strong>. Un saint, disait Mgr Jean de Saint-Denis, est « celui qui se nourrit de Dieu et le respire ». La sainteté n’est pas une performance morale ni une accumulation de mérites : c’est le choix délibéré et définitif de l’amour de Dieu, la vie entière accordée au rythme de la Trinité.</p>
+                <p>Nous ne les « adorons » pas — l’adoration est due à Dieu seul — mais nous les honorons et leur demandons de prier pour nous, comme on demande à un ami de prier pour soi. Avec eux, l’Église de la terre et celle du ciel ne forment qu’une seule famille.</p>
+                <p class="see-also">Voir aussi : <button class="link-btn" data-goto="credo-3">Credo, article 3</button> · <button class="link-btn" data-goto="faq-saints">Prier les saints ?</button></p>
+              </div>
+            </article>
+
+            <!-- Clé 2 -->
+            <article class="card key" id="cle-2" data-search data-kind="Sept clés" data-title="Les Anges et les Puissances célestes">
+              <div class="key-head">
+                <span class="key-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="16" cy="9" r="3.5" /><path d="M16 13v14M16 16c-3-4-8-5-12-3 2 4 6 7 12 7M16 16c3-4 8-5 12-3-2 4-6 7-12 7" /></svg></span>
+                <div><span class="key-num">Clé 2</span><h3>Les Anges et les Puissances célestes</h3></div>
+              </div>
+              <p>Le monde invisible est plus réel et plus peuplé que le visible : neuf chœurs angéliques au service de Dieu et des hommes.</p>
+              <button class="btn" type="button" data-open="cle-2">Lire l’approfondissement →</button>
+              <div class="key-full">
+                <p class="lettrine">« Créateur du ciel et de la terre » : dans le Credo, le <strong>ciel</strong> désigne aussi le monde angélique, et la <strong>terre</strong> le monde humain. L’œuvre de Dieu aboutit toujours à <em>quelqu’un</em> : dans le monde visible, c’est l’homme ; dans le monde invisible, c’est l’ange.</p>
+                <p>L’ange n’est pas un « pur esprit » au sens où Dieu seul l’est : s’il est incorporel par rapport à nous, il reste une créature limitée devant Dieu. Sa grandeur vient de ce qu’il est <strong>totalement au service de Dieu</strong> — jamais un « individu » replié sur soi, toujours une personne tournée vers l’Autre. L’ange est comme un miroir où se reflète la volonté divine. Il ne réclame rien pour lui-même.</p>
+                <h4>Les noms des anges</h4>
+                <p>Leurs noms finissent en <em>-el</em>, qui signifie « Dieu » : <strong>Michel</strong>, « Qui est comme Dieu ? », chef des armées célestes ; <strong>Gabriel</strong>, « Force de Dieu », messager de l’Annonciation ; <strong>Raphaël</strong>, « Dieu guérit ». La sobriété de l’Église à leur égard (concile de Laodicée) rappelle que le culte des anges ne doit jamais voiler celui de Dieu.</p>
+                <h4>Les neuf chœurs angéliques</h4>
+                <p>Selon la tradition transmise par saint Denys l’Aréopagite, les anges se répartissent en trois triades — trois fois trois, reflet de la Trinité. Seule la Mère de Dieu est élevée au-dessus d’eux.</p>
+                <div class="choirs">
+                  <div class="choir"><small>Triade suprême — proximité immédiate de Dieu</small><b>Séraphins · Chérubins · Trônes</b><br />Les plus hauts initiés de l’amour, de la connaissance et de l’obéissance.</div>
+                  <div class="choir"><small>Triade intermédiaire — l’ordre du cosmos</small><b>Dominations · Vertus · Puissances</b><br />Ils servent la volonté de Dieu, véritable « loi de la nature ».</div>
+                  <div class="choir"><small>Triade proche de l’homme</small><b>Principautés · Archanges · Anges</b><br />Protection des peuples et des cités, messagers divins, anges gardiens.</div>
+                </div>
+                <blockquote class="quote">Jacob eut un songe : une échelle était dressée sur la terre et son sommet touchait le ciel ; et les anges de Dieu y montaient et descendaient.<cite>Genèse 28, 12</cite></blockquote>
+                <h4>Ciel, terre et enfer</h4>
+                <p>À l’image de l’homme (esprit, âme, corps), la création se déploie en <strong>ciel, terre et enfer</strong> — une hiérarchie vers l’être. L’enfer n’est pas un lieu que Dieu aurait inventé pour punir : c’est l’état d’une créature qui s’enferme dans le refus et s’éloigne de la source de la vie. La terre est le lieu de la rencontre et du choix ; le ciel, la vie pleinement tournée vers Dieu. Le grand piège de la terre, c’est l’<strong>illusion</strong> : prendre le matériel pour plus « évident » que le spirituel. Progresser dans l’être, c’est devenir soi-même « ciel », par la grâce.</p>
+              </div>
+            </article>
+
+            <!-- Clé 3 -->
+            <article class="card key" id="cle-3" data-search data-kind="Sept clés" data-title="La Prière personnelle et la Prière de Jésus">
+              <div class="key-head">
+                <span class="key-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 4c-1.5 3-1.5 5 0 7 1.5-2 1.5-4 0-7z" /><path d="M12 13h8v15h-8z" /><path d="M10 28h12" /></svg></span>
+                <div><span class="key-num">Clé 3</span><h3>La Prière et la Prière de Jésus</h3></div>
+              </div>
+              <p>Prier, c’est parler avec Dieu. Une prière-nourriture régulière, et une prière-respiration qui accompagne toute la vie.</p>
+              <button class="btn" type="button" data-open="cle-3">Lire l’approfondissement →</button>
+              <div class="key-full">
+                <p class="lettrine">Prier, c’est <strong>parler avec Dieu</strong>. L’envie de prier naît quand on a quelque chose à lui dire. Le danger est de prendre pour de la prière un monologue intérieur où l’on se parle à soi-même en plaçant Dieu, au loin, comme une idée abstraite : on prie alors « à propos de Dieu » au lieu de prier Dieu.</p>
+                <p>La vraie prière nous remet à notre juste place : nous ne sommes pas grand-chose, et Dieu est tout — et de ce constat jaillit non la tristesse mais la <strong>louange</strong>. La prière, c’est l’esprit qui se nourrit de Dieu et qui le respire ; et peu à peu l’esprit nourrit l’âme, l’âme nourrit le corps, et le corps lui-même devient prière.</p>
+                <h4>Deux formes de prière</h4>
+                <div class="compare" style="grid-template-columns:1fr 1fr">
+                  <div><b>Prière-nourriture</b><span>Une règle régulière, comme des repas à heures fixes : prières du matin et du soir, psaumes, lecture de l’Évangile. Mieux vaut un quart d’heure fidèle que de grands élans sans lendemain.</span></div>
+                  <div><b>Prière-respiration</b><span>Une prière continue, discrète, qui accompagne la journée comme le souffle : « Priez sans cesse » (1 Thessaloniciens 5, 17).</span></div>
+                </div>
+                <h4>La Prière de Jésus</h4>
+                <p>Au cœur de la tradition orthodoxe se trouve une prière très courte, répétée avec attention et humilité, souvent au rythme de la respiration, parfois avec l’aide d’un chapelet de laine (<em>tchotki</em> en russe, <em>komboskini</em> en grec) :</p>
+                <blockquote class="quote">Seigneur Jésus-Christ, Fils de Dieu, aie pitié de moi, pécheur.<cite>La Prière de Jésus</cite></blockquote>
+                <p>Elle contient tout l’Évangile : la confession du Christ Seigneur et Fils de Dieu, et l’appel à sa miséricorde. Les Pères conseillent de la dire sans précipitation, sans chercher d’expériences extraordinaires, et de se faire guider par un père spirituel pour une pratique plus intense.</p>
+                <h4>Conseils pratiques pour prier chez soi</h4>
+                <ul>
+                  <li>Aménagez un <strong>coin de prière</strong> (le « beau coin ») tourné si possible vers l’Orient, avec une ou plusieurs icônes et une veilleuse.</li>
+                  <li>Commencez par le <strong>signe de croix</strong> et une prière simple : « Roi céleste », le Trisagion, le Notre Père.</li>
+                  <li>Fixez une <strong>règle modeste et tenable</strong>, en accord avec votre prêtre ; la régularité compte plus que la durée.</li>
+                  <li>Transformez les gestes du quotidien en prière : « Tu es artisan ? chante des psaumes, même intérieurement : tu feras de ton atelier un monastère » (saint Jean Chrysostome).</li>
+                </ul>
+                <blockquote class="quote">Lorsqu’on demeure avec patience dans la prière, on s’aperçoit que nos humeurs et nos « moi » capricieux perdent peu à peu leur autorité. La prière situe l’homme dans la conscience des choses réelles.<cite>Mgr Jean de Saint-Denis</cite></blockquote>
+              </div>
+            </article>
+
+            <!-- Clé 4 -->
+            <article class="card key" id="cle-4" data-search data-kind="Sept clés" data-title="Les Saintes Icônes : théologie de l’image et vénération">
+              <div class="key-head">
+                <span class="key-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="4" width="20" height="24" rx="1.5" /><path d="M10 26v-5a6 6 0 0 1 12 0v5" /><circle cx="16" cy="13" r="3" /><circle cx="16" cy="13" r="5.5" stroke-dasharray="1.5 2" /></svg></span>
+                <div><span class="key-num">Clé 4</span><h3>Les Saintes Icônes</h3></div>
+              </div>
+              <p>L’icône est « l’image qui ne ment plus » : une fenêtre sur le Royaume, fondée sur l’Incarnation du Christ.</p>
+              <button class="btn" type="button" data-open="cle-4">Lire l’approfondissement →</button>
+              <div class="key-full">
+                <p class="lettrine">Dans un monde blessé par le péché, les images nous trompent souvent : elles nourrissent l’illusion et nous attachent toujours plus à l’apparence. L’<strong>icône</strong>, au contraire, est <strong>l’image qui ne ment plus</strong> : elle nourrit la prière et nous entraîne vers plus de vie et de lumière.</p>
+                <h4>Pourquoi peut-on représenter Dieu ?</h4>
+                <p>Dieu, invisible, ne peut être dessiné. Mais en Jésus-Christ, <strong>l’Invisible s’est rendu visible</strong> : le Verbe s’est fait chair. Parce que le Christ a un vrai visage humain, on peut le peindre. L’icône proclame donc l’Incarnation : la divinité s’est unie, sans confusion, à notre nature, et toute la création matérielle — bois, couleurs, or — est appelée à être transfigurée.</p>
+                <blockquote class="quote">L’icône est ressemblance, modèle, représentation qui montre en elle-même celui dont elle est l’image. Elle révèle et montre ce qui est caché.<cite>Saint Jean Damascène (VIIIᵉ siècle)</cite></blockquote>
+                <h4>Vénérer n’est pas adorer</h4>
+                <p>Le septième concile œcuménique (Nicée II, 787) a précisé la distinction : l’<strong>adoration</strong> n’est due qu’à Dieu ; les icônes reçoivent une <strong>vénération</strong> respectueuse — baiser, encens, lumière — qui « passe au prototype », c’est-à-dire à la personne représentée. On ne vénère pas du bois peint, mais le Christ, la Mère de Dieu ou le saint qu’il rend présent. La victoire sur l’iconoclasme est fêtée chaque année au premier dimanche du Grand Carême : le <strong>Triomphe de l’Orthodoxie</strong>.</p>
+                <h4>Comment « lire » une icône ?</h4>
+                <ul>
+                  <li><strong>Le fond d’or</strong> : la lumière incréée du Royaume, sans ombre ni source extérieure.</li>
+                  <li><strong>La perspective inversée</strong> : les lignes s’ouvrent vers nous ; ce n’est pas nous qui regardons l’icône, c’est elle qui nous regarde.</li>
+                  <li><strong>Les visages paisibles</strong>, les grands yeux, les bouches closes : des corps déjà transfigurés, recueillis dans le silence de Dieu.</li>
+                  <li><strong>Une icône s’« écrit »</strong> dans la prière et le jeûne, selon des canons transmis, puis elle est bénie.</li>
+                </ul>
+                <p>En entrant dans une église, on se signe, on baise l’icône du Christ et celle de la Mère de Dieu, puis on allume un cierge : sa flamme est image de la grâce, et la cire qui se consume figure notre vie offerte.</p>
+                <p class="see-also">Voir aussi : <button class="link-btn" data-goto="faq-icones">Pourquoi vénère-t-on les icônes ?</button></p>
+              </div>
+            </article>
+
+            <!-- Clé 5 -->
+            <article class="card key" id="cle-5" data-search data-kind="Sept clés" data-title="Les Sacrements / Mystères : Baptême, Chrismation, Eucharistie, Confession, Mariage, Ordination, Onction">
+              <div class="key-head">
+                <span class="key-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 6h14l-2 9a5 5 0 0 1-10 0z" /><path d="M16 20v6M11 27h10" /><path d="M14 9h4" /></svg></span>
+                <div><span class="key-num">Clé 5</span><h3>Les Sacrements, ou Mystères</h3></div>
+              </div>
+              <p>Baptême, Chrismation, Eucharistie, Confession, Mariage, Ordination, Onction des malades : l’Esprit Saint sanctifie toute la vie.</p>
+              <button class="btn" type="button" data-open="cle-5">Lire l’approfondissement →</button>
+              <div class="key-full">
+                <p class="lettrine">L’Orient chrétien parle volontiers de <strong>Mystères</strong> plutôt que de sacrements : on ne réduit pas en formules ces actes par lesquels Dieu nous communique sa vie. Ils ne sont pas des « tiroirs » qu’on ouvrirait de temps à autre : toute la vie chrétienne baigne dans la grâce, et l’Église bénit aussi la maison, les fruits, l’eau, les voyages, la naissance d’un enfant…</p>
+                <p>La matière elle-même participe au salut : l’<strong>eau</strong> du baptême, l’<strong>huile parfumée</strong> du saint chrême, le <strong>pain et le vin</strong> de l’Eucharistie, l’<strong>huile</strong> de l’onction. Et dans chaque Mystère, c’est le <strong>Saint-Esprit</strong> qui agit : toute l’Église est <em>épiclèse</em>, invocation de l’Esprit.</p>
+                <div class="sacraments">
+                  <div><b>Baptême</b>Triple immersion au nom de la Trinité : on meurt et ressuscite avec le Christ, on « revêt le Christ ». Une seule fois.</div>
+                  <div><b>Chrismation</b>Onction du saint chrême, « sceau du don du Saint-Esprit ». Le nouveau baptisé devient membre du peuple royal et sacerdotal.</div>
+                  <div><b>Eucharistie</b>Le Mystère des Mystères : communion au Corps et au Sang du Christ, présence réelle, sommet de toute la vie de l’Église.</div>
+                  <div><b>Confession</b>Thérapie de l’âme : aveu des péchés devant le Christ, en présence du prêtre qui donne l’absolution. À pratiquer régulièrement.</div>
+                  <div><b>Mariage</b>L’homme et la femme sont couronnés et unis dans l’Esprit, comme le Christ est uni à son Église.</div>
+                  <div><b>Ordination</b>Par l’imposition des mains de l’évêque, diacres, prêtres et évêques sont donnés au service du peuple de Dieu.</div>
+                  <div><b>Onction des malades</b>Prière et onction d’huile pour la guérison de l’âme et du corps, selon la volonté de Dieu.</div>
+                </div>
+                <h4>L’initiation chrétienne</h4>
+                <p>Dans l’Église orthodoxe, <strong>baptême, chrismation et première communion</strong> sont donnés au cours d’une même célébration, y compris aux nourrissons lorsqu’une famille orthodoxe s’engage à les élever dans la foi. Les petits enfants communient ainsi dès leur baptême.</p>
+                <h4>L’épiclèse</h4>
+                <p>À la Liturgie, après le rappel des paroles du Christ (« Ceci est mon Corps… Ceci est mon Sang »), le prêtre invoque l’Esprit Saint sur les Dons. C’est par la <strong>puissance de l’Esprit</strong> que le pain et le vin deviennent le Corps et le Sang du Christ. Mystère de foi, que l’on reçoit plus qu’on ne l’explique.</p>
+                <h4>Les sacramentaux à la maison</h4>
+                <p>Une famille orthodoxe garde de l’<strong>eau bénite</strong> rapportée de la grande bénédiction des eaux de la Théophanie : on en boit à jeun, on en asperge la maison. Les parents bénissent leurs enfants et le repas : toute la création est ainsi associée à la prière.</p>
+                <p class="see-also">Voir aussi : <button class="link-btn" data-goto="faq-communion">Se préparer à la communion</button> · <button class="link-btn" data-goto="faq-confession">La confession</button></p>
+              </div>
+            </article>
+
+            <!-- Clé 6 -->
+            <article class="card key" id="cle-6" data-search data-kind="Sept clés" data-title="L’Église, Corps du Christ et Tradition vivante">
+              <div class="key-head">
+                <span class="key-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 2v4M14 4h4" /><path d="M10 14c0-4 3-7 6-8 3 1 6 4 6 8z" /><path d="M8 14h16v14H8z" /><path d="M14 28v-6a2 2 0 0 1 4 0v6" /></svg></span>
+                <div><span class="key-num">Clé 6</span><h3>L’Église et la Tradition vivante</h3></div>
+              </div>
+              <p>Mère des vivants, unité dans la diversité, sel de la terre et lumière du monde : l’Église à l’image de la Trinité.</p>
+              <button class="btn" type="button" data-open="cle-6">Lire l’approfondissement →</button>
+              <div class="key-full">
+                <p class="lettrine">L’Église ne se réduit pas à une institution visible, tantôt influente, tantôt persécutée. Comme le Verbe qui contient toutes choses s’est fait homme dans l’histoire, l’Église qui embrasse l’univers s’est faite communauté concrète, <strong>fondée par le Christ, illuminée par l’Esprit, organisée par les Apôtres</strong>.</p>
+                <h4>Mère des vivants</h4>
+                <p>Les Pères voient dans le sang et l’eau jaillis du côté du Christ en croix la naissance de l’Église, nouvelle Ève : le sang de l’Eucharistie et l’eau du baptême. À la Pentecôte, elle reçoit le souffle de l’Esprit. Elle porte l’humanité comme une mère porte son enfant, et la <strong>nourrit</strong> par les sacrements. Là où il y a l’Eucharistie, un peuple baptisé et un évêque, <strong>là est l’Église</strong>.</p>
+                <p>Le mystère de l’Église est celui du Christ lui-même : elle est <strong>divino-humaine</strong> (théandrique), Dieu <em>et</em> nous, inséparablement.</p>
+                <h4>Unité dans la diversité</h4>
+                <p>Parce qu’elle est à l’image de la Trinité — un seul Dieu en trois Personnes —, l’Église orthodoxe n’est pas un organisme centralisé et uniforme, mais une <strong>communion d’Églises locales</strong> : à Antioche, Athènes, Moscou, Bucarest, Tokyo ou Paris, chacune avec sa langue et sa culture, et chacune est <strong>toute l’Église</strong>, parce qu’elle célèbre la même Eucharistie dans la même foi. Tous les évêques sont égaux dans l’épiscopat ; ils sont successeurs de tous les Apôtres ensemble.</p>
+                <p>Les décisions se prennent dans l’accord, en <strong>concile</strong> : « Il a semblé bon au Saint-Esprit et à nous… » (Actes 15, 28). C’est ce qu’on appelle la <strong>conciliarité</strong> (en russe <em>sobornost</em>). L’autorité ne tombe pas d’en haut comme une épée : elle circule dans tout le peuple baptisé comme le sang dans un corps vivant.</p>
+                <blockquote class="quote">Mélangez des couleurs délavées, vous obtiendrez un gris sale ; unissez un bleu intensément bleu, un jaune éclatant, un rouge éperdument rouge, et vous obtiendrez la lumière blanche.<cite>Image de la catéchèse : la pleine personnalité de chacun fait l’unité vivante</cite></blockquote>
+                <h4>La Tradition vivante</h4>
+                <p>La Tradition n’est pas la poussière du passé : c’est <strong>l’Esprit Saint qui se fait mémoire de l’Église</strong>. Elle comprend l’Écriture sainte, le Credo, les dogmes des conciles, la Liturgie, les écrits des Pères, les icônes et la vie des saints. « La Vérité rajeunit le vase qui la contient », disait saint Irénée : ce n’est pas à l’Église de courir après les modes ; c’est la Vérité qui la garde toujours neuve. Un fleuve coupé de sa source devient une mare.</p>
+                <h4>Sel de la terre, lumière du monde</h4>
+                <p>« Vous êtes le sel de la terre… Vous êtes la lumière du monde » (Matthieu 5, 13-16). La <strong>lumière</strong> rend l’intelligence des choses : elle montre chaque réalité telle qu’elle est. Le <strong>sel</strong> rend le goût de la vie : il donne de choisir la vie et la joie. L’Église est appelée à donner sens et saveur à tout ce qui arrive dans le monde.</p>
+              </div>
+            </article>
+
+            <!-- Clé 7 -->
+            <article class="card key" id="cle-7" data-search data-kind="Sept clés" data-title="Initiation à la Divine Liturgie et au calendrier liturgique">
+              <div class="key-head">
+                <span class="key-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="7" width="22" height="20" rx="1.5" /><path d="M5 12h22M10 4v6M22 4v6" /><path d="M16 15v9M13 17h6M14 22.5l4-1.5" /></svg></span>
+                <div><span class="key-num">Clé 7</span><h3>La Divine Liturgie et l’année liturgique</h3></div>
+              </div>
+              <p>Entrer dans l’église, comprendre la Liturgie, vivre au rythme des fêtes : de la Nativité à Pâques, « fête des fêtes ».</p>
+              <button class="btn" type="button" data-open="cle-7">Lire l’approfondissement →</button>
+              <div class="key-full">
+                <h4 style="margin-top:0">Vous entrez dans l’église</h4>
+                <p>La majesté de Dieu se perçoit dans la mesure de notre silence intérieur. Avant d’entrer, laissons à la porte nos griefs, nos soucis, nos agitations. L’église est <strong>orientée</strong> : à l’Orient se trouve le <strong>sanctuaire</strong>, image du ciel et du Royaume, séparé de la nef par l’<strong>iconostase</strong>. Ses <strong>Portes saintes</strong>, au centre, sont encadrées par l’icône du Christ (à droite) et celle de la Mère de Dieu (à gauche). Au nord du sanctuaire, la <strong>prothèse</strong>, où sont préparés les Dons ; au sud, le <strong>diakonikon</strong>.</p>
+                <p>En arrivant, on prend un cierge, on se signe, on vénère les icônes, et l’on peut remettre au prêtre la liste des noms des vivants et des défunts pour lesquels on souhaite qu’il prie.</p>
+                <h4>« Sagesse ! Debout ! » — Attentifs, en silence</h4>
+                <p>On se tient <strong>debout</strong> devant Dieu : toute l’assemblée concélèbre avec les anges et le clergé (des sièges restent bien sûr à disposition des personnes âgées ou fatiguées). <strong>Soyons attentifs</strong> : devenir une coupe prête à recevoir les trésors de la Liturgie. <strong>En silence</strong> : non seulement sans bavarder, mais en faisant taire notre bavardage intérieur. Ce qui compte, c’est ce que Dieu va nous dire.</p>
+                <h4>Les deux parties de la Divine Liturgie</h4>
+                <ul>
+                  <li><strong>La Liturgie des catéchumènes</strong>, ordonnée à l’enseignement : grande litanie, antiennes, petite Entrée avec l’Évangéliaire, Trisagion (« Saint Dieu, Saint Fort, Saint Immortel, aie pitié de nous »), lecture de l’Apôtre et de l’Évangile, homélie, prières pour l’Église et le monde.</li>
+                  <li><strong>La Liturgie des fidèles</strong>, ordonnée à l’Eucharistie : Hymne des Chérubins et grande Entrée avec les Dons, baiser de paix, Credo chanté par tous, anaphore et épiclèse, Notre Père, communion. Ces mystères se vivent plus qu’ils ne se décrivent : « il faut en être ».</li>
+                </ul>
+                <blockquote class="quote">Nous qui représentons mystiquement les Chérubins et chantons à la vivifiante Trinité l’hymne trois fois saint, déposons maintenant tous les soucis de ce monde.<cite>Hymne des Chérubins</cite></blockquote>
+                <h4>L’année liturgique</h4>
+                <p>L’année liturgique byzantine commence le <strong>1ᵉʳ septembre</strong> et culmine à <strong>Pâques</strong>, « fête des fêtes ». Autour d’elle s’ordonnent les <strong>douze grandes fêtes</strong>. Notre paroisse, comme l’Église russe, suit le calendrier julien : les fêtes fixes y tombent 13 jours plus tard que dans le calendrier civil.</p>
+                <div class="table-wrap">
+                  <table class="feasts">
+                    <thead><tr><th>Date (julien → civil)</th><th>Fête</th></tr></thead>
+                    <tbody>
+                      <tr><td>8 sept. → 21 sept.</td><td>Nativité de la Mère de Dieu</td></tr>
+                      <tr><td>14 sept. → 27 sept.</td><td>Exaltation de la Sainte Croix</td></tr>
+                      <tr><td>21 nov. → 4 déc.</td><td>Entrée de la Mère de Dieu au Temple</td></tr>
+                      <tr><td>25 déc. → 7 janv.</td><td>Nativité du Christ (Noël), précédée d’un jeûne de 40 jours</td></tr>
+                      <tr><td>6 janv. → 19 janv.</td><td>Théophanie : Baptême du Christ et grande bénédiction des eaux</td></tr>
+                      <tr><td>2 févr. → 15 févr.</td><td>Sainte Rencontre (Présentation du Christ au Temple)</td></tr>
+                      <tr><td>25 mars → 7 avr.</td><td>Annonciation</td></tr>
+                      <tr><td>Mobile</td><td>Entrée du Seigneur à Jérusalem (Rameaux)</td></tr>
+                      <tr><td><strong>Mobile</strong></td><td><strong>Sainte Pâque — Résurrection du Christ</strong></td></tr>
+                      <tr><td>Pâques + 40 j</td><td>Ascension</td></tr>
+                      <tr><td>Pâques + 50 j</td><td>Pentecôte, fête de la Sainte Trinité</td></tr>
+                      <tr><td>6 août → 19 août</td><td>Transfiguration (bénédiction des fruits)</td></tr>
+                      <tr><td>15 août → 28 août</td><td>Dormition de la Mère de Dieu</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <h4>Le Grand Carême et la Semaine sainte</h4>
+                <p>Préparé par des dimanches de préparation (le Publicain et le Pharisien, le Fils prodigue, le Jugement dernier), le Grand Carême s’ouvre par les <strong>Vêpres du Pardon</strong>, où chacun demande pardon à tous. Le premier dimanche célèbre le <strong>Triomphe de l’Orthodoxie</strong> (le retour des icônes), le deuxième <strong>saint Grégoire Palamas</strong>, théologien de la lumière divine. Puis viennent la Semaine sainte — le Grand Jeudi de la Cène, le Grand Vendredi de la Croix, le Grand Samedi — et la nuit de Pâques : « Christ est ressuscité ! — En vérité, il est ressuscité ! ».</p>
+                <p class="see-also">Voir aussi : <button class="link-btn" data-goto="faq-liturgie">Comment participer à la Liturgie ?</button> · <button class="link-btn" data-goto="faq-jeune">Pourquoi jeûner ?</button></p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- =========================================================
+         RUBRIQUE IV — QUESTIONS & RÉPONSES
+         ========================================================= -->
+    <div class="panel" id="questions" role="tabpanel" aria-labelledby="tab-questions" tabindex="-1">
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Rubrique IV · Catéchisme pratique</span>
+            <h2>Questions &amp; Réponses</h2>
+            <div class="ornament" aria-hidden="true"><svg class="cross"><use href="#ortho-cross" /></svg></div>
+            <p>Les questions que se posent le plus souvent visiteurs, catéchumènes et fidèles. N’hésitez pas à poursuivre la conversation avec le prêtre de la paroisse.</p>
+          </div>
+
+          <div class="faq-tools">
+            <label class="faq-search">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" stroke-linecap="round" /></svg>
+              <span class="sr-only">Filtrer les questions</span>
+              <input id="faq-search" type="search" placeholder="Filtrer les questions par mot-clé…" autocomplete="off" />
+            </label>
+            <div class="filters" role="group" aria-label="Catégories">
+              <button class="filter" type="button" data-cat="all" aria-pressed="true">Toutes<span class="count"></span></button>
+              <button class="filter" type="button" data-cat="dogme" aria-pressed="false">Dogme<span class="count"></span></button>
+              <button class="filter" type="button" data-cat="liturgie" aria-pressed="false">Liturgie<span class="count"></span></button>
+              <button class="filter" type="button" data-cat="spirituel" aria-pressed="false">Vie spirituelle<span class="count"></span></button>
+              <button class="filter" type="button" data-cat="pratique" aria-pressed="false">Pratique<span class="count"></span></button>
+            </div>
+            <p class="faq-status" id="faq-status" aria-live="polite"></p>
+          </div>
+
+          <div class="accordion faq" id="faq-list">
+
+            <div class="acc-item" id="faq-orthodoxe" data-cat="dogme" data-search data-kind="Q&R" data-title="Que signifie « orthodoxe » ?">
+              <button class="acc-trigger" aria-expanded="false"><span><span class="badge">Dogme</span> <span class="acc-title">Que signifie le mot « orthodoxe » ?</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <p>Du grec <em>orthos</em>, « droit, juste », et <em>doxa</em>, qui signifie à la fois « opinion » et « gloire ». L’orthodoxie, c’est donc la <strong>foi droite</strong> et la <strong>juste glorification</strong> de Dieu. Les deux sont inséparables : on croit comme on prie, et on prie comme on croit.</p>
+                <p>L’Église orthodoxe se comprend comme l’Église « une, sainte, catholique et apostolique » du Credo, en continuité avec l’Église des Apôtres et des Pères. Pour un chrétien d’Occident, découvrir l’Orthodoxie, c’est souvent retrouver la foi commune du premier millénaire, celle de saint Irénée de Lyon, de saint Martin de Tours ou de saint Germain de Paris.</p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="faq-trinite" data-cat="dogme" data-search data-kind="Q&R" data-title="Comment Dieu peut-il être à la fois un et trois ?">
+              <button class="acc-trigger" aria-expanded="false"><span><span class="badge">Dogme</span> <span class="acc-title">Comment Dieu peut-il être à la fois un et trois ?</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <p>Ce n’est pas une équation à résoudre, mais un mystère révélé : Dieu est <strong>une seule nature</strong> en <strong>trois Personnes</strong>. Le Père, le Fils et l’Esprit ne sont pas trois dieux, ni trois « masques » d’un même Dieu : chacun est pleinement Dieu, et ils sont un dans l’amour.</p>
+                <p>Ce mystère éclaire notre propre vie : une personne n’existe vraiment qu’en relation, en se donnant aux autres. L’Église, communion de personnes uniques, est appelée à être l’icône de la Trinité.</p>
+                <p class="see-also"><button class="link-btn" data-goto="f-trinite">Lire : La Sainte Trinité</button></p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="faq-christ" data-cat="dogme" data-search data-kind="Q&R" data-title="Pourquoi dire que le Christ est vrai Dieu et vrai Homme ?">
+              <button class="acc-trigger" aria-expanded="false"><span><span class="badge">Dogme</span> <span class="acc-title">Pourquoi insister sur le Christ « vrai Dieu et vrai Homme » ?</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <p>Parce que notre salut en dépend. Si le Christ n’était pas vraiment Dieu, il ne pourrait pas nous unir à Dieu. S’il n’était pas vraiment homme, notre humanité n’aurait pas été rejointe et guérie. Les Pères le disaient ainsi : « Ce qui n’a pas été assumé n’a pas été sauvé » (saint Grégoire de Nazianze).</p>
+                <p>Le concile de Chalcédoine (451) l’a formulé : une seule Personne en deux natures, « sans confusion ni séparation ». Cet équilibre protège la vie chrétienne de deux dérives : mépriser l’humain au nom de Dieu, ou oublier Dieu au nom de l’humain.</p>
+                <p class="see-also"><button class="link-btn" data-goto="f-chalcedoine">Lire : Des hérésies au dogme de Chalcédoine</button></p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="faq-theosis" data-cat="dogme" data-search data-kind="Q&R" data-title="Qu’est-ce que la déification (théosis) ?">
+              <button class="acc-trigger" aria-expanded="false"><span><span class="badge">Dogme</span> <span class="acc-title">Qu’est-ce que la « déification » (<em>théosis</em>) ?</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <p>C’est le but de la vie chrétienne : devenir, <strong>par grâce</strong>, participant de la vie divine (2 Pierre 1, 4). Non pas se fondre en Dieu ou perdre sa personnalité, mais être transfiguré par sa lumière, comme le fer plongé dans le feu devient brûlant sans cesser d’être du fer.</p>
+                <p>Ce chemin passe par les sacrements, la prière, les commandements et l’amour du prochain. La grâce de Dieu et notre liberté y collaborent : c’est la <strong>synergie</strong>.</p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="faq-filioque" data-cat="dogme" data-search data-kind="Q&R" data-title="Pourquoi le Credo orthodoxe ne contient-il pas le Filioque ?">
+              <button class="acc-trigger" aria-expanded="false"><span><span class="badge">Dogme</span> <span class="acc-title">Pourquoi le Credo orthodoxe dit-il « qui procède du Père » sans ajout ?</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <p>L’Église orthodoxe garde le texte du Symbole tel que les conciles œcuméniques de Nicée et de Constantinople l’ont fixé, conformément à la parole du Christ : « l’Esprit de vérité qui procède du Père » (Jean 15, 26). L’ajout occidental du <em>Filioque</em> (« et du Fils ») s’est fait plus tard, sans concile œcuménique.</p>
+                <p>Pour la tradition orthodoxe, il ne s’agit pas d’une querelle de mots : affirmer le Père comme unique source du Fils et de l’Esprit préserve l’égale dignité des trois Personnes, et se reflète jusque dans la vie conciliaire de l’Église.</p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="faq-icones" data-cat="dogme" data-search data-kind="Q&R" data-title="Pourquoi vénère-t-on les icônes ?">
+              <button class="acc-trigger" aria-expanded="false"><span><span class="badge">Dogme</span> <span class="acc-title">Pourquoi vénère-t-on les icônes ? N’est-ce pas de l’idolâtrie ?</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <p>Non. Une idole prétend enfermer la divinité dans un objet ; l’icône, elle, témoigne que <strong>Dieu s’est fait visible</strong> en Jésus-Christ. Parce que le Fils de Dieu a pris un visage humain, on peut le représenter.</p>
+                <p>Le concile de Nicée II (787) distingue l’<strong>adoration</strong>, due à Dieu seul, et la <strong>vénération</strong> rendue aux icônes. Comme le dit saint Basile, « l’honneur rendu à l’image passe au prototype » : en baisant une icône, on salue la personne qu’elle représente, comme on embrasse la photo d’un être cher.</p>
+                <p class="see-also"><button class="link-btn" data-goto="cle-4">Lire : Les Saintes Icônes</button></p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="faq-saints" data-cat="spirituel" data-search data-kind="Q&R" data-title="Pourquoi prier la Mère de Dieu et les saints ?">
+              <button class="acc-trigger" aria-expanded="false"><span><span class="badge">Vie spirituelle</span> <span class="acc-title">Pourquoi prier la Mère de Dieu et les saints ?</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <p>Dans le Christ, la mort ne sépare pas : les saints sont <strong>vivants en Dieu</strong> et forment avec nous une seule Église. Leur demander de prier pour nous, c’est comme demander à un ami ou à un parent de prier pour nous — avec cette différence qu’ils sont déjà dans la lumière de Dieu.</p>
+                <p>La Mère de Dieu tient une place unique : elle a dit « oui » au nom de toute l’humanité, et le Christ, sur la croix, nous l’a donnée pour Mère. Les orthodoxes la prient avec une grande tendresse : « Très Sainte Mère de Dieu, sauve-nous ! ».</p>
+                <p class="see-also"><button class="link-btn" data-goto="cle-1">Lire : La Mère de Dieu et les Saints</button></p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="faq-prier" data-cat="spirituel" data-search data-kind="Q&R" data-title="Comment prier chez soi ?">
+              <button class="acc-trigger" aria-expanded="false"><span><span class="badge">Vie spirituelle</span> <span class="acc-title">Comment prier chez soi ?</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <ul>
+                  <li><strong>Un lieu</strong> : un coin d’icônes, tourné si possible vers l’Orient, avec une veilleuse.</li>
+                  <li><strong>Un temps</strong> : matin et soir, même brièvement. La régularité nourrit l’âme comme des repas pris à heure fixe.</li>
+                  <li><strong>Des mots</strong> : ceux de l’Église — « Roi céleste », le Trisagion, le Notre Père, un psaume, les prières du matin et du soir d’un livre de prières orthodoxe. Puis ses propres mots, simplement.</li>
+                  <li><strong>Une règle</strong> : modeste et fidèle, établie avec son père spirituel. « Priez seulement un quart d’heure par jour, mais faites-le vraiment », conseillait Mgr Jean de Saint-Denis.</li>
+                  <li><strong>Au long du jour</strong> : la Prière de Jésus, un signe de croix avant le repas, une pensée pour ceux que l’on aime.</li>
+                </ul>
+                <p class="see-also"><button class="link-btn" data-goto="cle-3">Lire : La Prière et la Prière de Jésus</button></p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="faq-signe-croix" data-cat="pratique" data-search data-kind="Q&R" data-title="Comment fait-on le signe de croix orthodoxe ?">
+              <button class="acc-trigger" aria-expanded="false"><span><span class="badge">Pratique</span> <span class="acc-title">Comment fait-on le signe de croix ?</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <p>On joint les trois premiers doigts de la main droite (pouce, index, majeur) en signe de la <strong>Trinité</strong>, et on replie les deux autres contre la paume, en signe des <strong>deux natures</strong> du Christ. On touche le front, la poitrine, puis l’<strong>épaule droite</strong> et enfin l’épaule gauche — c’est-à-dire de droite à gauche, à la différence de l’usage latin.</p>
+                <p>On se signe en entrant dans l’église, devant les icônes, aux invocations de la Trinité pendant les offices, avant et après le repas. On l’accompagne souvent d’une inclinaison profonde ou d’une métanie.</p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="faq-premiere-visite" data-cat="pratique" data-search data-kind="Q&R" data-title="Première visite dans une église orthodoxe : comment se comporter ?">
+              <button class="acc-trigger" aria-expanded="false"><span><span class="badge">Pratique</span> <span class="acc-title">Je viens pour la première fois : comment me comporter ?</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <p>Soyez le bienvenu ! Personne ne vous demandera de tout savoir. Quelques repères :</p>
+                <ul>
+                  <li>Une <strong>tenue sobre</strong> ; par tradition, les femmes se couvrent volontiers la tête et les hommes se découvrent.</li>
+                  <li>À l’entrée, vous pouvez prendre un <strong>cierge</strong> et le déposer devant une icône.</li>
+                  <li>Pendant les offices, on se tient <strong>debout</strong> ; n’hésitez pas à vous asseoir si nécessaire.</li>
+                  <li>Observez, écoutez, laissez-vous porter par les chants : la Liturgie se comprend d’abord en la vivant.</li>
+                  <li>À la fin, tous viennent vénérer la croix ; les non-orthodoxes peuvent recevoir le <strong>pain béni</strong> (<em>antidoron</em>) distribué à cette occasion.</li>
+                </ul>
+                <p>Après l’office, présentez-vous au prêtre : il sera heureux de vous accueillir et de répondre à vos questions.</p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="faq-liturgie" data-cat="liturgie" data-search data-kind="Q&R" data-title="Comment participer à la Divine Liturgie ?">
+              <button class="acc-trigger" aria-expanded="false"><span><span class="badge">Liturgie</span> <span class="acc-title">Comment participer à la Divine Liturgie ?</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <p>La Liturgie n’est pas un spectacle auquel on assiste : toute l’assemblée <strong>concélèbre</strong>. Chaque « Amen », chaque « Kyrie eleison » (« Seigneur, aie pitié ») est notre participation. On chante avec le chœur le Credo et le Notre Père, on s’incline lors des bénédictions, on se signe aux invocations de la Trinité.</p>
+                <p>Arriver <strong>avant le début</strong> permet de se recueillir et de déposer ses intentions. L’appel du diacre résume l’attitude intérieure : « Sagesse ! Debout ! Soyons attentifs ! ».</p>
+                <p class="see-also"><button class="link-btn" data-goto="cle-7">Lire : La Divine Liturgie et l’année liturgique</button></p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="faq-debout" data-cat="liturgie" data-search data-kind="Q&R" data-title="Pourquoi reste-t-on debout pendant les offices ?">
+              <button class="acc-trigger" aria-expanded="false"><span><span class="badge">Liturgie</span> <span class="acc-title">Pourquoi reste-t-on debout pendant les offices ?</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <p>La station debout est l’attitude du <strong>ressuscité</strong> et du serviteur attentif : on se tient devant Dieu comme les anges se tiennent devant son trône. C’est aussi la posture de la vigilance — l’homme debout est l’homme éveillé.</p>
+                <p>Mais l’Église est une mère : des sièges sont prévus pour les personnes âgées, malades ou fatiguées, et l’on peut s’asseoir pendant certaines lectures ou l’homélie. Mieux vaut être assis en pensant à Dieu que debout en pensant à ses pieds !</p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="faq-communion" data-cat="liturgie" data-search data-kind="Q&R" data-title="Comment se préparer à la communion ?">
+              <button class="acc-trigger" aria-expanded="false"><span><span class="badge">Liturgie</span> <span class="acc-title">Comment se préparer à la communion ?</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <p>La communion au Corps et au Sang du Christ est réservée aux <strong>fidèles orthodoxes baptisés et chrismés</strong>. Elle est le cœur de la vie chrétienne, et l’on devrait y participer souvent — mais jamais par routine. La préparation habituelle comprend :</p>
+                <ul>
+                  <li><strong>La paix avec tous</strong> : se réconcilier avec ceux avec qui l’on est en conflit (Matthieu 5, 23-24).</li>
+                  <li><strong>La prière</strong> : la veille, assister si possible aux Vêpres ou aux Vigiles, et lire les prières de préparation à la communion.</li>
+                  <li><strong>Le jeûne eucharistique</strong> : ne rien manger ni boire depuis minuit (ou le réveil) jusqu’à la communion, sauf nécessité médicale.</li>
+                  <li><strong>La confession</strong>, selon la fréquence convenue avec son père spirituel.</li>
+                  <li><strong>Arriver à l’heure</strong> : être présent dès le début de la Liturgie, et en particulier pour la lecture de l’Évangile.</li>
+                </ul>
+                <p>Au moment de la communion, on s’approche les bras croisés sur la poitrine, on dit son prénom de baptême, on reçoit les Dons de la cuillère, puis on prend un peu d’eau tiède et de pain bénit. Chaque paroisse a ses usages : <strong>parlez-en avec le prêtre</strong>.</p>
+                <blockquote class="quote">Je ne révélerai pas ton mystère à tes ennemis, et je ne te donnerai pas le baiser de Judas ; mais comme le larron je te confesse : souviens-toi de moi, Seigneur, dans ton Royaume.<cite>Prière avant la communion</cite></blockquote>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="faq-confession" data-cat="spirituel" data-search data-kind="Q&R" data-title="Quelle est la place de la confession ?">
+              <button class="acc-trigger" aria-expanded="false"><span><span class="badge">Vie spirituelle</span> <span class="acc-title">Quelle est la place de la confession ?</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <p>La confession (ou <strong>Mystère de la Pénitence</strong>) est une <strong>thérapie de l’âme</strong>, à laquelle on recourt régulièrement tout au long de la vie, et déjà pendant le catéchuménat. Ce n’est pas un tribunal mais un hôpital : on s’y présente comme un malade qui veut guérir.</p>
+                <p>Dans la tradition orthodoxe, on se confesse généralement debout, devant une icône du Christ et l’Évangile, le prêtre se tenant à côté comme <strong>témoin</strong> : c’est au Christ que l’on se confesse. Le prêtre peut donner un conseil, puis il pose son étole (<em>épitrachilion</em>) sur la tête du pénitent et lit la prière d’absolution.</p>
+                <p>Pour s’y préparer : examiner sa conscience à la lumière des commandements et des Béatitudes, nommer simplement ses fautes sans se justifier ni se perdre dans les détails, et désirer sincèrement changer — c’est le sens du mot grec <em>metanoia</em>, « retournement ».</p>
+                <blockquote class="quote">Celui qui connaît son péché est plus grand que celui qui ressuscite les morts.<cite>Saint Isaac le Syrien</cite></blockquote>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="faq-jeune" data-cat="spirituel" data-search data-kind="Q&R" data-title="Pourquoi jeûner ? Comment pratiquer le jeûne ?">
+              <button class="acc-trigger" aria-expanded="false"><span><span class="badge">Vie spirituelle</span> <span class="acc-title">Pourquoi jeûner, et comment ?</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <p>Le jeûne n’est pas un régime ni une punition : c’est une manière de remettre le corps à sa juste place, de libérer du temps et de l’attention pour la prière, et de partager avec les pauvres. Il prépare la joie des fêtes : on jeûne pour mieux se réjouir.</p>
+                <p>L’Église propose quatre grands jeûnes (le <strong>Grand Carême</strong> avant Pâques, le jeûne de la <strong>Nativité</strong>, celui des <strong>Apôtres</strong> et celui de la <strong>Dormition</strong>), ainsi que les <strong>mercredis et vendredis</strong>. Traditionnellement, on s’abstient alors de viande, de produits laitiers et d’œufs, et parfois de poisson, de vin et d’huile.</p>
+                <p>Le jeûne se pratique avec <strong>discernement et sans orgueil</strong>, selon sa santé et sa situation, et en accord avec son père spirituel. « À quoi bon s’abstenir de viande si l’on dévore son frère par la médisance ? » (saint Basile).</p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="faq-devenir" data-cat="pratique" data-search data-kind="Q&R" data-title="Comment devenir orthodoxe ? Le catéchuménat">
+              <button class="acc-trigger" aria-expanded="false"><span><span class="badge">Pratique</span> <span class="acc-title">Comment devenir orthodoxe ?</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <p>On ne « s’inscrit » pas dans l’Église : on y est accueilli au terme d’un <strong>cheminement</strong>. La première étape est de venir aux offices et de rencontrer le prêtre. Commence ensuite le <strong>catéchuménat</strong> : un temps d’enseignement, de prière et de participation à la vie de la communauté, dont la durée varie selon chacun.</p>
+                <p>L’entrée dans l’Église se fait par le <strong>baptême</strong>, la <strong>chrismation</strong> et la <strong>communion</strong>. Pour une personne déjà baptisée dans une autre confession chrétienne, l’Église détermine, selon les cas, le mode de réception — le plus souvent par la chrismation, précédée d’une profession de foi.</p>
+                <p>Comme le dit la catéchèse du Père Georges Lusseaud : on ne monte pas dans un train sans savoir où il va. Prenez le temps de connaître la foi : c’est précisément le but de ces pages.</p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="faq-parrain" data-cat="pratique" data-search data-kind="Q&R" data-title="Quel est le rôle du parrain et de la marraine ?">
+              <button class="acc-trigger" aria-expanded="false"><span><span class="badge">Pratique</span> <span class="acc-title">Quel est le rôle du parrain et de la marraine ?</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <p>Le parrain ou la marraine est le <strong>garant de la foi</strong> du baptisé devant l’Église. Pour un enfant, il prononce en son nom la renonciation à Satan et l’adhésion au Christ, puis récite le Credo. Il s’engage à l’accompagner toute sa vie par la prière et l’exemple.</p>
+                <p>C’est pourquoi le parrain ou la marraine doit être <strong>un chrétien orthodoxe</strong> pratiquant. Un seul suffit (de même sexe que le baptisé, de préférence) ; la coutume en prévoit souvent deux.</p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="faq-calendrier" data-cat="liturgie" data-search data-kind="Q&R" data-title="Pourquoi Noël est-il célébré le 7 janvier ? Calendrier julien">
+              <button class="acc-trigger" aria-expanded="false"><span><span class="badge">Liturgie</span> <span class="acc-title">Pourquoi Noël est-il fêté le 7 janvier ?</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <p>L’Église russe, comme plusieurs autres Églises orthodoxes (Jérusalem, Serbie, Géorgie, Mont Athos…), suit le <strong>calendrier julien</strong> pour ses fêtes. Noël y est bien célébré le 25 décembre, mais ce jour correspond actuellement au <strong>7 janvier</strong> du calendrier civil (grégorien), avec un décalage de 13 jours.</p>
+                <p>La date de <strong>Pâques</strong>, elle, est calculée par toutes les Églises orthodoxes selon la règle du premier concile de Nicée : elle coïncide parfois avec la Pâque occidentale, et en diffère souvent d’une à cinq semaines.</p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="faq-langue" data-cat="liturgie" data-search data-kind="Q&R" data-title="En quelle langue les offices sont-ils célébrés ? Slavon">
+              <button class="acc-trigger" aria-expanded="false"><span><span class="badge">Liturgie</span> <span class="acc-title">En quelle langue les offices sont-ils célébrés ?</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <p>L’Église orthodoxe a toujours célébré dans la langue des peuples qu’elle évangélisait : saints Cyrille et Méthode ont ainsi créé le <strong>slavon</strong> liturgique pour les Slaves. Dans les paroisses russes, les offices sont célébrés en slavon, souvent avec des parties en français, la langue du pays.</p>
+                <p>Ne vous laissez pas arrêter par la langue : des livrets bilingues existent, et l’on peut demander au prêtre les textes de la Liturgie en français. Les gestes, les icônes, les chants parlent aussi au cœur.</p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="faq-defunts" data-cat="spirituel" data-search data-kind="Q&R" data-title="Pourquoi prier pour les défunts ?">
+              <button class="acc-trigger" aria-expanded="false"><span><span class="badge">Vie spirituelle</span> <span class="acc-title">Pourquoi prier pour les défunts ?</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <p>Parce que l’amour est plus fort que la mort. Dans le Christ, vivants et défunts forment une seule Église ; nos prières accompagnent ceux qui nous ont quittés sur leur chemin vers Dieu. L’Église célèbre pour eux des offices (<em>panikhides</em>), en particulier le 3ᵉ, le 9ᵉ et le 40ᵉ jour après le décès, et lors des « samedis des défunts ».</p>
+                <p>À chaque Liturgie, le prêtre fait mémoire des noms des vivants et des défunts que les fidèles lui confient : n’hésitez pas à les lui remettre en arrivant.</p>
+              </div></div></div>
+            </div>
+
+            <div class="acc-item" id="faq-pere-spirituel" data-cat="spirituel" data-search data-kind="Q&R" data-title="Faut-il un père spirituel ?">
+              <button class="acc-trigger" aria-expanded="false"><span><span class="badge">Vie spirituelle</span> <span class="acc-title">Faut-il un père spirituel ?</span></span><span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span></button>
+              <div class="acc-panel"><div class="acc-inner"><div class="acc-body">
+                <p>On ne marche pas seul sur le chemin spirituel. Le plus souvent, c’est le prêtre auprès duquel on se confesse qui devient notre <strong>père spirituel</strong> : il nous aide à discerner, à établir une règle de prière et de jeûne adaptée, à éviter le découragement comme l’exaltation.</p>
+                <p>Ce n’est pas un directeur qui décide à notre place, mais un compagnon expérimenté qui nous aide à devenir libres devant Dieu.</p>
+              </div></div></div>
+            </div>
+
+          </div>
+          <p class="faq-empty" id="faq-empty">Aucune question ne correspond à votre recherche. Essayez un autre mot-clé, ou posez directement votre question au prêtre de la paroisse.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Modale de lecture approfondie (Sept clés) -->
+  <dialog class="reader" id="reader" aria-labelledby="reader-title">
+    <div class="reader-head">
+      <div>
+        <span class="key-num" id="reader-num"></span>
+        <h2 id="reader-title"></h2>
+      </div>
+      <button class="reader-close" type="button" aria-label="Fermer" data-close>×</button>
+    </div>
+    <div class="reader-body" id="reader-body"></div>
+    <div class="reader-foot">
+      <button class="btn ghost" type="button" id="reader-prev">← Clé précédente</button>
+      <button class="btn" type="button" id="reader-next">Clé suivante →</button>
+    </div>
+  </dialog>
+
+  <!-- ======================= PIED DE PAGE ======================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <svg class="cross" aria-hidden="true"><use href="#ortho-cross" /></svg>
+            <div>
+              <h2 style="font-size:1.6rem;margin:0">Catéchèse orthodoxe</h2>
+              <p>Église orthodoxe russe Saint Alexandre Nevsky — Pau</p>
+              <p style="margin-top:14px">Ces pages proposent une présentation modernisée de la <em>Catéchèse orthodoxe</em> rédigée par le <strong style="color:#fff">Père Georges Lusseaud</strong> et remaniée par le Père Marc-Antoine Costa de Beauregard. Elles ne remplacent pas l’enseignement vivant reçu dans la communauté : pour toute question, adressez-vous au prêtre de la paroisse.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>Sources patristiques</h3>
+          <ul>
+            <li>Saint Irénée de Lyon († 202)</li>
+            <li>Saint Grégoire de Nazianze (328-390)</li>
+            <li>Saint Grégoire de Nysse (v. 335-395)</li>
+            <li>Saint Jean Chrysostome (344-407)</li>
+            <li>Saint Jean Damascène (VIIIᵉ s.)</li>
+            <li>Les sept conciles œcuméniques</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Sources catéchétiques</h3>
+          <ul>
+            <li>Père Georges Lusseaud, <em>Catéchèse orthodoxe</em></li>
+            <li>Mgr Jean de Saint-Denis (1905-1970), cours et homélies</li>
+            <li>Archimandrite Sophrony (1896-1993)</li>
+            <li>Symbole de Nicée-Constantinople (325-381)</li>
+            <li style="margin-top:12px"><a href="/">nevsky.fr — accueil</a></li>
+            <li><a href="/#contact">Contacter la paroisse</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="doxology">Gloire au Père, et au Fils, et au Saint-Esprit.</span>
+        <span>© <span id="year"></span> Association culturelle orthodoxe russe Saint Alexandre Nevsky · <a href="#" data-top>Retour en haut ↑</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="Retour en haut de page" data-top>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m6 15 6-6 6 6" /></svg>
+  </button>
+
+  <script>
+  /* ==========================================================
+     Catéchèse orthodoxe — logique de l'application (vanilla JS)
+     Modules : onglets · accordéons · modales · recherche globale ·
+               filtres FAQ · navigation par ancres · retour en haut
+     ========================================================== */
+  (function () {
+    'use strict';
+
+    const $ = (sel, root = document) => root.querySelector(sel);
+    const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+
+    /** Normalise un texte pour la recherche : minuscules, sans accents, apostrophes unifiées. */
+    const norm = (s) => (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’‘]/g, "'");
+    const escapeHtml = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+    /* ---------------------------------------------------------
+       1. ONGLETS (navigation sans rechargement, ARIA + clavier)
+       --------------------------------------------------------- */
+    const tabs = $$('.tab');
+    const panels = $$('.panel');
+
+    function activateTab(name, { focus = false, updateHash = true } = {}) {
+      const tab = tabs.find((t) => t.dataset.tab === name);
+      if (!tab) return;
+      tabs.forEach((t) => {
+        const on = t === tab;
+        t.setAttribute('aria-selected', on);
+        t.tabIndex = on ? 0 : -1;
+      });
+      panels.forEach((p) => p.classList.toggle('active', p.id === name));
+      if (focus) tab.focus();
+      tab.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      if (updateHash) history.replaceState(null, '', '#' + name);
+    }
+
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => {
+        activateTab(tab.dataset.tab);
+        const nav = $('.main-nav');
+        // Remonte en haut de la rubrique si on est plus bas
+        if (window.scrollY > nav.offsetTop) window.scrollTo({ top: nav.offsetTop, behavior: 'smooth' });
+      });
+      tab.addEventListener('keydown', (e) => {
+        let j = null;
+        if (e.key === 'ArrowRight') j = (i + 1) % tabs.length;
+        if (e.key === 'ArrowLeft') j = (i - 1 + tabs.length) % tabs.length;
+        if (e.key === 'Home') j = 0;
+        if (e.key === 'End') j = tabs.length - 1;
+        if (j !== null) { e.preventDefault(); activateTab(tabs[j].dataset.tab, { focus: true }); }
+      });
+    });
+
+    /* ---------------------------------------------------------
+       2. ACCORDÉONS (Credo + FAQ) — animation CSS grid 0fr→1fr
+       --------------------------------------------------------- */
+    function setAcc(item, open) {
+      item.classList.toggle('open', open);
+      const trig = $('.acc-trigger', item);
+      if (trig) trig.setAttribute('aria-expanded', open);
+    }
+    $$('.acc-item').forEach((item, idx) => {
+      const trig = $('.acc-trigger', item);
+      const panel = $('.acc-panel', item);
+      const pid = (item.id || 'acc-' + idx) + '-panel';
+      panel.id = pid;
+      panel.setAttribute('role', 'region');
+      trig.setAttribute('aria-controls', pid);
+      trig.addEventListener('click', () => {
+        const open = !item.classList.contains('open');
+        setAcc(item, open);
+        if (open && item.id) history.replaceState(null, '', '#' + item.id);
+      });
+    });
+    $$('[data-acc-all]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const open = btn.dataset.accAll === 'open';
+        $$('.acc-item', $(btn.dataset.accTarget)).forEach((it) => setAcc(it, open));
+      });
+    });
+
+    /* ---------------------------------------------------------
+       3. MODALE DE LECTURE (Sept clés) avec navigation préc./suiv.
+       --------------------------------------------------------- */
+    const reader = $('#reader');
+    const keys = $$('.key');
+    let currentKey = -1;
+
+    function openKey(index) {
+      if (index < 0 || index >= keys.length) return;
+      currentKey = index;
+      const key = keys[index];
+      $('#reader-num').textContent = $('.key-num', key).textContent;
+      $('#reader-title').textContent = $('h3', key).textContent;
+      $('#reader-body').innerHTML = $('.key-full', key).innerHTML;
+      $('#reader-body').scrollTop = 0;
+      $('#reader-prev').disabled = index === 0;
+      $('#reader-next').disabled = index === keys.length - 1;
+      $('#reader-prev').style.visibility = index === 0 ? 'hidden' : 'visible';
+      $('#reader-next').style.visibility = index === keys.length - 1 ? 'hidden' : 'visible';
+      if (typeof reader.showModal === 'function') {
+        if (!reader.open) reader.showModal();
+      } else {
+        reader.setAttribute('open', '');
+      }
+      history.replaceState(null, '', '#' + key.id);
+    }
+    function closeReader() {
+      if (reader.open) reader.close ? reader.close() : reader.removeAttribute('open');
+    }
+
+    $$('[data-open]').forEach((btn) => btn.addEventListener('click', () => openKey(keys.findIndex((k) => k.id === btn.dataset.open))));
+    $('#reader-prev').addEventListener('click', () => openKey(currentKey - 1));
+    $('#reader-next').addEventListener('click', () => openKey(currentKey + 1));
+    $('[data-close]', reader).addEventListener('click', closeReader);
+    // Clic sur le fond (backdrop) = fermeture
+    reader.addEventListener('click', (e) => { if (e.target === reader) closeReader(); });
+    reader.addEventListener('close', () => {
+      const k = keys[currentKey];
+      if (k) { history.replaceState(null, '', '#cles'); $('[data-open]', k).focus({ preventScroll: true }); }
+    });
+    reader.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' && !e.target.closest('input')) openKey(currentKey + 1);
+      if (e.key === 'ArrowLeft' && !e.target.closest('input')) openKey(currentKey - 1);
+    });
+
+    /* ---------------------------------------------------------
+       4. NAVIGATION VERS UNE CIBLE (ancre profonde)
+          Détermine l'onglet, ouvre l'accordéon / la modale, défile.
+       --------------------------------------------------------- */
+    function goTo(id, { flash = true } = {}) {
+      const el = document.getElementById(id);
+      if (!el) return false;
+      const panel = el.closest('.panel');
+      if (!panel) return false;
+      closeReader();
+      activateTab(panel.id, { updateHash: false });
+
+      if (el.classList.contains('key')) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => openKey(keys.indexOf(el)), 250);
+        return true;
+      }
+      if (el.classList.contains('acc-item')) {
+        // S'assure que la question est visible malgré les filtres FAQ
+        if (el.hidden) resetFaqFilters();
+        setAcc(el, true);
+        if (flash) { el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash'); }
+      }
+      history.replaceState(null, '', '#' + id);
+      requestAnimationFrame(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+      return true;
+    }
+
+    // Liens internes "Pour aller plus loin" et sommaire
+    document.addEventListener('click', (e) => {
+      const g = e.target.closest('[data-goto], [data-jump]');
+      if (!g) return;
+      e.preventDefault();
+      goTo(g.dataset.goto || g.dataset.jump);
+    });
+
+    /* ---------------------------------------------------------
+       5. RECHERCHE GLOBALE — index construit à partir du DOM
+       --------------------------------------------------------- */
+    const index = $$('[data-search]').map((el) => {
+      const text = (el.querySelector('.key-full, .acc-body') || el).textContent.replace(/\s+/g, ' ').trim();
+      const title = el.dataset.title;
+      return { id: el.id, kind: el.dataset.kind, title, text, nTitle: norm(title), nText: norm(text) };
+    });
+
+    const input = $('#global-search');
+    const results = $('#search-results');
+    const clearBtn = $('.search-clear');
+    let active = -1;
+
+    /** Extrait un passage autour de la première occurrence et surligne les termes. */
+    function snippet(item, terms) {
+      const pos = terms.map((t) => item.nText.indexOf(t)).filter((p) => p >= 0).sort((a, b) => a - b)[0] ?? 0;
+      const start = Math.max(0, pos - 60);
+      let s = (start > 0 ? '…' : '') + item.text.slice(start, start + 180) + (start + 180 < item.text.length ? '…' : '');
+      return highlight(s, terms);
+    }
+    /** Surligne les termes (insensible aux accents) dans un texte brut. */
+    function highlight(raw, terms) {
+      const n = norm(raw);
+      const marks = [];
+      terms.forEach((t) => { let i = n.indexOf(t); while (t && i >= 0) { marks.push([i, i + t.length]); i = n.indexOf(t, i + t.length); } });
+      if (!marks.length) return escapeHtml(raw);
+      marks.sort((a, b) => a[0] - b[0]);
+      let out = '', last = 0;
+      marks.forEach(([a, b]) => { if (a < last) return; out += escapeHtml(raw.slice(last, a)) + '<mark>' + escapeHtml(raw.slice(a, b)) + '</mark>'; last = b; });
+      return out + escapeHtml(raw.slice(last));
+    }
+
+    function search(q) {
+      const terms = norm(q).split(/\s+/).filter((t) => t.length > 1);
+      if (!terms.length) return [];
+      return index
+        .map((it) => {
+          let score = 0;
+          for (const t of terms) {
+            const inTitle = it.nTitle.includes(t);
+            const inText = it.nText.includes(t);
+            if (!inTitle && !inText) return null; // tous les termes doivent figurer
+            score += (inTitle ? 10 : 0) + (inText ? Math.min(it.nText.split(t).length - 1, 6) : 0);
+          }
+          return { it, score };
+        })
+        .filter(Boolean)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 12)
+        .map(({ it }) => ({ ...it, html: snippet(it, terms), titleHtml: highlight(it.title, terms) }));
+    }
+
+    function renderResults() {
+      const q = input.value.trim();
+      clearBtn.classList.toggle('show', q.length > 0);
+      if (q.length < 2) { results.classList.remove('open'); input.setAttribute('aria-expanded', 'false'); return; }
+      const list = search(q);
+      active = -1;
+      results.innerHTML = list.length
+        ? `<div class="meta">${list.length} résultat${list.length > 1 ? 's' : ''} pour « ${escapeHtml(q)} »</div>` +
+          list.map((r, i) => `<button type="button" class="result" role="option" id="res-${i}" data-target="${r.id}"><span class="badge ${r.kind === 'Sept clés' ? 'gold' : ''}">${r.kind}</span><span class="result-title">${r.titleHtml}</span><span class="result-snippet">${r.html}</span></button>`).join('')
+        : `<div class="no-result">Aucun résultat pour « ${escapeHtml(q)} ». Essayez « Trinité », « icône », « confession »…</div>`;
+      results.classList.add('open');
+      input.setAttribute('aria-expanded', 'true');
+    }
+
+    let debounce;
+    input.addEventListener('input', () => { clearTimeout(debounce); debounce = setTimeout(renderResults, 90); });
+    input.addEventListener('focus', () => { if (input.value.trim().length >= 2) renderResults(); });
+    input.addEventListener('keydown', (e) => {
+      const items = $$('.result', results);
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        if (!items.length) return;
+        e.preventDefault();
+        active = e.key === 'ArrowDown' ? (active + 1) % items.length : (active - 1 + items.length) % items.length;
+        items.forEach((el, i) => el.classList.toggle('active', i === active));
+        input.setAttribute('aria-activedescendant', items[active].id);
+        items[active].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter') {
+        const pick = items[active >= 0 ? active : 0];
+        if (pick) { e.preventDefault(); choose(pick.dataset.target); }
+      } else if (e.key === 'Escape') {
+        results.classList.remove('open');
+      }
+    });
+    results.addEventListener('click', (e) => { const r = e.target.closest('.result'); if (r) choose(r.dataset.target); });
+    clearBtn.addEventListener('click', () => { input.value = ''; renderResults(); input.focus(); });
+    document.addEventListener('click', (e) => { if (!e.target.closest('.search')) results.classList.remove('open'); });
+    $$('.search-hints [data-q]').forEach((b) => b.addEventListener('click', () => { input.value = b.dataset.q; renderResults(); input.focus(); }));
+
+    function choose(id) {
+      results.classList.remove('open');
+      input.blur();
+      goTo(id);
+    }
+
+    /* ---------------------------------------------------------
+       6. FAQ — filtres par catégorie + recherche instantanée
+       --------------------------------------------------------- */
+    const faqItems = $$('#faq-list .acc-item');
+    const faqInput = $('#faq-search');
+    const filters = $$('.filter');
+    let currentCat = 'all';
+
+    // Compteurs par catégorie
+    filters.forEach((f) => {
+      const c = f.dataset.cat;
+      $('.count', f).textContent = '(' + (c === 'all' ? faqItems.length : faqItems.filter((i) => i.dataset.cat === c).length) + ')';
+    });
+
+    function applyFaq() {
+      const terms = norm(faqInput.value).split(/\s+/).filter(Boolean);
+      let shown = 0;
+      faqItems.forEach((item) => {
+        const catOk = currentCat === 'all' || item.dataset.cat === currentCat;
+        const hay = norm(item.textContent);
+        const textOk = terms.every((t) => hay.includes(t));
+        const show = catOk && textOk;
+        item.hidden = !show;
+        if (show) shown++;
+        // surlignage du titre
+        const title = $('.acc-title', item);
+        if (!title.dataset.raw) title.dataset.raw = title.innerHTML;
+        title.innerHTML = terms.length ? highlight(title.textContent, terms) : title.dataset.raw;
+      });
+      $('#faq-empty').style.display = shown ? 'none' : 'block';
+      $('#faq-status').textContent = (terms.length || currentCat !== 'all') ? `${shown} question${shown > 1 ? 's' : ''} affichée${shown > 1 ? 's' : ''}` : '';
+    }
+    function resetFaqFilters() {
+      currentCat = 'all';
+      faqInput.value = '';
+      filters.forEach((f) => f.setAttribute('aria-pressed', f.dataset.cat === 'all'));
+      applyFaq();
+    }
+    filters.forEach((f) => f.addEventListener('click', () => {
+      currentCat = f.dataset.cat;
+      filters.forEach((x) => x.setAttribute('aria-pressed', x === f));
+      applyFaq();
+    }));
+    faqInput.addEventListener('input', applyFaq);
+
+    /* ---------------------------------------------------------
+       7. SOMMAIRE ACTIF (Fondements) via IntersectionObserver
+       --------------------------------------------------------- */
+    const tocLinks = $$('.toc a');
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting) tocLinks.forEach((a) => a.classList.toggle('current', a.dataset.jump === en.target.id));
+        });
+      }, { rootMargin: '-30% 0px -60% 0px' });
+      $$('.prose > article').forEach((a) => obs.observe(a));
+    }
+
+    /* ---------------------------------------------------------
+       8. RETOUR EN HAUT + année du pied de page
+       --------------------------------------------------------- */
+    const toTop = $('.to-top');
+    window.addEventListener('scroll', () => toTop.classList.toggle('show', window.scrollY > 600), { passive: true });
+    $$('[data-top]').forEach((b) => b.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }));
+    $('#year').textContent = new Date().getFullYear();
+
+    /* ---------------------------------------------------------
+       9. ROUTAGE INITIAL (#credo, #credo-5, #cle-3, #faq-communion…)
+       --------------------------------------------------------- */
+    function route() {
+      const id = decodeURIComponent(location.hash.slice(1));
+      if (!id) return;
+      if (tabs.some((t) => t.dataset.tab === id)) activateTab(id, { updateHash: false });
+      else goTo(id, { flash: true });
+    }
+    route();
+    window.addEventListener('hashchange', route);
+  })();
+  </script>
+</body>
+</html>
