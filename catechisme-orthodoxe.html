@@ -136,7 +136,7 @@
        4. BANNIÈRE HERO + RECHERCHE GLOBALE
        ========================================================== */
     .hero {
-      position: relative; overflow: hidden;
+      position: relative; z-index: 5; /* pas d’overflow:hidden : la liste de résultats doit déborder sous la bannière */
       background:
         radial-gradient(1200px 400px at 50% -120px, rgba(212, 175, 55, .16), transparent 70%),
         linear-gradient(180deg, var(--blue-50) 0%, var(--white) 100%);
@@ -167,6 +167,7 @@
     .search-field input::placeholder { color: #8a99ab; }
     .search-clear { appearance: none; border: 0; background: var(--stone); color: var(--ink-soft); border-radius: 999px; width: 34px; height: 34px; cursor: pointer; font-size: 1.1rem; display: none; }
     .search-clear.show { display: inline-block; }
+    #global-search::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; } /* évite la double croix (native + bouton dédié) */
     .search-hints { margin-top: 12px; font-size: .85rem; color: var(--ink-soft); text-align: center; }
     .search-hints button { appearance: none; border: 1px solid var(--line); background: var(--white); color: var(--blue-700); border-radius: 999px; padding: 3px 12px; margin: 3px 2px; font: inherit; font-size: .82rem; cursor: pointer; transition: border-color .2s, background .2s; }
     .search-hints button:hover { border-color: var(--gold-500); background: var(--gold-100); }
