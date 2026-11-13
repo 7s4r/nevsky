@@ -73,6 +73,17 @@
   };
   const T = I18N[LANG] || I18N.fr;
 
+  /** Racinisation légère pour le russe (langue à déclinaisons) : « крещение » doit
+      aussi trouver « крещения », « крещении », « крещением »… Ailleurs : terme inchangé. */
+  const RU_ENDINGS = /(иями|ями|ами|ого|его|ому|ему|ыми|ими|ой|ей|ий|ый|ая|яя|ое|ее|ые|ие|ов|ев|ам|ям|ах|ях|ом|ем|ию|ия|ии|ую|юю|а|я|о|е|ы|и|у|ю|ь)$/;
+  const stem = (t) => {
+    if (LANG !== 'ru' || t.length < 5) return t;
+    const s = t.replace(RU_ENDINGS, '');
+    return s.length >= 4 ? s : t;
+  };
+  /** Découpe une requête en termes normalisés (sans accents) et racinisés. */
+  const toTerms = (q, min = 1) => norm(q).split(/\s+/).filter((t) => t.length > min).map(stem);
+
   /** Rendu des questions du catéchisme (rubrique IV) à partir des données (avant l'initialisation des accordéons). */
   (function renderCatechism() {
     const chevron = '<span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span>';
@@ -291,7 +302,7 @@
   }
 
   function search(q) {
-    const terms = norm(q).split(/\s+/).filter((t) => t.length > 1);
+    const terms = toTerms(q);
     if (!terms.length) return [];
     return index
       .map((it) => {
@@ -418,7 +429,7 @@
   }
 
   function applyQa() {
-    const terms = norm(qaInput.value).split(/\s+/).filter(Boolean);
+    const terms = toTerms(qaInput.value, 0);
     const showFaq = qa.scope !== 'cat';
     const showCat = qa.scope !== 'faq';
     const nFaq = filterItems(faqItems, terms, (i) => showFaq && (qa.cat === 'all' || i.dataset.cat === qa.cat));
