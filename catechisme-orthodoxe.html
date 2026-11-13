@@ -240,7 +240,7 @@
     .toc a.current { font-weight: 600; }
     .prose { max-width: 760px; }
     .prose > article { scroll-margin-top: 80px; padding-bottom: 36px; margin-bottom: 36px; border-bottom: 1px solid var(--line); }
-    .prose > article:last-child { border-bottom: 0; margin-bottom: 0; }
+    .prose > article:last-of-type { border-bottom: 0; margin-bottom: 0; }
     .prose h3 { display: flex; align-items: baseline; gap: 12px; }
     .prose h3 .n { font-size: .9rem; font-family: var(--font-sans); color: var(--gold-700); font-weight: 700; letter-spacing: .08em; }
     .prose ul { padding-left: 1.2em; }
@@ -360,6 +360,16 @@
     .faq .acc-title { font-size: 1.22rem; }
     .faq-empty { text-align: center; padding: 30px; color: var(--ink-soft); border: 1px dashed var(--line); border-radius: var(--radius); max-width: 880px; margin: 0 auto; display: none; }
 
+    /* Navigation entre rubriques (fin de chaque rubrique) */
+    .section-nav { max-width: 880px; margin: 48px auto 0; padding-top: 28px; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .section-nav a { display: flex; flex-direction: column; gap: 2px; text-decoration: none; padding: 16px 20px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow-sm); transition: border-color .2s, box-shadow .2s, transform .2s; }
+    .section-nav a:hover { border-color: var(--gold-500); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .section-nav .dir { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-700); }
+    .section-nav .ttl { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--blue-800); line-height: 1.25; }
+    .section-nav .next { grid-column: 2; text-align: right; align-items: flex-end; border-top: 3px solid var(--blue-800); }
+    .section-nav .prev { grid-column: 1; }
+    @media (max-width: 640px) { .section-nav { grid-template-columns: 1fr; } .section-nav .next, .section-nav .prev { grid-column: 1; } .section-nav .next { order: -1; } }
+
     /* Rubrique V — catéchisme en questions */
     .filters.chapters .filter { font-size: .8rem; padding: 6px 12px; }
     .filters.chapters .filter small { display: block; font-weight: 400; font-size: .7rem; opacity: .8; letter-spacing: .02em; }
@@ -434,6 +444,7 @@
     @media (min-width: 641px) { .tab .label-short { display: none; } }
 
     @media print {
+      .section-nav { display: none !important; }
       .topbar, .main-nav, .search, .to-top, .credo-tools, .faq-tools, .search-hints { display: none !important; }
       .panel { display: block !important; }
       .acc-panel { grid-template-rows: 1fr !important; }
@@ -2195,6 +2206,39 @@
       }, { rootMargin: '-30% 0px -60% 0px' });
       $$('.prose > article').forEach((a) => obs.observe(a));
     }
+
+    /* ---------------------------------------------------------
+       7 bis. NAVIGATION ENTRE RUBRIQUES (précédente / suivante)
+       --------------------------------------------------------- */
+    const SECTION_TITLES = {
+      fondements: 'I · Les Fondements de la Foi',
+      credo: 'II · Le Symbole de la Foi',
+      cles: 'III · Les Sept Clés de la Vie Spirituelle',
+      questions: 'IV · Questions & Réponses',
+      catechisme: 'V · Le Catéchisme en questions'
+    };
+    panels.forEach((panel, i) => {
+      const prev = panels[i - 1];
+      const next = panels[i + 1] || panels[0];
+      const nav = document.createElement('nav');
+      nav.className = 'section-nav';
+      nav.setAttribute('aria-label', 'Navigation entre les rubriques');
+      nav.innerHTML =
+        (prev ? `<a class="prev" href="#${prev.id}" data-section="${prev.id}"><span class="dir">← Rubrique précédente</span><span class="ttl">${SECTION_TITLES[prev.id]}</span></a>` : '') +
+        `<a class="next" href="#${next.id}" data-section="${next.id}"><span class="dir">${panels[i + 1] ? 'Rubrique suivante →' : 'Revenir au début ↺'}</span><span class="ttl">${SECTION_TITLES[next.id]}</span></a>`;
+      // Dans « Fondements », la dernière section est une grille (sommaire + texte) : on insère dans la colonne de texte.
+      const containers = panel.querySelectorAll('.section > .container');
+      const last = containers[containers.length - 1];
+      (last.querySelector('.prose') || last).appendChild(nav);
+    });
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('[data-section]');
+      if (!a) return;
+      e.preventDefault();
+      activateTab(a.dataset.section);
+      const nav = $('.main-nav');
+      window.scrollTo({ top: $('#' + a.dataset.section).offsetTop - nav.offsetHeight, behavior: 'smooth' });
+    });
 
     /* ---------------------------------------------------------
        8. RETOUR EN HAUT + année du pied de page
