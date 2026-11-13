@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Catéchèse orthodoxe — Église Saint Alexandre Nevsky à Pau</title>
-  <meta name="description" content="Découvrir et approfondir la foi orthodoxe : la Sainte Trinité, le Christ, le Symbole de Nicée-Constantinople article par article, les sept clés de la vie spirituelle et les questions pratiques des catéchumènes. D’après la catéchèse du Père Georges Lusseaud." />
+  <meta name="description" content="Découvrir et approfondir la foi orthodoxe : la Sainte Trinité, le Christ, le Symbole de Nicée-Constantinople article par article, les sept clés de la vie spirituelle et les questions pratiques des catéchumènes. D’après la catéchèse du Père Georges Lusseaud et le Catéchisme de l’Église orthodoxe en langage contemporain (ROCOR)." />
   <link rel="canonical" href="https://nevsky.fr/catechisme.html" />
   <meta property="og:url" content="https://nevsky.fr/catechisme.html" />
   <meta property="og:title" content="Catéchèse orthodoxe — Découvrir et approfondir la foi" />
@@ -123,7 +123,7 @@
     .tab {
       appearance: none; border: 0; background: transparent; cursor: pointer;
       color: #dbe4f3; font-family: var(--font-sans); font-size: .92rem; font-weight: 600; letter-spacing: .01em;
-      padding: 15px 18px 13px; white-space: nowrap; position: relative; display: flex; align-items: center; gap: 8px;
+      padding: 15px 16px 13px; white-space: nowrap; position: relative; display: flex; align-items: center; gap: 8px;
       transition: color .2s, background-color .2s;
     }
     .tab .num { font-family: var(--font-serif); font-size: 1.15rem; color: var(--gold-500); font-weight: 700; }
@@ -359,6 +359,17 @@
     .faq .acc-title { font-size: 1.22rem; }
     .faq-empty { text-align: center; padding: 30px; color: var(--ink-soft); border: 1px dashed var(--line); border-radius: var(--radius); max-width: 880px; margin: 0 auto; display: none; }
 
+    /* Rubrique V — catéchisme en questions */
+    .filters.chapters .filter { font-size: .8rem; padding: 6px 12px; }
+    .filters.chapters .filter small { display: block; font-weight: 400; font-size: .7rem; opacity: .8; letter-spacing: .02em; }
+    .cat-chapter-head { max-width: 880px; margin: 0 auto 14px; padding: 16px 20px; background: var(--parchment); border: 1px solid var(--parchment-deep); border-left: 3px solid var(--gold-600); border-radius: 0 var(--radius) var(--radius) 0; }
+    .cat-chapter-head h3 { margin: 0 0 4px; font-size: 1.35rem; }
+    .cat-chapter-head p { margin: 0; font-family: var(--font-serif); font-style: italic; font-size: 1.1rem; color: var(--blue-900); }
+    .qn { display: inline-block; min-width: 42px; text-align: center; font-size: .7rem; font-weight: 700; color: var(--gold-700); border: 1px solid var(--gold-500); border-radius: 999px; padding: 1px 7px; margin-right: 6px; vertical-align: middle; font-family: var(--font-sans); }
+    .cat-group { max-width: 880px; margin: 22px auto 8px; font-family: var(--font-serif); font-size: 1.3rem; color: var(--blue-800); border-bottom: 1px solid var(--line); padding-bottom: 4px; }
+    .cat-group:first-child { margin-top: 0; }
+    #cat-list { gap: 10px; }
+
     /* ==========================================================
        10. PIED DE PAGE
        ========================================================== */
@@ -468,10 +479,11 @@
   <nav class="main-nav" aria-label="Rubriques de la catéchèse">
     <div class="container">
       <div class="tablist" role="tablist">
-        <button class="tab" role="tab" id="tab-fondements" aria-controls="fondements" aria-selected="true" data-tab="fondements"><span class="num">I</span><span class="label-long">Les Fondements de la Foi</span><span class="label-short">Fondements</span></button>
-        <button class="tab" role="tab" id="tab-credo" aria-controls="credo" aria-selected="false" tabindex="-1" data-tab="credo"><span class="num">II</span><span class="label-long">Le Symbole de la Foi</span><span class="label-short">Credo</span></button>
-        <button class="tab" role="tab" id="tab-cles" aria-controls="cles" aria-selected="false" tabindex="-1" data-tab="cles"><span class="num">III</span><span class="label-long">Les Sept Clés de la Vie Spirituelle</span><span class="label-short">Sept clés</span></button>
+        <button class="tab" role="tab" id="tab-fondements" aria-controls="fondements" aria-selected="true" data-tab="fondements"><span class="num">I</span><span class="label-long">Fondements de la Foi</span><span class="label-short">Fondements</span></button>
+        <button class="tab" role="tab" id="tab-credo" aria-controls="credo" aria-selected="false" tabindex="-1" data-tab="credo"><span class="num">II</span><span class="label-long">Symbole de la Foi</span><span class="label-short">Credo</span></button>
+        <button class="tab" role="tab" id="tab-cles" aria-controls="cles" aria-selected="false" tabindex="-1" data-tab="cles"><span class="num">III</span><span class="label-long">Sept Clés spirituelles</span><span class="label-short">Sept clés</span></button>
         <button class="tab" role="tab" id="tab-questions" aria-controls="questions" aria-selected="false" tabindex="-1" data-tab="questions"><span class="num">IV</span><span class="label-long">Questions &amp; Réponses</span><span class="label-short">Q&amp;R</span></button>
+        <button class="tab" role="tab" id="tab-catechisme" aria-controls="catechisme" aria-selected="false" tabindex="-1" data-tab="catechisme"><span class="num">V</span><span class="label-long">Catéchisme en questions</span><span class="label-short">Catéchisme</span></button>
       </div>
     </div>
   </nav>
@@ -482,7 +494,7 @@
       <span class="eyebrow">Catéchèse orthodoxe</span>
       <h1 id="hero-title">Découvrir et Approfondir <em>la Foi Orthodoxe</em></h1>
       <div class="ornament" aria-hidden="true"><svg class="cross"><use href="#ortho-cross" /></svg></div>
-      <p class="hero-lead">Que vous franchissiez pour la première fois le seuil d’une église orthodoxe, que vous vous prépariez au baptême ou que vous souhaitiez simplement mieux comprendre ce que vous vivez chaque dimanche, ces pages vous accompagnent pas à pas : le mystère de Dieu, le Credo, la prière, les icônes, les sacrements et la Divine Liturgie.</p>
+      <p class="hero-lead">Que vous franchissiez pour la première fois le seuil d’une église orthodoxe, que vous vous prépariez au baptême ou que vous souhaitiez simplement mieux comprendre ce que vous vivez chaque dimanche, ces pages vous accompagnent pas à pas : le mystère de Dieu, le Credo, la prière, les icônes, les sacrements et la Divine Liturgie — avec plus de 150 questions-réponses pour aller plus loin.</p>
 
       <div class="search" role="search">
         <label for="global-search" class="sr-only">Rechercher dans la catéchèse</label>
@@ -499,6 +511,7 @@
           <button type="button" data-q="communion">Communion</button>
           <button type="button" data-q="prière de Jésus">Prière de Jésus</button>
           <button type="button" data-q="Pâques">Pâques</button>
+          <button type="button" data-q="ange gardien">Ange gardien</button>
         </p>
       </div>
     </div>
@@ -1309,6 +1322,38 @@
         </div>
       </section>
     </div>
+
+    <!-- =========================================================
+         RUBRIQUE V — LE CATÉCHISME EN QUESTIONS
+         (d'après le « Catéchisme de l'Église orthodoxe en langage
+         contemporain », diacre Roman Biliavskyi, ROCOR, 2018)
+         ========================================================= -->
+    <div class="panel" id="catechisme" role="tabpanel" aria-labelledby="tab-catechisme" tabindex="-1">
+      <section class="section stone">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Rubrique V · Le Credo en questions</span>
+            <h2>Le Catéchisme en questions</h2>
+            <div class="ornament" aria-hidden="true"><svg class="cross"><use href="#ortho-cross" /></svg></div>
+            <p>Le Symbole de la foi expliqué article par article, sous forme de questions et réponses, d’après le <em>Catéchisme de l’Église orthodoxe en langage contemporain</em> (Église orthodoxe russe hors frontières). Les réponses ont été reformulées et condensées ; le numéro renvoie à la question de l’ouvrage.</p>
+          </div>
+
+          <div class="faq-tools">
+            <label class="faq-search">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" stroke-linecap="round" /></svg>
+              <span class="sr-only">Filtrer les questions du catéchisme</span>
+              <input id="cat-search" type="search" placeholder="Filtrer : baptême, anges, Filioque, communion…" autocomplete="off" />
+            </label>
+            <div class="filters chapters" id="cat-chapters" role="group" aria-label="Chapitres du catéchisme"></div>
+            <p class="faq-status" id="cat-status" aria-live="polite"></p>
+          </div>
+
+          <div class="cat-chapter-head" id="cat-chapter-head" hidden></div>
+          <div class="accordion faq" id="cat-list"></div>
+          <p class="faq-empty" id="cat-empty">Aucune question ne correspond à votre recherche.</p>
+        </div>
+      </section>
+    </div>
   </main>
 
   <!-- Modale de lecture approfondie (Sept clés) -->
@@ -1337,7 +1382,7 @@
             <div>
               <h2 style="font-size:1.6rem;margin:0">Catéchèse orthodoxe</h2>
               <p>Église orthodoxe russe Saint Alexandre Nevsky — Pau</p>
-              <p style="margin-top:14px">Ces pages proposent une présentation modernisée de la <em>Catéchèse orthodoxe</em> rédigée par le <strong style="color:#fff">Père Georges Lusseaud</strong> et remaniée par le Père Marc-Antoine Costa de Beauregard. Elles ne remplacent pas l’enseignement vivant reçu dans la communauté : pour toute question, adressez-vous au prêtre de la paroisse.</p>
+              <p style="margin-top:14px">Ces pages proposent une présentation modernisée de la <em>Catéchèse orthodoxe</em> du <strong style="color:#fff">Père Georges Lusseaud</strong> et du <em>Catéchisme de l’Église orthodoxe en langage contemporain</em> du <strong style="color:#fff">diacre Roman Biliavskyi</strong> (Église orthodoxe russe hors frontières, 2018). Elles ne remplacent pas l’enseignement vivant reçu dans la communauté : pour toute question, adressez-vous au prêtre de la paroisse.</p>
             </div>
           </div>
         </div>
@@ -1356,6 +1401,7 @@
           <h3>Sources catéchétiques</h3>
           <ul>
             <li>Père Georges Lusseaud, <em>Catéchèse orthodoxe</em></li>
+            <li>Diacre Roman Biliavskyi (ROCOR), <em>Catéchisme de l’Église orthodoxe en langage contemporain</em>, 2018</li>
             <li>Mgr Jean de Saint-Denis (1905-1970), cours et homélies</li>
             <li>Archimandrite Sophrony (1896-1993)</li>
             <li>Symbole de Nicée-Constantinople (325-381)</li>
@@ -1390,6 +1436,295 @@
     /** Normalise un texte pour la recherche : minuscules, sans accents, apostrophes unifiées. */
     const norm = (s) => (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’‘]/g, "'");
     const escapeHtml = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+    /* ---------------------------------------------------------
+       DONNÉES — « Catéchisme de l'Église orthodoxe en langage contemporain »
+       (diacre Roman Biliavskyi, ROCOR, 2018). Réponses reformulées et
+       condensées ; « n » = numéro de la question dans l'ouvrage.
+       --------------------------------------------------------- */
+    const CATECHISM_CHAPTERS = [
+      { id: 0, short: "Introduction", title: "Le Symbole de la foi et la foi" },
+      { id: 1, short: "Article 1", title: "Dieu le Père, Créateur" },
+      { id: 2, short: "Article 2", title: "Le Fils unique de Dieu" },
+      { id: 3, short: "Article 3", title: "Le péché, le salut et l’Incarnation" },
+      { id: 4, short: "Article 4", title: "La Croix" },
+      { id: 5, short: "Article 5", title: "La Résurrection" },
+      { id: 6, short: "Article 6", title: "L’Ascension" },
+      { id: 7, short: "Article 7", title: "Le Jugement et le Royaume" },
+      { id: 8, short: "Article 8", title: "Le Saint-Esprit" },
+      { id: 9, short: "Article 9", title: "L’Église" },
+      { id: 10, short: "Article 10", title: "Le Baptême et les Mystères" },
+      { id: 11, short: "Article 11", title: "La résurrection des morts" },
+      { id: 12, short: "Article 12", title: "La vie du siècle à venir" }
+    ];
+
+    const CATECHISM = [
+      /* ---------- Introduction ---------- */
+      { c: 0, n: 2, q: "Que veut dire le mot « symbole » ?", a: "Du grec <em>symbolon</em>, « ce qui se rejoint ». Autrefois, un fiancé partant au loin cassait un bâton en deux et en laissait une moitié à sa bien-aimée : à son retour, les deux morceaux devaient s’ajuster parfaitement. Le Symbole de la foi est la moitié que Dieu nous a confiée pour le retrouver ; c’est aussi une clé qui doit correspondre exactement à sa serrure. C’est pourquoi on ne peut rien y ajouter ni en retrancher." },
+      { c: 0, n: 3, q: "De quoi parle le Symbole de la foi ?", a: "Il développe l’ordre du Christ : « Baptisez-les au nom du Père, et du Fils, et du Saint-Esprit » (Mt 28, 19). Il présente le Père Créateur, le Fils crucifié et ressuscité pour nous, et l’Esprit qui donne la vie : non pas trois noms, mais le seul nom de Dieu, Trinité consubstantielle et indivisible." },
+      { c: 0, n: 5, q: "Qui a formulé le Credo ?", a: "Les Pères du Iᵉʳ concile œcuménique de Nicée (325) ont rédigé les sept premiers articles, ceux du IIᵉ concile de Constantinople (381) les cinq derniers. D’où son nom de Symbole de Nicée-Constantinople." },
+      { c: 0, n: 6, q: "Qu’est-ce qu’un concile œcuménique ?", a: "Une assemblée universelle des évêques de toutes les Églises locales, réunie pour exprimer la foi apostolique, répondre aux hérésies et manifester l’unité des chrétiens. Le modèle en est le concile des Apôtres à Jérusalem (Ac 15), qui concluait : « Il a semblé bon au Saint-Esprit et à nous… »." },
+      { c: 0, n: 7, q: "Combien y a-t-il eu de conciles œcuméniques ?", a: "Sept : Nicée I (325), Constantinople I (381), Éphèse (431), Chalcédoine (451), Constantinople II (553), Constantinople III (680-681) et Nicée II (787), qui a défendu la vénération des icônes." },
+      { c: 0, n: 9, q: "Pourquoi le Credo dit-il « Je crois » et non « Nous croyons » ?", a: "Le Notre Père commence par « Notre », car le Père céleste est commun à tous. Mais la profession de foi demande un engagement personnel : c’est moi qui confesse la Trinité de mon cœur et de mes lèvres, et personne ne peut le faire à ma place." },
+      { c: 0, n: 10, q: "Peut-on croire dans son cœur sans confesser sa foi ?", a: "Non : « C’est en croyant du cœur qu’on parvient à la justice, et c’est en confessant de la bouche qu’on parvient au salut » (Rm 10, 10). La foi véritable se dit et se vit." },
+      { c: 0, n: 11, q: "Que veut dire « croire en Dieu » ?", a: "C’est d’abord croire qu’il existe, mais surtout lui faire confiance, s’en remettre à sa providence, l’aimer et accomplir sa volonté. La foi est « l’assurance des choses qu’on espère, la démonstration de celles qu’on ne voit pas » (He 11, 1)." },
+      { c: 0, n: 12, q: "D’où vient la foi ?", a: "« La foi vient de ce qu’on entend, et ce qu’on entend vient de la parole du Christ » (Rm 10, 17). C’est pourquoi l’Église prie pour que Dieu envoie des ouvriers annoncer l’Évangile." },
+      { c: 0, n: 13, q: "Comment faire l’expérience de la foi ?", a: "En vivant dans l’Église, la foi reçue par la parole devient expérience personnelle. Comme les Samaritains disaient à la femme qui leur avait parlé de Jésus : « Ce n’est plus à cause de ce que tu as dit que nous croyons ; nous l’avons entendu nous-mêmes » (Jn 4, 42)." },
+      { c: 0, n: 14, q: "Suffit-il d’être quelqu’un de bien, quoi que l’on croie ?", a: "Toute bonté vient de Dieu comme le fleuve vient de sa source : « Nul n’est bon que Dieu seul » (Mc 10, 18). L’homme devient vraiment bon en s’attachant à Dieu par la foi. L’introduction du catéchisme rappelle l’abba Agathon, qui acceptait toutes les insultes mais refusait d’être appelé hérétique : « l’hérésie, c’est être séparé de Dieu »." },
+      { c: 0, n: 16, q: "Quel est le lien entre la foi et les bonnes œuvres ?", a: "La foi est première : c’est elle qui rend juste, comme pour Abraham. Mais une foi sans œuvres est morte (Jc 2, 26) : la foi vivante se manifeste nécessairement par l’amour en actes. Les œuvres ne « méritent » pas le salut ; elles sont le fruit d’une foi véritable." },
+      { c: 0, n: 18, q: "Peut-on connaître l’essence de Dieu ?", a: "Non. L’essence de Dieu demeure insaisissable pour les hommes comme pour les anges : il « habite une lumière inaccessible » (1 Tm 6, 16). Aucun mot ne peut la décrire." },
+      { c: 0, n: 19, q: "Comment connaître alors un Dieu totalement transcendant ?", a: "Par ses <strong>énergies</strong> (du grec <em>energeia</em>, « force en action ») : ses actions éternelles, sa grâce. Ce sont elles qui se manifestent dans la création, dans l’Écriture et dans la vie des saints." },
+      { c: 0, n: 20, q: "Quelle est la nature de ces énergies divines ?", a: "Elles ne sont pas créées : elles jaillissent éternellement de l’essence de Dieu, comme les rayons du soleil, sans en être séparées. C’est en participant aux énergies divines que l’homme devient participant de la nature divine (2 P 1, 4)." },
+      { c: 0, n: 23, q: "Si Dieu est Esprit, pourquoi la Bible parle-t-elle de ses yeux, de ses mains ?", a: "Ce sont des <em>anthropomorphismes</em> : des images humaines pour exprimer, dans notre langage limité, des réalités spirituelles. Les « yeux » de Dieu disent son omniscience, sa « main » sa puissance, son « visage » sa présence." },
+      { c: 0, n: 25, q: "Quelle différence entre « personne » (hypostase) et « essence » (nature) ?", a: "L’essence dit ce qui est commun (« quoi ? ») : tous les hommes partagent la nature humaine. L’hypostase dit ce qui est unique (« qui ? ») : Pierre, Paul, Jean. En Dieu, il y a une seule essence et trois Personnes." },
+      { c: 0, n: 26, q: "En quoi les trois Personnes de la Trinité sont-elles égales ?", a: "Elles ont la même dignité divine, la même nature, la même volonté et la même puissance : le Père est vrai Dieu, le Fils est vrai Dieu, l’Esprit est vrai Dieu, et pourtant il n’y a qu’un seul Dieu." },
+      { c: 0, n: 27, q: "En quoi les trois Personnes sont-elles distinctes ?", a: "Par leurs propriétés personnelles : le Père n’est ni engendré ni procédant ; le Fils est engendré du Père ; l’Esprit procède du Père." },
+      { c: 0, n: 29, q: "Existe-t-il des images pour approcher la Trinité ?", a: "Les Pères en ont proposé, tout en sachant leurs limites. Le soleil : le disque (le Père), la lumière qui nous rejoint (le Fils), la chaleur qui nous vivifie (l’Esprit) — un seul soleil. Ou encore l’âme humaine, avec l’intelligence, la parole et le souffle." },
+      { c: 0, n: 31, q: "Où le Nouveau Testament révèle-t-il la Trinité ?", a: "Au baptême du Christ, où la voix du Père se fait entendre et l’Esprit descend comme une colombe (Mt 3, 16-17) ; dans l’ordre de baptiser « au nom du Père, et du Fils, et du Saint-Esprit » (Mt 28, 19) ; dans la bénédiction de saint Paul : « La grâce du Seigneur Jésus-Christ, l’amour de Dieu et la communion du Saint-Esprit » (2 Co 13, 13)." },
+      { c: 0, n: 32, q: "Pourquoi Dieu nous a-t-il révélé le mystère de la Trinité ?", a: "Pour que l’homme connaisse vraiment son Créateur, et qu’il puisse le glorifier avec justesse — ce que veut dire, précisément, le mot « orthodoxie »." },
+
+      /* ---------- Article 1 ---------- */
+      { c: 1, n: 36, q: "Que veut dire « Dieu tout-puissant » ?", a: "En grec <em>Pantocrator</em>, « celui qui tient tout ». Dieu maintient toute chose dans l’existence et prend soin de la plus petite de ses créatures : « Pas un seul passereau ne tombe à terre sans la volonté de votre Père » (Mt 10, 29)." },
+      { c: 1, n: 38, q: "Comment Dieu a-t-il créé l’univers ?", a: "À partir de rien (<em>ex nihilo</em>), sans matière préexistante, par sa seule parole et sa volonté : « Il dit, et la chose arriva » (Ps 33, 9)." },
+      { c: 1, n: 39, q: "Pourquoi Dieu a-t-il créé le monde ?", a: "Par amour. L’amour cherche toujours à partager sa joie : Dieu a voulu des êtres capables de communier à son amour éternel, de l’aimer et d’être aimés de lui." },
+      { c: 1, n: 40, q: "Dieu aurait-il pu ne pas créer le monde ?", a: "Oui. Il n’en avait aucun besoin : le Père, le Fils et l’Esprit vivent de toute éternité dans la plénitude de l’amour. La création est un don gratuit, fruit de la surabondance de cet amour." },
+      { c: 1, n: 42, q: "Qui sont les anges ?", a: "Des esprits bons, intelligents, incorporels et puissants, au service de Dieu et « envoyés pour exercer un ministère en faveur de ceux qui doivent hériter du salut » (He 1, 14). « Ange » signifie « messager »." },
+      { c: 1, n: 44, q: "Comment les anges sont-ils organisés ?", a: "En trois triades : Séraphins, Chérubins, Trônes ; Dominations, Vertus, Puissances ; Principautés, Archanges, Anges." },
+      { c: 1, n: 45, q: "Qu’est-ce qu’un ange gardien ?", a: "Un ange que Dieu donne à chaque personne, et même à chaque peuple, pour le protéger et le guider vers le salut : « Il ordonnera à ses anges de te garder dans toutes tes voies » (Ps 91, 11). Le Christ dit des petits enfants que « leurs anges voient continuellement la face de mon Père » (Mt 18, 10)." },
+      { c: 1, n: 46, q: "Qui est Satan ?", a: "Un ange de lumière qui, par orgueil et jalousie, a voulu s’élever au-dessus de Dieu et s’est détaché de son Créateur. Il est appelé « diable » (le diviseur) et « père du mensonge »." },
+      { c: 1, n: 47, q: "Qui sont les démons ?", a: "Des anges créés bons qui ont librement suivi Satan dans la révolte. Ils se sont attachés à l’orgueil et à la haine, et cherchent à éloigner l’homme de Dieu. Mais ils n’ont aucun pouvoir sur celui qui demeure dans le Christ." },
+      { c: 1, n: 48, q: "Qu’est-ce que le mal, et d’où vient-il ?", a: "Le mal n’est pas une « substance » créée par Dieu : il naît de la mauvaise volonté des êtres libres — anges déchus et hommes — qui se détournent de Dieu. Comme l’obscurité est absence de lumière, le mal est un éloignement du Bien." },
+      { c: 1, n: 50, q: "Le monde a-t-il été créé tel que nous le voyons aujourd’hui ?", a: "Non. Tout avait été créé bon, beau et sans violence. Le monde actuel porte les blessures de la chute de l’homme, et attend lui aussi sa libération (Rm 8, 21)." },
+      { c: 1, n: 51, q: "Comment Dieu a-t-il créé l’homme ?", a: "Seul de toutes les créatures, l’homme est créé après une sorte de « conseil » de la Trinité : « Faisons l’homme à notre image, selon notre ressemblance » (Gn 1, 26). Dieu le façonne de la terre et lui insuffle un souffle de vie : l’homme unit en lui le monde visible et le monde spirituel." },
+      { c: 1, n: 53, q: "Pourquoi Ève est-elle tirée d’une côte d’Adam ?", a: "La côte protège le cœur : l’image dit la proximité et l’amour mutuel de l’homme et de la femme dans le dessein de Dieu, ainsi que l’unité de toute l’humanité, issue d’un même corps." },
+      { c: 1, n: 54, q: "En quoi consiste l’« image de Dieu » en l’homme ?", a: "Dans tout ce qui nous distingue des animaux et nous rapproche du Créateur : être une personne, l’intelligence, la liberté, la volonté, la parole, la créativité, l’immortalité de l’âme, la responsabilité sur la création. L’image nous est donnée ; elle peut être obscurcie, jamais détruite." },
+      { c: 1, n: 55, q: "Et la « ressemblance » avec Dieu ?", a: "C’est la ressemblance par les vertus : l’amour, la joie, la paix, la patience, la bonté, la douceur, la maîtrise de soi. Dieu est amour : l’homme qui aime lui devient semblable. L’image est un don, la ressemblance une tâche, accomplie avec la grâce." },
+      { c: 1, n: 56, q: "Quelle est la vocation de l’homme ?", a: "Connaître Dieu, l’aimer, le glorifier et devenir son temple, pour devenir « participant de la nature divine » (2 P 1, 4) — c’est-à-dire dieu par grâce." },
+      { c: 1, n: 57, q: "Que veut dire « devenir dieu par la grâce » ?", a: "C’est la <em>théosis</em>, ou déification : devenir par don de Dieu ce que Dieu est par nature, sans se confondre avec lui. Comme le fer plongé dans le feu devient brûlant et lumineux tout en restant du fer." },
+      { c: 1, n: 58, q: "Qu’était le jardin d’Éden ?", a: "Le paradis où vivaient les premiers hommes, à la fois matériel et spirituel, où ils communiquaient directement avec Dieu. Au milieu se trouvaient l’arbre de vie, qui donnait l’immortalité, et l’arbre de la connaissance du bien et du mal." },
+      { c: 1, n: 61, q: "Dieu a-t-il prédestiné tout le monde au bonheur ?", a: "Dieu veut que tous soient sauvés (1 Tm 2, 4). Hors du temps, il connaît d’avance le choix libre de chacun — aimer Dieu ou s’y opposer — mais ce n’est pas sa prescience qui fixe ce choix : l’homme reste libre et responsable." },
+      { c: 1, n: 62, q: "Qu’est-ce que la providence divine ?", a: "L’action constante de Dieu dans le monde : il garde en vie toutes les créatures, les oriente vers le bien, soutient tout ce qui est bon, et fait même servir le mal à un bien plus grand. « Ne vous inquiétez pas… votre Père céleste sait que vous en avez besoin » (Mt 6, 25-32)." },
+
+      /* ---------- Article 2 ---------- */
+      { c: 2, n: 64, q: "Que signifie le nom « Jésus » ?", a: "« Dieu sauve », « le Sauveur ». L’ange l’a révélé à Joseph : « Tu lui donneras le nom de Jésus, car il sauvera son peuple de ses péchés » (Mt 1, 21)." },
+      { c: 2, n: 65, q: "Que signifie le titre « Christ » ?", a: "Du grec <em>Christos</em>, en hébreu <em>Messie</em> : « l’Oint ». Dans l’Ancien Testament, prophètes, rois et grands prêtres recevaient l’onction ; Jésus est l’Oint par excellence, Prophète, Roi et Grand Prêtre, rempli de l’Esprit." },
+      { c: 2, n: 66, q: "Pourquoi appelle-t-on Jésus « Seigneur » ?", a: "Parce qu’il est vrai Dieu : « Seigneur » est l’un des noms de Dieu dans l’Écriture. Jésus lui-même le dit : « Vous m’appelez Maître et Seigneur, et vous dites bien, car je le suis » (Jn 13, 13)." },
+      { c: 2, n: 67, q: "Qui est Jésus-Christ ?", a: "Le Fils éternel de Dieu qui s’est fait homme. Le concile de Chalcédoine le confesse « un seul et même Fils, parfait en divinité et parfait en humanité, vrai Dieu et vrai homme », en deux natures « sans confusion, sans changement, sans division, sans séparation »." },
+      { c: 2, n: 68, q: "Le Christ a-t-il deux volontés ?", a: "Oui, une volonté divine et une volonté humaine, comme il a deux natures. Sa volonté humaine se soumet librement à la volonté divine : « Non pas ce que je veux, mais ce que tu veux » (Mt 26, 39). C’est le VIᵉ concile œcuménique qui l’a précisé." },
+      { c: 2, n: 71, q: "Pourquoi Jésus est-il appelé « Fils unique » de Dieu ?", a: "Parce qu’il est le seul Fils né de l’essence même du Père, et donc de même nature que lui. Les anges et les saints sont appelés enfants de Dieu par adoption et par grâce ; le Christ l’est par nature." },
+      { c: 2, n: 72, q: "Quand le Fils de Dieu est-il né du Père ?", a: "« Avant tous les siècles » : il n’y a jamais eu de temps où le Fils n’existait pas. Il est coéternel au Père." },
+      { c: 2, n: 73, q: "Que veut dire « Lumière de Lumière » ?", a: "Une image de la naissance éternelle du Fils : comme la lumière du soleil engendre la lumière qui nous parvient, inséparable d’elle et de même nature, le Fils naît du Père sans le diminuer ni se séparer de lui." },
+      { c: 2, n: 75, q: "Quelle différence entre « engendrer » et « créer » ?", a: "Engendrer, c’est donner naissance à partir de sa propre substance ; créer, c’est faire à partir de rien ou d’une autre matière. L’homme engendre un homme ; Dieu engendre Dieu. Le Fils est donc « engendré, non créé » : il n’est pas une créature." },
+      { c: 2, n: 76, q: "Que veut dire « consubstantiel au Père » ?", a: "Le Fils est de la même substance divine que le Père (en grec <em>homoousios</em>). C’est le seul mot du Credo absent de la Bible, choisi à Nicée pour écarter l’arianisme ; il traduit la parole du Christ : « Moi et le Père, nous sommes un » (Jn 10, 30)." },
+      { c: 2, n: 77, q: "Que veut dire « par qui tout a été fait » ?", a: "C’est la parole de saint Jean : « Toutes choses ont été faites par lui, et rien de ce qui a été fait n’a été fait sans lui » (Jn 1, 3). Le Père crée et gouverne le monde par son Fils, dans l’Esprit." },
+
+      /* ---------- Article 3 ---------- */
+      { c: 3, n: 78, q: "« Pour nous les hommes » : de quels hommes s’agit-il ?", a: "De tous, sans exception. Le Fils de Dieu n’est pas venu pour un seul peuple, mais pour le salut du monde entier et de chacun personnellement." },
+      { c: 3, n: 79, q: "De quoi le Fils de Dieu nous sauve-t-il ?", a: "Du péché, de la malédiction qui en découle, de la mort et du pouvoir du diable." },
+      { c: 3, n: 80, q: "Qu’est-ce que le péché ?", a: "Une transgression de la loi de Dieu (1 Jn 3, 4). Saint Jean Damascène le définit comme « l’écart volontaire de ce qui est conforme à la nature vers ce qui lui est contraire » : le péché nous défigure et nous fait manquer notre but." },
+      { c: 3, n: 83, q: "Qu’était l’arbre de la connaissance du bien et du mal ?", a: "Le signe que Dieu seul définit ce qui est bien et ce qui est mal. En le respectant, l’homme pouvait exercer librement son obéissance confiante ; en y touchant, il a voulu décider du bien et du mal à la place de Dieu." },
+      { c: 3, n: 85, q: "Pourquoi Dieu a-t-il permis la possibilité de la chute ?", a: "Parce que la liberté fait partie de l’image de Dieu, et qu’il n’y a pas d’amour sans liberté. Or la liberté suppose la possibilité de choisir. Dieu a voulu un amour librement donné, au risque du refus." },
+      { c: 3, n: 88, q: "En quoi a consisté la chute ?", a: "Dans la désobéissance, d’abord — le commandement du jeûne a été transgressé. Mais plus profondément dans l’orgueil : vouloir devenir « comme des dieux » sans Dieu, par ses propres forces, au lieu de recevoir la déification comme un don." },
+      { c: 3, n: 89, q: "Adam et Ève auraient-ils pu se repentir aussitôt ?", a: "Oui. Mais au lieu de pleurer leur faute devant Dieu, ils ont cherché un coupable : Adam accuse Ève — et Dieu qui la lui a donnée —, Ève accuse le serpent. C’est le refus de la repentance qui a scellé la rupture." },
+      { c: 3, n: 92, q: "Qu’est-ce que la mort ?", a: "Pour les Pères, la mort est d’abord spirituelle : la séparation de l’âme d’avec Dieu, source de la vie. La mort physique — séparation de l’âme et du corps — en est la conséquence. Elle n’est pas voulue par Dieu, mais elle empêche aussi le mal de devenir éternel." },
+      { c: 3, n: 93, q: "Qu’est-ce que le péché originel ?", a: "Une blessure héréditaire de la nature humaine. Les descendants d’Adam ne sont pas personnellement coupables de sa faute, mais ils en portent toutes les conséquences : la mortalité, l’inclination au péché, la fragilité." },
+      { c: 3, n: 94, q: "Dieu a-t-il laissé une espérance aux hommes ?", a: "Oui : dès la chute, il promet que la descendance de la femme écrasera la tête du serpent (Gn 3, 15). On appelle cette promesse le « Protévangile », la première annonce du Christ, né de la Vierge." },
+      { c: 3, n: 97, q: "Comment Dieu, présent partout, peut-il « descendre des cieux » ?", a: "Dieu est partout, au ciel comme sur la terre. « Descendre » signifie que lui, l’Invisible, s’est rendu visible en s’incarnant." },
+      { c: 3, n: 98, q: "Pourquoi le Fils de Dieu est-il descendu des cieux ?", a: "« Le Verbe de Dieu s’est fait homme pour que nous devenions dieux ; il s’est rendu visible dans un corps pour que nous ayons une idée du Père invisible » (saint Athanase d’Alexandrie)." },
+      { c: 3, n: 102, q: "Comment les deux natures du Christ sont-elles unies ?", a: "« Sans confusion, sans changement, sans division et sans séparation » : le divin ne se mélange pas à l’humain, l’humain n’est pas absorbé, et pourtant c’est une seule Personne." },
+      { c: 3, n: 104, q: "En quoi l’humanité du Christ diffère-t-elle de la nôtre ?", a: "Il est né d’une Vierge, sans père humain, et n’hérite donc pas de la blessure du péché originel ; il n’a jamais commis de péché. Il a pris volontairement sur lui nos faiblesses innocentes : la faim, la fatigue, la souffrance, la mort." },
+      { c: 3, n: 105, q: "Combien de fois le Christ est-il né ?", a: "Deux fois : du Père, sans mère, hors du temps ; et de la Vierge Marie, sans père, dans le temps." },
+      { c: 3, n: 107, q: "Qui était la Vierge Marie ?", a: "Une fille de la lignée d’Abraham et de David, d’où devait naître le Messie. Consacrée à Dieu dès l’enfance, elle avait promis de rester vierge ; Joseph lui fut fiancé pour être le gardien de sa pureté." },
+      { c: 3, n: 108, q: "Pourquoi l’appelle-t-on « toujours Vierge » ?", a: "Parce qu’elle est restée vierge avant, pendant et après la naissance du Christ. Les trois étoiles peintes sur son voile, au front et aux épaules, sur les icônes, le rappellent." },
+      { c: 3, n: 110, q: "Dans quel sens Marie est-elle « Mère de Dieu » (Théotokos) ?", a: "Elle n’a pas donné au Christ sa divinité, mais celui qu’elle a conçu et enfanté selon la chair était dès sa conception le vrai Dieu, la deuxième Personne de la Trinité. C’est pourquoi elle est vraiment Mère de Dieu." },
+      { c: 3, n: 113, q: "A-t-on su, à l’époque, que le Messie était né ?", a: "Oui : les Mages l’ont reconnu à l’étoile, les bergers l’ont appris des anges, le vieillard Siméon et la prophétesse Anne l’ont reconnu au Temple, inspirés par l’Esprit." },
+      { c: 3, n: 115, q: "Comment le Christ a-t-il accompli notre salut ?", a: "Par toute sa vie : son incarnation, son enseignement, sa vie terrestre, sa mort, sa résurrection et son ascension. Chacune de ces étapes guérit et relève une part de notre humanité." },
+      { c: 3, n: 116, q: "Comment l’Incarnation nous sauve-t-elle ?", a: "En unissant en lui la nature divine et la nature humaine, le Christ a guéri de l’intérieur l’humanité blessée d’Adam. Ce qui a été uni à Dieu est sauvé." },
+      { c: 3, n: 118, q: "Comment sa vie nous sauve-t-elle ?", a: "En nous donnant un modèle à imiter : acquérir les sentiments, la volonté et l’Esprit du Christ, directement ou en suivant l’exemple de ses saints. « Soyez mes imitateurs, comme je le suis moi-même du Christ » (1 Co 11, 1)." },
+      { c: 3, n: 122, q: "Pourquoi dire à la fois « s’est incarné » et « s’est fait homme » ?", a: "Les Pères de Nicée ont ajouté « s’est fait homme » pour souligner que le Fils n’a pas pris seulement une chair, mais toute la nature humaine — corps, âme et esprit —, devenant homme parfait." },
+
+      /* ---------- Article 4 ---------- */
+      { c: 4, n: 123, q: "Pourquoi le Christ a-t-il été crucifié ?", a: "Il s’est volontairement abaissé, « obéissant jusqu’à la mort, et la mort de la croix » (Ph 2, 8), pour arracher chaque homme à la mort et purifier notre nature. « Le Fils de l’homme est venu… pour servir et donner sa vie en rançon pour beaucoup » (Mc 10, 45)." },
+      { c: 4, n: 125, q: "Que signifie « rédemption » ou « rançon » ?", a: "Autrefois, la rançon était le prix payé pour libérer un esclave ou un captif. Le Christ a donné sa propre vie pour nous libérer de l’esclavage du péché, de la mort et du diable." },
+      { c: 4, n: 126, q: "Pourquoi Jean-Baptiste appelle-t-il Jésus « l’Agneau de Dieu » ?", a: "Parce que le Christ a pris sur lui le poids de nos péchés. Sur la croix, il est à la fois la victime offerte selon son humanité, comme un agneau, et le Grand Prêtre qui offre le sacrifice selon sa divinité. La Liturgie le chante : « C’est toi qui offres et qui es offert »." },
+      { c: 4, n: 127, q: "Pourquoi le Credo mentionne-t-il Ponce Pilate ?", a: "Pour ancrer notre foi dans l’histoire réelle : Dieu agit dans notre temps. Le Christ est mort sous un gouverneur romain connu — ce n’est pas un mythe intemporel." },
+      { c: 4, n: 128, q: "Comment le Christ a-t-il pu souffrir et mourir s’il est Dieu ?", a: "Il a souffert et il est mort dans son humanité, réellement, et non en apparence. Il aurait pu échapper à la souffrance, mais il l’a librement acceptée : « Personne ne m’ôte la vie, je la donne de moi-même » (Jn 10, 18)." },
+      { c: 4, n: 129, q: "En quoi la mort du Christ diffère-t-elle de la nôtre ?", a: "Pour nous, la mort est la conséquence du péché. Lui, sans péché, ne devait pas mourir : il a goûté une mort qui ne lui revenait pas, chargée du poids de nos fautes. Et parce que la Vie elle-même y est entrée, la mort a été vaincue de l’intérieur." },
+      { c: 4, n: 130, q: "Quelles sont les sept paroles du Christ en croix ?", a: "« Père, pardonne-leur » (Lc 23, 34) ; « Aujourd’hui tu seras avec moi dans le paradis » (Lc 23, 43) ; « Femme, voici ton fils… voici ta mère » (Jn 19, 26-27) ; « Mon Dieu, pourquoi m’as-tu abandonné ? » (Mt 27, 46) ; « J’ai soif » (Jn 19, 28) ; « Tout est accompli » (Jn 19, 30) ; « Père, je remets mon esprit entre tes mains » (Lc 23, 46)." },
+      { c: 4, n: 132, q: "Où était le Christ entre sa mort et sa résurrection ?", a: "Son corps reposait au tombeau, et son âme, toujours unie à sa divinité, est descendue aux enfers pour en libérer les justes de l’Ancien Testament. C’est ce que montre l’icône de la Résurrection, où le Christ relève Adam et Ève." },
+      { c: 4, n: 134, q: "Comment participer à la mort du Christ ?", a: "Par une foi sincère ; par les sacrements, qui contiennent la force de sa Passion ; et en « crucifiant la chair avec ses passions et ses désirs » (Ga 5, 24), c’est-à-dire en luttant contre ce qui nous asservit." },
+      { c: 4, n: 135, q: "Concrètement, comment lutter contre les passions ?", a: "En pratiquant la vertu opposée, à l’imitation du Christ et des saints : si la colère monte en nous, nous souvenir du Christ qui priait pour ses bourreaux ; à l’orgueil, opposer l’humilité ; à l’avarice, le partage." },
+
+      /* ---------- Article 5 ---------- */
+      { c: 5, n: 136, q: "Que nous apprend l’article « Il est ressuscité le troisième jour » ?", a: "Que le Christ est vraiment ressuscité, comme l’annonçaient les prophètes et les psaumes, et qu’il est ressuscité dans son propre corps, celui-là même qui était né de la Vierge et avait été crucifié." },
+      { c: 5, n: 137, q: "Quel est le lien entre la résurrection du Christ et nous ?", a: "Elle est le fondement de notre propre résurrection : « Christ est ressuscité des morts, prémices de ceux qui sont morts » (1 Co 15, 20). Chacun ressuscitera dans son propre corps." },
+      { c: 5, n: 138, q: "Quels sont les signes de la résurrection du Christ ?", a: "Le tombeau vide ; les linges restés en place ; les apparitions aux femmes myrrhophores, aux Apôtres, à plus de cinq cents frères à la fois (1 Co 15, 6) ; la transformation des disciples apeurés en témoins prêts à mourir ; et, jusqu’à aujourd’hui, l’expérience vivante de l’Église." },
+      { c: 5, n: 140, q: "Que veut dire « selon les Écritures » ?", a: "Que la mort et la résurrection du Christ accomplissent ce qu’annonçait l’Ancien Testament. Les mots sont repris de saint Paul (1 Co 15, 3-4)." },
+      { c: 5, n: 141, q: "Où l’Ancien Testament l’annonçait-il ?", a: "Isaïe : « Il était blessé pour nos péchés… c’est par ses meurtrissures que nous sommes guéris » (Is 53, 5). Le psaume 16 : « Tu ne laisseras pas ton bien-aimé voir la corruption ». Et le signe de Jonas, trois jours dans le ventre du poisson (Mt 12, 40)." },
+
+      /* ---------- Article 6 ---------- */
+      { c: 6, n: 142, q: "Comment s’est déroulée l’Ascension ?", a: "Quarante jours après Pâques, sur le mont des Oliviers, le Christ s’est élevé sous les yeux des Apôtres et une nuée l’a dérobé à leurs regards. Deux anges leur dirent : « Ce Jésus… viendra de la même manière que vous l’avez vu aller au ciel » (Ac 1, 11)." },
+      { c: 6, n: 144, q: "Le Christ est-il monté au ciel comme homme ou comme Dieu ?", a: "Comme homme, avec le corps qu’il avait reçu de la Vierge. Comme Dieu, il n’a jamais quitté le ciel, puisqu’il est présent partout." },
+      { c: 6, n: 145, q: "Dieu le Père a-t-il un « côté droit » ?", a: "Non, c’est une image. « Siéger à la droite du Père » signifie que le Christ, dans son humanité, reçoit la même gloire et la même puissance que le Père — celles qu’il possédait déjà de toute éternité selon sa divinité." },
+      { c: 6, n: 147, q: "Que fait le Christ après l’Ascension ?", a: "Il intercède pour nous auprès du Père comme Médiateur et Grand Prêtre (He 7, 25) ; il gouverne son Église, dont il est la Tête ; il envoie l’Esprit Saint ; il nous prépare une place." },
+      { c: 6, n: 148, q: "Quel est le rôle de l’Ascension dans notre salut ?", a: "Le Christ élève notre nature humaine jusqu’au cœur de Dieu et nous ouvre le chemin du ciel : « Il y a plusieurs demeures dans la maison de mon Père… je vais vous préparer une place » (Jn 14, 2)." },
+
+      /* ---------- Article 7 ---------- */
+      { c: 7, n: 151, q: "Quelle différence entre la première et la seconde venue du Christ ?", a: "La première fois, il est venu humblement, sous la forme d’un serviteur, pour souffrir pour nous ; la seconde fois, il viendra dans sa gloire, avec tous ses anges, pour juger. La première fois, peu l’ont reconnu ; la seconde, il sera visible de tous, « comme l’éclair »." },
+      { c: 7, n: 153, q: "Comment le Christ nous jugera-t-il ?", a: "La conscience de chacun sera mise en pleine lumière : non seulement les actes, mais les paroles, les pensées et les intentions du cœur (1 Co 4, 5). Celui qui juge est celui qui a donné sa vie pour nous." },
+      { c: 7, n: 154, q: "Serons-nous jugés sur tous nos actes ?", a: "Sur tout ce dont nous ne nous serons pas purifiés par la repentance et la conversion de notre vie. C’est pourquoi l’Église invite à ne pas remettre la confession à plus tard." },
+      { c: 7, n: 155, q: "Quand le Jugement dernier aura-t-il lieu ?", a: "Nul ne le sait : « Veillez donc, puisque vous ne savez ni le jour ni l’heure » (Mt 25, 13). Il faut être prêt à tout moment à rencontrer le Christ." },
+      { c: 7, n: 156, q: "Y a-t-il des signes de la seconde venue ?", a: "Le Christ en a annoncé : l’Évangile prêché à toutes les nations, le refroidissement de la foi et de l’amour, la multiplication des guerres et des malheurs, la venue de l’Antéchrist (Mt 24). Mais il met en garde contre ceux qui prétendent fixer des dates." },
+      { c: 7, n: 159, q: "Qu’est-ce que le Royaume de Dieu ?", a: "Les Pères distinguent trois sens : le Royaume de la nature (Dieu, Roi de toute la création) ; le Royaume de la grâce (l’Église sur la terre) ; le Royaume de la gloire (les saints dans les cieux). C’est ce dernier qui « n’aura pas de fin »." },
+      { c: 7, n: 162, q: "Pourra-t-on encore se repentir après le Jugement ?", a: "Non : le temps de la conversion est celui de cette vie. Après le Jugement, il n’y aura plus de temps, et chacun entrera dans l’éternité selon l’état de son âme. D’où l’urgence de l’« aujourd’hui » de Dieu." },
+      { c: 7, n: 163, q: "Que devient l’âme après la mort ?", a: "Elle entre dans le monde invisible, conscient et sensible, et passe par un jugement particulier. Elle attend la résurrection et le Jugement dernier, dans un avant-goût de la joie ou de la peine. C’est pourquoi l’Église prie pour les défunts, en particulier le 3ᵉ, le 9ᵉ et le 40ᵉ jour." },
+      { c: 7, n: 164, q: "Le purgatoire existe-t-il ?", a: "L’Église orthodoxe ne connaît pas l’enseignement du purgatoire tel qu’il a été défini en Occident au XVᵉ siècle, avec l’idée d’une peine expiatoire à « payer ». Elle croit en revanche, avec toute la Tradition, que la prière de l’Église, la Liturgie et l’aumône viennent en aide aux défunts." },
+
+      /* ---------- Article 8 ---------- */
+      { c: 8, n: 165, q: "Qui est le Saint-Esprit ?", a: "La troisième Personne de la Trinité, de même nature que le Père et le Fils, qui se distingue par sa propriété personnelle : il procède du Père." },
+      { c: 8, n: 166, q: "Où l’Écriture appelle-t-elle l’Esprit « Dieu » ?", a: "Saint Pierre dit à Ananias : « Tu as menti au Saint-Esprit… ce n’est pas à des hommes que tu as menti, mais à Dieu » (Ac 5, 3-4). Saint Paul appelle notre corps tantôt « temple de Dieu », tantôt « temple du Saint-Esprit » (1 Co 3, 16 ; 6, 19)." },
+      { c: 8, n: 167, q: "Que veut dire « qui donne la vie » ?", a: "L’Esprit a des propriétés divines : il participe à la création (Gn 1, 2), il sait tout, il est présent partout, il fait naître les hommes à la vie spirituelle (Jn 3, 5), il sanctifie et donne la vie éternelle." },
+      { c: 8, n: 168, q: "Que veut dire « qui procède du Père » ?", a: "Que le Père est l’unique source de l’Esprit, comme il l’est du Fils. C’est la parole même du Christ : « l’Esprit de vérité, qui procède du Père » (Jn 15, 26)." },
+      { c: 8, n: 169, q: "L’Esprit procède-t-il aussi du Fils (Filioque) ?", a: "Non, selon la foi orthodoxe : le Père est l’unique cause dans la Trinité. Le Filioque (« et du Fils ») a été ajouté plus tard au Credo en Occident, alors que le concile d’Éphèse (431) avait interdit toute modification du Symbole. L’Esprit est cependant envoyé dans le monde par le Fils, et repose sur lui." },
+      { c: 8, n: 172, q: "Pourquoi « qui a parlé par les prophètes » ?", a: "Pour affirmer, contre certains faux docteurs, que l’Ancien Testament est inspiré par le même Esprit : « C’est poussés par le Saint-Esprit que des hommes ont parlé de la part de Dieu » (2 P 1, 21)." },
+      { c: 8, n: 174, q: "Comment l’Esprit s’est-il révélé aux hommes ?", a: "Il est descendu sur les Apôtres sous forme de langues de feu le cinquantième jour après Pâques, à la Pentecôte (Ac 2)." },
+      { c: 8, n: 175, q: "L’Esprit se donne-t-il encore aujourd’hui ?", a: "Oui, à tous les croyants : par la prière, par la pratique des vertus, et surtout par les sacrements de l’Église. « Le but de la vie chrétienne est l’acquisition du Saint-Esprit », disait saint Séraphim de Sarov." },
+      { c: 8, n: 176, q: "Quels sont les dons de l’Esprit ?", a: "Le prophète Isaïe en énumère sept : esprit de sagesse et d’intelligence, de conseil et de force, de connaissance et de piété, et de crainte de Dieu (Is 11, 2)." },
+      { c: 8, n: 177, q: "Comment savoir si l’on a reçu la grâce de l’Esprit ?", a: "À ses fruits : « l’amour, la joie, la paix, la patience, la bonté, la bienveillance, la fidélité, la douceur, la maîtrise de soi » (Ga 5, 22). Non à des phénomènes extraordinaires." },
+
+      /* ---------- Article 9 ---------- */
+      { c: 9, n: 178, q: "Qu’est-ce que l’Église ?", a: "La communauté instituée par Dieu, rassemblant ceux qui sont unis par la foi orthodoxe, les commandements de Dieu, la hiérarchie apostolique et les sacrements." },
+      { c: 9, n: 179, q: "D’où vient le mot « Église » ?", a: "Du grec <em>ekklesia</em>, « assemblée de ceux qui sont appelés ». Dans l’Athènes antique, c’était l’assemblée des citoyens convoqués ; l’Église est l’assemblée de ceux que Dieu appelle et qui répondent à son appel." },
+      { c: 9, n: 180, q: "Comment « croire » en l’Église, puisqu’elle est visible ?", a: "Comme le Christ a une nature humaine visible et une nature divine invisible, l’Église a un aspect visible — ses membres, ses évêques, ses lieux de culte — et un aspect invisible : la grâce de l’Esprit qui y agit. C’est en cela que nous croyons." },
+      { c: 9, n: 182, q: "Quelle image de l’Église l’Écriture utilise-t-elle le plus ?", a: "Celle du corps et de la tête : l’Église est le Corps du Christ, dont il est la Tête et dont nous sommes les membres (1 Co 12, 27 ; Col 1, 18). Un organisme divino-humain." },
+      { c: 9, n: 183, q: "Qui fait partie de l’Église ?", a: "Les chrétiens orthodoxes vivant sur la terre, tous ceux qui sont morts dans la vraie foi et la repentance, et les anges. L’Église de la terre et celle du ciel forment une seule Église." },
+      { c: 9, n: 185, q: "Comment l’Église a-t-elle été fondée ?", a: "Promise par le Christ (« Je bâtirai mon Église », Mt 16, 18), acquise par son sang sur la croix, elle est née à la Pentecôte, quand l’Esprit est descendu sur les Apôtres." },
+      { c: 9, n: 187, q: "« Les portes de l’enfer ne prévaudront pas contre elle » : qu’est-ce à dire ?", a: "Que l’Église existera toujours, de la Pentecôte à la seconde venue du Christ, malgré toutes les persécutions : « Je suis avec vous tous les jours, jusqu’à la fin du monde » (Mt 28, 20)." },
+      { c: 9, n: 191, q: "Sur qui l’Église est-elle fondée ?", a: "Sur le Christ, unique pierre angulaire. Le « rocher » dont parle Jésus à Pierre (Mt 16, 18) est, selon de nombreux Pères, la foi que Pierre venait de confesser au nom de tous les Apôtres : « Tu es le Christ, le Fils du Dieu vivant »." },
+      { c: 9, n: 192, q: "L’apôtre Pierre avait-il la primauté ?", a: "Une primauté d’honneur, avec saint Paul : il était « premier parmi des égaux », souvent porte-parole des Apôtres. Mais il ne commandait pas aux autres : au concile de Jérusalem, c’est Jacques qui a présidé et conclu (Ac 15)." },
+      { c: 9, n: 197, q: "Pourquoi l’Église est-elle « une » ?", a: "Parce qu’elle est l’unique Corps du Christ, animé par l’unique Esprit : « un seul corps et un seul Esprit… un seul Seigneur, une seule foi, un seul baptême, un seul Dieu et Père de tous » (Ep 4, 4-6)." },
+      { c: 9, n: 199, q: "Quel est le lien entre l’Église universelle et les Églises locales ?", a: "L’unique Église du Christ existe aujourd’hui sous la forme d’une quinzaine d’Églises autocéphales — Constantinople, Alexandrie, Antioche, Jérusalem, Russie, Serbie, Roumanie, Bulgarie, Géorgie, Grèce, etc. —, unies dans la même foi, les mêmes sacrements et la même succession apostolique." },
+      { c: 9, n: 200, q: "Comment se manifeste l’unité de l’Église ?", a: "Par l’unité de la foi (le même Credo), des sacrements et de la liturgie, de la succession apostolique des évêques, et des canons qui règlent la vie de l’Église." },
+      { c: 9, n: 202, q: "Comment l’Église de la terre communique-t-elle avec celle du ciel ?", a: "Par la prière : nous prions Dieu, et nous demandons aux saints de prier avec nous et pour nous." },
+      { c: 9, n: 204, q: "L’Écriture parle-t-elle de la prière des saints ?", a: "Oui. Dans l’Apocalypse, saint Jean voit un ange offrir sur l’autel d’or l’encens « avec les prières de tous les saints » (Ap 8, 3-4). Et « la prière fervente du juste a une grande efficacité » (Jc 5, 16)." },
+      { c: 9, n: 205, q: "Dieu fait-il des miracles par les saints ?", a: "Oui, et même par leurs reliques : un mort revint à la vie en touchant les ossements du prophète Élisée (2 R 13, 21) ; des linges ayant touché saint Paul guérissaient les malades (Ac 19, 12). C’est le fondement de la vénération des reliques." },
+      { c: 9, n: 206, q: "Faut-il prier pour les défunts ?", a: "Oui, c’est un devoir d’amour : les défunts ne peuvent plus agir pour eux-mêmes, mais ils comptent sur nos prières, nos aumônes et surtout la Liturgie offerte à leur intention. Judas Maccabée faisait déjà offrir un sacrifice pour les morts (2 M 12, 43-45)." },
+      { c: 9, n: 211, q: "Pourquoi l’Église est-elle « apostolique » ?", a: "Parce qu’elle garde et transmet sans altération la foi des Apôtres, « transmise aux saints une fois pour toutes » (Jude 3), et qu’elle conserve la succession ininterrompue des ordinations depuis les Apôtres." },
+      { c: 9, n: 212, q: "Qu’est-ce que la sainte Tradition ?", a: "Du latin <em>tradere</em>, « transmettre ». C’est la transmission vivante, orale et écrite, de génération en génération, de la foi, des commandements, de la liturgie et de l’expérience spirituelle de l’Église. L’Écriture sainte en est le cœur." },
+      { c: 9, n: 214, q: "L’Écriture parle-t-elle de la Tradition ?", a: "Oui : « Retenez les traditions que vous avez reçues, soit par notre parole, soit par notre lettre » (2 Th 2, 15). L’Église est « la colonne et l’appui de la vérité » (1 Tm 3, 15)." },
+      { c: 9, n: 216, q: "Pourquoi tant de confessions chrétiennes avec une seule Bible ?", a: "Parce que la Bible ne s’interprète pas toute seule. L’eunuque éthiopien le disait à Philippe : « Comment comprendrais-je, si quelqu’un ne me guide ? » (Ac 8, 31). Coupée de la Tradition, la Bible donne lieu à des lectures contradictoires." },
+      { c: 9, n: 218, q: "Comment interpréter la Bible ?", a: "Dans l’Église, avec l’Esprit qui l’a inspirée, et à la lumière des saints Pères. « Aucune prophétie de l’Écriture ne peut être un objet d’interprétation particulière » (2 P 1, 20)." },
+      { c: 9, n: 220, q: "Que veut dire « consensus des Pères » ?", a: "L’accord des saints Pères. Saint Vincent de Lérins (Vᵉ siècle) en a donné la règle : tenir pour vrai « ce qui a été cru partout, toujours et par tous »." },
+      { c: 9, n: 224, q: "Comment le ministère est-il organisé dans l’Église ?", a: "En trois degrés établis dès l’époque apostolique : les diacres (Ac 6), les prêtres ou presbytres (Ac 14, 23) et les évêques (1 Tm 3)." },
+      { c: 9, n: 225, q: "Qu’est-ce que la succession apostolique ?", a: "La chaîne ininterrompue des impositions des mains, des Apôtres aux évêques et d’évêque en évêque jusqu’à nos jours, par laquelle se transmettent le ministère et les dons de l’Esprit. Dans l’Église russe, le patriarche est ainsi le successeur, en lignée continue, de l’apôtre André." },
+      { c: 9, n: 229, q: "Qui est le patriarche ?", a: "Le premier évêque, « premier parmi des égaux » d’une Église locale. Il préside le concile de son Église et la représente auprès des autres Églises, sans rien décider sans l’accord de ses frères évêques (34ᵉ canon apostolique)." },
+      { c: 9, n: 230, q: "Quel lien entre l’Église « une, sainte, catholique et apostolique » et l’Église orthodoxe ?", a: "L’Église orthodoxe se reconnaît comme cette Église même. Le mot « orthodoxe » — foi droite, juste glorification — s’est imposé dès les premiers siècles pour la distinguer des groupes qui s’en étaient séparés." },
+
+      /* ---------- Article 10 ---------- */
+      { c: 10, n: 233, q: "Qu’est-ce qu’un sacrement, ou Mystère ?", a: "Un acte sacré par lequel Dieu agit sur l’homme de sa grâce invisible, directement ou à travers une matière visible (en grec <em>mysterion</em>)." },
+      { c: 10, n: 234, q: "Combien y a-t-il de sacrements ?", a: "Au sens large, la grâce de Dieu n’a pas de limite. Au sens ecclésial, on en compte sept : le Baptême, la Chrismation, l’Eucharistie, la Confession, l’Ordination, le Mariage et l’Onction des malades." },
+      { c: 10, n: 235, q: "Par quelles matières Dieu agit-il dans les sacrements ?", a: "L’eau pour le Baptême ; l’huile pour la Chrismation et l’Onction ; le pain et le vin, qui deviennent le Corps et le Sang du Christ, pour l’Eucharistie ; l’imposition des mains pour l’Ordination ; la parole d’absolution pour la Confession ; l’échange des consentements et les couronnes pour le Mariage." },
+      { c: 10, n: 236, q: "Que donne chaque sacrement ?", a: "Le Baptême fait naître à la vie spirituelle ; la Chrismation donne les forces de l’Esprit ; l’Eucharistie nourrit pour la vie éternelle ; la Confession guérit et pardonne ; le Mariage sanctifie l’union des époux ; l’Ordination donne des pasteurs à l’Église ; l’Onction soulage et guérit les malades." },
+      { c: 10, n: 237, q: "Qui accomplit les sacrements ?", a: "Dieu lui-même, réellement, à travers le ministère des évêques et des prêtres. « Celui qui baptise n’est ni Pierre ni Ambroise : nous accomplissons notre service, mais l’efficacité vient de l’Esprit Saint » (saint Ambroise de Milan)." },
+      { c: 10, n: 239, q: "Pourquoi le Credo ne mentionne-t-il que le Baptême ?", a: "À cause des débats de l’époque sur la nécessité de rebaptiser ceux qui revenaient d’un schisme ou d’une hérésie. L’Église confesse un seul baptême (Ep 4, 5) et ne réitère pas un baptême correctement donné au nom de la Trinité." },
+      { c: 10, n: 240, q: "Que se passe-t-il au Baptême ?", a: "Le croyant est plongé trois fois dans l’eau, au nom du Père, du Fils et du Saint-Esprit : il meurt à la vie de péché et ressuscite à une vie nouvelle et sainte." },
+      { c: 10, n: 241, q: "Que veut dire mourir et ressusciter dans le Baptême ?", a: "« Nous avons été baptisés en sa mort » (Rm 6, 3). L’immersion figure la mort du Christ, les trois immersions ses trois jours au tombeau, la remontée hors de l’eau sa résurrection. Le baptisé « revêt le Christ » (Ga 3, 27)." },
+      { c: 10, n: 242, q: "Le Baptême est-il nécessaire au salut ?", a: "Le Christ le dit : « Nul, s’il ne naît d’eau et d’Esprit, ne peut entrer dans le Royaume de Dieu » (Jn 3, 5). Comme un œuf doit éclore, l’homme né de la chair doit naître de l’Esprit. Dieu seul juge cependant ceux qui n’ont pas pu le recevoir." },
+      { c: 10, n: 244, q: "Peut-on baptiser par aspersion ?", a: "Le Baptême se fait normalement par triple immersion complète. L’aspersion n’est admise qu’en cas extrême, comme un danger de mort." },
+      { c: 10, n: 245, q: "Qui peut baptiser ?", a: "Normalement l’évêque ou le prêtre. En cas d’urgence (danger de mort), tout chrétien orthodoxe peut baptiser en plongeant trois fois dans l’eau, ou en versant de l’eau, avec la formule : « Le serviteur (la servante) de Dieu N. est baptisé(e) au nom du Père, amen, et du Fils, amen, et du Saint-Esprit, amen. »" },
+      { c: 10, n: 247, q: "Que faut-il pour être baptisé ?", a: "La foi et la repentance : « Repentez-vous, et que chacun de vous soit baptisé au nom de Jésus-Christ » (Ac 2, 38). D’où le temps du catéchuménat pour les adultes." },
+      { c: 10, n: 248, q: "Faut-il baptiser les petits enfants ?", a: "Oui. L’Église baptise les enfants depuis les Apôtres, qui baptisaient « toute la maison » (Ac 16, 15.33). La grâce agit dans l’âme de l’enfant au-delà de ce qu’il comprend, comme Jean-Baptiste tressaillit dans le sein de sa mère (Lc 1, 41)." },
+      { c: 10, n: 254, q: "Qui confesse la foi pour un enfant au baptême ?", a: "Le parrain et la marraine, avec les parents. Ils s’engagent à élever l’enfant dans la foi orthodoxe. Car la grâce peut être donnée aux uns par la foi des autres : le paralytique fut pardonné à cause de la foi de ceux qui le portaient (Mc 2, 5)." },
+      { c: 10, n: 257, q: "La Tradition atteste-t-elle le baptême des enfants ?", a: "Oui, abondamment. Saint Irénée de Lyon (IIᵉ siècle) parle du Christ venu sauver « nourrissons, enfants, adolescents et vieillards » ; Origène (IIIᵉ siècle) affirme que l’usage de baptiser les petits enfants vient des Apôtres." },
+      { c: 10, n: 258, q: "Pourquoi des prières d’exorcisme avant le Baptême ?", a: "Pour chasser l’emprise du mal sur le cœur humain. Leur force est le nom de Jésus-Christ prononcé avec foi : « En mon nom ils chasseront les démons » (Mc 16, 17)." },
+      { c: 10, n: 260, q: "Quelle force a le signe de croix ?", a: "La même que le nom du Christ invoqué avec foi. « N’ayons pas honte de confesser le Crucifié : traçons avec assurance le signe de la croix sur notre front et sur toute chose — sur le pain que nous mangeons, sur la coupe, en entrant et en sortant » (saint Cyrille de Jérusalem). Les chrétiens se signent depuis les Apôtres." },
+      { c: 10, n: 262, q: "Que signifient le vêtement blanc et la croix du baptême ?", a: "Le vêtement blanc signifie la pureté de l’âme et de la vie chrétienne. La croix de baptême, portée toute la vie, rappelle la parole du Christ : « Si quelqu’un veut me suivre, qu’il prenne sa croix » (Mt 16, 24)." },
+      { c: 10, n: 264, q: "Pourquoi le Baptême ne se répète-t-il pas ?", a: "Parce qu’il est une naissance spirituelle : on ne naît qu’une fois." },
+      { c: 10, n: 267, q: "Les péchés peuvent-ils être pardonnés après le Baptême ?", a: "Oui, par le « baptême des larmes » : le sacrement de la Confession." },
+      { c: 10, n: 268, q: "Qu’est-ce que la Chrismation ?", a: "Le sacrement par lequel le baptisé reçoit les dons de l’Esprit Saint par l’onction du saint chrême, une huile parfumée, avec les paroles : « Sceau du don du Saint-Esprit »." },
+      { c: 10, n: 270, q: "D’où vient l’onction du saint chrême ?", a: "Les premiers chrétiens recevaient l’Esprit par l’imposition des mains des Apôtres (Ac 8, 17). Les chrétiens se multipliant, leurs successeurs ont transmis ce don par l’onction du chrême, préparé jusqu’à aujourd’hui à partir de dizaines d’ingrédients et consacré par les patriarches." },
+      { c: 10, n: 272, q: "Pourquoi oindre différentes parties du corps ?", a: "Le front, pour sanctifier l’intelligence et les pensées ; les yeux, les oreilles, les lèvres, pour sanctifier les sens ; la poitrine, pour sanctifier le cœur ; les mains et les pieds, pour sanctifier nos actes et nos chemins." },
+      { c: 10, n: 273, q: "Qu’est-ce que l’Eucharistie ?", a: "Du grec « action de grâces » : le sacrement dans lequel, sous les espèces du pain et du vin, les fidèles reçoivent le vrai Corps et le vrai Sang du Christ pour la vie éternelle. C’est le « sacrement des sacrements », au centre de toute la vie de l’Église." },
+      { c: 10, n: 276, q: "Quel est le sens profond de l’Eucharistie ?", a: "Recevoir le Christ lui-même dans tout son être, corps, âme et esprit : « Si vous ne mangez la chair du Fils de l’homme et ne buvez son sang, vous n’avez pas la vie en vous » (Jn 6, 53)." },
+      { c: 10, n: 277, q: "Quel lien entre la Cène et la Liturgie de chaque dimanche ?", a: "L’Eucharistie n’est pas un simple souvenir de la Cène : c’est la même Cène, que le Christ célèbre sans interruption depuis cette nuit-là, et à laquelle il nous invite chaque fois." },
+      { c: 10, n: 278, q: "À quelle fréquence communier ?", a: "Les Pères conseillent de communier le plus souvent possible, en s’y préparant dignement. Le catéchisme indique comme repère au moins toutes les trois semaines ; le rythme se fixe avec son père spirituel." },
+      { c: 10, n: 279, q: "Comment se préparer à la communion ?", a: "Se réconcilier avec tous et pardonner ; purifier sa conscience par la confession ; lire les prières de préparation ; jeûner selon l’usage ; arriver au début de la Liturgie et y participer avec attention." },
+      { c: 10, n: 281, q: "Peut-on communier indignement ?", a: "Oui : l’Eucharistie n’est pas un acte magique. Elle demande un cœur disposé, une volonté tournée vers Dieu. « Que chacun s’éprouve soi-même, et qu’ainsi il mange de ce pain et boive de cette coupe » (1 Co 11, 28)." },
+      { c: 10, n: 282, q: "Le pain et le vin deviennent-ils vraiment le Corps et le Sang du Christ ?", a: "Oui. L’Église a toujours confessé que les Dons ne sont pas seulement un symbole ou une image : par l’action de l’Esprit Saint, ils deviennent le vrai Corps et le vrai Sang du Christ, et notre union avec lui est réelle." },
+      { c: 10, n: 283, q: "Que rassemble l’Eucharistie ?", a: "Le ciel et la terre, le passé, le présent et l’avenir : les fidèles y chantent avec les anges, y font mémoire de toute l’histoire du salut — et même de la seconde venue du Christ — et y goûtent déjà le Royaume." },
+      { c: 10, n: 284, q: "Qu’est-ce que la Confession ?", a: "Le sacrement par lequel le chrétien reçoit de Dieu le pardon des péchés qu’il confesse, par la prière du prêtre. Le Christ en a donné le pouvoir aux Apôtres : « Ceux à qui vous remettrez les péchés, ils leur seront remis » (Jn 20, 23)." },
+      { c: 10, n: 287, q: "Quel est le sens profond de la repentance ?", a: "En grec <em>metanoia</em>, « changement d’esprit » : une conversion, un retournement de toute la vie et de toute la pensée vers Dieu, et non un simple regret." },
+      { c: 10, n: 289, q: "Quelles sont les étapes de la repentance ?", a: "S’arrêter et regarder sa vie à la lumière de Dieu ; reconnaître ses péchés, comme le fils prodigue « rentré en lui-même » (Lc 15, 17) ; décider de revenir vers le Père ; confesser ses fautes ; changer de vie avec l’aide de la grâce." },
+      { c: 10, n: 290, q: "Que sont les « fruits dignes de la repentance » ?", a: "La vertu opposée au péché commis : « Tu as volé ? donne. Tu as parlé en vain ? garde le silence. Tu as offensé ? viens en aide. »" },
+      { c: 10, n: 292, q: "À quelle fréquence se confesser ?", a: "Aussi régulièrement que l’on se lave : la confession est une hygiène et une guérison de l’âme. « Tu as péché ? Viens à l’église… Ici, il y a un médecin, non un juge » (saint Jean Chrysostome)." },
+      { c: 10, n: 293, q: "Qu’est-ce que l’Ordination ?", a: "Le sacrement par lequel le Saint-Esprit établit un chrétien évêque, prêtre ou diacre, par l’imposition des mains des successeurs des Apôtres, pour « paître l’Église de Dieu » (Ac 20, 28)." },
+      { c: 10, n: 295, q: "Quelle différence entre diacre, prêtre et évêque ?", a: "Le diacre sert la célébration des sacrements sans les accomplir ; le prêtre, délégué par l’évêque, célèbre les sacrements ; l’évêque célèbre les sacrements et peut aussi transmettre ce pouvoir en ordonnant." },
+      { c: 10, n: 296, q: "Qu’est-ce que le « sacerdoce royal » de tous les fidèles ?", a: "Tous les baptisés sont « un sacerdoce royal » (1 P 2, 9) : ils peuvent s’adresser directement à Dieu et lui offrir sur l’autel de leur cœur des sacrifices spirituels — prière, charité, louange. Ce sacerdoce commun ne remplace pas le sacerdoce ordonné, il en est le fondement." },
+      { c: 10, n: 297, q: "Qu’est-ce que le Mariage ?", a: "Le sacrement dans lequel, sur le libre consentement des fiancés, Dieu bénit leur union à l’image de l’union du Christ et de l’Église, et leur donne la grâce de l’unité, de la fidélité, de la naissance et de l’éducation des enfants." },
+      { c: 10, n: 300, q: "Quel est le but du Mariage ?", a: "Que l’homme et la femme ne fassent plus qu’un, à l’image de la Trinité unie dans l’amour, et qu’ils s’aident l’un l’autre sur le chemin du salut. Les enfants en sont le fruit et la bénédiction." },
+      { c: 10, n: 301, q: "Un mariage sans enfants est-il moins un mariage ?", a: "Non. Les couples qui ne peuvent avoir d’enfants ont la même possibilité d’accomplir le dessein de Dieu sur le mariage : « Ils ne sont plus deux, mais une seule chair » (Mt 19, 6)." },
+      { c: 10, n: 302, q: "Tout le monde doit-il se marier ?", a: "Non. La virginité consacrée, notamment dans la vie monastique, est une vocation plus haute, mais réservée à ceux « à qui cela est donné » (Mt 19, 11)." },
+      { c: 10, n: 303, q: "Qu’est-ce que l’Onction des malades ?", a: "Le sacrement par lequel, au moyen d’une onction d’huile, le malade reçoit la grâce de Dieu pour la guérison de l’âme et du corps. Il remonte aux Apôtres : « Quelqu’un parmi vous est-il malade ? Qu’il appelle les anciens de l’Église » (Jc 5, 14)." },
+
+      /* ---------- Article 11 ---------- */
+      { c: 11, n: 306, q: "Qu’est-ce que la résurrection des morts ?", a: "L’événement universel par lequel toutes les âmes de tous les hommes rejoindront leur propre corps, désormais incorruptible : « Il faut que ce corps corruptible revête l’incorruptibilité » (1 Co 15, 53)." },
+      { c: 11, n: 307, q: "Quand aura-t-elle lieu ?", a: "Lors de la seconde venue du Christ et du Jugement dernier." },
+      { c: 11, n: 308, q: "Tout le monde ressuscitera-t-il ?", a: "Oui, tous. Et ceux qui seront encore en vie seront transformés « en un instant, en un clin d’œil » (1 Co 15, 52)." },
+      { c: 11, n: 309, q: "Comment les corps ressusciteront-ils ?", a: "Ce seront nos propres corps, mais transfigurés, incorruptibles, spirituels, à l’image du corps glorieux du Christ ressuscité. Le prophète Ézéchiel l’annonçait dans la vision des ossements desséchés qui reprennent vie (Ez 37)." },
+      { c: 11, n: 310, q: "Qu’adviendra-t-il de ce monde ?", a: "Il sera transformé, purifié comme par le feu : « Je vis un nouveau ciel et une nouvelle terre » (Ap 21, 1)." },
+      { c: 11, n: 311, q: "Où sont les âmes des défunts avant la résurrection ?", a: "Les âmes des justes goûtent déjà la joie du paradis et attendent que toute l’Église les rejoigne pour la plénitude de la récompense (He 11, 40). Les autres attendent dans la peine. Les prières de l’Église et la Liturgie peuvent les soulager." },
+
+      /* ---------- Article 12 ---------- */
+      { c: 12, n: 312, q: "Qu’est-ce que « la vie du siècle à venir » ?", a: "La vie qui suivra la résurrection des morts et le Jugement : la vie éternelle avec Dieu, dans un monde renouvelé." },
+      { c: 12, n: 313, q: "Que sera le sort de ceux qui refusent Dieu ?", a: "L’Écriture parle de « châtiment éternel » (Mt 25, 46). Les Pères expliquent que la même lumière de Dieu sera joie pour ceux qui l’aiment et brûlure pour ceux qui la refusent. « Dieu avertit les hommes de la géhenne pour qu’ils y échappent » (saint Jean Chrysostome)." },
+      { c: 12, n: 314, q: "Les peines seront-elles égales pour tous ?", a: "Non : Dieu « rendra à chacun selon ses œuvres » (Mt 16, 27). Celui qui connaissait la volonté de son maître et ne l’a pas faite sera plus sévèrement jugé (Lc 12, 47-48)." },
+      { c: 12, n: 315, q: "Quelle sera la joie des justes ?", a: "Voir Dieu « face à face » (1 Co 13, 12), dans une joie que « l’œil n’a point vue, que l’oreille n’a point entendue » (1 Co 2, 9). « Tous verront le doux visage de Jésus-Christ » (saint Irénée de Lyon)." },
+      { c: 12, n: 316, q: "Les récompenses seront-elles égales ?", a: "Non : « Autre est l’éclat du soleil, autre celui de la lune, autre celui des étoiles » (1 Co 15, 41). « Il y a plusieurs demeures dans la maison de mon Père » (Jn 14, 2). Mais chacun sera comblé selon sa mesure." },
+      { c: 12, n: 317, q: "En quoi penser à la fin des temps aide-t-il à vivre ?", a: "Le souvenir de la mort, de la résurrection et du Jugement aide à se détacher des biens qui passent, à garder le cœur pur, à se consoler dans les épreuves et à vivre chaque jour en présence de Dieu. « Souviens-toi de ta fin, et tu ne pécheras jamais » (Si 7, 36)." }
+    ];
+
+    /** Rendu de la rubrique V à partir des données (avant l'initialisation des accordéons). */
+    const CREED_LINES = [
+      "Le Symbole de la foi, la foi et le mystère de la Trinité.",
+      "Je crois en un seul Dieu, le Père tout-puissant, Créateur du ciel et de la terre, de toutes les choses visibles et invisibles.",
+      "Et en un seul Seigneur Jésus-Christ, le Fils unique de Dieu, né du Père avant tous les siècles…",
+      "Qui pour nous les hommes et pour notre salut est descendu des cieux, s’est incarné du Saint-Esprit et de la Vierge Marie, et s’est fait homme.",
+      "Il a été crucifié pour nous sous Ponce Pilate, a souffert et a été enseveli.",
+      "Il est ressuscité le troisième jour, selon les Écritures.",
+      "Il est monté aux cieux et siège à la droite du Père.",
+      "Il reviendra dans la gloire juger les vivants et les morts, et son règne n’aura pas de fin.",
+      "Et en l’Esprit Saint, Seigneur, qui donne la vie, qui procède du Père…",
+      "En l’Église, une, sainte, catholique et apostolique.",
+      "Je confesse un seul baptême pour la rémission des péchés.",
+      "J’attends la résurrection des morts…",
+      "… et la vie du siècle à venir. Amen."
+    ];
+    (function renderCatechism() {
+      const chevron = '<span class="acc-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" /></svg></span>';
+      let html = '';
+      CATECHISM_CHAPTERS.forEach((ch) => {
+        html += `<h3 class="cat-group" data-chap="${ch.id}">${ch.short} · ${ch.title}</h3>`;
+        CATECHISM.filter((it) => it.c === ch.id).forEach((it) => {
+          html += `<div class="acc-item" id="cat-q${it.n}" data-chap="${it.c}" data-search data-kind="Catéchisme" data-title="${it.q.replace(/"/g, '&quot;')}">` +
+            `<button class="acc-trigger" aria-expanded="false"><span><span class="qn">Q ${it.n}</span> <span class="acc-title">${it.q}</span></span>${chevron}</button>` +
+            `<div class="acc-panel"><div class="acc-inner"><div class="acc-body"><p>${it.a}</p></div></div></div></div>`;
+        });
+      });
+      document.getElementById('cat-list').innerHTML = html;
+      document.getElementById('cat-chapters').innerHTML =
+        '<button class="filter" type="button" data-chap="all" aria-pressed="true">Tout<small>' + CATECHISM.length + ' questions</small></button>' +
+        CATECHISM_CHAPTERS.map((ch) => `<button class="filter" type="button" data-chap="${ch.id}" aria-pressed="false">${ch.short}<small>${ch.title}</small></button>`).join('');
+      // Passerelles depuis chaque article du Credo (rubrique II)
+      CATECHISM_CHAPTERS.slice(1).forEach((ch) => {
+        const body = document.querySelector(`#credo-${ch.id} .acc-body`);
+        if (!body) return;
+        const n = CATECHISM.filter((it) => it.c === ch.id).length;
+        const p = document.createElement('p');
+        p.className = 'see-also';
+        p.innerHTML = `<button class="link-btn" data-catchap="${ch.id}">Approfondir : ${n} questions du catéchisme sur cet article →</button>`;
+        body.appendChild(p);
+      });
+    })();
 
     /* ---------------------------------------------------------
        1. ONGLETS (navigation sans rechargement, ARIA + clavier)
@@ -1520,7 +1855,7 @@
       }
       if (el.classList.contains('acc-item')) {
         // S'assure que la question est visible malgré les filtres FAQ
-        if (el.hidden) resetFaqFilters();
+        if (el.hidden) (el.closest('#cat-list') ? resetCatFilters : resetFaqFilters)();
         setAcc(el, true);
         if (flash) { el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash'); }
       }
@@ -1586,7 +1921,7 @@
         })
         .filter(Boolean)
         .sort((a, b) => b.score - a.score)
-        .slice(0, 12)
+        .slice(0, 15)
         .map(({ it }) => ({ ...it, html: snippet(it, terms), titleHtml: highlight(it.title, terms) }));
     }
 
@@ -1598,7 +1933,7 @@
       active = -1;
       results.innerHTML = list.length
         ? `<div class="meta">${list.length} résultat${list.length > 1 ? 's' : ''} pour « ${escapeHtml(q)} »</div>` +
-          list.map((r, i) => `<button type="button" class="result" role="option" id="res-${i}" data-target="${r.id}"><span class="badge ${r.kind === 'Sept clés' ? 'gold' : ''}">${r.kind}</span><span class="result-title">${r.titleHtml}</span><span class="result-snippet">${r.html}</span></button>`).join('')
+          list.map((r, i) => `<button type="button" class="result" role="option" id="res-${i}" data-target="${r.id}"><span class="badge ${r.kind === 'Sept clés' || r.kind === 'Catéchisme' ? 'gold' : ''}">${r.kind}</span><span class="result-title">${r.titleHtml}</span><span class="result-snippet">${r.html}</span></button>`).join('')
         : `<div class="no-result">Aucun résultat pour « ${escapeHtml(q)} ». Essayez « Trinité », « icône », « confession »…</div>`;
       results.classList.add('open');
       input.setAttribute('aria-expanded', 'true');
@@ -1639,7 +1974,7 @@
        --------------------------------------------------------- */
     const faqItems = $$('#faq-list .acc-item');
     const faqInput = $('#faq-search');
-    const filters = $$('.filter');
+    const filters = $$('.filter[data-cat]');
     let currentCat = 'all';
 
     // Compteurs par catégorie
@@ -1678,6 +2013,58 @@
       applyFaq();
     }));
     faqInput.addEventListener('input', applyFaq);
+
+    /* ---------------------------------------------------------
+       6 bis. CATÉCHISME EN QUESTIONS — chapitres + recherche
+       --------------------------------------------------------- */
+    const catItems = $$('#cat-list .acc-item');
+    const catGroups = $$('#cat-list .cat-group');
+    const catInput = $('#cat-search');
+    const catFilters = $$('#cat-chapters .filter');
+    let currentChap = 'all';
+
+    function applyCat() {
+      const terms = norm(catInput.value).split(/\s+/).filter(Boolean);
+      let shown = 0;
+      const perChap = {};
+      catItems.forEach((item) => {
+        const ok = (currentChap === 'all' || item.dataset.chap === currentChap) && terms.every((t) => norm(item.textContent).includes(t));
+        item.hidden = !ok;
+        if (ok) { shown++; perChap[item.dataset.chap] = true; }
+        const title = $('.acc-title', item);
+        if (!title.dataset.raw) title.dataset.raw = title.innerHTML;
+        title.innerHTML = terms.length ? highlight(title.textContent, terms) : title.dataset.raw;
+      });
+      catGroups.forEach((g) => { g.hidden = currentChap !== 'all' || !perChap[g.dataset.chap]; });
+      const head = $('#cat-chapter-head');
+      if (currentChap !== 'all') {
+        const ch = CATECHISM_CHAPTERS[+currentChap];
+        head.innerHTML = `<h3>${ch.short} · ${ch.title}</h3><p>${CREED_LINES[ch.id]}</p>`;
+        head.hidden = false;
+      } else head.hidden = true;
+      $('#cat-empty').style.display = shown ? 'none' : 'block';
+      $('#cat-status').textContent = `${shown} question${shown > 1 ? 's' : ''} affichée${shown > 1 ? 's' : ''}`;
+    }
+    function setChap(chap) {
+      currentChap = String(chap);
+      catFilters.forEach((x) => x.setAttribute('aria-pressed', x.dataset.chap === currentChap));
+      applyCat();
+    }
+    function resetCatFilters() { catInput.value = ''; setChap('all'); }
+    catFilters.forEach((f) => f.addEventListener('click', () => setChap(f.dataset.chap)));
+    catInput.addEventListener('input', applyCat);
+    applyCat();
+
+    // Lien « Approfondir » depuis un article du Credo → rubrique V filtrée
+    document.addEventListener('click', (e) => {
+      const b = e.target.closest('[data-catchap]');
+      if (!b) return;
+      catInput.value = '';
+      setChap(b.dataset.catchap);
+      activateTab('catechisme');
+      const nav = $('.main-nav');
+      window.scrollTo({ top: $('#catechisme').offsetTop - nav.offsetHeight, behavior: 'smooth' });
+    });
 
     /* ---------------------------------------------------------
        7. SOMMAIRE ACTIF (Fondements) via IntersectionObserver
