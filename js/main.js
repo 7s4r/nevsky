@@ -225,6 +225,11 @@ function applyI18n() {
     const key = el.getAttribute('data-i18n');
     if (t[currentLang][key]) el.textContent = t[currentLang][key];
   });
+  // Liens dont la cible dépend de la langue (ex. page du catéchisme FR / RU / EN)
+  document.querySelectorAll('[data-i18n-href]').forEach((el) => {
+    const key = el.getAttribute('data-i18n-href');
+    if (t[currentLang][key]) el.setAttribute('href', t[currentLang][key]);
+  });
   syncLangSelect();
   buildCalendar(current);
   updateSeoTags();
