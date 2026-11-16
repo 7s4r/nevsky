@@ -57,13 +57,17 @@
       type="image/webp"
     />
 
-    <!-- Fonts -->
+    <!-- Fonts : seule « Great Vibes » est utilisée (logo « Nevsky / Невский »).
+         Sous-ensemble limité à ces lettres (paramètre text=) et chargement non bloquant. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap&text=Nevsky%D0%9D%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap&text=Nevsky%D0%9D%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9" /></noscript>
 
     <!-- Styles -->
     <link rel="stylesheet" href="./css/styles.min.css" />
@@ -79,9 +83,11 @@
         <div class="flex h-16 items-center justify-between">
           <a href="#accueil" class="flex items-center">
             <img
-              src="images/logo-nevsky.svg"
+              src="images/logo-nevsky-120.webp"
               alt="Logo de l'Église Orthodoxe Russe Alexandre Nevsky"
               class="h-10 w-10"
+              width="40"
+              height="40"
             />
             <span
               class="logo font-script text-3xl leading-none"
@@ -176,7 +182,7 @@
             href="#about"
             class="block rounded-md px-3 py-2 text-base font-medium text-slate-800 hover:bg-slate-50"
             data-i18n="nav.about"
-            >Présentation</a
+            >Histoire</a
           >
           <a
             href="#services"
@@ -188,7 +194,7 @@
             href="#events"
             class="block rounded-md px-3 py-2 text-base font-medium text-slate-800 hover:bg-slate-50"
             data-i18n="nav.events"
-            >Événements & Offices</a
+            >Événements</a
           >
           <a
             href="catechisme-orthodoxe.html"
@@ -264,16 +270,13 @@
               class="font-extrabold tracking-tight text-4xl sm:text-5xl md:text-6xl"
               data-i18n="hero.title"
             >
-              Église Orthodoxe Russe Alexandre Nevsky · Pau
+              Lumière et paix au cœur du Béarn
             </h1>
             <p
               class="mt-6 text-lg md:text-xl text-white/95"
               data-i18n="hero.desc"
             >
-              Bienvenue sur le site de la paroisse orthodoxe de Pau. Vous
-              trouverez ici l'histoire de notre église, les horaires des
-              offices, les services proposés à la communauté et comment soutenir
-              nos grands travaux.
+              Venez vivre la beauté de la liturgie orthodoxe dans notre église Saint Alexandre Nevsky à Pau. Un lieu de prière, de rencontre et de partage de la foi, la tradition byzantine et l’amitié chrétienne.
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
               <a
@@ -306,29 +309,22 @@
               Histoire de notre église
             </h2>
             <p class="mt-4 text-slate-600 leading-relaxed" data-i18n="about.p1">
-              Fondée en 1867 à l’initiative du père Hérodien, aumônier de la
-              colonie russe, l’église Saint Alexandre Nevsky fut la troisième
-              église orthodoxe russe construite en France, après celles de Nice
-              (1860) et Paris (1861). Elle est dédiée à Alexandre Nevsky, prince
-              de Novgorod et héros de la bataille de la Neva en 1240.
+              Fondée en 1867 à l’initiative du père Hérodien, aumônier de la colonie russe, l’église Saint‑Alexandre‑Nevsky vit le jour grâce à une souscription de 65 000 francs levée auprès des aristocrates russes du Béarn. Troisième église orthodoxe russe bâtie en France, après Nice (1860) et Paris (1861), elle est dédiée à Alexandre Nevsky, prince de Novgorod et héros de la bataille de la Neva (1240). Elle illustre les liens profonds unissant Pau et la Russie.
             </p>
             <p class="mt-4 text-slate-600 leading-relaxed" data-i18n="about.p2">
-              Érigée grâce à une souscription des aristocrates russes de la
-              région (environ 65 000 francs), elle témoigne des forts liens
-              palois avec la Russie.
+              Discrète, nichée dans un jardin bordé de palmiers, elle ne possède ni dômes traditionnels ni façades ostentatoires. Commandée depuis Saint Petersbourg à un architecte palois, qui en lieu et place d’une église orthodoxe a livré une construction semblable aux églises protestantes construites pour les résidents anglophones dans le quartier actuel du commissariat.
             </p>
           </div>
           <div class="grid grid-cols-2 gap-4">
             <picture>
               <source
                 type="image/webp"
-                srcset="images/eglise-orthodoxe-russe-pau-interieur.webp"
-                sizes="(min-width: 256px) 50vw, 100vw"
+                srcset="images/eglise-orthodoxe-russe-pau-interieur-360.webp 360w, images/eglise-orthodoxe-russe-pau-interieur.webp 384w"
+                sizes="(min-width: 1024px) 284px, (min-width: 768px) 160px, 45vw"
               />
               <source
                 type="image/jpeg"
                 srcset="images/eglise-orthodoxe-russe-pau-interieur.jpg"
-                sizes="(min-width: 256px) 50vw, 100vw"
               />
               <img
                 class="aspect-[4/3] w-full rounded-2xl object-cover shadow"
@@ -341,13 +337,12 @@
             <picture>
               <source
                 type="image/webp"
-                srcset="images/eglise-orthodoxe-russe-bougies.webp"
-                sizes="(min-width: 256px) 50vw, 100vw"
+                srcset="images/eglise-orthodoxe-russe-bougies.webp 341w"
+                sizes="(min-width: 1024px) 284px, (min-width: 768px) 160px, 45vw"
               />
               <source
                 type="image/jpeg"
                 srcset="images/eglise-orthodoxe-russe-bougies.jpg"
-                sizes="(min-width: 256px) 50vw, 100vw"
               />
               <img
                 class="aspect-[4/3] w-full rounded-2xl object-cover shadow"
@@ -360,13 +355,12 @@
             <picture>
               <source
                 type="image/webp"
-                srcset="images/eglise-orthodoxe-russe-liturgie.webp"
-                sizes="(min-width: 256px) 50vw, 100vw"
+                srcset="images/eglise-orthodoxe-russe-liturgie-360.webp 360w, images/eglise-orthodoxe-russe-liturgie.webp 512w"
+                sizes="(min-width: 1024px) 284px, (min-width: 768px) 160px, 45vw"
               />
               <source
                 type="image/jpeg"
                 srcset="images/eglise-orthodoxe-russe-liturgie.jpg"
-                sizes="(min-width: 256px) 50vw, 100vw"
               />
               <img
                 class="aspect-[4/3] w-full rounded-2xl object-cover shadow"
@@ -379,13 +373,12 @@
             <picture>
               <source
                 type="image/webp"
-                srcset="images/eglise-orthodoxe-russe-noel.webp"
-                sizes="(min-width: 256px) 50vw, 100vw"
+                srcset="images/eglise-orthodoxe-russe-noel-360.webp 360w, images/eglise-orthodoxe-russe-noel.webp 512w"
+                sizes="(min-width: 1024px) 284px, (min-width: 768px) 160px, 45vw"
               />
               <source
                 type="image/jpeg"
                 srcset="images/eglise-orthodoxe-russe-noel.jpg"
-                sizes="(min-width: 256px) 50vw, 100vw"
               />
               <img
                 class="aspect-[4/3] w-full rounded-2xl object-cover shadow"
@@ -719,7 +712,7 @@
               </h3>
               <p class="mt-2 text-slate-700" data-i18n="events.notice.text">
                 Merci de votre compréhension. Inscrivez-vous à la
-                <a href="#newsletter" class="underline font-semibold link-gold"
+                <a href="#newsletter" class="underline font-semibold link-gold-on-light"
                   >newsletter</a
                 >
                 pour être informé(e) de la réouverture et des prochains offices.
@@ -953,7 +946,7 @@
                 <dd>
                   <a
                     id="contactEmail"
-                    class="link-gold hover:opacity-90"
+                    class="link-gold-on-light hover:opacity-90"
                     href="#"
                     rel="nofollow"
                     data-user="contact"
@@ -1046,6 +1039,7 @@
               title="Carte — Pau"
               width="100%"
               height="420"
+              loading="lazy"
               src="https://www.openstreetmap.org/export/embed.html?bbox=-0.387%2C43.28%2C-0.32%2C43.32&amp;layer=mapnik&amp;marker=43.301585%2C-0.366551"
               class="border-0"
             ></iframe>
@@ -1062,7 +1056,7 @@
             <div class="flex items-center gap-2">
               <span class="block h-8 w-8" data-i18n="brand.icon">
                 <img
-                  src="images/logo-nevsky.svg"
+                  src="images/logo-nevsky-120.webp"
                   alt="Logo de l'Église
                 Orthodoxe Russe Alexandre Nevsky"
                   width="32"
@@ -1157,7 +1151,7 @@
                       href="#events"
                       class="hover:opacity-90 text-slate-600"
                       data-i18n="nav.events"
-                      >Calendrier</a
+                      >Événements</a
                     >
                   </li>
                   <li>
@@ -1174,7 +1168,7 @@
                       href="#don"
                       class="hover:opacity-90 text-slate-600"
                       data-i18n="nav.donate"
-                      >Faire un don</a
+                      >Dons</a
                     >
                   </li>
                   <li>

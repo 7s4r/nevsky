@@ -223,7 +223,11 @@ function applyI18n() {
   document.title = t[currentLang]['meta.title'];
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.getAttribute('data-i18n');
-    if (t[currentLang][key]) el.textContent = t[currentLang][key];
+    const value = t[currentLang][key];
+    // Ne réécrire que si le texte change : réécrire un texte identique repousse
+    // l’affichage de l’élément principal (LCP) au moment où ce script s’exécute.
+    if (value && el.textContent.replace(/\s+/g, ' ').trim() !== value)
+      el.textContent = value;
   });
   // Liens dont la cible dépend de la langue (ex. page du catéchisme FR / RU / EN)
   document.querySelectorAll('[data-i18n-href]').forEach((el) => {
