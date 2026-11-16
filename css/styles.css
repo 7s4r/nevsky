@@ -1,5 +1,9 @@
 @import "tailwindcss";
 @source not "../catechisme-orthodoxe.html";
+@source not "../pravoslavnyj-katekhizis.html";
+@source not "../orthodox-catechism.html";
+@source not "./catechisme.css";
+@source not "../js/catechisme*.js";
 
 /* Site-specific styles moved from index.html */
 html {

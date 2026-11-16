@@ -115,7 +115,7 @@ window.locales = {
     'nav.about': 'История',
     'nav.services': 'Служения',
     'nav.events': 'События',
-    'nav.catechism': 'Катехизис',
+    'nav.catechism': 'Закон\u00a0Божий',
     'nav.catechism.href': 'pravoslavnyj-katekhizis.html',
     'nav.donate': 'Пожертвования',
     'nav.contact': 'Контакты',
