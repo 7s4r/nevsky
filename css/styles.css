@@ -1,5 +1,9 @@
 @import "tailwindcss";
 @source not "../catechisme-orthodoxe.html";
+@source not "../zakon-bozhij.html";
+@source not "../orthodox-catechism.html";
+@source not "./catechisme.css";
+@source not "../js/catechisme*.js";
 
 /* Site-specific styles moved from index.html */
 html {
@@ -33,6 +37,14 @@ html {
 }
 .link-gold:hover {
   opacity: 0.85;
+}
+/* Variante lisible sur fond clair (contraste ≥ 4,5:1 sur blanc) */
+.link-gold-on-light {
+  color: #7a5c00;
+  font-weight: 600;
+}
+.link-gold-on-light:hover {
+  color: #5c4500;
 }
 .font-script {
   font-family: 'Great Vibes', cursive;
