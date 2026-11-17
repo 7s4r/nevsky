@@ -1,0 +1,42 @@
+/* Prière de Jésus — compléments à css/catechisme.css (pages FR / RU / EN) */
+
+/* Or plus foncé pour les petits textes dorés : contraste ≥ 4,5:1 sur blanc et sur parchemin */
+:root { --gold-700: #7a5c00; }
+
+/* Bannière : la prière elle-même, en grand */
+.hero .prayer-hero { margin: 26px auto 0; max-width: 760px; font-family: var(--font-serif); font-style: italic; font-weight: 500; font-size: clamp(1.5rem, 3.6vw, 2.25rem); line-height: 1.35; color: var(--blue-900); }
+.hero .prayer-hero small { display: block; margin-top: 10px; font-family: var(--font-sans); font-style: normal; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; color: var(--gold-700); }
+.hero .hero-actions { margin-top: 26px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* Les différentes formes de la prière */
+.prayer-forms { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 24px 0; }
+.prayer-form { background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--gold-600); border-radius: var(--radius); padding: 16px 18px; box-shadow: var(--shadow-sm); }
+.prayer-form .lang { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gold-700); margin-bottom: 6px; }
+.prayer-form p { margin: 0; font-family: var(--font-serif); font-size: 1.25rem; line-height: 1.4; color: var(--blue-900); font-style: italic; }
+.prayer-form small { display: block; margin-top: 8px; color: var(--ink-soft); font-size: .82rem; }
+
+/* Étapes du chemin : la colonne de gauche contient un mot ou un nombre */
+.timeline.steps::before { left: 108px; }
+.timeline.steps li { grid-template-columns: 92px 1fr; gap: 36px; }
+.timeline.steps li::before { left: 102px; }
+.timeline.steps .year { font-size: 1.1rem; padding-top: 2px; }
+@media (max-width: 640px) {
+  .timeline.steps::before { left: 6px; }
+  .timeline.steps li { grid-template-columns: 1fr; gap: 0; padding-left: 30px; }
+  .timeline.steps li::before { left: 0; top: 4px; }
+  .timeline.steps .year { text-align: left; font-size: .8rem; font-family: var(--font-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--gold-700); }
+}
+
+/* Encadré « source » (texte original en domaine public) */
+.source-note { font-size: .88rem; color: var(--ink-soft); background: var(--stone); border: 1px dashed var(--line); border-radius: var(--radius); padding: 12px 16px; margin-top: 22px; }
+
+/* Avertissement pastoral */
+.caution { background: var(--gold-100); border-left: 3px solid var(--gold-600); border-radius: 0 var(--radius) var(--radius) 0; padding: 14px 18px; margin: 22px 0; }
+.caution strong { color: var(--blue-900); }
+
+/* Cartes « pour aller plus loin » */
+.further { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+.further .card { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
+.further .card h3 { font-size: 1.35rem; margin-bottom: 6px; }
+.further .card p { margin: 0 0 12px; color: var(--ink-soft); font-size: .95rem; }
+.further .card .more { margin-top: auto; font-weight: 600; font-size: .9rem; color: var(--blue-700); }
