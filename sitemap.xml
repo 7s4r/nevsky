@@ -55,4 +55,31 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://nevsky.fr/priere-de-jesus.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/priere-de-jesus.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/iisusova-molitva.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/jesus-prayer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/priere-de-jesus.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nevsky.fr/iisusova-molitva.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/priere-de-jesus.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/iisusova-molitva.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/jesus-prayer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/priere-de-jesus.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nevsky.fr/jesus-prayer.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/priere-de-jesus.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/iisusova-molitva.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/jesus-prayer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/priere-de-jesus.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
