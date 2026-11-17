@@ -82,4 +82,31 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://nevsky.fr/saint-seraphin-de-sarov.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/saint-seraphin-de-sarov.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/serafim-sarovskij.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/seraphim-of-sarov.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/saint-seraphin-de-sarov.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nevsky.fr/serafim-sarovskij.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/saint-seraphin-de-sarov.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/serafim-sarovskij.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/seraphim-of-sarov.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/saint-seraphin-de-sarov.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nevsky.fr/seraphim-of-sarov.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/saint-seraphin-de-sarov.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/serafim-sarovskij.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/seraphim-of-sarov.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/saint-seraphin-de-sarov.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
