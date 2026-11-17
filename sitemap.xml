@@ -109,4 +109,58 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://nevsky.fr/philocalie.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/philocalie.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/dobrotolyubie.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/philokalia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/philocalie.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nevsky.fr/dobrotolyubie.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/philocalie.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/dobrotolyubie.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/philokalia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/philocalie.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nevsky.fr/philokalia.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/philocalie.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/dobrotolyubie.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/philokalia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/philocalie.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nevsky.fr/saint-silouane-athonite.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/saint-silouane-athonite.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/siluan-afonskij.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/silouan-the-athonite.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/saint-silouane-athonite.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nevsky.fr/siluan-afonskij.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/saint-silouane-athonite.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/siluan-afonskij.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/silouan-the-athonite.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/saint-silouane-athonite.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nevsky.fr/silouan-the-athonite.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/saint-silouane-athonite.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/siluan-afonskij.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/silouan-the-athonite.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/saint-silouane-athonite.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
