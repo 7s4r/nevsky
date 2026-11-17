@@ -1,8 +1,5 @@
 /* Prière de Jésus — compléments à css/catechisme.css (pages FR / RU / EN) */
 
-/* Or plus foncé pour les petits textes dorés : contraste ≥ 4,5:1 sur blanc et sur parchemin */
-:root { --gold-700: #7a5c00; }
-
 /* Bannière : la prière elle-même, en grand */
 .hero .prayer-hero { margin: 26px auto 0; max-width: 760px; font-family: var(--font-serif); font-style: italic; font-weight: 500; font-size: clamp(1.5rem, 3.6vw, 2.25rem); line-height: 1.35; color: var(--blue-900); }
 .hero .prayer-hero small { display: block; margin-top: 10px; font-family: var(--font-sans); font-style: normal; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; color: var(--gold-700); }

@@ -23,7 +23,8 @@
   <!-- Шрифты: Cormorant Garamond (заголовки, богослужебные цитаты) + Open Sans (текст, интерфейс); кириллица подключена -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap&subset=cyrillic" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap&subset=cyrillic" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap&subset=cyrillic" /></noscript>
 
   <link rel="stylesheet" href="css/catechisme.css" />
 </head>
@@ -53,7 +54,7 @@
 
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="/?lang=ru" aria-label="Русский православный храм святого Александра Невского — главная">
+      <a class="brand" href="/?lang=ru">
         <svg class="cross" aria-hidden="true"><use href="#ortho-cross" /></svg>
         <span class="brand-text">
           <span class="brand-title">Храм св. Александра Невского</span>
@@ -81,7 +82,7 @@
         <label for="global-search" class="sr-only">Поиск по всем разделам Закона Божия</label>
         <div class="search-field">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" stroke-linecap="round" /></svg>
-          <input id="global-search" type="search" autocomplete="off" placeholder="Поиск по всем разделам: Троица, икона, причастие…" aria-controls="search-results" aria-expanded="false" aria-autocomplete="list" />
+          <input id="global-search" type="search" role="combobox" autocomplete="off" placeholder="Поиск по всем разделам: Троица, икона, причастие…" aria-controls="search-results" aria-expanded="false" aria-autocomplete="list" />
           <button class="search-clear" type="button" aria-label="Очистить поиск">×</button>
         </div>
         <div class="search-results" id="search-results" role="listbox" aria-label="Результаты поиска"></div>
@@ -1006,7 +1007,7 @@
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m6 15 6-6 6 6" /></svg>
   </button>
 
-  <script src="js/catechisme-data.ru.js"></script>
-  <script src="js/catechisme.js"></script>
+  <script src="js/catechisme-data.ru.js" defer></script>
+  <script src="js/catechisme.js" defer></script>
 </body>
 </html>
