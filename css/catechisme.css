@@ -10,7 +10,8 @@
   --blue-100: #E8EEF7;
   --blue-50:  #F3F6FB;
   /* Or byzantin */
-  --gold-700: #A07E1C;
+  --gold-700: #7A5C00; /* petits textes dorés : contraste ≥ 4,5:1 sur blanc et sur parchemin */
+  --gold-650: #A07E1C; /* grands textes dorés : contraste ≥ 3:1 */
   --gold-600: #C59B27;
   --gold-500: #D4AF37;
   --gold-100: #F6EDD3;
@@ -226,7 +227,7 @@ mark { background: var(--gold-100); color: inherit; padding: 0 2px; border-radiu
 .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-bottom: 14px; }
 .pillar { text-decoration: none; color: inherit; display: block; }
 .pillar:hover { transform: translateY(-3px); color: inherit; }
-.pillar .roman { font-family: var(--font-serif); font-size: 2.4rem; color: var(--gold-600); line-height: 1; font-weight: 700; }
+.pillar .roman { font-family: var(--font-serif); font-size: 2.4rem; color: var(--gold-650); line-height: 1; font-weight: 700; }
 .pillar h3 { margin: 8px 0 6px; }
 .pillar p { color: var(--ink-soft); font-size: .95rem; margin: 0; }
 
