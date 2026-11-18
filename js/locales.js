@@ -54,6 +54,8 @@ window.locales = {
     'services.items.hor.text':
       'Consultez ci-dessous le calendrier des offices et des fêtes liturgiques.',
     'nav.lectures': 'Lectures',
+    'nav.lectures.href': 'lectures-spirituelles.html',
+    'lectures.all': 'Toutes les lectures spirituelles →',
     'lectures.title': 'Lectures spirituelles',
     'lectures.desc': 'Des livres qui ont formé des générations de chrétiens orthodoxes, présentés simplement pour les découvrir ou les redécouvrir.',
     'lectures.pilgrim.tag': 'La prière du cœur',
@@ -180,6 +182,8 @@ window.locales = {
     'services.items.hor.title': 'Расписание служб',
     'services.items.hor.text': 'Ниже — календарь богослужений и праздников.',
     'nav.lectures': 'Чтение',
+    'nav.lectures.href': 'duhovnoe-chtenie.html',
+    'lectures.all': 'Всё духовное чтение →',
     'lectures.title': 'Духовное чтение',
     'lectures.desc': 'Книги, на которых воспитывались поколения православных христиан. Коротко о главном, чтобы открыть их для себя или перечитать.',
     'lectures.pilgrim.tag': 'Сердечная молитва',
@@ -304,6 +308,8 @@ window.locales = {
     'services.items.hor.text':
       'Below is the calendar of services and liturgical feasts.',
     'nav.lectures': 'Reading',
+    'nav.lectures.href': 'spiritual-reading.html',
+    'lectures.all': 'All spiritual reading →',
     'lectures.title': 'Spiritual reading',
     'lectures.desc': 'Books that have shaped generations of Orthodox Christians, presented simply so you can discover or rediscover them.',
     'lectures.pilgrim.tag': 'The prayer of the heart',
