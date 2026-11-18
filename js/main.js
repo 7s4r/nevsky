@@ -20,14 +20,6 @@ const onScroll = () => {
 window.addEventListener('scroll', onScroll);
 onScroll();
 
-// Simple calendar generator
-const title = document.getElementById('calendarTitle');
-const grid = document.getElementById('calendarGrid');
-const prev = document.getElementById('prevMonth');
-const next = document.getElementById('nextMonth');
-
-let current = new Date();
-current.setDate(1);
 /** Language helpers: URL param (?lang=fr|ru) has priority over localStorage */
 function getLangFromUrl() {
   try {
@@ -51,59 +43,6 @@ function setLangParamInUrl(lang) {
 let currentLang = getLangFromUrl() || localStorage.getItem('lang') || 'fr';
 // Ensure URL reflects the chosen language on first load
 setLangParamInUrl(currentLang);
-
-function formatMonthYear(d) {
-  const localeMap = { fr: 'fr-FR', ru: 'ru-RU', en: 'en-GB' };
-  const loc = localeMap[currentLang] || 'fr-FR';
-  return d
-    .toLocaleDateString(loc, { month: 'long', year: 'numeric' })
-    .replace(/^./, (c) => c.toUpperCase());
-}
-
-function buildCalendar(date) {
-  grid.innerHTML = '';
-  title.textContent = formatMonthYear(date);
-  const firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
-  const startDay = (firstDay.getDay() + 6) % 7; // Monday=0
-  const daysInMonth = new Date(
-    date.getFullYear(),
-    date.getMonth() + 1,
-    0
-  ).getDate();
-
-  for (let i = 0; i < startDay; i++) {
-    const cell = document.createElement('div');
-    cell.className = 'h-10 rounded-lg bg-transparent';
-    grid.appendChild(cell);
-  }
-  for (let d = 1; d <= daysInMonth; d++) {
-    const cell = document.createElement('button');
-    cell.type = 'button';
-    cell.className =
-      'h-10 rounded-lg border border-slate-200 text-sm hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-[#ffd615]';
-    cell.textContent = d;
-    cell.addEventListener('click', () => {
-      const msgPrefix =
-        currentLang === 'ru'
-          ? 'Богослужения на '
-          : currentLang === 'en'
-          ? 'Services on '
-          : 'Offices pour le ';
-      alert(msgPrefix + d + ' ' + formatMonthYear(date) + ' — (à compléter)');
-    });
-    grid.appendChild(cell);
-  }
-}
-
-prev?.addEventListener('click', () => {
-  current.setMonth(current.getMonth() - 1);
-  buildCalendar(current);
-});
-next?.addEventListener('click', () => {
-  current.setMonth(current.getMonth() + 1);
-  buildCalendar(current);
-});
-buildCalendar(current);
 
 const translations = window.locales;
 const t = {
@@ -235,7 +174,7 @@ function applyI18n() {
     if (t[currentLang][key]) el.setAttribute('href', t[currentLang][key]);
   });
   syncLangSelect();
-  buildCalendar(current);
+  window.NevskyCalendar?.render(currentLang);
   updateSeoTags();
 }
 
