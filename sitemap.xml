@@ -163,4 +163,31 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://nevsky.fr/lectures-spirituelles.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/lectures-spirituelles.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/duhovnoe-chtenie.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/spiritual-reading.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/lectures-spirituelles.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nevsky.fr/duhovnoe-chtenie.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/lectures-spirituelles.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/duhovnoe-chtenie.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/spiritual-reading.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/lectures-spirituelles.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nevsky.fr/spiritual-reading.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/lectures-spirituelles.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/duhovnoe-chtenie.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/spiritual-reading.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/lectures-spirituelles.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

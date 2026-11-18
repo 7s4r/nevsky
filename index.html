@@ -123,7 +123,7 @@
             <nav class="hidden md:flex items-center gap-2 lg:gap-6 md:text-sm lg:text-base">
               <a
                 href="#accueil"
-                class="nav-link font-medium hover:opacity-80"
+                class="nav-link font-medium hover:opacity-80 hidden lg:inline"
                 data-i18n="nav.home"
                 >Accueil</a
               >
@@ -151,6 +151,13 @@
                 data-i18n="nav.catechism"
                 data-i18n-href="nav.catechism.href"
                 >Catéchisme</a
+              >
+              <a
+                href="lectures-spirituelles.html"
+                class="nav-link font-medium hover:opacity-80"
+                data-i18n="nav.lectures"
+                data-i18n-href="nav.lectures.href"
+                >Lectures</a
               >
               <a
                 href="#don"
@@ -202,6 +209,13 @@
             data-i18n="nav.catechism"
                 data-i18n-href="nav.catechism.href"
             >Catéchisme</a
+          >
+          <a
+            href="lectures-spirituelles.html"
+            class="block rounded-md px-3 py-2 text-base font-medium text-slate-800 hover:bg-slate-50"
+            data-i18n="nav.lectures"
+            data-i18n-href="nav.lectures.href"
+            >Lectures</a
           >
           <a
             href="#don"
@@ -691,6 +705,13 @@
             Des livres qui ont formé des générations de chrétiens orthodoxes,
             présentés simplement pour les découvrir ou les redécouvrir.
           </p>
+          <a
+            href="lectures-spirituelles.html"
+            class="mt-3 inline-block text-sm underline font-semibold link-gold-on-light"
+            data-i18n="lectures.all"
+            data-i18n-href="nav.lectures.href"
+            >Toutes les lectures spirituelles →</a
+          >
         </div>
 
         <div class="mt-10 grid gap-6 lg:grid-cols-3">
@@ -1253,9 +1274,10 @@
                   </li>
                   <li>
                     <a
-                      href="#lectures"
+                      href="lectures-spirituelles.html"
                       class="hover:opacity-90 text-slate-600"
                       data-i18n="nav.lectures"
+                      data-i18n-href="nav.lectures.href"
                       >Lectures</a
                     >
                   </li>
