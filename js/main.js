@@ -20,90 +20,41 @@ const onScroll = () => {
 window.addEventListener('scroll', onScroll);
 onScroll();
 
-// Simple calendar generator
-const title = document.getElementById('calendarTitle');
-const grid = document.getElementById('calendarGrid');
-const prev = document.getElementById('prevMonth');
-const next = document.getElementById('nextMonth');
+/* ---- Langue ----
+ * La page d'accueil existe en trois fichiers : index.html (fr), ru.html, en.html
+ * (ru.html et en.html sont générés par scripts/build-home.mjs).
+ * Sur ru.html / en.html, la langue est fixée par <html data-static-lang>.
+ * Sur index.html, les anciens liens « ?lang=ru » / « ?lang=en » renvoient
+ * vers la page de la bonne langue. */
+const HOME_PAGES = { fr: '/', ru: '/ru.html', en: '/en.html' };
+const staticLang = document.documentElement.dataset.staticLang || null;
 
-let current = new Date();
-current.setDate(1);
-/** Language helpers: URL param (?lang=fr|ru) has priority over localStorage */
 function getLangFromUrl() {
   try {
-    const params = new URLSearchParams(window.location.search);
-    const l = (params.get('lang') || '').toLowerCase();
+    const l = (new URLSearchParams(window.location.search).get('lang') || '').toLowerCase();
     return l === 'fr' || l === 'ru' || l === 'en' ? l : null;
   } catch (_) {
     return null;
   }
 }
-
-function setLangParamInUrl(lang) {
-  try {
-    const url = new URL(window.location.href);
-    url.searchParams.set('lang', lang);
-    // Do not create a new history entry; keep navigation clean
-    window.history.replaceState({}, '', url);
-  } catch (_) {}
+function goToLang(lang) {
+  try { localStorage.setItem('lang', lang); } catch (_) {}
+  const target = HOME_PAGES[lang] || '/';
+  // En local (file://), garder des chemins relatifs
+  const href = location.protocol === 'file:' ? (lang === 'fr' ? 'index.html' : target.slice(1)) : target;
+  location.assign(href + location.hash);
 }
 
-let currentLang = getLangFromUrl() || localStorage.getItem('lang') || 'fr';
-// Ensure URL reflects the chosen language on first load
-setLangParamInUrl(currentLang);
-
-function formatMonthYear(d) {
-  const localeMap = { fr: 'fr-FR', ru: 'ru-RU', en: 'en-GB' };
-  const loc = localeMap[currentLang] || 'fr-FR';
-  return d
-    .toLocaleDateString(loc, { month: 'long', year: 'numeric' })
-    .replace(/^./, (c) => c.toUpperCase());
-}
-
-function buildCalendar(date) {
-  grid.innerHTML = '';
-  title.textContent = formatMonthYear(date);
-  const firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
-  const startDay = (firstDay.getDay() + 6) % 7; // Monday=0
-  const daysInMonth = new Date(
-    date.getFullYear(),
-    date.getMonth() + 1,
-    0
-  ).getDate();
-
-  for (let i = 0; i < startDay; i++) {
-    const cell = document.createElement('div');
-    cell.className = 'h-10 rounded-lg bg-transparent';
-    grid.appendChild(cell);
-  }
-  for (let d = 1; d <= daysInMonth; d++) {
-    const cell = document.createElement('button');
-    cell.type = 'button';
-    cell.className =
-      'h-10 rounded-lg border border-slate-200 text-sm hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-[#ffd615]';
-    cell.textContent = d;
-    cell.addEventListener('click', () => {
-      const msgPrefix =
-        currentLang === 'ru'
-          ? 'Богослужения на '
-          : currentLang === 'en'
-          ? 'Services on '
-          : 'Offices pour le ';
-      alert(msgPrefix + d + ' ' + formatMonthYear(date) + ' — (à compléter)');
-    });
-    grid.appendChild(cell);
+let currentLang = staticLang || 'fr';
+if (!staticLang) {
+  const wanted = getLangFromUrl();
+  if (wanted && wanted !== 'fr') {
+    goToLang(wanted);
+  } else if (getLangFromUrl()) {
+    // ?lang=fr : nettoyer l'adresse
+    try { history.replaceState({}, '', location.pathname + location.hash); } catch (_) {}
   }
 }
-
-prev?.addEventListener('click', () => {
-  current.setMonth(current.getMonth() - 1);
-  buildCalendar(current);
-});
-next?.addEventListener('click', () => {
-  current.setMonth(current.getMonth() + 1);
-  buildCalendar(current);
-});
-buildCalendar(current);
 
 const translations = window.locales;
 const t = {
@@ -111,112 +62,6 @@ const t = {
   ru: translations.ru,
   en: translations.en,
 };
-/** ---- SEO helpers: canonical, hreflang, title & descriptions per language ---- */
-function ensureAltLink(hreflang) {
-  let el = document.querySelector(
-    `link[rel="alternate"][hreflang="${hreflang}"]`
-  );
-  if (!el) {
-    el = document.createElement('link');
-    el.setAttribute('rel', 'alternate');
-    el.setAttribute('hreflang', hreflang);
-    document.head.appendChild(el);
-  }
-  return el;
-}
-
-function updateSeoTags() {
-  const lang = typeof currentLang === 'string' ? currentLang : 'fr';
-
-  // Canonical self-referencing per language (?lang=fr|ru)
-  try {
-    const canonical =
-      document.querySelector('link[rel="canonical"]') ||
-      (() => {
-        const c = document.createElement('link');
-        c.setAttribute('rel', 'canonical');
-        document.head.appendChild(c);
-        return c;
-      })();
-    const url = new URL(window.location.href);
-    url.searchParams.set('lang', lang);
-    canonical.setAttribute('href', url.toString());
-  } catch {}
-
-  // Hreflang alternates (+ x-default -> FR)
-  try {
-    const base = new URL(window.location.origin + window.location.pathname);
-    const fr = new URL(base);
-    fr.searchParams.set('lang', 'fr');
-    const ru = new URL(base);
-    ru.searchParams.set('lang', 'ru');
-    const en = new URL(base);
-    en.searchParams.set('lang', 'en');
-
-    const linkFr = ensureAltLink('fr');
-    const linkRu = ensureAltLink('ru');
-    const linkEn = ensureAltLink('en');
-    const linkXd = ensureAltLink('x-default');
-
-    linkFr.setAttribute('href', fr.toString());
-    linkRu.setAttribute('href', ru.toString());
-    linkEn.setAttribute('href', en.toString());
-    linkXd.setAttribute('href', fr.toString()); // default to FR
-  } catch {}
-
-  // Title & meta descriptions (HTML + OpenGraph)
-  try {
-    const dict = t && t[lang] ? t[lang] : (t && t['fr']) || {};
-    const titleStr = dict['meta.title'] || document.title;
-    const descStr =
-      dict['meta.description'] ||
-      document
-        .querySelector('meta[name="description"]')
-        ?.getAttribute('content') ||
-      '';
-
-    // <title>
-    document.title = titleStr;
-
-    // <meta name="description">
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement('meta');
-      metaDesc.setAttribute('name', 'description');
-      document.head.appendChild(metaDesc);
-    }
-    metaDesc.setAttribute('content', descStr);
-
-    // OpenGraph
-    let ogTitle = document.querySelector('meta[property="og:title"]');
-    if (!ogTitle) {
-      ogTitle = document.createElement('meta');
-      ogTitle.setAttribute('property', 'og:title');
-      document.head.appendChild(ogTitle);
-    }
-    ogTitle.setAttribute('content', titleStr);
-
-    let ogDesc = document.querySelector('meta[property="og:description"]');
-    if (!ogDesc) {
-      ogDesc = document.createElement('meta');
-      ogDesc.setAttribute('property', 'og:description');
-      document.head.appendChild(ogDesc);
-    }
-    ogDesc.setAttribute('content', descStr);
-
-    // og:url
-    let ogUrl = document.querySelector('meta[property="og:url"]');
-    if (!ogUrl) {
-      ogUrl = document.createElement('meta');
-      ogUrl.setAttribute('property', 'og:url');
-      document.head.appendChild(ogUrl);
-    }
-    ogUrl.setAttribute('content', new URL(window.location.href).toString());
-  } catch {}
-}
-
-currentLang =
-  getLangFromUrl() || localStorage.getItem('lang') || currentLang || 'fr';
 
 function applyI18n() {
   document.documentElement.lang = currentLang || 'fr';
@@ -235,15 +80,12 @@ function applyI18n() {
     if (t[currentLang][key]) el.setAttribute('href', t[currentLang][key]);
   });
   syncLangSelect();
-  buildCalendar(current);
-  updateSeoTags();
+  window.NevskyCalendar?.render(currentLang);
 }
 
 function setLang(lang) {
-  currentLang = lang;
-  localStorage.setItem('lang', lang);
-  setLangParamInUrl(lang);
-  applyI18n();
+  if (lang === currentLang) return;
+  goToLang(lang);
 }
 
 // Language selector in footer

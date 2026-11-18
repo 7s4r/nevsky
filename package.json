@@ -9,7 +9,8 @@
   "scripts": {
     "minify:css": "npx @tailwindcss/cli -i ./css/styles.css -o ./css/styles.min.css --minify",
     "minify:js": "npx terser ./js/main.js -o ./js/main.min.js --compress --mangle",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:home": "node scripts/build-home.mjs"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.11",

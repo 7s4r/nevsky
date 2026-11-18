@@ -75,6 +75,10 @@ window.locales = {
     'lectures.classics.3': 'Saint Silouane l’Athonite →',
     'lectures.silouan.href': 'saint-silouane-athonite.html',
     'lectures.classics.note': 'Demandez conseil au prêtre pour choisir vos lectures.',
+    'about.patron': 'Découvrir saint Alexandre Nevsky, notre saint patron →',
+    'about.patron.href': 'saint-alexandre-nevsky.html',
+    'events.firstvisit': 'Première visite ? Ce qu’il faut savoir →',
+    'events.firstvisit.href': 'premiere-visite.html',
     'events.title': 'Événements à venir & calendrier des offices',
     'events.desc':
       'Voici les prochains événements de la paroisse. Vous pouvez ajouter les dates à votre agenda.',
@@ -90,7 +94,7 @@ window.locales = {
     'events.item3.time': 'Dimanche 31 août · 12:15 — 13:15',
     'events.item3.desc':
       'Découverte de la foi orthodoxe, questions & réponses.',
-    'events.help': 'Cliquez sur une date pour voir les offices.',
+    'events.help': 'Cliquez sur une date pour voir les fêtes, le jeûne et les offices.',
     'events.notice.title': 'Église temporairement fermée pour travaux',
     'events.notice.text':
       'Merci de votre compréhension. Inscrivez-vous à la newsletter pour être informé(e) de la réouverture et des prochains offices.',
@@ -203,6 +207,10 @@ window.locales = {
     'lectures.classics.3': 'Преподобный Силуан Афонский →',
     'lectures.silouan.href': 'siluan-afonskij.html',
     'lectures.classics.note': 'Посоветуйтесь со священником, что читать.',
+    'about.patron': 'Святой Александр Невский — небесный покровитель нашего храма →',
+    'about.patron.href': 'aleksandr-nevskij.html',
+    'events.firstvisit': 'Впервые в храме? Что полезно знать →',
+    'events.firstvisit.href': 'pervoe-poseshchenie.html',
     'events.title': 'Ближайшие события и календарь служб',
     'events.desc':
       'Здесь вы найдёте ближайшие события прихода. Добавляйте даты в свой календарь.',
@@ -217,7 +225,7 @@ window.locales = {
     'events.item3.title': 'Катехизация для взрослых',
     'events.item3.time': 'Воскресенье 31 августа · 12:15 — 13:15',
     'events.item3.desc': 'Знакомство с православной верой. Вопросы и ответы.',
-    'events.help': 'Нажмите на дату, чтобы увидеть службы.',
+    'events.help': 'Нажмите на дату, чтобы увидеть праздники, пост и богослужения.',
     'events.notice.title': 'Храм временно закрыт на ремонт',
     'events.notice.text':
       'Спасибо за понимание. Подпишитесь на рассылку, чтобы получить уведомление об открытии и ближайших богослужениях.',
@@ -329,6 +337,10 @@ window.locales = {
     'lectures.classics.3': 'Saint Silouan the Athonite →',
     'lectures.silouan.href': 'silouan-the-athonite.html',
     'lectures.classics.note': 'Ask the priest for advice on what to read.',
+    'about.patron': 'Discover Saint Alexander Nevsky, our patron saint →',
+    'about.patron.href': 'alexander-nevsky.html',
+    'events.firstvisit': 'First visit? What to know →',
+    'events.firstvisit.href': 'first-visit.html',
     'events.title': 'Upcoming Events & Service Calendar',
     'events.desc':
       'Here are the upcoming events of the parish. You can add the dates to your calendar.',
@@ -344,7 +356,7 @@ window.locales = {
     'events.item3.time': 'Sunday, August 31 · 12:15 — 13:15',
     'events.item3.desc':
       'Introduction to the Orthodox faith, questions & answers.',
-    'events.help': 'Click on a date to see the services.',
+    'events.help': 'Click on a date to see feasts, fasting and services.',
     'events.notice.title': 'Church temporarily closed for renovation',
     'events.notice.text':
       'Thank you for your understanding. Subscribe to the newsletter to be notified about the reopening and upcoming services.',
