@@ -75,6 +75,10 @@ window.locales = {
     'lectures.classics.3': 'Saint Silouane l’Athonite →',
     'lectures.silouan.href': 'saint-silouane-athonite.html',
     'lectures.classics.note': 'Demandez conseil au prêtre pour choisir vos lectures.',
+    'about.patron': 'Découvrir saint Alexandre Nevsky, notre saint patron →',
+    'about.patron.href': 'saint-alexandre-nevsky.html',
+    'events.firstvisit': 'Première visite ? Ce qu’il faut savoir →',
+    'events.firstvisit.href': 'premiere-visite.html',
     'events.title': 'Événements à venir & calendrier des offices',
     'events.desc':
       'Voici les prochains événements de la paroisse. Vous pouvez ajouter les dates à votre agenda.',
@@ -203,6 +207,10 @@ window.locales = {
     'lectures.classics.3': 'Преподобный Силуан Афонский →',
     'lectures.silouan.href': 'siluan-afonskij.html',
     'lectures.classics.note': 'Посоветуйтесь со священником, что читать.',
+    'about.patron': 'Святой Александр Невский — небесный покровитель нашего храма →',
+    'about.patron.href': 'aleksandr-nevskij.html',
+    'events.firstvisit': 'Впервые в храме? Что полезно знать →',
+    'events.firstvisit.href': 'pervoe-poseshchenie.html',
     'events.title': 'Ближайшие события и календарь служб',
     'events.desc':
       'Здесь вы найдёте ближайшие события прихода. Добавляйте даты в свой календарь.',
@@ -329,6 +337,10 @@ window.locales = {
     'lectures.classics.3': 'Saint Silouan the Athonite →',
     'lectures.silouan.href': 'silouan-the-athonite.html',
     'lectures.classics.note': 'Ask the priest for advice on what to read.',
+    'about.patron': 'Discover Saint Alexander Nevsky, our patron saint →',
+    'about.patron.href': 'alexander-nevsky.html',
+    'events.firstvisit': 'First visit? What to know →',
+    'events.firstvisit.href': 'first-visit.html',
     'events.title': 'Upcoming Events & Service Calendar',
     'events.desc':
       'Here are the upcoming events of the parish. You can add the dates to your calendar.',
