@@ -12,9 +12,10 @@
       data-i18n="meta.description"
     />
     <link rel="canonical" href="https://nevsky.fr/" />
-    <link rel="alternate" hreflang="fr" href="https://nevsky.fr/?lang=fr" />
-    <link rel="alternate" hreflang="ru" href="https://nevsky.fr/?lang=ru" />
-    <link rel="alternate" hreflang="en" href="https://nevsky.fr/?lang=en" />
+    <link rel="alternate" hreflang="fr" href="https://nevsky.fr/" />
+    <link rel="alternate" hreflang="ru" href="https://nevsky.fr/ru.html" />
+    <link rel="alternate" hreflang="en" href="https://nevsky.fr/en.html" />
+    <link rel="alternate" hreflang="x-default" href="https://nevsky.fr/" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -43,6 +44,43 @@
       content="Liturgie byzantine à Pau, horaires des offices, événements, services et histoire de l’église. Un lieu d’accueil et de prière, ouvert à tous, pour partager la foi, la culture orthodoxe et soutenir nos projets."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <!-- Fiche « lieu de culte » pour les moteurs de recherche (schema.org) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Church",
+        "@id": "https://nevsky.fr/#church",
+        "name": "Église orthodoxe russe Saint-Alexandre-Nevsky de Pau",
+        "alternateName": [
+          "Храм святого благоверного князя Александра Невского в По",
+          "St Alexander Nevsky Russian Orthodox Church, Pau"
+        ],
+        "description": "Église orthodoxe russe de Pau, fondée en 1867 : liturgie byzantine, catéchèse et lectures spirituelles en français, en russe et en anglais.",
+        "url": "https://nevsky.fr/",
+        "image": "https://nevsky.fr/images/eglise-orthodoxe-russe-alexandre-nevsky-pau-1280.jpg",
+        "logo": "https://nevsky.fr/images/logo-nevsky-share.jpg",
+        "foundingDate": "1867",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "18 rue Jean-Réveil",
+          "postalCode": "64000",
+          "addressLocality": "Pau",
+          "addressRegion": "Nouvelle-Aquitaine",
+          "addressCountry": "FR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 43.301585,
+          "longitude": -0.366551
+        },
+        "hasMap": "https://www.openstreetmap.org/?mlat=43.301585&mlon=-0.366551#map=17/43.301585/-0.366551",
+        "isAccessibleForFree": true,
+        "publicAccess": true,
+        "knowsLanguage": ["fr", "ru", "en", "cu"],
+        "sameAs": ["https://www.facebook.com/groups/nevskypau/"]
+      }
+    </script>
     <meta
       property="og:image"
       content="https://nevsky.fr/images/logo-nevsky-share.jpg"
