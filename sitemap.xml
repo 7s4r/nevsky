@@ -298,4 +298,31 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://nevsky.fr/prosphore.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/prosphore.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/prosfora.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/prosphora.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/prosphore.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nevsky.fr/prosfora.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/prosphore.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/prosfora.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/prosphora.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/prosphore.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nevsky.fr/prosphora.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/prosphore.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/prosfora.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/prosphora.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/prosphore.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

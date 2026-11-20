@@ -58,3 +58,13 @@ a.reading:hover h3 { color: var(--blue-700); }
 .prayer .slavonic { margin-top: 8px; font-size: .88rem; color: var(--ink-soft); }
 .prayer .slavonic summary { cursor: pointer; color: var(--blue-700); font-weight: 600; width: fit-content; }
 .prayer .slavonic p { margin: 6px 0 0; font-family: var(--font-serif); font-size: 1.08rem; line-height: 1.5; color: var(--ink); }
+
+/* Photos (page prosphore) */
+.photo { margin: 24px 0; }
+.photo img { display: block; width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow-md); background: var(--parchment-deep); }
+.photo figcaption { margin-top: 8px; font-size: .88rem; color: var(--ink-soft); line-height: 1.5; }
+.photo .credit { display: block; font-size: .78rem; color: var(--ink-soft); }
+.photo-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+.photo-pair .photo { margin: 8px 0; }
+.photo-pair .photo img { aspect-ratio: 3 / 2; object-fit: cover; }
+.photo-pair.square .photo img { aspect-ratio: 1 / 1; }
