@@ -28,6 +28,20 @@ indexées par date julienne ; après modification, régénérer `js/saints.min.j
 
   puis committer `ru.html` et `en.html`.
 
+## Citation biblique du jour
+
+Une référence par jour de l’année dans **`data/versets.txt`** (366 lignes).
+Les textes viennent de traductions du domaine public (Louis Segond 1910,
+traduction synodale, King James) ; pour régénérer `js/verses.fr.js`,
+`js/verses.ru.js` et `js/verses.en.js` après une modification :
+
+```bash
+node scripts/build-verses.mjs
+```
+
+La citation s’affiche dans l’encart de l’accueil et dans le détail de chaque
+jour du calendrier.
+
 ## Sitemap
 
 `sitemap.xml` est **généré** par `npm run build:home` à partir de toutes les

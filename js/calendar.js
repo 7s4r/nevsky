@@ -3,6 +3,8 @@
  * - Calcule Pâques, les fêtes fixes et mobiles, les périodes de jeûne,
  *   les jours sans jeûne et les samedis des défunts.
  * - Ajoute les mémoires des saints du jour (js/saints.js, chargé à la demande).
+ * - Affiche la citation biblique du jour (js/verses.<langue>.js, chargé à la demande)
+ *   dans l'encart de l'accueil et dans le détail de chaque jour.
  * - Affiche le calendrier mensuel de la page d'accueil, les prochaines fêtes,
  *   les prochains offices (js/offices.js) et génère un fichier agenda (.ics).
  * Les dates civiles = dates juliennes + 13 jours (valable de 1900 à 2099).
@@ -102,7 +104,7 @@
       upcomingFeasts: 'Prochaines fêtes', upcomingOffices: 'Prochains offices', noOffices: 'Aucun office n’est annoncé pour le moment. Inscrivez-vous à la newsletter pour connaître la reprise des offices.',
       today: 'Aujourd’hui', period: 'Période actuelle', julian: 'calendrier julien', legend: ['Grande fête', 'Saint, fête patronale', 'Jeûne', 'Office'],
       ics: 'Calendrier de la paroisse Saint-Alexandre-Nevsky', icsDesc: 'Fêtes et offices de l’église orthodoxe russe Saint-Alexandre-Nevsky de Pau.',
-      sundays: 'Dimanche',
+      sundays: 'Dimanche', verse: 'Citation biblique du jour', quotes: ['« ', ' »'],
     },
     ru: {
       week: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
@@ -114,7 +116,7 @@
       upcomingFeasts: 'Ближайшие праздники', upcomingOffices: 'Ближайшие богослужения', noOffices: 'Пока богослужения не объявлены. Подпишитесь на рассылку, чтобы узнать о их возобновлении.',
       today: 'Сегодня', period: 'Сейчас', julian: 'по старому стилю', legend: ['Великий праздник', 'Святой, престольный праздник', 'Пост', 'Богослужение'],
       ics: 'Календарь прихода св. Александра Невского', icsDesc: 'Праздники и богослужения русского православного храма св. Александра Невского в По.',
-      sundays: 'Воскресенье',
+      sundays: 'Воскресенье', verse: 'Цитата из Библии', quotes: ['«', '»'],
     },
     en: {
       week: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
@@ -126,7 +128,7 @@
       upcomingFeasts: 'Upcoming feasts', upcomingOffices: 'Upcoming services', noOffices: 'No services have been announced yet. Subscribe to the newsletter to hear when services resume.',
       today: 'Today', period: 'Current period', julian: 'Julian calendar', legend: ['Great feast', 'Saint, patronal feast', 'Fast', 'Service'],
       ics: 'St Alexander Nevsky parish calendar', icsDesc: 'Feasts and services of the St Alexander Nevsky Russian Orthodox Church in Pau.',
-      sundays: 'Sunday',
+      sundays: 'Sunday', verse: 'Bible verse of the day', quotes: ['“', '”'],
     },
   };
   const LANGS = { fr: 3, ru: 4, en: 5 };
@@ -208,6 +210,8 @@
     if (info.feasts.length) h += '<ul class="mt-2 space-y-1">' + info.feasts.map((f) => `<li class="flex gap-2"><span class="mt-2 h-2 w-2 flex-none rounded-full ${isGreat(f.rank) ? 'bg-[#d4af37]' : f.rank === 'departed' || f.rank === 'lent' ? 'bg-slate-400' : f.rank === 'memory' ? 'bg-slate-300' : 'bg-[#1B3B6F]'}"></span><span class="${f.rank === 'pascha' || f.rank === 'great12' ? 'font-semibold text-slate-900' : f.rank === 'memory' ? 'text-sm text-slate-600' : 'text-slate-700'}">${esc(f.name)}</span></li>`).join('') + '</ul>';
     if (info.fast) h += `<p class="mt-2 text-sm text-violet-800"><span class="inline-block h-2 w-2 rounded-full bg-violet-500 align-middle"></span> ${esc(info.fast.name)}</p>`;
     if (info.note) h += `<p class="mt-2 text-sm text-emerald-800">${esc(info.note)}</p>`;
+    const v = verseFor(date);
+    if (v) h += `<figure class="mt-3 border-l-2 border-[#d4af37] pl-3"><blockquote class="font-serif text-base italic text-slate-700">${esc(L.quotes[0] + v[0] + L.quotes[1])}</blockquote><figcaption class="mt-1 text-xs text-slate-500">${esc(v[1])}</figcaption></figure>`;
     h += `<p class="mt-3 text-sm font-semibold text-slate-900">${esc(L.offices)}</p>`;
     h += off.length ? '<ul class="mt-1 space-y-1 text-sm text-slate-700">' + off.map((o) => `<li><span class="font-semibold">${esc(o.time)}</span> ${esc(o.name)}${o.note ? ' — ' + esc(o.note) : ''}</li>`).join('') + '</ul>' : `<p class="mt-1 text-sm text-slate-500">${esc(L.noOffice)}</p>`;
     return h;
@@ -346,14 +350,41 @@
   function loadSaints() {
     if (saintsRequested || window.NEVSKY_SAINTS) return;
     saintsRequested = true;
-    const src = document.querySelector('script[src*="calendar"]')?.getAttribute('src') || 'js/calendar.min.js';
     const s = document.createElement('script');
-    s.src = src.replace(/calendar(\.min)?\.js.*$/, 'saints.min.js');
+    s.src = scriptPath('saints.min.js');
     s.defer = true;
     s.onload = () => renderMonth();
     document.head.appendChild(s);
   }
-  function draw() { wire(); renderMonth(); renderUpcoming(); loadSaints(); }
+  /* ---------- Citation biblique du jour (js/verses.<langue>.js) ---------- */
+  let versesLang = null, versesLoading = null;
+  const verseFor = (date) => (versesLang === state.lang && window.NEVSKY_VERSES ? window.NEVSKY_VERSES[key(date).slice(5)] : null);
+  function scriptPath(file) {
+    const src = document.querySelector('script[src*="calendar"]')?.getAttribute('src') || 'js/calendar.min.js';
+    return src.replace(/calendar(\.min)?\.js.*$/, file);
+  }
+  function loadVerses() {
+    const lang = state.lang;
+    if (versesLang === lang || versesLoading === lang) return;
+    versesLoading = lang;
+    const s = document.createElement('script');
+    s.src = scriptPath(`verses.${lang}.js`);
+    s.onload = () => { if (versesLoading !== lang) return; versesLang = lang; versesLoading = null; fillVerse(); if (visible) renderMonth(); };
+    document.head.appendChild(s);
+  }
+  /** Remplit l'encart « Citation biblique du jour » de la page d'accueil. */
+  function fillVerse() {
+    const text = document.getElementById('verseText'), ref = document.getElementById('verseRef');
+    const n = new Date(), v = verseFor(mk(n.getFullYear(), n.getMonth() + 1, n.getDate()));
+    if (!text || !ref || !v) return;
+    const L = T[state.lang] || T.fr;
+    // Le texte ne doit plus être remplacé par la traduction statique (main.js)
+    text.removeAttribute('data-i18n'); ref.removeAttribute('data-i18n');
+    text.textContent = L.quotes[0] + v[0] + L.quotes[1];
+    ref.textContent = v[1];
+  }
+
+  function draw() { wire(); renderMonth(); renderUpcoming(); loadSaints(); loadVerses(); }
   function render(lang) {
     state.lang = T[lang] ? lang : 'fr';
     if (!state.month) { const n = new Date(); state.month = mk(n.getFullYear(), n.getMonth() + 1, 1); }
@@ -365,6 +396,9 @@
         if (entries.some((e) => e.isIntersecting)) { visible = true; observer.disconnect(); draw(); }
       }, { rootMargin: '600px 0px' });
       observer.observe(section);
+      // L'encart de la citation précède le calendrier : le même chargement le remplit
+      const verse = document.getElementById('verse');
+      if (verse) observer.observe(verse);
     }
   }
 

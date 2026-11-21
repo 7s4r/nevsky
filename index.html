@@ -984,6 +984,31 @@
       </div>
     </section>
 
+    <!-- Citation biblique du jour (remplie par js/calendar.js depuis js/verses.<langue>.js) -->
+    <section id="verse" class="bg-[#1B3B6F] py-16 text-white" aria-labelledby="verseTitle">
+      <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+        <h2
+          id="verseTitle"
+          class="text-xs font-semibold uppercase tracking-widest text-[#ffd615]"
+          data-i18n="verse.title"
+        >
+          Citation biblique du jour
+        </h2>
+        <figure class="mt-5">
+          <blockquote>
+            <p id="verseText" class="font-serif text-2xl italic leading-snug sm:text-3xl" data-i18n="verse.fallback.text">
+              « Car Dieu a tant aimé le monde qu’il a donné son Fils unique, afin que quiconque croit en lui ne périsse point, mais qu’il ait la vie éternelle. »
+            </p>
+          </blockquote>
+          <figcaption class="mt-4 text-sm text-slate-200">
+            <cite id="verseRef" class="font-semibold not-italic" data-i18n="verse.fallback.ref">Jean 3, 16</cite>
+            <span aria-hidden="true">·</span>
+            <span data-i18n="verse.version">Bible Louis Segond 1910</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section id="events" class="py-20 bg-white">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="md:flex md:items-end md:justify-between">
