@@ -40,6 +40,19 @@
     tocLinks.forEach((a) => { const t = document.getElementById(a.getAttribute('href').slice(1)); if (t) io.observe(t); });
   }
 
+  // Vidéo YouTube : chargée seulement au clic (vie privée, performance)
+  $$('.video[data-yt]').forEach((v) => {
+    const b = $('button', v);
+    if (b) b.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + v.dataset.yt + '?autoplay=1&rel=0';
+      f.title = b.getAttribute('aria-label') || 'YouTube';
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      f.allowFullscreen = true;
+      v.replaceChildren(f);
+    });
+  });
+
   // Retour en haut + année du pied de page
   const toTop = $('.to-top');
   window.addEventListener('scroll', () => toTop.classList.toggle('show', window.scrollY > 600), { passive: true });
