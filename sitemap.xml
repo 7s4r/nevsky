@@ -325,4 +325,31 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://nevsky.fr/archange-michel.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/archange-michel.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/arhangel-mihail.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/archangel-michael.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/archange-michel.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nevsky.fr/arhangel-mihail.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/archange-michel.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/arhangel-mihail.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/archangel-michael.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/archange-michel.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nevsky.fr/archangel-michael.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/archange-michel.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/arhangel-mihail.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/archangel-michael.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/archange-michel.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
