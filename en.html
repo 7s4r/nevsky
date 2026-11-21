@@ -441,26 +441,56 @@
         </div>
 
         <div class="mt-16 grid gap-8 md:grid-cols-3">
-          <div class="rounded-2xl border border-slate-200 p-6">
-            <h3
-              class="text-xl font-semibold"
-              data-i18n="about.cards.history.title"
-            >History</h3>
-            <p class="mt-3 text-slate-600" data-i18n="about.cards.history.text">Since its founding, the parish has been a place of prayer and fellowship. We grow through the involvement of our parishioners.</p>
+          <div class="flex flex-col rounded-2xl border border-slate-200 p-6">
+            <div class="flex items-center gap-3">
+              <span
+                class="inline-flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-[#fff2a1] text-slate-900"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22" /><line x1="6" x2="6" y1="18" y2="11" /><line x1="10" x2="10" y1="18" y2="11" /><line x1="14" x2="14" y1="18" y2="11" /><line x1="18" x2="18" y1="18" y2="11" /><polygon points="12 2 20 7 4 7" /></svg>
+              </span>
+              <h3 class="text-xl font-semibold" data-i18n="about.cards.history.title">A heritage since 1867</h3>
+            </div>
+            <p class="mt-3 flex-1 text-slate-600" data-i18n="about.cards.history.text">The third Russian Orthodox church built in France, after Nice and Paris, it has borne witness to the ties between Pau and Russia for over 150 years.</p>
+            <a
+              href="#contact"
+              class="mt-4 inline-block self-start text-sm underline font-semibold link-gold-on-light"
+              data-i18n="about.cards.history.link"
+              >Visit us →</a
+            >
           </div>
-          <div class="rounded-2xl border border-slate-200 p-6">
-            <h3
-              class="text-xl font-semibold"
-              data-i18n="about.cards.trad.title"
-            >Living Tradition</h3>
-            <p class="mt-3 text-slate-600" data-i18n="about.cards.trad.text">Liturgy, icons, singing, and the church calendar fill the year.</p>
+          <div class="flex flex-col rounded-2xl border border-slate-200 p-6">
+            <div class="flex items-center gap-3">
+              <span
+                class="inline-flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-[#fff2a1] text-slate-900"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" /></svg>
+              </span>
+              <h3 class="text-xl font-semibold" data-i18n="about.cards.trad.title">Living tradition</h3>
+            </div>
+            <p class="mt-3 flex-1 text-slate-600" data-i18n="about.cards.trad.text">The Divine Liturgy is celebrated in Church Slavonic, sometimes also in French, with a cappella singing, icons and the Julian calendar of the Russian Church.</p>
+            <a
+              href="first-visit.html"
+              class="mt-4 inline-block self-start text-sm underline font-semibold link-gold-on-light"
+              data-i18n="about.cards.trad.link" data-i18n-href="about.cards.trad.href"
+              >What happens at a service →</a
+            >
           </div>
-          <div class="rounded-2xl border border-slate-200 p-6">
-            <h3
-              class="text-xl font-semibold"
-              data-i18n="about.cards.comm.title"
-            >Community</h3>
-            <p class="mt-3 text-slate-600" data-i18n="about.cards.comm.text">After services, we gather to welcome newcomers and share fellowship. Everyone is welcome.</p>
+          <div class="flex flex-col rounded-2xl border border-slate-200 p-6">
+            <div class="flex items-center gap-3">
+              <span
+                class="inline-flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-[#fff2a1] text-slate-900"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" /><path d="M7 2v20" /><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" /></svg>
+              </span>
+              <h3 class="text-xl font-semibold" data-i18n="about.cards.comm.title">Community</h3>
+            </div>
+            <p class="mt-3 flex-1 text-slate-600" data-i18n="about.cards.comm.text">French Orthodox Christians and Russian speakers from the former Soviet Union gather after the Liturgy for a shared meal. Believers and the simply curious are all welcome.</p>
+            <a
+              href="#newsletter"
+              class="mt-4 inline-block self-start text-sm underline font-semibold link-gold-on-light"
+              data-i18n="about.cards.comm.link"
+              >Get the parish news →</a
+            >
           </div>
         </div>
       </div>
@@ -476,6 +506,12 @@
               data-i18n="services.title"
             >Our Services</h2>
             <p class="mt-3 text-slate-600" data-i18n="services.desc">Spiritual guidance and sacraments in the Orthodox tradition.</p>
+            <a
+              href="#contact"
+              class="mt-3 inline-block text-sm underline font-semibold link-gold-on-light"
+              data-i18n="services.contact"
+              >Make an appointment with the priest →</a
+            >
           </div>
         </div>
 
@@ -510,6 +546,13 @@
               >Baptism</h3>
             </div>
             <p class="mt-3 text-slate-600" data-i18n="services.items.bapt.text">Preparation for the baptism of children and adults according to the Byzantine rite.</p>
+            <a
+              href="orthodox-catechism.html#cle-5"
+              class="mt-3 inline-block text-sm underline font-semibold link-gold-on-light"
+              data-i18n="services.items.bapt.link"
+              data-i18n-href="services.items.bapt.href"
+              >Baptism explained in the catechism →</a
+            >
           </article>
 
           <article
@@ -543,6 +586,13 @@
               >Marriage</h3>
             </div>
             <p class="mt-3 text-slate-600" data-i18n="services.items.mar.text">Preparation for couples and celebration of the sacrament of marriage.</p>
+            <a
+              href="orthodox-catechism.html#cle-5"
+              class="mt-3 inline-block text-sm underline font-semibold link-gold-on-light"
+              data-i18n="services.items.mar.link"
+              data-i18n-href="services.items.mar.href"
+              >Marriage among the sacraments →</a
+            >
           </article>
 
           <article
@@ -578,6 +628,13 @@
               >Confession &amp; Guidance</h3>
             </div>
             <p class="mt-3 text-slate-600" data-i18n="services.items.conf.text">Meet with the priest for confession, listening, and prayer.</p>
+            <a
+              href="orthodox-catechism.html#faq-confession"
+              class="mt-3 inline-block text-sm underline font-semibold link-gold-on-light"
+              data-i18n="services.items.conf.link"
+              data-i18n-href="services.items.conf.href"
+              >How to go to confession →</a
+            >
           </article>
 
           <article
@@ -615,6 +672,13 @@
               >Catechism</h3>
             </div>
             <p class="mt-3 text-slate-600" data-i18n="services.items.cat.text">Classes for children, teenagers, and adults. Introduction to the faith.</p>
+            <a
+              href="orthodox-catechism.html"
+              class="mt-3 inline-block text-sm underline font-semibold link-gold-on-light"
+              data-i18n="services.items.cat.link"
+              data-i18n-href="services.items.cat.href"
+              >Read the catechism online →</a
+            >
           </article>
 
           <article
@@ -640,6 +704,13 @@
               >Blessings &amp; Funerals</h3>
             </div>
             <p class="mt-3 text-slate-600" data-i18n="services.items.ben.text">Blessing of homes and objects, prayer for the sick, funerals.</p>
+            <a
+              href="prosphora.html#p-noms"
+              class="mt-3 inline-block text-sm underline font-semibold link-gold-on-light"
+              data-i18n="services.items.ben.link"
+              data-i18n-href="services.items.ben.href"
+              >Remembering the living and the departed →</a
+            >
           </article>
 
           <article
@@ -671,6 +742,13 @@
               >Service Times</h3>
             </div>
             <p class="mt-3 text-slate-600" data-i18n="services.items.hor.text">Below is the calendar of services and liturgical feasts.</p>
+            <a
+              href="#events"
+              class="mt-3 inline-block text-sm underline font-semibold link-gold-on-light"
+              data-i18n="services.items.hor.link"
+              data-i18n-href="services.items.hor.href"
+              >See the calendar →</a
+            >
           </article>
         </div>
       </div>
@@ -688,7 +766,7 @@
             class="text-3xl font-bold tracking-tight text-slate-900"
             data-i18n="lectures.title"
           >Spiritual reading</h2>
-          <p class="mt-3 text-slate-600" data-i18n="lectures.desc">Books that have shaped generations of Orthodox Christians, presented simply so you can discover or rediscover them.</p>
+          <p class="mt-3 text-slate-600" data-i18n="lectures.desc">Classic books of the tradition, lives of the saints and articles on faith and prayer, presented simply so you can discover them or go deeper.</p>
           <a
             href="spiritual-reading.html"
             class="mt-3 inline-block text-sm underline font-semibold link-gold-on-light"
@@ -838,6 +916,27 @@
             >All spiritual reading →</a
           >
         </div>
+      </div>
+    </section>
+
+    <!-- Citation biblique du jour (remplie par js/calendar.js depuis js/verses.<langue>.js) -->
+    <section id="verse" class="bg-[#1B3B6F] py-16 text-white" aria-labelledby="verseTitle">
+      <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+        <h2
+          id="verseTitle"
+          class="text-xs font-semibold uppercase tracking-widest text-[#ffd615]"
+          data-i18n="verse.title"
+        >Bible verse of the day</h2>
+        <figure class="mt-5">
+          <blockquote>
+            <p id="verseText" class="font-serif text-2xl italic leading-snug sm:text-3xl" data-i18n="verse.fallback.text">“For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.”</p>
+          </blockquote>
+          <figcaption class="mt-4 text-sm text-slate-200">
+            <cite id="verseRef" class="font-semibold not-italic" data-i18n="verse.fallback.ref">John 3:16</cite>
+            <span aria-hidden="true">·</span>
+            <span data-i18n="verse.version">King James Version</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
 

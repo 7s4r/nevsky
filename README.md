@@ -11,7 +11,10 @@ dans le calendrier de l’accueil, la liste « Prochains offices » et le fichie
 Aucune autre étape n’est nécessaire.
 
 Le calendrier liturgique (Pâques, fêtes, jeûnes, samedis des défunts) est calculé
-automatiquement par `js/calendar.js`.
+automatiquement par `js/calendar.js`. Les mémoires des saints de chaque jour
+(Ménée de l’Église russe, en français, russe et anglais) sont dans `js/saints.js`,
+indexées par date julienne ; après modification, régénérer `js/saints.min.js`
+(voir « Fichiers minifiés »).
 
 ## Modifier la page d’accueil
 
@@ -25,13 +28,36 @@ automatiquement par `js/calendar.js`.
 
   puis committer `ru.html` et `en.html`.
 
+## Citation biblique du jour
+
+Une référence par jour de l’année dans **`data/versets.txt`** (366 lignes).
+Les textes viennent de traductions du domaine public (Louis Segond 1910,
+traduction synodale, King James) ; pour régénérer `js/verses.fr.js`,
+`js/verses.ru.js` et `js/verses.en.js` après une modification :
+
+```bash
+node scripts/build-verses.mjs
+```
+
+La citation s’affiche dans l’encart de l’accueil et dans le détail de chaque
+jour du calendrier.
+
+## Sitemap
+
+`sitemap.xml` est **généré** par `npm run build:home` à partir de toutes les
+pages `.html` du site : adresse canonique, versions FR / RU / EN (balises
+`hreflang`) et date du dernier commit de chaque page. Une nouvelle page y
+apparaît automatiquement si elle a ces balises dans son en-tête. Relancer
+`npm run build:home` après l’ajout ou la modification d’une page, puis
+committer `sitemap.xml`.
+
 ## Ajouter une lecture spirituelle à l’accueil
 
 La liste des lectures est dans **`data/lectures.mjs`** (date de publication,
 image, titre, description et lien en français, russe et anglais). L’accueil
 affiche automatiquement les 6 plus récentes (`HOME_COUNT`). Après une
 modification, lancer `npm run build:home` puis committer `index.html`,
-`ru.html` et `en.html`.
+`ru.html`, `en.html` et `sitemap.xml`.
 
 Images des cartes : `images/lecture-<page>-1200.webp` (1200×750) et sa version
 `-600.webp` (600×375), au format paysage 16:10, en `.webp`,
@@ -46,4 +72,5 @@ npm run minify:css
 npm run minify:js
 npx terser js/locales.js -o js/locales.min.js --compress --mangle
 npx terser js/calendar.js -o js/calendar.min.js --compress --mangle
+npx terser js/saints.js -o js/saints.min.js --compress --mangle
 ```
