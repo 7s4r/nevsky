@@ -47,7 +47,7 @@ window.locales = {
       "Rencontre avec le prêtre pour la confession, l'écoute et la prière.",
     'services.items.cat.title': 'Catéchisme',
     'services.items.cat.text':
-      'Cours pour enfants, adolescents et adultes, introduction à la foi orthodoxe.',
+      'Découvrir la foi orthodoxe pas à pas avec le catéchisme en ligne ; le prêtre accompagne ceux qui se préparent au baptême.',
     'services.items.ben.title': 'Bénédictions & funérailles',
     'services.items.ben.text':
       'Bénédiction des maisons et objets, prière pour les malades, funérailles.',
@@ -61,8 +61,8 @@ window.locales = {
     'services.items.mar.href': 'mariage.html',
     'services.items.conf.link': 'Comment se confesser ? →',
     'services.items.conf.href': 'confession.html',
-    'services.items.cat.link': 'Les cours de catéchisme →',
-    'services.items.cat.href': 'cours-de-catechisme.html',
+    'services.items.cat.link': 'Lire le catéchisme en ligne →',
+    'services.items.cat.href': 'catechisme-orthodoxe.html',
     'services.items.ben.link': 'Bénédictions, malades et funérailles →',
     'services.items.ben.href': 'benedictions-et-funerailles.html',
     'services.items.hor.link': 'Voir le calendrier →',
@@ -182,7 +182,7 @@ window.locales = {
       'Встреча со священником для исповеди, беседы и молитвы.',
     'services.items.cat.title': 'Катехизация',
     'services.items.cat.text':
-      'Занятия для детей, подростков и взрослых. Введение в веру.',
+      'Основы православной веры шаг за шагом — в «Законе Божием» онлайн; готовящимся ко Крещению помогает священник.',
     'services.items.ben.title': 'Освящения и отпевание',
     'services.items.ben.text':
       'Освящение домов и вещей, молитва о больных, отпевание.',
@@ -195,8 +195,8 @@ window.locales = {
     'services.items.mar.href': 'venchanie.html',
     'services.items.conf.link': 'Как исповедоваться? →',
     'services.items.conf.href': 'ispoved.html',
-    'services.items.cat.link': 'Занятия по катехизации →',
-    'services.items.cat.href': 'katehizacija.html',
+    'services.items.cat.link': 'Читать «Закон Божий» онлайн →',
+    'services.items.cat.href': 'zakon-bozhij.html',
     'services.items.ben.link': 'Освящения, болящие и отпевание →',
     'services.items.ben.href': 'treby.html',
     'services.items.hor.link': 'Смотреть календарь →',
@@ -313,7 +313,7 @@ window.locales = {
       'Meet with the priest for confession, listening, and prayer.',
     'services.items.cat.title': 'Catechism',
     'services.items.cat.text':
-      'Classes for children, teenagers, and adults. Introduction to the faith.',
+      'Discover the Orthodox faith step by step with the online catechism; the priest accompanies those preparing for baptism.',
     'services.items.ben.title': 'Blessings & Funerals',
     'services.items.ben.text':
       'Blessing of homes and objects, prayer for the sick, funerals.',
@@ -327,8 +327,8 @@ window.locales = {
     'services.items.mar.href': 'orthodox-wedding.html',
     'services.items.conf.link': 'How to go to confession →',
     'services.items.conf.href': 'holy-confession.html',
-    'services.items.cat.link': 'Catechism classes →',
-    'services.items.cat.href': 'catechism-classes.html',
+    'services.items.cat.link': 'Read the catechism online →',
+    'services.items.cat.href': 'orthodox-catechism.html',
     'services.items.ben.link': 'Blessings, the sick and funerals →',
     'services.items.ben.href': 'blessings-and-funerals.html',
     'services.items.hor.link': 'See the calendar →',
