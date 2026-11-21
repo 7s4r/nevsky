@@ -2,6 +2,7 @@
  * Calendrier liturgique de la paroisse (calendrier julien de l'Église russe).
  * - Calcule Pâques, les fêtes fixes et mobiles, les périodes de jeûne,
  *   les jours sans jeûne et les samedis des défunts.
+ * - Ajoute les mémoires des saints du jour (js/saints.js, chargé à la demande).
  * - Affiche le calendrier mensuel de la page d'accueil, les prochaines fêtes,
  *   les prochains offices (js/offices.js) et génère un fichier agenda (.ics).
  * Les dates civiles = dates juliennes + 13 jours (valable de 1900 à 2099).
@@ -155,6 +156,8 @@
     FIXED.forEach((f) => { if (f[0] === j.m && f[1] === j.d) feasts.push({ rank: f[2], name: f[li] }); });
     MOVABLE.forEach((f) => { if (f[0] === p) feasts.push({ rank: f[1], name: f[li - 1] }); });
     if (sameDay(date, dmitri)) feasts.push({ rank: 'departed', name: L.dmitri });
+    // Mémoires des saints du jour (js/saints.js, chargé à l'affichage du calendrier)
+    ((window.NEVSKY_SAINTS || {})[j.m + '-' + j.d] || []).forEach((f) => feasts.push({ rank: f[3] ? 'saint' : 'memory', name: f[li - 3] }));
 
     // Périodes de jeûne
     let fast = null;
@@ -202,7 +205,7 @@
   function detailHtml(date, lang) {
     const L = T[lang] || T.fr, info = dayInfo(date, lang), off = officesOn(date, lang);
     let h = `<p class="font-semibold text-slate-900">${esc(fmtDate(date, lang).replace(/^./, (c) => c.toUpperCase()))} <span class="font-normal text-slate-500">(${esc(julianLabel(date, lang))}, ${esc(L.julian)})</span></p>`;
-    if (info.feasts.length) h += '<ul class="mt-2 space-y-1">' + info.feasts.map((f) => `<li class="flex gap-2"><span class="mt-2 h-2 w-2 flex-none rounded-full ${isGreat(f.rank) ? 'bg-[#d4af37]' : f.rank === 'departed' || f.rank === 'lent' ? 'bg-slate-400' : 'bg-[#1B3B6F]'}"></span><span class="${f.rank === 'pascha' || f.rank === 'great12' ? 'font-semibold text-slate-900' : 'text-slate-700'}">${esc(f.name)}</span></li>`).join('') + '</ul>';
+    if (info.feasts.length) h += '<ul class="mt-2 space-y-1">' + info.feasts.map((f) => `<li class="flex gap-2"><span class="mt-2 h-2 w-2 flex-none rounded-full ${isGreat(f.rank) ? 'bg-[#d4af37]' : f.rank === 'departed' || f.rank === 'lent' ? 'bg-slate-400' : f.rank === 'memory' ? 'bg-slate-300' : 'bg-[#1B3B6F]'}"></span><span class="${f.rank === 'pascha' || f.rank === 'great12' ? 'font-semibold text-slate-900' : f.rank === 'memory' ? 'text-sm text-slate-600' : 'text-slate-700'}">${esc(f.name)}</span></li>`).join('') + '</ul>';
     if (info.fast) h += `<p class="mt-2 text-sm text-violet-800"><span class="inline-block h-2 w-2 rounded-full bg-violet-500 align-middle"></span> ${esc(info.fast.name)}</p>`;
     if (info.note) h += `<p class="mt-2 text-sm text-emerald-800">${esc(info.note)}</p>`;
     h += `<p class="mt-3 text-sm font-semibold text-slate-900">${esc(L.offices)}</p>`;
@@ -236,7 +239,7 @@
       if (sel) cls.push('outline outline-2 outline-offset-1 outline-[#d4af37]');
       cls.push('hover:bg-slate-50');
       const dots = (great ? '<span class="h-1.5 w-1.5 rounded-full bg-[#d4af37]"></span>' : '') + (saint ? '<span class="h-1.5 w-1.5 rounded-full bg-[#1B3B6F]"></span>' : '') + (off.length ? '<span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>' : '');
-      const label = fmtDate(date, lang) + (info.feasts.length ? ' — ' + info.feasts.map((f) => f.name).join(', ') : '') + (info.fast ? ' — ' + info.fast.name : '');
+      const label = fmtDate(date, lang) + (info.feasts.some((f) => f.rank !== 'memory') ? ' — ' + info.feasts.filter((f) => f.rank !== 'memory').map((f) => f.name).join(', ') : '') + (info.fast ? ' — ' + info.fast.name : '');
       html += `<button type="button" class="${cls.join(' ')}" data-date="${key(date)}" aria-label="${esc(label)}" aria-pressed="${sel ? 'true' : 'false'}">${d}<span class="absolute inset-x-0 bottom-1 flex justify-center gap-0.5">${dots}</span></button>`;
     }
     grid.innerHTML = html;
@@ -338,7 +341,19 @@
   // Le calendrier est calculé seulement quand la section approche de l'écran,
   // pour ne pas ralentir le chargement de la page.
   let visible = false, observer = null;
-  function draw() { wire(); renderMonth(); renderUpcoming(); }
+  let saintsRequested = false;
+  /** Charge js/saints.min.js une seule fois, puis redessine le mois. */
+  function loadSaints() {
+    if (saintsRequested || window.NEVSKY_SAINTS) return;
+    saintsRequested = true;
+    const src = document.querySelector('script[src*="calendar"]')?.getAttribute('src') || 'js/calendar.min.js';
+    const s = document.createElement('script');
+    s.src = src.replace(/calendar(\.min)?\.js.*$/, 'saints.min.js');
+    s.defer = true;
+    s.onload = () => renderMonth();
+    document.head.appendChild(s);
+  }
+  function draw() { wire(); renderMonth(); renderUpcoming(); loadSaints(); }
   function render(lang) {
     state.lang = T[lang] ? lang : 'fr';
     if (!state.month) { const n = new Date(); state.month = mk(n.getFullYear(), n.getMonth() + 1, 1); }

@@ -11,7 +11,10 @@ dans le calendrier de l’accueil, la liste « Prochains offices » et le fichie
 Aucune autre étape n’est nécessaire.
 
 Le calendrier liturgique (Pâques, fêtes, jeûnes, samedis des défunts) est calculé
-automatiquement par `js/calendar.js`.
+automatiquement par `js/calendar.js`. Les mémoires des saints de chaque jour
+(Ménée de l’Église russe, en français, russe et anglais) sont dans `js/saints.js`,
+indexées par date julienne ; après modification, régénérer `js/saints.min.js`
+(voir « Fichiers minifiés »).
 
 ## Modifier la page d’accueil
 
@@ -55,4 +58,5 @@ npm run minify:css
 npm run minify:js
 npx terser js/locales.js -o js/locales.min.js --compress --mangle
 npx terser js/calendar.js -o js/calendar.min.js --compress --mangle
+npx terser js/saints.js -o js/saints.min.js --compress --mangle
 ```
