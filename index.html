@@ -737,10 +737,16 @@
       </div>
     </section>
 
-    <!-- Événements & Calendrier -->
+    <!-- Lectures spirituelles : dernières pages publiées -->
     <section id="lectures" class="py-20 bg-white">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div>
+          <p
+            class="text-xs font-semibold uppercase tracking-widest text-slate-500"
+            data-i18n="lectures.latest"
+          >
+            Dernières lectures
+          </p>
           <h2
             class="text-3xl font-bold tracking-tight text-slate-900"
             data-i18n="lectures.title"
@@ -760,75 +766,145 @@
           >
         </div>
 
-        <div class="mt-10 grid gap-6 lg:grid-cols-3">
-          <article
-            class="flex flex-col justify-center rounded-2xl bg-[#1B3B6F] p-8 text-white shadow-sm lg:col-span-2"
+        <!-- lectures:start (généré par scripts/build-home.mjs depuis data/lectures.mjs) -->
+        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <a
+            href="archange-michel.html"
+            class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
           >
-            <p
-              class="text-xs font-semibold uppercase tracking-widest text-[#ffd615]"
-              data-i18n="lectures.pilgrim.tag"
-            >
-              La prière du cœur
-            </p>
-            <h3 class="mt-3 text-2xl font-bold" data-i18n="lectures.pilgrim.title">
-              Récits d’un pèlerin russe
-            </h3>
-            <p class="mt-3 text-slate-200" data-i18n="lectures.pilgrim.text">
-              Un pèlerin pauvre parcourt la Russie pour apprendre à « prier sans
-              cesse ». Son récit, publié en 1881, est la plus belle introduction
-              à la Prière de Jésus.
-            </p>
-            <p
-              class="mt-5 font-serif text-xl italic text-white"
-              data-i18n="lectures.pilgrim.prayer"
-            >
-              « Seigneur Jésus-Christ, Fils de Dieu, aie pitié de moi, pécheur. »
-            </p>
-            <a
-              href="priere-de-jesus.html"
-              class="mt-6 inline-flex self-start items-center rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-slate-900 hover:opacity-90"
-              data-i18n="lectures.pilgrim.cta"
-              data-i18n-href="lectures.pilgrim.href"
-              >Découvrir la Prière de Jésus →</a
-            >
-          </article>
+            <img
+              src="images/lecture-archange-michel-1200.webp"
+              srcset="images/lecture-archange-michel-600.webp 600w, images/lecture-archange-michel-1200.webp 1200w"
+              sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
+              width="1200"
+              height="750"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              class="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+            />
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="text-lg font-semibold text-slate-900">L’archange Michel</h3>
+              <p class="mt-2 flex-1 text-slate-600">Le chef des armées célestes : son nom, l’Écriture, le miracle de Chones, ses icônes, sa fête du 21 novembre, en vidéo.</p>
+              <span class="mt-4 text-sm font-semibold underline link-gold-on-light">Lire →</span>
+            </div>
+          </a>
+          <a
+            href="prosphore.html"
+            class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <img
+              src="images/lecture-prosphore-1200.webp"
+              srcset="images/lecture-prosphore-600.webp 600w, images/lecture-prosphore-1200.webp 1200w"
+              sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
+              width="1200"
+              height="750"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              class="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+            />
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="text-lg font-semibold text-slate-900">La prosphore</h3>
+              <p class="mt-2 flex-1 text-slate-600">Le petit pain de l’offrande : son sceau, les cinq prosphores de la Liturgie, la prière pour nos proches.</p>
+              <span class="mt-4 text-sm font-semibold underline link-gold-on-light">Lire →</span>
+            </div>
+          </a>
+          <a
+            href="premiere-visite.html"
+            class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <img
+              src="images/lecture-premiere-visite-1200.webp"
+              srcset="images/lecture-premiere-visite-600.webp 600w, images/lecture-premiere-visite-1200.webp 1200w"
+              sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
+              width="1200"
+              height="750"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              class="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+            />
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="text-lg font-semibold text-slate-900">Première visite</h3>
+              <p class="mt-2 flex-1 text-slate-600">Comment se passe un office orthodoxe et ce qu’il est bon de savoir avant de venir.</p>
+              <span class="mt-4 text-sm font-semibold underline link-gold-on-light">Lire →</span>
+            </div>
+          </a>
+          <a
+            href="saint-jean-de-cronstadt.html"
+            class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <img
+              src="images/lecture-saint-jean-de-cronstadt-1200.webp"
+              srcset="images/lecture-saint-jean-de-cronstadt-600.webp 600w, images/lecture-saint-jean-de-cronstadt-1200.webp 1200w"
+              sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
+              width="1200"
+              height="750"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              class="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+            />
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="text-lg font-semibold text-slate-900">Saint Jean de Cronstadt</h3>
+              <p class="mt-2 flex-1 text-slate-600">Le prêtre de Cronstadt, ami des pauvres, que toute la Russie venait consulter, auteur de Ma vie en Christ.</p>
+              <span class="mt-4 text-sm font-semibold underline link-gold-on-light">Lire →</span>
+            </div>
+          </a>
+          <a
+            href="saint-alexandre-nevsky.html"
+            class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <img
+              src="images/lecture-saint-alexandre-nevsky-1200.webp"
+              srcset="images/lecture-saint-alexandre-nevsky-600.webp 600w, images/lecture-saint-alexandre-nevsky-1200.webp 1200w"
+              sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
+              width="1200"
+              height="750"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              class="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+            />
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="text-lg font-semibold text-slate-900">Saint Alexandre Nevsky</h3>
+              <p class="mt-2 flex-1 text-slate-600">Prince de Novgorod, défenseur de la Russie, mort moine sous le nom d’Alexis : le patron de notre église.</p>
+              <span class="mt-4 text-sm font-semibold underline link-gold-on-light">Lire →</span>
+            </div>
+          </a>
+          <a
+            href="livre-de-prieres.html"
+            class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <img
+              src="images/lecture-livre-de-prieres-1200.webp"
+              srcset="images/lecture-livre-de-prieres-600.webp 600w, images/lecture-livre-de-prieres-1200.webp 1200w"
+              sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
+              width="1200"
+              height="750"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              class="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+            />
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="text-lg font-semibold text-slate-900">Livre de prières</h3>
+              <p class="mt-2 flex-1 text-slate-600">Les prières du matin, du soir et des repas, en français avec le texte slavon, et des conseils pour prier chez soi.</p>
+              <span class="mt-4 text-sm font-semibold underline link-gold-on-light">Lire →</span>
+            </div>
+          </a>
+        </div>
+        <!-- lectures:end -->
 
-          <div class="flex flex-col gap-6">
-            <article class="rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200">
-              <h3
-                class="text-lg font-semibold text-slate-900"
-                data-i18n="lectures.catechism.title"
-              >
-                Catéchisme orthodoxe
-              </h3>
-              <p class="mt-2 text-slate-600" data-i18n="lectures.catechism.text">
-                La foi orthodoxe expliquée pas à pas, avec 313 questions-réponses.
-              </p>
-              <a
-                href="catechisme-orthodoxe.html"
-                class="mt-3 inline-block text-sm underline font-semibold link-gold-on-light"
-                data-i18n="lectures.catechism.cta"
-                data-i18n-href="nav.catechism.href"
-                >Lire le catéchisme →</a
-              >
-            </article>
-            <article class="rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200">
-              <h3
-                class="text-lg font-semibold text-slate-900"
-                data-i18n="lectures.classics.title"
-              >
-                D’autres classiques
-              </h3>
-              <ul class="mt-2 space-y-1 text-slate-600">
-                <li><a href="philocalie.html" class="underline font-semibold link-gold-on-light" data-i18n="lectures.classics.1" data-i18n-href="lectures.philokalia.href">La Philocalie, les Pères sur la prière →</a></li>
-                <li><a href="saint-seraphin-de-sarov.html" class="underline font-semibold link-gold-on-light" data-i18n="lectures.classics.2" data-i18n-href="lectures.seraphim.href">Saint Séraphin de Sarov, Entretien avec Motovilov →</a></li>
-                <li><a href="saint-silouane-athonite.html" class="underline font-semibold link-gold-on-light" data-i18n="lectures.classics.3" data-i18n-href="lectures.silouan.href">Saint Silouane l’Athonite →</a></li>
-              </ul>
-              <p class="mt-3 text-sm text-slate-500" data-i18n="lectures.classics.note">
-                Demandez conseil au prêtre pour choisir vos lectures.
-              </p>
-            </article>
-          </div>
+        <div class="mt-10 text-center">
+          <a
+            href="lectures-spirituelles.html"
+            class="inline-flex items-center rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-slate-900 hover:opacity-90"
+            data-i18n="lectures.all"
+            data-i18n-href="nav.lectures.href"
+            >Toutes les lectures spirituelles →</a
+          >
         </div>
       </div>
     </section>
