@@ -59,7 +59,11 @@ function lectureCards(lang) {
             class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
           >
             <img
-              src="${escAttr(image)}"
+              src="${escAttr(image)}"${image.endsWith('-1200.webp') ? `
+              srcset="${escAttr(image.replace('-1200.webp', '-600.webp'))} 600w, ${escAttr(image)} 1200w"
+              sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"` : ''}
+              width="1200"
+              height="750"
               alt=""
               loading="lazy"
               decoding="async"
