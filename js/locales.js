@@ -23,15 +23,16 @@ window.locales = {
       'Fondée en 1867 à l’initiative du père Hérodien, aumônier de la colonie russe, l’église Saint‑Alexandre‑Nevsky vit le jour grâce à une souscription de 65 000 francs levée auprès des aristocrates russes du Béarn. Troisième église orthodoxe russe bâtie en France, après Nice (1860) et Paris (1861), elle est dédiée à Alexandre Nevsky, prince de Novgorod et héros de la bataille de la Neva (1240). Elle illustre les liens profonds unissant Pau et la Russie.',
     'about.p2':
       'Discrète, nichée dans un jardin bordé de palmiers, elle ne possède ni dômes traditionnels ni façades ostentatoires. Commandée depuis Saint Petersbourg à un architecte palois, qui en lieu et place d’une église orthodoxe a livré une construction semblable aux églises protestantes construites pour les résidents anglophones dans le quartier actuel du commissariat.',
-    'about.cards.history.title': 'Histoire',
-    'about.cards.history.text':
-      "Depuis sa création, la paroisse est un lieu de prière et de rencontre. Notre communauté grandit grâce à l'engagement des fidèles.",
+    'about.cards.history.title': 'Un patrimoine depuis 1867',
+    'about.cards.history.text': 'Troisième église orthodoxe russe bâtie en France, après Nice et Paris, elle témoigne depuis plus de 150 ans des liens entre Pau et la Russie.',
+    'about.cards.history.link': 'Nous rendre visite →',
     'about.cards.trad.title': 'Tradition vivante',
-    'about.cards.trad.text':
-      "La liturgie, les icônes, le chant et le calendrier des fêtes rythment l'année.",
+    'about.cards.trad.text': 'La Divine Liturgie est célébrée en slavon, parfois aussi en français, avec le chant a cappella, les icônes et le calendrier julien de l’Église russe.',
+    'about.cards.trad.link': 'Comment se passe un office →',
+    'about.cards.trad.href': 'premiere-visite.html',
     'about.cards.comm.title': 'Communauté',
-    'about.cards.comm.text':
-      "Après les offices, un temps fraternel permet d'accueillir et d'échanger. Tous sont les bienvenus.",
+    'about.cards.comm.text': 'Français orthodoxes et russophones des pays de l’ex-URSS se retrouvent après la Liturgie autour d’un repas pour discuter. Croyants ou simples curieux, vous êtes les bienvenus.',
+    'about.cards.comm.link': 'Recevoir les nouvelles de la paroisse →',
     'services.title': 'Services proposés',
     'services.desc':
       'Accompagnement spirituel et sacrements dans la tradition orthodoxe.',
@@ -153,15 +154,16 @@ window.locales = {
       'Основанный в 1867 году по инициативе отца Иродиана, капеллана русской колонии, храм святого Александра Невского был воздвигнут на средства подписки в размере 65 000 франков, собранных среди русской аристократии Беарна. Это третий русский православный храм, построенный во Франции после Ниццы (1860) и Парижа (1861). Он посвящён Александру Невскому, новгородскому князю и герою Невской битвы (1240), и свидетельствует о глубоких связях между По и Россией.',
     'about.p2':
       'Скромная, расположенная в саду, окруженном пальмами, она не имеет ни традиционных куполов, ни показных фасадов. Её заказали в Санкт-Петербурге архитектору из По, который вместо православной церкви построил здание, похожее на протестантские церкви, построенные для англоговорящих жителей в районе нынешнего полицейского участка.',
-    'about.cards.history.title': 'История',
-    'about.cards.history.text':
-      'С момента основания приход остаётся местом молитвы и встречи. Мы растём благодаря участию прихожан.',
+    'about.cards.history.title': 'Наследие с 1867 года',
+    'about.cards.history.text': 'Третий русский православный храм, построенный во Франции после Ниццы и Парижа, более 150 лет свидетельствует о связях По и России.',
+    'about.cards.history.link': 'Как нас найти →',
     'about.cards.trad.title': 'Живая традиция',
-    'about.cards.trad.text':
-      'Литургия, иконы, пение и церковный календарь наполняют год.',
+    'about.cards.trad.text': 'Божественная литургия совершается на церковнославянском языке, иногда и на французском: хоровое пение без инструментов, иконы и юлианский календарь Русской Церкви.',
+    'about.cards.trad.link': 'Как проходит богослужение →',
+    'about.cards.trad.href': 'pervoe-poseshchenie.html',
     'about.cards.comm.title': 'Община',
-    'about.cards.comm.text':
-      'После служб мы общаемся и принимаем новых людей. Всем рады.',
+    'about.cards.comm.text': 'Православные французы и русскоязычные выходцы из стран бывшего СССР после литургии собираются за общей трапезой. Верующим и просто интересующимся — добро пожаловать!',
+    'about.cards.comm.link': 'Подписаться на новости прихода →',
     'services.title': 'Наши служения',
     'services.desc':
       'Духовное сопровождение и таинства в православной традиции.',
@@ -279,15 +281,16 @@ window.locales = {
       'Founded in 1867 by Father Herodian, chaplain of the Russian colony, the Saint Alexander Nevsky Church was built through a fundraising campaign that raised 65,000 francs from the Russian aristocracy of Béarn. It is the third Russian Orthodox church built in France, after Nice (1860) and Paris (1861). Dedicated to Alexander Nevsky, the prince of Novgorod and hero of the Battle of the Neva (1240), it reflects the deep ties between Pau and Russia.',
     'about.p2':
       'Humble and nestled in a garden surrounded by palm trees, it lacks traditional domes and ostentatious facades. Commissioned from a Pau architect in Saint Petersburg, it resembles a Protestant church built for English-speaking residents in the area of the current police station.',
-    'about.cards.history.title': 'History',
-    'about.cards.history.text':
-      'Since its founding, the parish has been a place of prayer and fellowship. We grow through the involvement of our parishioners.',
-    'about.cards.trad.title': 'Living Tradition',
-    'about.cards.trad.text':
-      'Liturgy, icons, singing, and the church calendar fill the year.',
+    'about.cards.history.title': 'A heritage since 1867',
+    'about.cards.history.text': 'The third Russian Orthodox church built in France, after Nice and Paris, it has borne witness to the ties between Pau and Russia for over 150 years.',
+    'about.cards.history.link': 'Visit us →',
+    'about.cards.trad.title': 'Living tradition',
+    'about.cards.trad.text': 'The Divine Liturgy is celebrated in Church Slavonic, sometimes also in French, with a cappella singing, icons and the Julian calendar of the Russian Church.',
+    'about.cards.trad.link': 'What happens at a service →',
+    'about.cards.trad.href': 'first-visit.html',
     'about.cards.comm.title': 'Community',
-    'about.cards.comm.text':
-      'After services, we gather to welcome newcomers and share fellowship. Everyone is welcome.',
+    'about.cards.comm.text': 'French Orthodox Christians and Russian speakers from the former Soviet Union gather after the Liturgy for a shared meal. Believers and the simply curious are all welcome.',
+    'about.cards.comm.link': 'Get the parish news →',
     'services.title': 'Our Services',
     'services.desc':
       'Spiritual guidance and sacraments in the Orthodox tradition.',
