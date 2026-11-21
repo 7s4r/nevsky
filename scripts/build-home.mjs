@@ -13,6 +13,9 @@
  * de data/lectures.mjs (les plus récentes d'abord) et insérées entre les
  * commentaires <!-- lectures:start --> et <!-- lectures:end --> de chaque page.
  *
+ * Le script régénère aussi sitemap.xml à partir de toutes les pages du site
+ * (voir scripts/sitemap.mjs) : committer également sitemap.xml.
+ *
  * Principe : chaque élément portant data-i18n="clé" reçoit le texte traduit,
  * chaque data-i18n-href="clé" reçoit le lien traduit, et l'en-tête (<title>,
  * description, Open Graph, canonical, langue) est adapté. Les visiteurs et
@@ -24,6 +27,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
 import { lectures, HOME_COUNT } from '../data/lectures.mjs';
+import { buildSitemap } from './sitemap.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const sandbox = { window: {} };
@@ -146,3 +150,5 @@ for (const [lang, page] of Object.entries(PAGES)) {
   writeFileSync(join(root, page.file), html);
   console.log(`${page.file} : écrit${missing.size ? ` (clés sans traduction : ${[...missing].join(', ')})` : ''}`);
 }
+
+buildSitemap(root);

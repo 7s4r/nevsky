@@ -25,13 +25,22 @@ automatiquement par `js/calendar.js`.
 
   puis committer `ru.html` et `en.html`.
 
+## Sitemap
+
+`sitemap.xml` est **généré** par `npm run build:home` à partir de toutes les
+pages `.html` du site : adresse canonique, versions FR / RU / EN (balises
+`hreflang`) et date du dernier commit de chaque page. Une nouvelle page y
+apparaît automatiquement si elle a ces balises dans son en-tête. Relancer
+`npm run build:home` après l’ajout ou la modification d’une page, puis
+committer `sitemap.xml`.
+
 ## Ajouter une lecture spirituelle à l’accueil
 
 La liste des lectures est dans **`data/lectures.mjs`** (date de publication,
 image, titre, description et lien en français, russe et anglais). L’accueil
 affiche automatiquement les 6 plus récentes (`HOME_COUNT`). Après une
 modification, lancer `npm run build:home` puis committer `index.html`,
-`ru.html` et `en.html`.
+`ru.html`, `en.html` et `sitemap.xml`.
 
 Images des cartes : `images/lecture-<page>-1200.webp` (1200×750) et sa version
 `-600.webp` (600×375), au format paysage 16:10, en `.webp`,
