@@ -17,13 +17,24 @@ automatiquement par `js/calendar.js`.
 
 - Le texte français est dans `index.html`, les traductions dans `js/locales.js`.
 - Les pages d’accueil russe et anglaise (`ru.html`, `en.html`) sont **générées** :
-  après toute modification de `index.html` ou de `js/locales.js`, lancer
+  après toute modification de `index.html`, de `js/locales.js` ou de `data/lectures.mjs`, lancer
 
   ```bash
   npm run build:home
   ```
 
   puis committer `ru.html` et `en.html`.
+
+## Ajouter une lecture spirituelle à l’accueil
+
+La liste des lectures est dans **`data/lectures.mjs`** (date de publication,
+image, titre, description et lien en français, russe et anglais). L’accueil
+affiche automatiquement les 6 plus récentes (`HOME_COUNT`). Après une
+modification, lancer `npm run build:home` puis committer `index.html`,
+`ru.html` et `en.html`.
+
+Images des cartes : format paysage 16:10 (idéalement 1200×750), en `.webp`,
+dans `images/`.
 
 ## Fichiers minifiés
 

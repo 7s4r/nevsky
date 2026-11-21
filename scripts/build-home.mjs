@@ -5,8 +5,13 @@
  *
  * Usage : npm run build:home
  *
- * À relancer après toute modification de index.html ou de js/locales.js,
- * puis committer ru.html et en.html. Aucune dépendance : Node seul suffit.
+ * À relancer après toute modification de index.html, de js/locales.js ou de
+ * data/lectures.mjs, puis committer index.html, ru.html et en.html.
+ * Aucune dépendance : Node seul suffit.
+ *
+ * Les cartes « Lectures spirituelles » de l'accueil sont construites à partir
+ * de data/lectures.mjs (les plus récentes d'abord) et insérées entre les
+ * commentaires <!-- lectures:start --> et <!-- lectures:end --> de chaque page.
  *
  * Principe : chaque élément portant data-i18n="clé" reçoit le texte traduit,
  * chaque data-i18n-href="clé" reçoit le lien traduit, et l'en-tête (<title>,
@@ -18,9 +23,9 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
+import { lectures, HOME_COUNT } from '../data/lectures.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const source = readFileSync(join(root, 'index.html'), 'utf8');
 const sandbox = { window: {} };
 vm.runInNewContext(readFileSync(join(root, 'js/locales.js'), 'utf8'), sandbox);
 const locales = sandbox.window.locales;
@@ -37,6 +42,53 @@ const ATTRS = {
 
 const escText = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const escAttr = (s) => escText(s).replace(/"/g, '&quot;');
+const READ_LABEL = { fr: 'Lire →', ru: 'Читать →', en: 'Read →' };
+const LECTURES_BLOCK = /( *)<!-- lectures:start[^>]*-->[\s\S]*?<!-- lectures:end -->/;
+
+/** Cartes des dernières lectures, dans la langue demandée. */
+function lectureCards(lang) {
+  const latest = lectures
+    .map((l, i) => ({ ...l, i }))
+    .sort((a, b) => b.date.localeCompare(a.date) || a.i - b.i)
+    .slice(0, HOME_COUNT);
+  for (const l of latest) {
+    if (!l[lang]?.href || !l[lang]?.title || !l[lang]?.text) throw new Error(`data/lectures.mjs : texte ${lang} manquant pour ${l.fr?.href}`);
+  }
+  const cards = latest.map(({ image, [lang]: { href, title, text } }) => `          <a
+            href="${escAttr(href)}"
+            class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <img
+              src="${escAttr(image)}"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              class="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+            />
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="text-lg font-semibold text-slate-900">${escText(title)}</h3>
+              <p class="mt-2 flex-1 text-slate-600">${escText(text)}</p>
+              <span class="mt-4 text-sm font-semibold underline link-gold-on-light">${READ_LABEL[lang]}</span>
+            </div>
+          </a>`);
+  return `        <!-- lectures:start (généré par scripts/build-home.mjs depuis data/lectures.mjs) -->
+        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+${cards.join('\n')}
+        </div>
+        <!-- lectures:end -->`;
+}
+
+/** Remplace le bloc des lectures par les cartes de la langue demandée. */
+function withLectures(html, lang) {
+  if (!LECTURES_BLOCK.test(html)) throw new Error('index.html : marqueurs <!-- lectures:start --> / <!-- lectures:end --> introuvables');
+  return html.replace(LECTURES_BLOCK, () => lectureCards(lang));
+}
+
+// Page française : met à jour les cartes directement dans index.html
+const source = withLectures(readFileSync(join(root, 'index.html'), 'utf8'), 'fr');
+writeFileSync(join(root, 'index.html'), source);
+console.log('index.html : lectures mises à jour');
+
 const VOID = new Set(['meta', 'link', 'img', 'input', 'br', 'hr', 'source']);
 
 /** Remplace le contenu de chaque élément data-i18n par sa traduction. */
@@ -75,7 +127,7 @@ function translate(html, dict) {
 
 for (const [lang, page] of Object.entries(PAGES)) {
   const dict = locales[lang];
-  let { html, missing } = translate(source, dict);
+  let { html, missing } = translate(withLectures(source, lang), dict);
   html = html
     .replace('<html lang="fr">', `<html lang="${lang}" data-static-lang="${lang}">`)
     .replace('<link rel="canonical" href="https://nevsky.fr/" />', `<link rel="canonical" href="${page.url}" />`)
