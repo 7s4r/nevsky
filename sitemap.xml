@@ -63,6 +63,36 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://nevsky.fr/bapteme.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/bapteme.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/kreshchenie.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/baptism.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/bapteme.html"/>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nevsky.fr/kreshchenie.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/bapteme.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/kreshchenie.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/baptism.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/bapteme.html"/>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nevsky.fr/baptism.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/bapteme.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/kreshchenie.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nevsky.fr/baptism.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nevsky.fr/bapteme.html"/>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://nevsky.fr/catechisme-orthodoxe.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://nevsky.fr/catechisme-orthodoxe.html"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://nevsky.fr/zakon-bozhij.html"/>
