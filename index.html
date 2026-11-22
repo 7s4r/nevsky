@@ -84,8 +84,11 @@
     </script>
     <meta
       property="og:image"
-      content="https://nevsky.fr/images/logo-nevsky-share.jpg"
+      content="https://nevsky.fr/images/og/accueil.jpg"
     />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <link
       rel="preload"
@@ -199,6 +202,13 @@
                 >Lectures</a
               >
               <a
+                href="actualites.html"
+                class="nav-link font-medium hover:opacity-80"
+                data-i18n="nav.actu"
+                data-i18n-href="nav.actu.href"
+                >Actualités</a
+              >
+              <a
                 href="#don"
                 class="nav-link font-medium hover:opacity-80"
                 data-i18n="nav.donate"
@@ -255,6 +265,13 @@
             data-i18n="nav.lectures"
             data-i18n-href="nav.lectures.href"
             >Lectures</a
+          >
+          <a
+            href="actualites.html"
+            class="block rounded-md px-3 py-2 text-base font-medium text-slate-800 hover:bg-slate-50"
+            data-i18n="nav.actu"
+            data-i18n-href="nav.actu.href"
+            >Actualités</a
           >
           <a
             href="#don"
@@ -811,6 +828,39 @@
     </section>
 
     <!-- Lectures spirituelles : dernières pages publiées -->
+    <section id="actualites" class="py-20 bg-slate-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-widest text-slate-500" data-i18n="actu.latest">La vie de la paroisse</p>
+          <h2 class="text-3xl font-bold tracking-tight text-slate-900" data-i18n="actu.title">Actualités</h2>
+          <p class="mt-3 text-slate-600" data-i18n="actu.desc">Les nouvelles de la paroisse : travaux de l’église, fêtes, offices et nouveaux articles.</p>
+        </div>
+        <!-- actualites:start (généré par scripts/build-home.mjs depuis data/actualites.mjs) -->
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          <article class="flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <time class="text-xs font-semibold uppercase tracking-widest text-slate-500" datetime="2026-11-22">22 novembre 2026</time>
+            <h3 class="mt-2 text-lg font-semibold text-slate-900">Le jeûne de la Nativité commence le 28 novembre</h3>
+            <p class="mt-2 flex-1 text-slate-600">Du 28 novembre au 6 janvier, l’Église nous invite à préparer la fête de la Nativité du Christ, que nous célébrons le 7 janvier, par quarante jours de jeûne, de prière et de partage.</p>
+            <a class="mt-4 text-sm font-semibold underline link-gold-on-light" href="actualites.html#n-2026-11-22">Lire la suite →</a>
+          </article>
+          <article class="flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <time class="text-xs font-semibold uppercase tracking-widest text-slate-500" datetime="2026-11-21">21 novembre 2026</time>
+            <h3 class="mt-2 text-lg font-semibold text-slate-900">Nouvelle page : l’archange Michel</h3>
+            <p class="mt-2 flex-1 text-slate-600">À l’occasion de la Synaxe de l’archistratège Michel et des puissances célestes, le 21 novembre, découvrez une nouvelle page sur l’archange : le sens de son nom, l’Écriture, le miracle de Chones, ses icônes et une vidéo.</p>
+            <a class="mt-4 text-sm font-semibold underline link-gold-on-light" href="actualites.html#n-2026-11-21">Lire la suite →</a>
+          </article>
+          <article class="flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <time class="text-xs font-semibold uppercase tracking-widest text-slate-500" datetime="2026-11-20">20 novembre 2026</time>
+            <h3 class="mt-2 text-lg font-semibold text-slate-900">L’église est temporairement fermée pour travaux</h3>
+            <p class="mt-2 flex-1 text-slate-600">Notre église a besoin de travaux importants : toiture, chauffage et mise aux normes. Elle est donc temporairement fermée, et aucun office n’y est célébré pour le moment.</p>
+            <a class="mt-4 text-sm font-semibold underline link-gold-on-light" href="actualites.html#n-2026-11-20">Lire la suite →</a>
+          </article>
+        </div>
+        <a href="actualites.html" class="mt-8 inline-block text-sm underline font-semibold link-gold-on-light">Toutes les actualités →</a>
+        <!-- actualites:end -->
+      </div>
+    </section>
+
     <section id="lectures" class="py-20 bg-white">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div>
@@ -842,6 +892,69 @@
 
         <!-- lectures:start (généré par scripts/build-home.mjs depuis data/lectures.mjs) -->
         <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <a
+            href="noel-orthodoxe.html"
+            class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <img
+              src="images/lecture-noel-orthodoxe-1200.webp"
+              srcset="images/lecture-noel-orthodoxe-600.webp 600w, images/lecture-noel-orthodoxe-1200.webp 1200w"
+              sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
+              width="1200"
+              height="750"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              class="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+            />
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="text-lg font-semibold text-slate-900">Noël orthodoxe</h3>
+              <p class="mt-2 flex-1 text-slate-600">Pourquoi le 7 janvier, la veille de Noël et le sotchivo, l’icône et les chants de la Nativité.</p>
+              <span class="mt-4 text-sm font-semibold underline link-gold-on-light">Lire →</span>
+            </div>
+          </a>
+          <a
+            href="jeune-de-la-nativite.html"
+            class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <img
+              src="images/lecture-jeune-de-la-nativite-1200.webp"
+              srcset="images/lecture-jeune-de-la-nativite-600.webp 600w, images/lecture-jeune-de-la-nativite-1200.webp 1200w"
+              sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
+              width="1200"
+              height="750"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              class="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+            />
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="text-lg font-semibold text-slate-900">Le jeûne de la Nativité</h3>
+              <p class="mt-2 flex-1 text-slate-600">Du 28 novembre au 6 janvier : dates, ce que l’on mange, les fêtes du jeûne et le sens de ces quarante jours.</p>
+              <span class="mt-4 text-sm font-semibold underline link-gold-on-light">Lire →</span>
+            </div>
+          </a>
+          <a
+            href="jeune-orthodoxe.html"
+            class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <img
+              src="images/lecture-jeune-orthodoxe-1200.webp"
+              srcset="images/lecture-jeune-orthodoxe-600.webp 600w, images/lecture-jeune-orthodoxe-1200.webp 1200w"
+              sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
+              width="1200"
+              height="750"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              class="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+            />
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="text-lg font-semibold text-slate-900">Le jeûne orthodoxe</h3>
+              <p class="mt-2 flex-1 text-slate-600">Les quatre carêmes, le mercredi et le vendredi, ce que l’on mange, des idées de repas et l’esprit du jeûne.</p>
+              <span class="mt-4 text-sm font-semibold underline link-gold-on-light">Lire →</span>
+            </div>
+          </a>
           <a
             href="archange-michel.html"
             class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
@@ -905,69 +1018,6 @@
               <span class="mt-4 text-sm font-semibold underline link-gold-on-light">Lire →</span>
             </div>
           </a>
-          <a
-            href="saint-jean-de-cronstadt.html"
-            class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
-          >
-            <img
-              src="images/lecture-saint-jean-de-cronstadt-1200.webp"
-              srcset="images/lecture-saint-jean-de-cronstadt-600.webp 600w, images/lecture-saint-jean-de-cronstadt-1200.webp 1200w"
-              sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
-              width="1200"
-              height="750"
-              alt=""
-              loading="lazy"
-              decoding="async"
-              class="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
-            />
-            <div class="flex flex-1 flex-col p-6">
-              <h3 class="text-lg font-semibold text-slate-900">Saint Jean de Cronstadt</h3>
-              <p class="mt-2 flex-1 text-slate-600">Le prêtre de Cronstadt, ami des pauvres, que toute la Russie venait consulter, auteur de Ma vie en Christ.</p>
-              <span class="mt-4 text-sm font-semibold underline link-gold-on-light">Lire →</span>
-            </div>
-          </a>
-          <a
-            href="saint-alexandre-nevsky.html"
-            class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
-          >
-            <img
-              src="images/lecture-saint-alexandre-nevsky-1200.webp"
-              srcset="images/lecture-saint-alexandre-nevsky-600.webp 600w, images/lecture-saint-alexandre-nevsky-1200.webp 1200w"
-              sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
-              width="1200"
-              height="750"
-              alt=""
-              loading="lazy"
-              decoding="async"
-              class="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
-            />
-            <div class="flex flex-1 flex-col p-6">
-              <h3 class="text-lg font-semibold text-slate-900">Saint Alexandre Nevsky</h3>
-              <p class="mt-2 flex-1 text-slate-600">Prince de Novgorod, défenseur de la Russie, mort moine sous le nom d’Alexis : le patron de notre église.</p>
-              <span class="mt-4 text-sm font-semibold underline link-gold-on-light">Lire →</span>
-            </div>
-          </a>
-          <a
-            href="livre-de-prieres.html"
-            class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
-          >
-            <img
-              src="images/lecture-livre-de-prieres-1200.webp"
-              srcset="images/lecture-livre-de-prieres-600.webp 600w, images/lecture-livre-de-prieres-1200.webp 1200w"
-              sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
-              width="1200"
-              height="750"
-              alt=""
-              loading="lazy"
-              decoding="async"
-              class="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
-            />
-            <div class="flex flex-1 flex-col p-6">
-              <h3 class="text-lg font-semibold text-slate-900">Livre de prières</h3>
-              <p class="mt-2 flex-1 text-slate-600">Les prières du matin, du soir et des repas, en français avec le texte slavon, et des conseils pour prier chez soi.</p>
-              <span class="mt-4 text-sm font-semibold underline link-gold-on-light">Lire →</span>
-            </div>
-          </a>
         </div>
         <!-- lectures:end -->
 
@@ -1005,6 +1055,8 @@
             <span data-i18n="verse.version">Bible Louis Segond 1910</span>
           </figcaption>
         </figure>
+        <!-- Aujourd'hui dans l'Église (rempli par js/calendar.js) -->
+        <div id="today" class="mx-auto mt-12 max-w-xl rounded-2xl border border-white/20 bg-white/5 p-6 text-left" aria-live="polite" hidden></div>
       </div>
     </section>
 
@@ -1490,6 +1542,15 @@
                       data-i18n="nav.lectures"
                       data-i18n-href="nav.lectures.href"
                       >Lectures</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="actualites.html"
+                      class="hover:opacity-90 text-slate-600"
+                      data-i18n="nav.actu"
+                      data-i18n-href="nav.actu.href"
+                      >Actualités</a
                     >
                   </li>
                   <li>

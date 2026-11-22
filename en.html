@@ -83,8 +83,11 @@
     </script>
     <meta
       property="og:image"
-      content="https://nevsky.fr/images/logo-nevsky-share.jpg"
+      content="https://nevsky.fr/images/og/accueil.jpg"
     />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <link
       rel="preload"
@@ -198,6 +201,13 @@
                 >Reading</a
               >
               <a
+                href="news.html"
+                class="nav-link font-medium hover:opacity-80"
+                data-i18n="nav.actu"
+                data-i18n-href="nav.actu.href"
+                >News</a
+              >
+              <a
                 href="#don"
                 class="nav-link font-medium hover:opacity-80"
                 data-i18n="nav.donate"
@@ -254,6 +264,13 @@
             data-i18n="nav.lectures"
             data-i18n-href="nav.lectures.href"
             >Reading</a
+          >
+          <a
+            href="news.html"
+            class="block rounded-md px-3 py-2 text-base font-medium text-slate-800 hover:bg-slate-50"
+            data-i18n="nav.actu"
+            data-i18n-href="nav.actu.href"
+            >News</a
           >
           <a
             href="#don"
@@ -755,6 +772,39 @@
     </section>
 
     <!-- Lectures spirituelles : dernières pages publiées -->
+    <section id="actualites" class="py-20 bg-slate-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-widest text-slate-500" data-i18n="actu.latest">Parish life</p>
+          <h2 class="text-3xl font-bold tracking-tight text-slate-900" data-i18n="actu.title">News</h2>
+          <p class="mt-3 text-slate-600" data-i18n="actu.desc">News from the parish: works on the church, feasts, services and new articles.</p>
+        </div>
+        <!-- actualites:start (généré par scripts/build-home.mjs depuis data/actualites.mjs) -->
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          <article class="flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <time class="text-xs font-semibold uppercase tracking-widest text-slate-500" datetime="2026-11-22">22 November 2026</time>
+            <h3 class="mt-2 text-lg font-semibold text-slate-900">The Nativity Fast begins on 28 November</h3>
+            <p class="mt-2 flex-1 text-slate-600">From 28 November to 6 January, the Church invites us to prepare for the feast of the Nativity of Christ, which we celebrate on 7 January, with forty days of fasting, prayer and generosity.</p>
+            <a class="mt-4 text-sm font-semibold underline link-gold-on-light" href="news.html#n-2026-11-22">Read more →</a>
+          </article>
+          <article class="flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <time class="text-xs font-semibold uppercase tracking-widest text-slate-500" datetime="2026-11-21">21 November 2026</time>
+            <h3 class="mt-2 text-lg font-semibold text-slate-900">New page: the Archangel Michael</h3>
+            <p class="mt-2 flex-1 text-slate-600">For the Synaxis of the Archistrategos Michael and the Bodiless Powers on 21 November, discover a new page on the archangel: the meaning of his name, Scripture, the miracle at Chonae, his icons and a video.</p>
+            <a class="mt-4 text-sm font-semibold underline link-gold-on-light" href="news.html#n-2026-11-21">Read more →</a>
+          </article>
+          <article class="flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <time class="text-xs font-semibold uppercase tracking-widest text-slate-500" datetime="2026-11-20">20 November 2026</time>
+            <h3 class="mt-2 text-lg font-semibold text-slate-900">The church is temporarily closed for works</h3>
+            <p class="mt-2 flex-1 text-slate-600">Our church needs major works: roof, heating and bringing it up to standard. It is therefore temporarily closed, and no services are held there for the moment.</p>
+            <a class="mt-4 text-sm font-semibold underline link-gold-on-light" href="news.html#n-2026-11-20">Read more →</a>
+          </article>
+        </div>
+        <a href="news.html" class="mt-8 inline-block text-sm underline font-semibold link-gold-on-light">All news →</a>
+        <!-- actualites:end -->
+      </div>
+    </section>
+
     <section id="lectures" class="py-20 bg-white">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div>
@@ -778,6 +828,69 @@
 
         <!-- lectures:start (généré par scripts/build-home.mjs depuis data/lectures.mjs) -->
         <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <a
+            href="orthodox-christmas.html"
+            class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <img
+              src="images/lecture-noel-orthodoxe-1200.webp"
+              srcset="images/lecture-noel-orthodoxe-600.webp 600w, images/lecture-noel-orthodoxe-1200.webp 1200w"
+              sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
+              width="1200"
+              height="750"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              class="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+            />
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="text-lg font-semibold text-slate-900">Orthodox Christmas</h3>
+              <p class="mt-2 flex-1 text-slate-600">Why 7 January, Christmas Eve and sochivo, the icon and hymns of the Nativity.</p>
+              <span class="mt-4 text-sm font-semibold underline link-gold-on-light">Read →</span>
+            </div>
+          </a>
+          <a
+            href="nativity-fast.html"
+            class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <img
+              src="images/lecture-jeune-de-la-nativite-1200.webp"
+              srcset="images/lecture-jeune-de-la-nativite-600.webp 600w, images/lecture-jeune-de-la-nativite-1200.webp 1200w"
+              sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
+              width="1200"
+              height="750"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              class="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+            />
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="text-lg font-semibold text-slate-900">The Nativity Fast</h3>
+              <p class="mt-2 flex-1 text-slate-600">28 November to 6 January: dates, what one eats, the feasts of the fast and the meaning of these forty days.</p>
+              <span class="mt-4 text-sm font-semibold underline link-gold-on-light">Read →</span>
+            </div>
+          </a>
+          <a
+            href="orthodox-fasting.html"
+            class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <img
+              src="images/lecture-jeune-orthodoxe-1200.webp"
+              srcset="images/lecture-jeune-orthodoxe-600.webp 600w, images/lecture-jeune-orthodoxe-1200.webp 1200w"
+              sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
+              width="1200"
+              height="750"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              class="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+            />
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="text-lg font-semibold text-slate-900">Orthodox fasting</h3>
+              <p class="mt-2 flex-1 text-slate-600">The four fasts, Wednesdays and Fridays, what one eats, meal ideas and the spirit of fasting.</p>
+              <span class="mt-4 text-sm font-semibold underline link-gold-on-light">Read →</span>
+            </div>
+          </a>
           <a
             href="archangel-michael.html"
             class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
@@ -841,69 +954,6 @@
               <span class="mt-4 text-sm font-semibold underline link-gold-on-light">Read →</span>
             </div>
           </a>
-          <a
-            href="john-of-kronstadt.html"
-            class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
-          >
-            <img
-              src="images/lecture-saint-jean-de-cronstadt-1200.webp"
-              srcset="images/lecture-saint-jean-de-cronstadt-600.webp 600w, images/lecture-saint-jean-de-cronstadt-1200.webp 1200w"
-              sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
-              width="1200"
-              height="750"
-              alt=""
-              loading="lazy"
-              decoding="async"
-              class="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
-            />
-            <div class="flex flex-1 flex-col p-6">
-              <h3 class="text-lg font-semibold text-slate-900">Saint John of Kronstadt</h3>
-              <p class="mt-2 flex-1 text-slate-600">The priest of Kronstadt, friend of the poor, whom all Russia came to consult, author of My Life in Christ.</p>
-              <span class="mt-4 text-sm font-semibold underline link-gold-on-light">Read →</span>
-            </div>
-          </a>
-          <a
-            href="alexander-nevsky.html"
-            class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
-          >
-            <img
-              src="images/lecture-saint-alexandre-nevsky-1200.webp"
-              srcset="images/lecture-saint-alexandre-nevsky-600.webp 600w, images/lecture-saint-alexandre-nevsky-1200.webp 1200w"
-              sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
-              width="1200"
-              height="750"
-              alt=""
-              loading="lazy"
-              decoding="async"
-              class="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
-            />
-            <div class="flex flex-1 flex-col p-6">
-              <h3 class="text-lg font-semibold text-slate-900">Saint Alexander Nevsky</h3>
-              <p class="mt-2 flex-1 text-slate-600">Prince of Novgorod, defender of Russia, who died a monk with the name Alexis: the patron of our church.</p>
-              <span class="mt-4 text-sm font-semibold underline link-gold-on-light">Read →</span>
-            </div>
-          </a>
-          <a
-            href="prayer-book.html"
-            class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md"
-          >
-            <img
-              src="images/lecture-livre-de-prieres-1200.webp"
-              srcset="images/lecture-livre-de-prieres-600.webp 600w, images/lecture-livre-de-prieres-1200.webp 1200w"
-              sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
-              width="1200"
-              height="750"
-              alt=""
-              loading="lazy"
-              decoding="async"
-              class="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
-            />
-            <div class="flex flex-1 flex-col p-6">
-              <h3 class="text-lg font-semibold text-slate-900">Prayer book</h3>
-              <p class="mt-2 flex-1 text-slate-600">Morning, evening and mealtime prayers, in English with the Church Slavonic text, and advice for praying at home.</p>
-              <span class="mt-4 text-sm font-semibold underline link-gold-on-light">Read →</span>
-            </div>
-          </a>
         </div>
         <!-- lectures:end -->
 
@@ -937,6 +987,8 @@
             <span data-i18n="verse.version">King James Version</span>
           </figcaption>
         </figure>
+        <!-- Aujourd'hui dans l'Église (rempli par js/calendar.js) -->
+        <div id="today" class="mx-auto mt-12 max-w-xl rounded-2xl border border-white/20 bg-white/5 p-6 text-left" aria-live="polite" hidden></div>
       </div>
     </section>
 
@@ -1380,6 +1432,15 @@
                       data-i18n="nav.lectures"
                       data-i18n-href="nav.lectures.href"
                       >Reading</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="news.html"
+                      class="hover:opacity-90 text-slate-600"
+                      data-i18n="nav.actu"
+                      data-i18n-href="nav.actu.href"
+                      >News</a
                     >
                   </li>
                   <li>

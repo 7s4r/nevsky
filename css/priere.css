@@ -72,6 +72,21 @@ a.reading:hover h3 { color: var(--blue-700); }
 .photo-pair.icons { align-items: start; }
 .photo-pair.icons .photo img { aspect-ratio: auto; }
 
+/* Tableau (degrés du jeûne) */
+.table-wrap { overflow-x: auto; margin: 20px 0; }
+.fast-table { width: 100%; border-collapse: collapse; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); font-size: .92rem; }
+.fast-table caption { text-align: left; font-size: .85rem; color: var(--ink-soft); padding-bottom: 8px; }
+.fast-table th, .fast-table td { padding: 9px 12px; border-bottom: 1px solid var(--line); text-align: center; }
+.fast-table thead th { font-size: .78rem; letter-spacing: .04em; text-transform: uppercase; color: var(--blue-900); background: var(--stone); }
+.fast-table tbody th { text-align: left; font-weight: 600; color: var(--ink); }
+.fast-table td.yes { color: #1f6b3a; font-weight: 600; }
+.fast-table td.no { color: var(--ink-soft); }
+@media (max-width: 640px) {
+  .fast-table { font-size: .8rem; }
+  .fast-table th, .fast-table td { padding: 7px 5px; }
+  .fast-table thead th { font-size: .66rem; letter-spacing: 0; text-transform: none; hyphens: auto; }
+}
+
 /* Vidéo YouTube (façade chargée au clic) */
 .video { position: relative; aspect-ratio: 16 / 9; margin: 24px 0 8px; border-radius: var(--radius); overflow: hidden; background: #111; box-shadow: var(--shadow-md); }
 .video button { all: unset; cursor: pointer; position: absolute; inset: 0; display: block; }
@@ -82,3 +97,12 @@ a.reading:hover h3 { color: var(--blue-700); }
 .video .play svg { margin-left: 5px; }
 .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .video-note { font-size: .88rem; color: var(--ink-soft); }
+
+/* Page « Actualités » */
+.news-list { max-width: 760px; }
+.news-item { background: var(--white); border: 1px solid var(--line); border-left: 3px solid var(--gold-600); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin-bottom: 22px; box-shadow: var(--shadow-sm); scroll-margin-top: 24px; }
+.news-item time { display: block; font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold-700); }
+.news-item h2 { font-size: 1.6rem; margin: 6px 0 10px; }
+.news-item p { margin: 0 0 10px; }
+.news-item .news-link { font-weight: 600; color: var(--blue-700); }
+.news-foot { color: var(--ink-soft); font-size: .95rem; }

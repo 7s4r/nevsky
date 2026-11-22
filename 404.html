@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page introuvable · Страница не найдена · Page not found | nevsky.fr</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#1B3B6F" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" /></noscript>
+  <!-- Chemins absolus : cette page peut être servie à n'importe quelle adresse -->
+  <link rel="stylesheet" href="/css/catechisme.css" />
+  <link rel="stylesheet" href="/css/priere.css" />
+  <style>
+    .lost { max-width: 760px; display: grid; gap: 18px; }
+    .lost-card { background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--gold-600); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow-sm); }
+    .lost-card h2 { font-size: 1.5rem; margin: 0 0 6px; }
+    .lost-card p { margin: 0 0 12px; color: var(--ink-soft); }
+    .lost-card .links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .lost-card.first { order: -1; }
+  </style>
+</head>
+
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="ortho-cross" viewBox="0 0 40 64">
+      <g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round">
+        <line x1="20" y1="2" x2="20" y2="62" />
+        <line x1="13" y1="10" x2="27" y2="10" />
+        <line x1="5" y1="21" x2="35" y2="21" />
+        <line x1="11" y1="41" x2="29" y2="48" />
+      </g>
+    </symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">
+        <svg class="cross" aria-hidden="true"><use href="#ortho-cross" /></svg>
+        <span class="brand-text">
+          <span class="brand-title">Église Saint Alexandre Nevsky</span>
+          <span class="brand-sub">Pau</span>
+        </span>
+      </a>
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <span class="eyebrow">404</span>
+      <h1 id="hero-title">Page <em>introuvable</em></h1>
+      <div class="ornament" aria-hidden="true"><svg class="cross"><use href="#ortho-cross" /></svg></div>
+      <p class="prayer-hero">«&#8239;Cherchez, et vous trouverez.&#8239;»<small>Matthieu 7, 7</small></p>
+    </div>
+  </section>
+
+  <main id="contenu">
+    <section class="section">
+      <div class="container lost">
+        <div class="lost-card" lang="fr" data-lang="fr">
+          <h2>Cette page n’existe pas ou a été déplacée</h2>
+          <p>L’adresse est peut-être mal saisie, ou la page a changé de nom. Voici quelques pistes&#8239;:</p>
+          <div class="links">
+            <a class="btn" href="/">Page d’accueil</a>
+            <a class="btn ghost" href="/lectures-spirituelles.html">Lectures spirituelles</a>
+            <a class="btn ghost" href="/actualites.html">Actualités</a>
+          </div>
+        </div>
+        <div class="lost-card" lang="ru" data-lang="ru">
+          <h2>Страница не найдена</h2>
+          <p>Возможно, адрес набран с ошибкой или страница была переименована. Попробуйте:</p>
+          <div class="links">
+            <a class="btn" href="/ru.html">Главная страница</a>
+            <a class="btn ghost" href="/duhovnoe-chtenie.html">Духовное чтение</a>
+            <a class="btn ghost" href="/novosti.html">Новости</a>
+          </div>
+        </div>
+        <div class="lost-card" lang="en" data-lang="en">
+          <h2>This page does not exist or has moved</h2>
+          <p>The address may be mistyped, or the page may have been renamed. Here are a few ideas:</p>
+          <div class="links">
+            <a class="btn" href="/en.html">Home page</a>
+            <a class="btn ghost" href="/spiritual-reading.html">Spiritual reading</a>
+            <a class="btn ghost" href="/news.html">News</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span class="doxology">Слава Богу за всё · Gloire à Dieu pour tout</span>
+        <span>Association culturelle orthodoxe russe Saint Alexandre Nevsky</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Met en premier le message dans la langue du visiteur
+    (function () {
+      var l = (navigator.language || 'fr').slice(0, 2);
+      var card = document.querySelector('.lost-card[data-lang="' + l + '"]');
+      if (card) card.classList.add('first');
+    })();
+  </script>
+</body>
+</html>

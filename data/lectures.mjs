@@ -17,6 +17,27 @@ export const HOME_COUNT = 6;
 
 export const lectures = [
   {
+    date: '2026-11-22',
+    image: 'images/lecture-noel-orthodoxe-1200.webp',
+    fr: { href: 'noel-orthodoxe.html', title: "Noël orthodoxe", text: "Pourquoi le 7 janvier, la veille de Noël et le sotchivo, l’icône et les chants de la Nativité." },
+    ru: { href: 'rozhdestvo-hristovo.html', title: "Рождество Христово", text: "Почему 7 января, Сочельник и сочиво, икона и песнопения праздника." },
+    en: { href: 'orthodox-christmas.html', title: "Orthodox Christmas", text: "Why 7 January, Christmas Eve and sochivo, the icon and hymns of the Nativity." },
+  },
+  {
+    date: '2026-11-22',
+    image: 'images/lecture-jeune-de-la-nativite-1200.webp',
+    fr: { href: 'jeune-de-la-nativite.html', title: "Le jeûne de la Nativité", text: "Du 28 novembre au 6 janvier : dates, ce que l’on mange, les fêtes du jeûne et le sens de ces quarante jours." },
+    ru: { href: 'rozhdestvenskij-post.html', title: "Рождественский пост", text: "С 28 ноября по 6 января: сроки, что можно есть, праздники поста и смысл сорока дней." },
+    en: { href: 'nativity-fast.html', title: "The Nativity Fast", text: "28 November to 6 January: dates, what one eats, the feasts of the fast and the meaning of these forty days." },
+  },
+  {
+    date: '2026-11-22',
+    image: 'images/lecture-jeune-orthodoxe-1200.webp',
+    fr: { href: 'jeune-orthodoxe.html', title: "Le jeûne orthodoxe", text: "Les quatre carêmes, le mercredi et le vendredi, ce que l’on mange, des idées de repas et l’esprit du jeûne." },
+    ru: { href: 'post-v-pravoslavii.html', title: "Пост в православии", text: "Четыре многодневных поста, среда и пятница, что можно есть, постные блюда и дух поста." },
+    en: { href: 'orthodox-fasting.html', title: "Orthodox fasting", text: "The four fasts, Wednesdays and Fridays, what one eats, meal ideas and the spirit of fasting." },
+  },
+  {
     date: '2026-11-21',
     image: 'images/lecture-archange-michel-1200.webp',
     fr: { href: 'archange-michel.html', title: "L’archange Michel", text: "Le chef des armées célestes : son nom, l’Écriture, le miracle de Chones, ses icônes, sa fête du 21 novembre, en vidéo." },

@@ -6,12 +6,17 @@
  * Usage : npm run build:home
  *
  * À relancer après toute modification de index.html, de js/locales.js ou de
- * data/lectures.mjs, puis committer index.html, ru.html et en.html.
+ * data/lectures.mjs ou de data/actualites.mjs, puis committer index.html,
+ * ru.html, en.html et les pages d'actualités.
  * Aucune dépendance : Node seul suffit.
  *
  * Les cartes « Lectures spirituelles » de l'accueil sont construites à partir
  * de data/lectures.mjs (les plus récentes d'abord) et insérées entre les
  * commentaires <!-- lectures:start --> et <!-- lectures:end --> de chaque page.
+ *
+ * De même, la section « Actualités » vient de data/actualites.mjs (marqueurs
+ * <!-- actualites:start --> / <!-- actualites:end -->), et le script écrit les
+ * pages actualites.html, novosti.html et news.html (voir scripts/news.mjs).
  *
  * Le script régénère aussi sitemap.xml à partir de toutes les pages du site
  * (voir scripts/sitemap.mjs) : committer également sitemap.xml.
@@ -28,6 +33,7 @@ import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
 import { lectures, HOME_COUNT } from '../data/lectures.mjs';
 import { buildSitemap } from './sitemap.mjs';
+import { newsSection, buildNewsPages } from './news.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const sandbox = { window: {} };
@@ -48,6 +54,7 @@ const escText = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>
 const escAttr = (s) => escText(s).replace(/"/g, '&quot;');
 const READ_LABEL = { fr: 'Lire →', ru: 'Читать →', en: 'Read →' };
 const LECTURES_BLOCK = /( *)<!-- lectures:start[^>]*-->[\s\S]*?<!-- lectures:end -->/;
+const NEWS_BLOCK = /( *)<!-- actualites:start[^>]*-->[\s\S]*?<!-- actualites:end -->/;
 
 /** Cartes des dernières lectures, dans la langue demandée. */
 function lectureCards(lang) {
@@ -89,13 +96,14 @@ ${cards.join('\n')}
 /** Remplace le bloc des lectures par les cartes de la langue demandée. */
 function withLectures(html, lang) {
   if (!LECTURES_BLOCK.test(html)) throw new Error('index.html : marqueurs <!-- lectures:start --> / <!-- lectures:end --> introuvables');
-  return html.replace(LECTURES_BLOCK, () => lectureCards(lang));
+  if (!NEWS_BLOCK.test(html)) throw new Error('index.html : marqueurs <!-- actualites:start --> / <!-- actualites:end --> introuvables');
+  return html.replace(LECTURES_BLOCK, () => lectureCards(lang)).replace(NEWS_BLOCK, () => newsSection(lang));
 }
 
 // Page française : met à jour les cartes directement dans index.html
 const source = withLectures(readFileSync(join(root, 'index.html'), 'utf8'), 'fr');
 writeFileSync(join(root, 'index.html'), source);
-console.log('index.html : lectures mises à jour');
+console.log('index.html : lectures et actualités mises à jour');
 
 const VOID = new Set(['meta', 'link', 'img', 'input', 'br', 'hr', 'source']);
 
@@ -151,4 +159,5 @@ for (const [lang, page] of Object.entries(PAGES)) {
   console.log(`${page.file} : écrit${missing.size ? ` (clés sans traduction : ${[...missing].join(', ')})` : ''}`);
 }
 
+buildNewsPages(root);
 buildSitemap(root);
