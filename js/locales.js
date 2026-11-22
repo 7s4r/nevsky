@@ -20,9 +20,9 @@ window.locales = {
     'hero.cta2': "Soutenir l'église",
     'about.title': 'Histoire de notre église',
     'about.p1':
-      'Fondée en 1867 à l’initiative du père Hérodien, aumônier de la colonie russe, l’église Saint‑Alexandre‑Nevsky vit le jour grâce à une souscription de 65 000 francs levée auprès des aristocrates russes du Béarn. Troisième église orthodoxe russe bâtie en France, après Nice (1860) et Paris (1861), elle est dédiée à Alexandre Nevsky, prince de Novgorod et héros de la bataille de la Neva (1240). Elle illustre les liens profonds unissant Pau et la Russie.',
+      'Au milieu du XIXᵉ siècle, sous le règne de Napoléon III, une importante communauté russe s’installe à Pau. Comme bien d’autres, elle est séduite par la réputation curative du climat béarnais. À l’initiative du père Hérodien, aumônier de cette colonie, une souscription de 65 000 francs est levée auprès des aristocrates russes du Béarn. En 1867, l’église Saint‑Alexandre‑Nevsky voit le jour. Elle est aujourd’hui considérée comme la troisième plus ancienne église orthodoxe russe de France, après celles de Nice (1860) et de Paris (1861). Elle est dédiée à saint Alexandre Nevsky, prince de Novgorod et vainqueur de la bataille de la Neva (1240), et témoigne depuis plus de 150 ans des liens profonds entre Pau et la Russie.',
     'about.p2':
-      'Discrète, nichée dans un jardin bordé de palmiers, elle ne possède ni dômes traditionnels ni façades ostentatoires. Commandée depuis Saint Petersbourg à un architecte palois, qui en lieu et place d’une église orthodoxe a livré une construction semblable aux églises protestantes construites pour les résidents anglophones dans le quartier actuel du commissariat.',
+      'Commandée depuis Saint‑Pétersbourg, elle est confiée à un architecte local, qui livre un résultat éloigné des églises russes traditionnelles. Discrète, nichée dans un jardin bordé de palmiers, elle ne possède ni dômes traditionnels ni façades ostentatoires. À l’intérieur, une collection d’icônes venues de Saint‑Pétersbourg rappelle l’origine de ses fondateurs.',
     'about.cards.history.title': 'Un patrimoine depuis 1867',
     'about.cards.history.text': 'Troisième église orthodoxe russe bâtie en France, après Nice et Paris, elle témoigne depuis plus de 150 ans des liens entre Pau et la Russie.',
     'about.cards.history.link': 'Nous rendre visite →',
@@ -155,9 +155,9 @@ window.locales = {
     'hero.cta2': 'Поддержать храм',
     'about.title': 'Наш приход',
     'about.p1':
-      'Основанный в 1867 году по инициативе отца Иродиана, капеллана русской колонии, храм святого Александра Невского был воздвигнут на средства подписки в размере 65 000 франков, собранных среди русской аристократии Беарна. Это третий русский православный храм, построенный во Франции после Ниццы (1860) и Парижа (1861). Он посвящён Александру Невскому, новгородскому князю и герою Невской битвы (1240), и свидетельствует о глубоких связях между По и Россией.',
+      'В середине XIX века, в царствование Наполеона III, в По поселилась большая русская община: как и многих других, её привлекла слава целебного беарнского климата. По инициативе отца Иродиана, священника этой колонии, среди русской аристократии Беарна была собрана подписка в 65 000 франков. В 1867 году был освящён храм святого Александра Невского. Сегодня он считается третьим по древности русским православным храмом во Франции после храмов в Ницце (1860) и Париже (1861). Храм посвящён святому Александру Невскому, князю новгородскому и победителю в Невской битве (1240), и уже более 150 лет свидетельствует о глубоких связях между По и Россией.',
     'about.p2':
-      'Скромная, расположенная в саду, окруженном пальмами, она не имеет ни традиционных куполов, ни показных фасадов. Её заказали в Санкт-Петербурге архитектору из По, который вместо православной церкви построил здание, похожее на протестантские церкви, построенные для англоговорящих жителей в районе нынешнего полицейского участка.',
+      'Храм был заказан из Санкт-Петербурга, но строительство поручили местному архитектору, и в итоге он получился непохожим на традиционные русские церкви. Скромный, укрытый в саду среди пальм, он не имеет ни традиционных куполов, ни пышных фасадов. Внутри собрание икон, привезённых из Санкт-Петербурга, напоминает о происхождении его основателей.',
     'about.cards.history.title': 'Наследие с 1867 года',
     'about.cards.history.text': 'Третий русский православный храм, построенный во Франции после Ниццы и Парижа, более 150 лет свидетельствует о связях По и России.',
     'about.cards.history.link': 'Как нас найти →',
@@ -286,9 +286,9 @@ window.locales = {
     'hero.cta2': 'Support the Church',
     'about.title': 'Our Parish',
     'about.p1':
-      'Founded in 1867 by Father Herodian, chaplain of the Russian colony, the Saint Alexander Nevsky Church was built through a fundraising campaign that raised 65,000 francs from the Russian aristocracy of Béarn. It is the third Russian Orthodox church built in France, after Nice (1860) and Paris (1861). Dedicated to Alexander Nevsky, the prince of Novgorod and hero of the Battle of the Neva (1240), it reflects the deep ties between Pau and Russia.',
+      'In the mid-19th century, under the reign of Napoleon III, a large Russian community settled in Pau, drawn, like many others, by the healing reputation of the Béarn climate. At the initiative of Father Herodian, chaplain of this colony, a subscription of 65,000 francs was raised among the Russian aristocracy of Béarn. In 1867 the Church of Saint Alexander Nevsky came into being. Today it is considered the third oldest Russian Orthodox church in France, after those of Nice (1860) and Paris (1861). It is dedicated to Saint Alexander Nevsky, prince of Novgorod and victor of the Battle of the Neva (1240), and for more than 150 years it has borne witness to the deep ties between Pau and Russia.',
     'about.p2':
-      'Humble and nestled in a garden surrounded by palm trees, it lacks traditional domes and ostentatious facades. Commissioned from a Pau architect in Saint Petersburg, it resembles a Protestant church built for English-speaking residents in the area of the current police station.',
+      'Commissioned from Saint Petersburg but entrusted to a local architect, it turned out quite unlike traditional Russian churches. Discreet, nestled in a garden lined with palm trees, it has neither traditional domes nor ostentatious façades. Inside, a collection of icons brought from Saint Petersburg recalls the origins of its founders.',
     'about.cards.history.title': 'A heritage since 1867',
     'about.cards.history.text': 'The third Russian Orthodox church built in France, after Nice and Paris, it has borne witness to the ties between Pau and Russia for over 150 years.',
     'about.cards.history.link': 'Visit us →',
