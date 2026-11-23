@@ -104,7 +104,6 @@
       upcomingFeasts: 'Prochaines fêtes', upcomingOffices: 'Prochains offices', noOffices: 'Aucun office n’est annoncé pour le moment. Inscrivez-vous à la newsletter pour connaître la reprise des offices.',
       today: 'Aujourd’hui', period: 'Période actuelle', julian: 'calendrier julien', legend: ['Grande fête', 'Saint, fête patronale', 'Jeûne', 'Office'],
       ics: 'Calendrier de la paroisse Saint-Alexandre-Nevsky', icsDesc: 'Fêtes et offices de l’église orthodoxe russe Saint-Alexandre-Nevsky de Pau.',
-      todayTitle: 'Aujourd’hui dans l’Église', readLife: 'En savoir plus →',
       sundays: 'Dimanche', verse: 'Citation biblique du jour', quotes: ['« ', ' »'],
     },
     ru: {
@@ -117,7 +116,6 @@
       upcomingFeasts: 'Ближайшие праздники', upcomingOffices: 'Ближайшие богослужения', noOffices: 'Пока богослужения не объявлены. Подпишитесь на рассылку, чтобы узнать о их возобновлении.',
       today: 'Сегодня', period: 'Сейчас', julian: 'по старому стилю', legend: ['Великий праздник', 'Святой, престольный праздник', 'Пост', 'Богослужение'],
       ics: 'Календарь прихода св. Александра Невского', icsDesc: 'Праздники и богослужения русского православного храма св. Александра Невского в По.',
-      todayTitle: 'Сегодня в Церкви', readLife: 'Подробнее →',
       sundays: 'Воскресенье', verse: 'Цитата из Библии', quotes: ['«', '»'],
     },
     en: {
@@ -130,27 +128,11 @@
       upcomingFeasts: 'Upcoming feasts', upcomingOffices: 'Upcoming services', noOffices: 'No services have been announced yet. Subscribe to the newsletter to hear when services resume.',
       today: 'Today', period: 'Current period', julian: 'Julian calendar', legend: ['Great feast', 'Saint, patronal feast', 'Fast', 'Service'],
       ics: 'St Alexander Nevsky parish calendar', icsDesc: 'Feasts and services of the St Alexander Nevsky Russian Orthodox Church in Pau.',
-      todayTitle: 'Today in the Church', readLife: 'Learn more →',
       sundays: 'Sunday', verse: 'Bible verse of the day', quotes: ['“', '”'],
     },
   };
   const LANGS = { fr: 3, ru: 4, en: 5 };
   const LOCALE = { fr: 'fr-FR', ru: 'ru-RU', en: 'en-GB' };
-  /** Pages du site liées à une date julienne ('mois-jour') : [fr, ru, en]. */
-  const DAY_PAGES = {
-    '11-23': ['saint-alexandre-nevsky.html', 'aleksandr-nevskij.html', 'alexander-nevsky.html'],
-    '8-30': ['saint-alexandre-nevsky.html', 'aleksandr-nevskij.html', 'alexander-nevsky.html'],
-    '1-2': ['saint-seraphin-de-sarov.html', 'serafim-sarovskij.html', 'seraphim-of-sarov.html'],
-    '7-19': ['saint-seraphin-de-sarov.html', 'serafim-sarovskij.html', 'seraphim-of-sarov.html'],
-    '9-11': ['saint-silouane-athonite.html', 'siluan-afonskij.html', 'silouan-the-athonite.html'],
-    '10-19': ['saint-jean-de-cronstadt.html', 'ioann-kronshtadtskij.html', 'john-of-kronstadt.html'],
-    '12-20': ['saint-jean-de-cronstadt.html', 'ioann-kronshtadtskij.html', 'john-of-kronstadt.html'],
-    '11-8': ['archange-michel.html', 'arhangel-mihail.html', 'archangel-michael.html'],
-    '9-6': ['archange-michel.html', 'arhangel-mihail.html', 'archangel-michael.html'],
-    '12-25': ['noel-orthodoxe.html', 'rozhdestvo-hristovo.html', 'orthodox-christmas.html'],
-  };
-  const FAST_PAGES = { guide: ['jeune-orthodoxe.html', 'post-v-pravoslavii.html', 'orthodox-fasting.html'], nativity: ['jeune-de-la-nativite.html', 'rozhdestvenskij-post.html', 'nativity-fast.html'] };
-  const LI = { fr: 0, ru: 1, en: 2 };
   const WEEKDAYS = { dimanche: 0, lundi: 1, mardi: 2, mercredi: 3, jeudi: 4, vendredi: 5, samedi: 6 };
 
   const isGreat = (r) => r === 'pascha' || r === 'great12' || r === 'great';
@@ -371,7 +353,7 @@
     const s = document.createElement('script');
     s.src = scriptPath('saints.min.js');
     s.defer = true;
-    s.onload = () => { renderMonth(); fillToday(); };
+    s.onload = () => renderMonth();
     document.head.appendChild(s);
   }
   /* ---------- Citation biblique du jour (js/verses.<langue>.js) ---------- */
@@ -402,29 +384,7 @@
     ref.textContent = v[1];
   }
 
-  /** Remplit l'encart « Aujourd'hui dans l'Église » de la page d'accueil. */
-  function fillToday() {
-    const box = document.getElementById('today');
-    if (!box) return;
-    const lang = state.lang, L = T[lang] || T.fr, i = LI[lang] || 0;
-    const n = new Date(), date = mk(n.getFullYear(), n.getMonth() + 1, n.getDate());
-    const info = dayInfo(date, lang), j = civilToJulian(date);
-    const feasts = info.feasts.filter((f) => f.rank !== 'memory').concat(info.feasts.filter((f) => f.rank === 'memory')).slice(0, 4);
-    const page = DAY_PAGES[j.m + '-' + j.d];
-    const link = (href, t) => `<a class="font-semibold text-[#ffd615] underline-offset-4 hover:underline" href="${href}">${esc(t)}</a>`;
-    let h = `<h3 class="text-xs font-semibold uppercase tracking-widest text-[#ffd615]">${esc(L.todayTitle)}</h3>`;
-    h += `<p class="mt-2 font-serif text-xl">${esc(fmtDate(date, lang).replace(/^./, (c) => c.toUpperCase()))} <span class="text-sm text-slate-300">(${esc(julianLabel(date, lang))}, ${esc(L.julian)})</span></p>`;
-    if (feasts.length) h += '<ul class="mt-3 space-y-1 text-sm text-slate-100">' + feasts.map((f) => `<li class="flex gap-2"><span class="mt-1.5 h-1.5 w-1.5 flex-none rounded-full ${isGreat(f.rank) ? 'bg-[#d4af37]' : 'bg-slate-300'}"></span><span class="${isGreat(f.rank) || f.rank === 'parish' ? 'font-semibold text-white' : ''}">${esc(f.name)}</span></li>`).join('') + '</ul>';
-    if (page) h += `<p class="mt-3 text-sm">${link(page[i], L.readLife)}</p>`;
-    if (info.fast) {
-      const fp = info.fast.name === L.nativity ? FAST_PAGES.nativity : FAST_PAGES.guide;
-      h += `<p class="mt-3 text-sm text-slate-100"><span class="inline-block h-2 w-2 rounded-full bg-violet-300 align-middle"></span> ${link(fp[i], info.fast.name + ' →')}</p>`;
-    } else if (info.note) h += `<p class="mt-3 text-sm text-emerald-200">${esc(info.note)}</p>`;
-    box.innerHTML = h;
-    box.hidden = false;
-  }
-
-  function draw() { wire(); renderMonth(); renderUpcoming(); fillToday(); loadSaints(); loadVerses(); }
+  function draw() { wire(); renderMonth(); renderUpcoming(); loadSaints(); loadVerses(); }
   function render(lang) {
     state.lang = T[lang] ? lang : 'fr';
     if (!state.month) { const n = new Date(); state.month = mk(n.getFullYear(), n.getMonth() + 1, 1); }
