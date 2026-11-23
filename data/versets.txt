@@ -12,8 +12,8 @@ Matt 3:17
 Isa 9:6 fr=9:5
 Luke 2:14
 Matt 5:3
-Matt 5:4
-Matt 5:5
+Matt 5:4 fr=5:5
+Matt 5:5 fr=5:4
 Matt 5:6
 Matt 5:7
 Matt 5:8
@@ -35,7 +35,7 @@ Matt 22:39
 Matt 25:40
 Matt 28:20
 Mark 1:15
-Mark 9:23
+Mark 9:23 fr=9:22
 # Février
 Mark 10:27
 Mark 11:24
@@ -274,7 +274,7 @@ Prov 19:21
 Prov 22:6
 Eccl 3:1
 Eccl 4:9
-Eccl 12:13 fr=12:15
+Eccl 12:13
 Song 8:7
 Isa 1:17
 Isa 1:18
@@ -307,7 +307,7 @@ Lam 3:25
 Ezek 36:26
 Dan 2:20
 Hos 6:6
-Hos 14:9 ru=14:10
+Hos 14:9 fr=14:10 ru=14:10
 Joel 2:13
 Amos 5:24
 Jonah 2:9 fr=2:10 ru=2:10
@@ -334,7 +334,7 @@ Matt 10:30-31
 Matt 14:27
 Matt 16:24
 Matt 16:26
-Matt 17:20
+Matt 17:20 fr=17:19
 Matt 19:14
 Matt 19:26
 Matt 20:28

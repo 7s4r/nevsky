@@ -5,9 +5,11 @@
  *
  * Usage : node scripts/build-verses.mjs   (Node 18+, accès à api.getbible.net)
  *
- * Traductions du domaine public : Louis Segond 1910 (français), traduction
- * synodale (russe), King James (anglais). Les chapitres téléchargés sont gardés
- * dans .cache/bible/ pour ne pas les retélécharger.
+ * Traductions du domaine public : Bible Crampon 1923 (français), traduction
+ * synodale (russe), King James (anglais). Le russe et l'anglais sont téléchargés
+ * depuis api.getbible.net (chapitres gardés dans .cache/bible/) ; le français
+ * vient de data/crampon-versets.json, extrait de Wikisource par
+ * scripts/extract-crampon.py (à relancer si data/versets.txt change).
  *
  * Les Psaumes sont cités dans la numérotation française / anglaise ; pour le
  * russe, le script passe à la numérotation de la Septante (Пс 22 = Ps 23) et
@@ -30,7 +32,7 @@ const BOOKS = [
   [13, '1Chr', '1 Chroniques', '1 Пар.', '1 Chronicles'], [14, '2Chr', '2 Chroniques', '2 Пар.', '2 Chronicles'], [15, 'Ezra', 'Esdras', '1 Ездр.', 'Ezra'],
   [16, 'Neh', 'Néhémie', 'Неем.', 'Nehemiah'], [17, 'Esth', 'Esther', 'Есф.', 'Esther'], [18, 'Job', 'Job', 'Иов.', 'Job'],
   [19, 'Ps', 'Psaume', 'Пс.', 'Psalm'], [20, 'Prov', 'Proverbes', 'Притч.', 'Proverbs'], [21, 'Eccl', 'Ecclésiaste', 'Еккл.', 'Ecclesiastes'],
-  [22, 'Song', 'Cantique des cantiques', 'Песн.', 'Song of Songs'], [23, 'Isa', 'Ésaïe', 'Ис.', 'Isaiah'], [24, 'Jer', 'Jérémie', 'Иер.', 'Jeremiah'],
+  [22, 'Song', 'Cantique des cantiques', 'Песн.', 'Song of Songs'], [23, 'Isa', 'Isaïe', 'Ис.', 'Isaiah'], [24, 'Jer', 'Jérémie', 'Иер.', 'Jeremiah'],
   [25, 'Lam', 'Lamentations', 'Плач.', 'Lamentations'], [26, 'Ezek', 'Ézéchiel', 'Иез.', 'Ezekiel'], [27, 'Dan', 'Daniel', 'Дан.', 'Daniel'],
   [28, 'Hos', 'Osée', 'Ос.', 'Hosea'], [29, 'Joel', 'Joël', 'Иоил.', 'Joel'], [30, 'Amos', 'Amos', 'Ам.', 'Amos'],
   [31, 'Obad', 'Abdias', 'Авд.', 'Obadiah'], [32, 'Jonah', 'Jonas', 'Ион.', 'Jonah'], [33, 'Mic', 'Michée', 'Мих.', 'Micah'],
@@ -47,7 +49,19 @@ const BOOKS = [
   [64, '3John', '3 Jean', '3 Ин.', '3 John'], [65, 'Jude', 'Jude', 'Иуд.', 'Jude'], [66, 'Rev', 'Apocalypse', 'Откр.', 'Revelation'],
 ];
 const BY_CODE = Object.fromEntries(BOOKS.map((b) => [b[1], b]));
-const TRANSLATIONS = { fr: 'ls1910', ru: 'synodal', en: 'kjv' };
+const TRANSLATIONS = { fr: 'crampon', ru: 'synodal', en: 'kjv' };
+const NAMES = { fr: 'Bible Crampon 1923', ru: 'Синодальный перевод', en: 'King James Version' };
+const CRAMPON = JSON.parse(readFileSync(join(root, 'data/crampon-versets.json'), 'utf8'));
+
+/** Chapitre de la Bible Crampon au format de getbible (versets présents dans data/crampon-versets.json). */
+function crampon(code, ch) {
+  const verses = Object.entries(CRAMPON)
+    .map(([k, text]) => [/^(\S+) (\d+):(\d+)$/.exec(k), text])
+    .filter(([m]) => m && m[1] === code && +m[2] === ch)
+    .map(([m, text]) => ({ verse: +m[3], text }));
+  const count = CRAMPON[`${code} ${ch}:count`];
+  return { verses, length: count || verses.length };
+}
 // Chapitres de longueur différente, mais verset vérifié identique
 const OK = new Set(['Mark 9:23 fr', 'Rom 14:8 ru', 'Josh 24:15 ru', 'Prov 4:23 ru', 'Eccl 4:9 fr', 'Eccl 4:9 ru', 'Nah 1:7 fr']);
 const DAYS = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
@@ -60,6 +74,7 @@ function lxxPsalm(n) {
 }
 
 async function chapter(tr, book, ch) {
+  if (tr === 'crampon') return crampon(BOOKS[book - 1][1], ch);
   const file = join(cacheDir, `${tr}-${book}-${ch}.json`);
   if (!existsSync(file)) {
     const res = await fetch(`https://api.getbible.net/v2/${tr}/${book}/${ch}.json`);
@@ -95,25 +110,35 @@ for (let m = 1; m <= 12; m++) {
         [c, a, b] = fix[lang];
         data = await chapter(tr, book[0], c);
       } else if (lang !== 'en' && book[0] === 19) {
-        // Psaumes : la Bible russe suit la Septante ; Segond et la traduction
+        // Psaumes : la Bible russe suit la Septante ; la Crampon et la traduction
         // synodale comptent parfois le titre du psaume comme un verset.
         if (lang === 'ru') c = lxxPsalm(+ch);
         data = await chapter(tr, 19, c);
-        const offset = data.verses.length - kjv.verses.length;
+        const offset = (data.length ?? data.verses.length) - kjv.verses.length;
         if (offset < 0 || offset > 2) warnings.push(`${ref} : décalage de versets inattendu en ${lang} (${offset})`);
         a += offset; b += offset;
       } else if (!data) {
         data = await chapter(tr, book[0], c);
-        if (data.verses.length !== kjv.verses.length && !OK.has(`${ref} ${lang}`)) warnings.push(`${ref} : ${lang} compte ${data.verses.length} versets dans ce chapitre (anglais : ${kjv.verses.length}), à vérifier`);
+        if (lang !== 'fr' && data.verses.length !== kjv.verses.length && !OK.has(`${ref} ${lang}`)) warnings.push(`${ref} : ${lang} compte ${data.verses.length} versets dans ce chapitre (anglais : ${kjv.verses.length}), à vérifier`);
       }
       const verses = data.verses.filter((v) => v.verse >= a && v.verse <= b);
       if (verses.length !== b - a + 1) throw new Error(`${ref} : versets introuvables en ${lang}`);
       let text = clean(verses.map((v) => v.text).join(' '));
       // Titre du psaume compté dans le verset 1 (« Cantique de David. … »)
-      if (book[0] === 19) text = text.replace(/^(?:(?:Cantique|Psaume|Au chef des chantres|Prière|Hymne|Maskil|Miktam)[^.]*\.\s+)+/, '');
+      if (book[0] === 19) text = text.replace(/^(?:(?:Cantique|Psaume|Au chef des chantres|Au maître de chant|Prière|Hymne|Maskil|Miktam|De David|D’Asaph|Des fils de Coré|De Salomon|Louange)[^.]*\.\s+)+/, '');
       if (lang === 'ru') text = text.replace(/ - /g, ' — ');
       // Citation coupée au milieu d'une phrase : finir par des points de suspension
       text = text.replace(/[\s,;:\u202f-]+$/, '').replace(/([^.!?…»”"])$/, '$1…');
+      // Crampon : citation extraite d'un discours, guillemets à équilibrer
+      if (lang === 'fr') {
+        const open = (text.match(/«/g) || []).length, close = (text.match(/»/g) || []).length;
+        if (close > open) text = text.replace(/\s*»([^»]*)$/, '$1');
+        else if (open > close) text = text.replace(/^«\s*/, (m) => (open - close === 1 && text.indexOf('«') === 0 ? '' : m));
+        const o2 = (text.match(/«/g) || []).length, c2 = (text.match(/»/g) || []).length;
+        if (o2 > c2) text = text.replace(/\s*$/, ' »');
+        // La page entoure déjà la citation de « » : guillemets intérieurs en “ ”
+        text = text.replace(/«\s*/g, '“').replace(/\s*»/g, '”');
+      }
       const name = book[{ fr: 2, ru: 3, en: 4 }[lang]];
       const range = a === b ? `${a}` : `${a}-${b}`;
       const label = lang === 'fr' ? `${name} ${c}, ${range}` : `${name} ${c}:${range}`;
@@ -124,7 +149,7 @@ for (let m = 1; m <= 12; m++) {
 
 for (const lang of Object.keys(out)) {
   const file = join(root, `js/verses.${lang}.js`);
-  writeFileSync(file, `/* Citation biblique du jour (${TRANSLATIONS[lang]}, domaine public). Fichier généré par scripts/build-verses.mjs depuis data/versets.txt : ne pas modifier à la main. */\nwindow.NEVSKY_VERSES=${JSON.stringify(out[lang])};\n`);
+  writeFileSync(file, `/* Citation biblique du jour (${NAMES[lang]}, domaine public). Fichier généré par scripts/build-verses.mjs depuis data/versets.txt : ne pas modifier à la main. */\nwindow.NEVSKY_VERSES=${JSON.stringify(out[lang])};\n`);
   console.log(`js/verses.${lang}.js : ${Object.keys(out[lang]).length} jours`);
 }
 for (const w of warnings) console.warn('  attention : ' + w);
