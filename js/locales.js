@@ -31,7 +31,7 @@ window.locales = {
     'about.cards.trad.link': 'Comment se passe un office →',
     'about.cards.trad.href': 'premiere-visite.html',
     'about.cards.comm.title': 'Communauté',
-    'about.cards.comm.text': 'Français orthodoxes et russophones des pays de l’ex-URSS se retrouvent après la Liturgie autour d’un repas pour discuter. Croyants ou simples curieux, vous êtes les bienvenus.',
+    'about.cards.comm.text': 'Notre paroisse rassemble des fidèles de nombreux pays et de toutes origines, unis par la même foi. Après la Liturgie, on se retrouve autour d’un repas pour discuter. Croyants ou simples curieux, vous êtes les bienvenus.',
     'about.cards.comm.link': 'Recevoir les nouvelles de la paroisse →',
     'services.title': 'Services proposés',
     'services.desc':
@@ -171,7 +171,7 @@ window.locales = {
     'about.cards.trad.link': 'Как проходит богослужение →',
     'about.cards.trad.href': 'pervoe-poseshchenie.html',
     'about.cards.comm.title': 'Община',
-    'about.cards.comm.text': 'Православные французы и русскоязычные выходцы из стран бывшего СССР после литургии собираются за общей трапезой. Верующим и просто интересующимся — добро пожаловать!',
+    'about.cards.comm.text': 'Наш приход объединяет верующих из многих стран и самого разного происхождения, связанных единой верой. После литургии мы собираемся за общей трапезой, чтобы пообщаться. Верующим и просто интересующимся — добро пожаловать!',
     'about.cards.comm.link': 'Подписаться на новости прихода →',
     'services.title': 'Наши служения',
     'services.desc':
@@ -307,7 +307,7 @@ window.locales = {
     'about.cards.trad.link': 'What happens at a service →',
     'about.cards.trad.href': 'first-visit.html',
     'about.cards.comm.title': 'Community',
-    'about.cards.comm.text': 'French Orthodox Christians and Russian speakers from the former Soviet Union gather after the Liturgy for a shared meal. Believers and the simply curious are all welcome.',
+    'about.cards.comm.text': 'Our parish brings together faithful from many countries and all walks of life, united by the same faith. After the Liturgy, we gather around a shared meal to talk. Believers and the simply curious are all welcome.',
     'about.cards.comm.link': 'Get the parish news →',
     'services.title': 'Our Services',
     'services.desc':
