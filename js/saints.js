@@ -13,7 +13,7 @@
  */
 window.NEVSKY_SAINTS = {
   // ---------- Janvier ----------
-  '1-2': [['Saint Sylvestre, pape de Rome', 'Свт. Сильвестра, папы Римского', 'St Sylvester, Pope of Rome']],
+  '1-2': [['Saint Sylvestre, évêque de Rome', 'Свт. Сильвестра, папы Римского', 'St Sylvester, Bishop of Rome']],
   '1-3': [['Saint prophète Malachie', 'Прор. Малахии', 'Holy Prophet Malachi'], ['Saint martyr Gordius', 'Мч. Гордия', 'Martyr Gordius']],
   '1-4': [['Synaxe des soixante-dix apôtres', 'Собор 70-ти апостолов', 'Synaxis of the Seventy Apostles']],
   '1-5': [['Veille de la Théophanie', 'Навечерие Богоявления (Крещенский сочельник)', 'Eve of Theophany'], ['Sainte Synclétique d’Alexandrie', 'Прп. Синклитикии Александрийской', 'St Syncletica of Alexandria']],
@@ -60,7 +60,7 @@ window.NEVSKY_SAINTS = {
   '2-15': [['Saint apôtre Onésime', 'Ап. от 70-ти Онисима', 'Holy Apostle Onesimus']],
   '2-16': [['Saint martyr Pamphile et ses compagnons', 'Мчч. Памфила и иже с ним', 'Martyr Pamphilus and those with him']],
   '2-17': [['Saint grand-martyr Théodore le Conscrit', 'Вмч. Феодора Тирона', 'Great Martyr Theodore the Recruit']],
-  '2-18': [['Saint Léon le Grand, pape de Rome', 'Свт. Льва, папы Римского', 'St Leo the Great, Pope of Rome']],
+  '2-18': [['Saint Léon le Grand, évêque de Rome', 'Свт. Льва, папы Римского', 'St Leo the Great, Bishop of Rome']],
   '2-19': [['Saints apôtres Archippe et Philémon', 'Апп. от 70-ти Архиппа и Филимона', 'Holy Apostles Archippus and Philemon']],
   '2-20': [['Saint Léon de Catane', 'Свт. Льва Катанского', 'St Leo of Catania']],
   '2-21': [['Saint Eustathe d’Antioche', 'Свт. Евстафия Антиохийского', 'St Eustathius of Antioch']],
@@ -85,7 +85,7 @@ window.NEVSKY_SAINTS = {
   '3-9': [['Les quarante martyrs de Sébaste', '40 мучеников Севастийских', 'The Forty Martyrs of Sebaste', 1]],
   '3-10': [['Saint martyr Codrat de Corinthe', 'Мч. Кодрата Коринфского', 'Martyr Quadratus of Corinth']],
   '3-11': [['Saint Sophrone de Jérusalem', 'Свт. Софрония Иерусалимского', 'St Sophronius of Jerusalem']],
-  '3-12': [['Saint Théophane le Confesseur', 'Прп. Феофана исповедника', 'St Theophanes the Confessor'], ['Saint Grégoire le Dialogue, pape de Rome', 'Свт. Григория Двоеслова, папы Римского', 'St Gregory the Dialogist, Pope of Rome']],
+  '3-12': [['Saint Théophane le Confesseur', 'Прп. Феофана исповедника', 'St Theophanes the Confessor'], ['Saint Grégoire le Dialogue, évêque de Rome', 'Свт. Григория Двоеслова, папы Римского', 'St Gregory the Dialogist, Bishop of Rome']],
   '3-13': [['Translation des reliques de saint Nicéphore de Constantinople', 'Перенесение мощей свт. Никифора Константинопольского', 'Translation of the relics of St Nicephorus of Constantinople']],
   '3-14': [['Saint Benoît de Nursie', 'Прп. Венедикта Нурсийского', 'St Benedict of Nursia']],
   '3-15': [['Saint martyr Agapios et ses compagnons', 'Мч. Агапия и иже с ним', 'Martyr Agapius and those with him']],
@@ -119,7 +119,7 @@ window.NEVSKY_SAINTS = {
   '4-11': [['Saint hiéromartyr Antipas de Pergame', 'Сщмч. Антипы Пергамского', 'Hieromartyr Antipas of Pergamum']],
   '4-12': [['Saint Basile le Confesseur, évêque de Parium', 'Прп. Василия исповедника, еп. Парийского', 'St Basil the Confessor, Bishop of Parium']],
   '4-13': [['Saint hiéromartyr Artémon', 'Сщмч. Артемона', 'Hieromartyr Artemon']],
-  '4-14': [['Saint Martin le Confesseur, pape de Rome', 'Свт. Мартина исповедника, папы Римского', 'St Martin the Confessor, Pope of Rome']],
+  '4-14': [['Saint Martin le Confesseur, évêque de Rome', 'Свт. Мартина исповедника, папы Римского', 'St Martin the Confessor, Bishop of Rome']],
   '4-15': [['Saints apôtres Aristarque, Pudens et Trophime', 'Апп. от 70-ти Аристарха, Пуда и Трофима', 'Holy Apostles Aristarchus, Pudens and Trophimus']],
   '4-16': [['Saintes martyres Agapè, Irène et Chionie', 'Мцц. Агапии, Ирины и Хионии', 'Martyrs Agape, Irene and Chionia']],
   '4-17': [['Saint hiéromartyr Syméon de Perse', 'Сщмч. Симеона Персидского', 'Hieromartyr Simeon of Persia']],
