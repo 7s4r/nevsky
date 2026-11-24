@@ -1,7 +1,6 @@
 # nevsky
 
-Site de l’église orthodoxe russe Saint-Alexandre-Nevsky de Pau — https://nevsky.fr
-(site statique publié par GitHub Pages).
+Site de l’église orthodoxe russe Saint-Alexandre-Nevsky de Pau
 
 ## Mettre à jour les horaires des offices
 
