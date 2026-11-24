@@ -2,7 +2,7 @@ window.locales = {
   fr: {
     'meta.title': 'Église Orthodoxe Russe Saint Alexandre Nevsky à Pau',
     'meta.description':
-      'Liturgie byzantine à Pau, horaires des offices, événements, services et histoire de l’église. Un lieu d’accueil et de prière, ouvert à tous, pour partager la foi, la culture orthodoxe et soutenir nos projets.',
+      'Église orthodoxe russe Saint-Alexandre-Nevsky de Pau, consacrée en 1867 : offices, fêtes, histoire, vie de la paroisse. Un lieu de prière ouvert à tous.',
     'brand.name': 'Nevsky',
     'nav.home': 'Accueil',
     'nav.about': 'Histoire',
@@ -142,7 +142,7 @@ window.locales = {
     'meta.title':
       'Русская Православная Церковь Святого Александра Невского в По',
     'meta.description':
-      'Византийская литургия в По, расписание богослужений, события, история храма. Место молитвы и встречи, открытое для всех, кто ищет веру и общение.',
+      'Русский православный храм святого Александра Невского в По, освящён в 1867 году: богослужения, праздники, история, жизнь прихода. Место молитвы, открытое для всех.',
     'brand.name': 'Невский',
     'nav.home': 'Главная',
     'nav.about': 'История',
@@ -278,7 +278,7 @@ window.locales = {
   en: {
     'meta.title': 'Russian Orthodox Church of Saint Alexander Nevsky in Pau',
     'meta.description':
-      'Byzantine liturgy in Pau, service times, events, and church history. A place of prayer and fellowship, open to all seeking faith and community.',
+      'St Alexander Nevsky Russian Orthodox Church in Pau, consecrated in 1867: services, feasts, history and parish life. A place of prayer open to all.',
     'brand.name': 'Nevsky',
     'nav.home': 'Home',
     'nav.about': 'History',
