@@ -73,7 +73,7 @@ Le site utilise une police système sans empattement ; Helvetica/Arial en est l'
 
 ## Exemple : e-mail de réouverture
 
-`modele-reouverture.html` applique la charte à un e-mail : logo, photo de l'église, encart date, bouton, citation et pied de page. Il fonctionne dans n'importe quel outil d'e-mailing qui accepte du HTML :
+`modele-reouverture.html` applique la charte à un e-mail : logo, encart date, bouton, citation et pied de page. Il fonctionne dans n'importe quel outil d'e-mailing qui accepte du HTML :
 
 1. Remplacez `LIEN_DESINSCRIPTION` et `LIEN_VERSION_WEB` par les balises de votre outil. Le lien de désinscription est obligatoire.
 2. Les logos sont chargés depuis `https://nevsky.fr/brand/logos/…`. Ces adresses ne fonctionnent qu'une fois ce dossier publié sur le site.
