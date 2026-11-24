@@ -102,9 +102,9 @@ window.locales = {
     'events.item3.desc':
       'Découverte de la foi orthodoxe, questions & réponses.',
     'events.help': 'Cliquez sur une date pour voir les fêtes, le jeûne et les offices.',
-    'events.notice.title': 'Église temporairement fermée pour travaux',
+    'events.notice.title': 'L’église rouvre le dimanche 6 décembre',
     'events.notice.text':
-      'Merci de votre compréhension. Inscrivez-vous à la newsletter pour être informé(e) de la réouverture et des prochains offices.',
+      'Première Divine Liturgie à 10h00, en la fête de saint Alexandre Nevsky, patron de notre église. Tous sont les bienvenus ! Inscrivez-vous à la newsletter pour connaître les prochains offices.',
     'don.title': 'Soutenir les grands travaux',
     'don.desc':
       'Notre église nécessite des travaux importants (toiture, chauffage, mise aux normes). Votre don nous aide à préserver ce lieu de prière.',
@@ -240,9 +240,9 @@ window.locales = {
     'events.item3.time': 'Воскресенье 31 августа · 12:15 — 13:15',
     'events.item3.desc': 'Знакомство с православной верой. Вопросы и ответы.',
     'events.help': 'Нажмите на дату, чтобы увидеть праздники, пост и богослужения.',
-    'events.notice.title': 'Храм временно закрыт на ремонт',
+    'events.notice.title': 'Храм открывается в воскресенье 6 декабря',
     'events.notice.text':
-      'Спасибо за понимание. Подпишитесь на рассылку, чтобы получить уведомление об открытии и ближайших богослужениях.',
+      'Первая Божественная литургия в 10:00, в день памяти святого благоверного князя Александра Невского, небесного покровителя нашего храма. Добро пожаловать! Подпишитесь на рассылку, чтобы узнавать о ближайших богослужениях.',
     'don.title': 'Поддержите ремонт храма',
     'don.desc':
       'Храм нуждается в серьёзных работах (крыша, отопление, безопасность). Ваше пожертвование помогает сохранить дом молитвы.',
@@ -378,9 +378,9 @@ window.locales = {
     'events.item3.desc':
       'Introduction to the Orthodox faith, questions & answers.',
     'events.help': 'Click on a date to see feasts, fasting and services.',
-    'events.notice.title': 'Church temporarily closed for renovation',
+    'events.notice.title': 'The church reopens on Sunday 6 December',
     'events.notice.text':
-      'Thank you for your understanding. Subscribe to the newsletter to be notified about the reopening and upcoming services.',
+      'First Divine Liturgy at 10:00, on the feast of St Alexander Nevsky, patron saint of our church. All are welcome! Subscribe to the newsletter to hear about upcoming services.',
     'don.title': 'Support Major Works',
     'don.desc':
       'Our church requires significant repairs (roof, heating, safety). Your donation helps preserve this place of prayer.',

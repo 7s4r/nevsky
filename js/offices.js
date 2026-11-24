@@ -41,10 +41,14 @@
  */
 window.NEVSKY_OFFICES = {
   weekly: [
-    // L'église est temporairement fermée pour travaux :
-    // ajouter ici les offices réguliers à la réouverture.
+    // Ajouter ici les offices réguliers dès que leurs horaires sont fixés.
   ],
   dates: [
+    { date: '2026-12-06', time: '10:00', duration: 150,
+      fr: 'Divine Liturgie', ru: 'Божественная литургия', en: 'Divine Liturgy',
+      noteFr: 'Saint Alexandre Nevsky, réouverture de l\'église',
+      noteRu: 'Св. блгв. кн. Александр Невский, открытие храма',
+      noteEn: 'St Alexander Nevsky, reopening of the church' },
   ],
   cancelled: [
   ],

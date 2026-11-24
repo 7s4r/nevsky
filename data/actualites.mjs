@@ -19,6 +19,24 @@ export const HOME_NEWS = 3;
 
 export const actualites = [
   {
+    date: '2026-11-24',
+    fr: {
+      title: 'L’église rouvre le 6 décembre, en la fête de saint Alexandre Nevsky',
+      text: 'Nous avons la joie d’annoncer la réouverture de notre église. La première Divine Liturgie sera célébrée le dimanche 6 décembre à 10h00, jour de la fête de saint Alexandre Nevsky, patron de notre église.\n\nTous sont les bienvenus, fidèles de longue date comme visiteurs venus pour la première fois. Adresse : 18 rue Jean-Réveil, 64000 Pau.',
+      link: { href: 'premiere-visite.html', label: 'Préparer votre visite →' },
+    },
+    ru: {
+      title: 'Храм открывается 6 декабря, в день памяти святого Александра Невского',
+      text: 'С радостью сообщаем об открытии нашего храма. Первая Божественная литургия будет совершена в воскресенье 6 декабря в 10:00, в день памяти святого благоверного князя Александра Невского, небесного покровителя нашего храма.\n\nДобро пожаловать всем — и постоянным прихожанам, и тем, кто придёт впервые. Адрес: 18 rue Jean-Réveil, 64000 Pau.',
+      link: { href: 'pervoe-poseshchenie.html', label: 'Впервые в храме? →' },
+    },
+    en: {
+      title: 'The church reopens on 6 December, the feast of St Alexander Nevsky',
+      text: 'We are delighted to announce the reopening of our church. The first Divine Liturgy will be celebrated on Sunday 6 December at 10:00, the feast of St Alexander Nevsky, patron saint of our church.\n\nAll are welcome, long-standing faithful and first-time visitors alike. Address: 18 rue Jean-Réveil, 64000 Pau.',
+      link: { href: 'first-visit.html', label: 'Plan your visit →' },
+    },
+  },
+  {
     date: '2026-11-22',
     fr: {
       title: 'Le jeûne de la Nativité commence le 28 novembre',
