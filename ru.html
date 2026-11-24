@@ -782,6 +782,12 @@
         <!-- actualites:start (généré par scripts/build-home.mjs depuis data/actualites.mjs) -->
         <div class="mt-10 grid gap-6 md:grid-cols-3">
           <article class="flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <time class="text-xs font-semibold uppercase tracking-widest text-slate-500" datetime="2026-11-24">24 ноября 2026 г.</time>
+            <h3 class="mt-2 text-lg font-semibold text-slate-900">Храм открывается 6 декабря, в день памяти святого Александра Невского</h3>
+            <p class="mt-2 flex-1 text-slate-600">С радостью сообщаем об открытии нашего храма. Первая Божественная литургия будет совершена в воскресенье 6 декабря в 10:30, в день памяти святого благоверного князя Александра Невского, небесного покровителя нашего храма.</p>
+            <a class="mt-4 text-sm font-semibold underline link-gold-on-light" href="novosti.html#n-2026-11-24">Читать дальше →</a>
+          </article>
+          <article class="flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
             <time class="text-xs font-semibold uppercase tracking-widest text-slate-500" datetime="2026-11-22">22 ноября 2026 г.</time>
             <h3 class="mt-2 text-lg font-semibold text-slate-900">Рождественский пост начинается 28 ноября</h3>
             <p class="mt-2 flex-1 text-slate-600">С 28 ноября по 6 января Церковь призывает нас приготовиться к празднику Рождества Христова, который мы празднуем 7 января, сорока днями поста, молитвы и милосердия.</p>
@@ -792,12 +798,6 @@
             <h3 class="mt-2 text-lg font-semibold text-slate-900">Новая страница: Архангел Михаил</h3>
             <p class="mt-2 flex-1 text-slate-600">К празднику Собора Архистратига Михаила и прочих Небесных сил бесплотных, 21 ноября, — новая страница об Архангеле: значение имени, Священное Писание, чудо в Хонех, иконы и видео.</p>
             <a class="mt-4 text-sm font-semibold underline link-gold-on-light" href="novosti.html#n-2026-11-21">Читать дальше →</a>
-          </article>
-          <article class="flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-            <time class="text-xs font-semibold uppercase tracking-widest text-slate-500" datetime="2026-11-20">20 ноября 2026 г.</time>
-            <h3 class="mt-2 text-lg font-semibold text-slate-900">Храм временно закрыт на ремонт</h3>
-            <p class="mt-2 flex-1 text-slate-600">Нашему храму необходим серьёзный ремонт: кровля, отопление, приведение в соответствие с нормами. Поэтому храм временно закрыт, и богослужения в нём пока не совершаются.</p>
-            <a class="mt-4 text-sm font-semibold underline link-gold-on-light" href="novosti.html#n-2026-11-20">Читать дальше →</a>
           </article>
         </div>
         <a href="novosti.html" class="mt-8 inline-block text-sm underline font-semibold link-gold-on-light">Все новости →</a>
@@ -1015,8 +1015,8 @@
               <h3
                 class="text-lg font-semibold text-slate-900"
                 data-i18n="events.notice.title"
-              >Храм временно закрыт на ремонт</h3>
-              <p class="mt-2 text-slate-700" data-i18n="events.notice.text">Спасибо за понимание. Подпишитесь на рассылку, чтобы получить уведомление об открытии и ближайших богослужениях.</p>
+              >Храм открывается в воскресенье 6 декабря</h3>
+              <p class="mt-2 text-slate-700" data-i18n="events.notice.text">Первая Божественная литургия в 10:30, в день памяти святого благоверного князя Александра Невского, небесного покровителя нашего храма. Добро пожаловать! Подпишитесь на рассылку, чтобы узнавать о ближайших богослужениях.</p>
               <a
                 href="pervoe-poseshchenie.html"
                 class="mt-3 inline-block text-sm underline font-semibold link-gold-on-light"
@@ -1081,8 +1081,8 @@
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
         <div class="md:flex md:items-center md:justify-between gap-12">
           <div class="max-w-2xl">
-            <h2 class="text-3xl font-bold tracking-tight" data-i18n="don.title">Поддержите ремонт храма</h2>
-            <p class="mt-4 text-white/90" data-i18n="don.desc">Храм нуждается в серьёзных работах (крыша, отопление, безопасность). Ваше пожертвование помогает сохранить дом молитвы.</p>
+            <h2 class="text-3xl font-bold tracking-tight" data-i18n="don.title">Поддержите наш храм</h2>
+            <p class="mt-4 text-white/90" data-i18n="don.desc">Ваше пожертвование поддерживает жизнь прихода: оно помогает содержать и сохранять дом молитвы и финансировать ремонтные работы в храме.</p>
 
             <!-- Progress -->
             <div class="mt-6">
@@ -1133,23 +1133,21 @@
               <ul class="mt-4 space-y-2 text-white/90">
                 <li class="flex items-center gap-2">
                   <span class="h-2 w-2 rounded-full bg-gold"></span>
-                  <span data-i18n="don.items.roof">Крыша и утепление</span>
+                  <span data-i18n="don.items.works">Ремонтные работы</span>
                 </li>
                 <li class="flex items-center gap-2">
                   <span class="h-2 w-2 rounded-full bg-gold"></span>
-                  <span data-i18n="don.items.heat"
-                    >Отопление и электрика</span
+                  <span data-i18n="don.items.upkeep"
+                    >Содержание храма</span
                   >
                 </li>
                 <li class="flex items-center gap-2">
                   <span class="h-2 w-2 rounded-full bg-gold"></span>
-                  <span data-i18n="don.items.access"
-                    >Доступность и безопасность</span
-                  >
+                  <span data-i18n="don.items.liturgy">Богослужебная жизнь</span>
                 </li>
                 <li class="flex items-center gap-2">
                   <span class="h-2 w-2 rounded-full bg-gold"></span>
-                  <span data-i18n="don.items.icons">Уход за иконами</span>
+                  <span data-i18n="don.items.parish">Жизнь прихода</span>
                 </li>
               </ul>
             </div>
