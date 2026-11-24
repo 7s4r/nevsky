@@ -1,0 +1,39 @@
+{
+  "nom": "Église orthodoxe russe Saint-Alexandre-Nevsky de Pau",
+  "nom_court": "Nevsky",
+  "site": "https://nevsky.fr",
+  "expediteur_suggere": "Église Nevsky de Pau",
+  "adresse_pied_de_page": "18 rue Jean-Réveil, 64000 Pau, France",
+  "logos": {
+    "principal_fond_clair": "logos/logo-nevsky-horizontal.png",
+    "principal_fond_fonce": "logos/logo-nevsky-horizontal-blanc.png",
+    "complet_fond_clair": "logos/logo-nevsky-complet.png",
+    "complet_fond_fonce": "logos/logo-nevsky-complet-blanc.png",
+    "icone": "logos/icone-croix-or.png",
+    "largeur_affichage_email_px": 220
+  },
+  "couleurs": {
+    "bleu_nevsky": { "hex": "#10354B", "role": "Couleur principale : titres, wordmark, bandeau de pied de page" },
+    "or_nevsky": { "hex": "#FFD615", "role": "Accent : boutons, filets, puces" },
+    "bleu_liturgique": { "hex": "#1B3B6F", "role": "Fond des encarts « citation / verset »" },
+    "or_clair": { "hex": "#FFF2A1", "role": "Fond des pastilles et encarts d'information" },
+    "or_fonce": { "hex": "#7A5C00", "role": "Liens sur fond blanc (contraste AA)" },
+    "texte": { "hex": "#0F172A", "role": "Texte principal" },
+    "texte_secondaire": { "hex": "#475569", "role": "Texte courant secondaire, légendes" },
+    "fond_doux": { "hex": "#F8FAFC", "role": "Fond de l'e-mail / sections alternées" },
+    "bordure": { "hex": "#E2E8F0", "role": "Séparateurs" },
+    "blanc": { "hex": "#FFFFFF", "role": "Fond du contenu" }
+  },
+  "typographie": {
+    "titres": { "famille": "Helvetica, Arial, sans-serif", "graisse": 700, "couleur": "#10354B", "tailles_px": { "h1": 30, "h2": 22, "h3": 18 } },
+    "texte": { "famille": "Helvetica, Arial, sans-serif", "graisse": 400, "couleur": "#0F172A", "taille_px": 16, "interligne": 1.6 },
+    "citation": { "famille": "Georgia, 'Times New Roman', serif", "style": "italic", "taille_px": 20 },
+    "signature_script": { "famille": "Great Vibes (Google Fonts)", "usage": "Uniquement dans le logo (image), jamais en texte d'e-mail" }
+  },
+  "boutons": {
+    "principal": { "fond": "#FFD615", "texte": "#0F172A", "graisse": 700, "rayon_px": 999, "padding": "14px 28px" },
+    "secondaire_sur_fond_fonce": { "fond": "#FFFFFF", "texte": "#0F172A", "graisse": 700, "rayon_px": 999 }
+  },
+  "liens": { "couleur": "#7A5C00", "souligne": true, "sur_fond_fonce": "#FFD615" },
+  "mise_en_page": { "largeur_px": 600, "rayon_cartes_px": 16, "marges_px": 32 }
+}
