@@ -2,7 +2,7 @@ window.locales = {
   fr: {
     'meta.title': 'Église Orthodoxe Russe Saint Alexandre Nevsky à Pau',
     'meta.description':
-      'Église orthodoxe russe Saint-Alexandre-Nevsky de Pau, consacrée en 1867 : offices, fêtes, histoire, vie de la paroisse. Un lieu de prière ouvert à tous.',
+      'Église orthodoxe russe consacrée en 1867 et dédiée à saint Alexandre Nevsky, l’une des plus anciennes églises orthodoxes de France. Une paroisse qui rassemble des fidèles de nombreux pays, un lieu de prière et d’accueil ouvert à tous, croyants comme simples curieux.',
     'brand.name': 'Nevsky',
     'nav.home': 'Accueil',
     'nav.about': 'Histoire',
@@ -142,7 +142,7 @@ window.locales = {
     'meta.title':
       'Русская Православная Церковь Святого Александра Невского в По',
     'meta.description':
-      'Русский православный храм святого Александра Невского в По, освящён в 1867 году: богослужения, праздники, история, жизнь прихода. Место молитвы, открытое для всех.',
+      'Русский православный храм, освящённый в 1867 году во имя святого Александра Невского, — один из старейших православных храмов Франции. Приход объединяет верующих из многих стран: это место молитвы и встречи, открытое для всех — и для верующих, и для просто интересующихся.',
     'brand.name': 'Невский',
     'nav.home': 'Главная',
     'nav.about': 'История',
@@ -278,7 +278,7 @@ window.locales = {
   en: {
     'meta.title': 'Russian Orthodox Church of Saint Alexander Nevsky in Pau',
     'meta.description':
-      'St Alexander Nevsky Russian Orthodox Church in Pau, consecrated in 1867: services, feasts, history and parish life. A place of prayer open to all.',
+      'Russian Orthodox church consecrated in 1867 and dedicated to St Alexander Nevsky, one of the oldest Orthodox churches in France. A parish bringing together faithful from many countries, a place of prayer and welcome open to all, believers and the simply curious alike.',
     'brand.name': 'Nevsky',
     'nav.home': 'Home',
     'nav.about': 'History',
