@@ -44,7 +44,7 @@ window.NEVSKY_OFFICES = {
     // Ajouter ici les offices réguliers dès que leurs horaires sont fixés.
   ],
   dates: [
-    { date: '2026-12-06', time: '10:00', duration: 150,
+    { date: '2026-12-06', time: '10:30', duration: 150,
       fr: 'Divine Liturgie', ru: 'Божественная литургия', en: 'Divine Liturgy',
       noteFr: 'Saint Alexandre Nevsky, réouverture de l\'église',
       noteRu: 'Св. блгв. кн. Александр Невский, открытие храма',
