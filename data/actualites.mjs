@@ -72,22 +72,4 @@ export const actualites = [
       link: { href: 'archangel-michael.html', label: 'Discover the Archangel Michael →' },
     },
   },
-  {
-    date: '2026-11-20',
-    fr: {
-      title: 'L’église est temporairement fermée pour travaux',
-      text: 'Notre église a besoin de travaux importants : toiture, chauffage et mise aux normes. Elle est donc temporairement fermée, et aucun office n’y est célébré pour le moment.\n\nInscrivez-vous à la newsletter pour être informé de la réouverture. Vous pouvez aussi soutenir les travaux par un don.',
-      link: { href: 'index.html#don', label: 'Soutenir les travaux →' },
-    },
-    ru: {
-      title: 'Храм временно закрыт на ремонт',
-      text: 'Нашему храму необходим серьёзный ремонт: кровля, отопление, приведение в соответствие с нормами. Поэтому храм временно закрыт, и богослужения в нём пока не совершаются.\n\nПодпишитесь на рассылку, чтобы узнать о возобновлении служб. Вы также можете поддержать ремонт пожертвованием.',
-      link: { href: 'ru.html#don', label: 'Поддержать ремонт →' },
-    },
-    en: {
-      title: 'The church is temporarily closed for works',
-      text: 'Our church needs major works: roof, heating and bringing it up to standard. It is therefore temporarily closed, and no services are held there for the moment.\n\nSubscribe to the newsletter to hear when it reopens. You can also support the works with a donation.',
-      link: { href: 'en.html#don', label: 'Support the works →' },
-    },
-  },
 ];
