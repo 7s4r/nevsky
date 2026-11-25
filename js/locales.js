@@ -24,7 +24,7 @@ window.locales = {
     'about.p2':
       'Commandée depuis Saint‑Pétersbourg, elle est confiée à un architecte local, Lucien Cottet (1842-1919), qui livre un résultat éloigné des églises russes traditionnelles. Discrète, nichée dans un jardin bordé de palmiers, elle ne possède ni dômes traditionnels ni façades ostentatoires. Seule une croix orthodoxe à huit branches surmonte la façade, avec un buste du Christ au-dessus de l’entrée, sculpté par Jean Rolland-Bouttier. Le fronton porte un œil rayonnant inscrit dans un triangle, symbole du divin. À l’intérieur, l’iconostase de 1867, signée par le peintre iconographe Vassili Pecheronoff, provient de Saint‑Pétersbourg et rappelle l’origine de ses fondateurs.',
     'about.cards.history.title': 'Un patrimoine depuis 1867',
-    'about.cards.history.text': 'Troisième église orthodoxe russe bâtie en France, après Nice et Paris, elle témoigne depuis plus de 150 ans des liens entre Pau et la Russie.',
+    'about.cards.history.text': 'Troisième église orthodoxe russe bâtie en France, après Nice et Paris, elle témoigne depuis plus de 150 ans des liens entre le Béarn et la Russie.',
     'about.cards.history.link': 'Nous rendre visite →',
     'about.cards.trad.title': 'Tradition vivante',
     'about.cards.trad.text': 'La Divine Liturgie est célébrée en slavon, parfois aussi en français, avec le chant a cappella, les icônes et le calendrier julien de l’Église russe.',
@@ -164,7 +164,7 @@ window.locales = {
     'about.p2':
       'Храм был заказан из Санкт-Петербурга, но строительство поручили местному архитектору Люсьену Котте (1842–1919), и в итоге он получился непохожим на традиционные русские церкви. Скромный, укрытый в саду среди пальм, он не имеет ни традиционных куполов, ни пышных фасадов. Лишь восьмиконечный православный крест венчает фасад, а над входом помещён бюст Христа работы скульптора Жана Роллан-Бутье. На фронтоне — лучезарное Всевидящее око в треугольнике, символ Бога. Внутри иконостас 1867 года, написанный иконописцем Василием Пешероновым и привезённый из Санкт-Петербурга, напоминает о происхождении основателей храма.',
     'about.cards.history.title': 'Наследие с 1867 года',
-    'about.cards.history.text': 'Третий русский православный храм, построенный во Франции после Ниццы и Парижа, более 150 лет свидетельствует о связях По и России.',
+    'about.cards.history.text': 'Третий русский православный храм, построенный во Франции после Ниццы и Парижа, более 150 лет свидетельствует о связях Беарна и России.',
     'about.cards.history.link': 'Как нас найти →',
     'about.cards.trad.title': 'Живая традиция',
     'about.cards.trad.text': 'Божественная литургия совершается на церковнославянском языке, иногда и на французском: хоровое пение без инструментов, иконы и юлианский календарь Русской Церкви.',
@@ -300,7 +300,7 @@ window.locales = {
     'about.p2':
       'Commissioned from Saint Petersburg, it was entrusted to a local architect, Lucien Cottet (1842–1919), whose design is quite unlike traditional Russian churches. Discreet, nestled in a garden lined with palm trees, it has neither traditional domes nor ostentatious façades. Only an eight-pointed Orthodox cross crowns the façade, with a bust of Christ above the entrance by the sculptor Jean Rolland-Bouttier. The pediment bears a radiant eye within a triangle, a symbol of the divine. Inside, the iconostasis of 1867, signed by the icon painter Vasily Pecheronov, came from Saint Petersburg and recalls the origins of the church’s founders.',
     'about.cards.history.title': 'A heritage since 1867',
-    'about.cards.history.text': 'The third Russian Orthodox church built in France, after Nice and Paris, it has borne witness to the ties between Pau and Russia for over 150 years.',
+    'about.cards.history.text': 'The third Russian Orthodox church built in France, after Nice and Paris, it has borne witness to the ties between Béarn and Russia for over 150 years.',
     'about.cards.history.link': 'Visit us →',
     'about.cards.trad.title': 'Living tradition',
     'about.cards.trad.text': 'The Divine Liturgy is celebrated in Church Slavonic, sometimes also in French, with a cappella singing, icons and the Julian calendar of the Russian Church.',
