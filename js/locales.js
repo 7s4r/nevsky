@@ -1,6 +1,6 @@
 window.locales = {
   fr: {
-    'meta.title': 'Église Orthodoxe Russe Saint Alexandre Nevsky à Pau',
+    'meta.title': 'Église orthodoxe russe Saint-Alexandre-Nevsky à Pau',
     'meta.description':
       'Église orthodoxe russe consacrée en 1867 et dédiée à saint Alexandre Nevsky, l’une des plus anciennes églises orthodoxes de France. Une paroisse qui rassemble des fidèles de nombreux pays, un lieu de prière et d’accueil ouvert à tous, croyants comme simples curieux.',
     'brand.name': 'Nevsky',
@@ -15,7 +15,7 @@ window.locales = {
     'nav.cta': 'Faire un don',
     'hero.title': 'Lumière et paix au cœur du Béarn',
     'hero.desc':
-      'Venez vivre la beauté de la liturgie orthodoxe dans notre église Saint Alexandre Nevsky à Pau. Un lieu de prière, de rencontre et de partage de la foi, la tradition byzantine et l’amitié chrétienne.',
+      'Venez vivre la beauté de la liturgie orthodoxe dans notre église Saint-Alexandre-Nevsky à Pau. Un lieu de prière, de rencontre et de partage de la foi, la tradition byzantine et l’amitié chrétienne.',
     'hero.cta1': 'Prochains offices',
     'hero.cta2': "Soutenir l'église",
     'about.title': 'Histoire de notre église',
