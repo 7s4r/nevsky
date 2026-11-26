@@ -17,6 +17,13 @@ export const HOME_COUNT = 6;
 
 export const lectures = [
   {
+    date: '2026-11-26',
+    image: 'images/lecture-saint-jean-chrysostome-1200.webp',
+    fr: { href: 'saint-jean-chrysostome.html', title: "Saint Jean Chrysostome", text: "La « Bouche d’or » : prédicateur d’Antioche, archevêque de Constantinople, auteur de la Liturgie du dimanche. Fêté le 26 novembre." },
+    ru: { href: 'ioann-zlatoust.html', title: "Святитель Иоанн Златоуст", text: "«Золотые уста» Церкви: проповедник Антиохии, архиепископ Константинопольский, автор воскресной литургии. Память 26 ноября." },
+    en: { href: 'john-chrysostom.html', title: "Saint John Chrysostom", text: "The “Golden Mouth”: preacher of Antioch, Archbishop of Constantinople, author of the Sunday Liturgy. Feast on 26 November." },
+  },
+  {
     date: '2026-11-22',
     image: 'images/lecture-noel-orthodoxe-1200.webp',
     fr: { href: 'noel-orthodoxe.html', title: "Noël orthodoxe", text: "Pourquoi le 7 janvier, la veille de Noël et le sotchivo, l’icône et les chants de la Nativité." },

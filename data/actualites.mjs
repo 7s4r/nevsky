@@ -19,6 +19,24 @@ export const HOME_NEWS = 3;
 
 export const actualites = [
   {
+    date: '2026-11-26',
+    fr: {
+      title: 'Aujourd’hui, fête de saint Jean Chrysostome',
+      text: 'Le 26 novembre (13 novembre du calendrier julien), l’Église fait mémoire de saint Jean Chrysostome, archevêque de Constantinople, mort en exil en 407 en disant : « Gloire à Dieu pour tout ! » Ses homélies lui ont valu le surnom de « Bouche d’or ».\n\nC’est sa Liturgie que nous célébrons presque chaque dimanche, et son homélie que nous lisons dans la nuit de Pâques. Découvrez sa vie et ses paroles dans un nouvel article.',
+      link: { href: 'saint-jean-chrysostome.html', label: 'Lire l’article sur saint Jean Chrysostome →' },
+    },
+    ru: {
+      title: 'Сегодня память святителя Иоанна Златоуста',
+      text: '26 ноября (13 ноября по старому стилю) Церковь празднует память святителя Иоанна Златоуста, архиепископа Константинопольского, скончавшегося в изгнании в 407 году со словами: «Слава Богу за всё!» За дар слова его назвали Златоустом.\n\nЕго литургию мы служим почти каждое воскресенье, а его Огласительное слово читаем в пасхальную ночь. О житии и словах святителя — в новой статье.',
+      link: { href: 'ioann-zlatoust.html', label: 'Читать о святителе Иоанне Златоусте →' },
+    },
+    en: {
+      title: 'Today is the feast of Saint John Chrysostom',
+      text: 'On 26 November (13 November in the Julian calendar), the Church commemorates Saint John Chrysostom, Archbishop of Constantinople, who died in exile in 407 saying: “Glory to God for all things!” His preaching earned him the name “Golden Mouth”.\n\nIt is his Liturgy that we celebrate almost every Sunday, and his homily that we read on Paschal night. Discover his life and words in a new article.',
+      link: { href: 'john-chrysostom.html', label: 'Read about Saint John Chrysostom →' },
+    },
+  },
+  {
     date: '2026-11-24',
     fr: {
       title: 'L’église rouvre le 6 décembre, en la fête de saint Alexandre Nevsky',
